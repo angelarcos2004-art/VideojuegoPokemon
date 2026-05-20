@@ -10,25 +10,25 @@ import { NavbarComponent } from '../../shared/components/navbar/navbar.component
   template: `
     <app-navbar></app-navbar>
     <div class="menu-container">
-      <h1>Main Menu</h1>
+      <h1>Menú Principal</h1>
       <div class="menu-options">
         <a routerLink="/cards/collection" class="menu-btn">
-          <span>📚</span> Collection
+          <span>📚</span> Colección
         </a>
         <a routerLink="/cards/deck-builder" class="menu-btn">
-          <span>🛠️</span> Deck Builder
+          <span>🛠️</span> Constructor de Mazo
         </a>
         <a routerLink="/game/cpu" class="menu-btn">
-          <span>🤖</span> Play vs CPU
+          <span>🤖</span> Jugar vs CPU
         </a>
         <a routerLink="/game/online" class="menu-btn">
-          <span>🌐</span> Play Online
+          <span>🌐</span> Jugar En Línea
         </a>
         <a routerLink="/history" class="menu-btn">
-          <span>📊</span> History
+          <span>📊</span> Historial
         </a>
         <a routerLink="/rules" class="menu-btn">
-          <span>📖</span> Rules
+          <span>📖</span> Reglas
         </a>
       </div>
     </div>

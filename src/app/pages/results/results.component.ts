@@ -11,13 +11,13 @@ import { NavbarComponent } from '../../shared/components/navbar/navbar.component
     <app-navbar></app-navbar>
     <div class="results-container">
       <div class="results-card">
-        <h1>Game Over</h1>
+        <h1>Juego Terminado</h1>
         <div class="result-status">
-          <p class="message">Please check your game history to view detailed results.</p>
+          <p class="message">Por favor revisa tu historial de juegos para ver los resultados detallados.</p>
         </div>
         <div class="action-buttons">
-          <a routerLink="/history" class="btn-primary">View History</a>
-          <a routerLink="/menu" class="btn-secondary">Back to Menu</a>
+          <a routerLink="/history" class="btn-primary">Ver Historial</a>
+          <a routerLink="/menu" class="btn-secondary">Volver al Menú</a>
         </div>
       </div>
     </div>

@@ -13,21 +13,21 @@ import { NavbarComponent } from '../../../shared/components/navbar/navbar.compon
     <app-navbar></app-navbar>
     <div class="login-container">
       <div class="login-box">
-        <h2>Login</h2>
+        <h2>Iniciar Sesión</h2>
         <form (ngSubmit)="login()">
           <div class="form-group">
             <label>Email:</label>
             <input type="email" [(ngModel)]="email" name="email" required>
           </div>
           <div class="form-group">
-            <label>Password:</label>
+            <label>Contraseña:</label>
             <input type="password" [(ngModel)]="password" name="password" required>
           </div>
-          <button type="submit" class="btn-submit">Login</button>
+          <button type="submit" class="btn-submit">Iniciar Sesión</button>
           <div *ngIf="error" class="error">{{ error }}</div>
         </form>
         <p class="signup-link">
-          Don't have an account? <a routerLink="/register">Register here</a>
+          ¿No tienes cuenta? <a routerLink="/register">Regístrate aquí</a>
         </p>
       </div>
     </div>

@@ -30,7 +30,7 @@ import { takeUntil } from 'rxjs/operators';
 
           <div class="player-field">
             <div class="cards-zone">
-              <div class="zone-label">Field ({{ gameState.player2.field.length }}/5)</div>
+              <div class="zone-label">Campo ({{ gameState.player2.field.length }}/5)</div>
               <div class="field-cards">
                 <div *ngFor="let card of gameState.player2.field; let i = index" class="field-card">
                   <img [src]="card.image" [alt]="card.name" class="card-image">
@@ -46,19 +46,19 @@ import { takeUntil } from 'rxjs/operators';
         <div class="game-center">
           <div class="game-phase">
             <h3>{{ getCurrentPhaseText() }}</h3>
-            <p>Turn {{ gameState.turnNumber }} - {{ gameState.currentTurn === 'player1' ? 'Your' : 'CPU' }} Turn</p>
+            <p>Turno {{ gameState.turnNumber }} - {{ gameState.currentTurn === 'player1' ? 'Tu' : 'CPU' }} Turno</p>
           </div>
 
           <div *ngIf="gameState.winner" class="winner-overlay">
             <div class="winner-message">
-              <h2>{{ gameState.winner === 'player1' ? 'You Win!' : 'You Lost!' }}</h2>
-              <button (click)="endGame()" class="btn-back">Back to Menu</button>
+              <h2>{{ gameState.winner === 'player1' ? '¡Ganaste!' : '¡Perdiste!' }}</h2>
+              <button (click)="endGame()" class="btn-back">Volver al Menú</button>
             </div>
           </div>
 
           <div *ngIf="gameState.currentTurn === 'player1' && !gameState.winner" class="player-actions">
-            <button (click)="playPhase()" class="btn-action">End Phase</button>
-            <button (click)="drawPhase()" class="btn-action">Draw Card</button>
+            <button (click)="playPhase()" class="btn-action">Terminar Fase</button>
+            <button (click)="drawPhase()" class="btn-action">Robar Carta</button>
           </div>
         </div>
 
@@ -72,7 +72,7 @@ import { takeUntil } from 'rxjs/operators';
 
           <div class="player-field">
             <div class="cards-zone">
-              <div class="zone-label">Field ({{ gameState.player1.field.length }}/5)</div>
+              <div class="zone-label">Campo ({{ gameState.player1.field.length }}/5)</div>
               <div class="field-cards">
                 <div *ngFor="let card of gameState.player1.field; let i = index"
                      class="field-card interactive"
@@ -86,7 +86,7 @@ import { takeUntil } from 'rxjs/operators';
           </div>
 
           <div class="player-hand">
-            <div class="zone-label">Hand ({{ gameState.player1.hand.length }})</div>
+            <div class="zone-label">Mano ({{ gameState.player1.hand.length }})</div>
             <div class="hand-cards">
               <div *ngFor="let card of gameState.player1.hand; let i = index"
                    class="hand-card interactive"
@@ -99,8 +99,8 @@ import { takeUntil } from 'rxjs/operators';
           </div>
 
           <div class="player-resources">
-            <span>Deck: {{ gameState.player1.deck.length }}</span>
-            <span>Graveyard: {{ gameState.player1.graveyard.length }}</span>
+            <span>Mazo: {{ gameState.player1.deck.length }}</span>
+            <span>Cementerio: {{ gameState.player1.graveyard.length }}</span>
           </div>
         </div>
       </div>
@@ -399,12 +399,12 @@ export class VsCpuComponent implements OnInit, OnDestroy {
 
   getCurrentPhaseText(): string {
     const phases: { [key: string]: string } = {
-      'draw': 'Draw Phase',
-      'main': 'Main Phase',
-      'battle': 'Battle Phase',
-      'end': 'End Phase'
+      'draw': 'Fase de Robo',
+      'main': 'Fase Principal',
+      'battle': 'Fase de Batalla',
+      'end': 'Fase de Término'
     };
-    return this.gameState?.phase ? phases[this.gameState.phase] : 'Unknown';
+    return this.gameState?.phase ? phases[this.gameState.phase] : 'Desconocido';
   }
 
   drawPhase(): void {

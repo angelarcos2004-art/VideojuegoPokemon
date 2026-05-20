@@ -13,10 +13,10 @@ import { NavbarComponent } from '../../../shared/components/navbar/navbar.compon
     <app-navbar></app-navbar>
     <div class="register-container">
       <div class="register-box">
-        <h2>Register</h2>
+        <h2>Registrarse</h2>
         <form (ngSubmit)="register()">
           <div class="form-group">
-            <label>Username:</label>
+            <label>Usuario:</label>
             <input type="text" [(ngModel)]="username" name="username" required>
           </div>
           <div class="form-group">
@@ -24,18 +24,18 @@ import { NavbarComponent } from '../../../shared/components/navbar/navbar.compon
             <input type="email" [(ngModel)]="email" name="email" required>
           </div>
           <div class="form-group">
-            <label>Password:</label>
+            <label>Contraseña:</label>
             <input type="password" [(ngModel)]="password" name="password" required>
           </div>
           <div class="form-group">
-            <label>Confirm Password:</label>
+            <label>Confirmar Contraseña:</label>
             <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required>
           </div>
-          <button type="submit" class="btn-submit">Register</button>
+          <button type="submit" class="btn-submit">Registrarse</button>
           <div *ngIf="error" class="error">{{ error }}</div>
         </form>
         <p class="login-link">
-          Already have an account? <a routerLink="/login">Login here</a>
+          ¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión aquí</a>
         </p>
       </div>
     </div>

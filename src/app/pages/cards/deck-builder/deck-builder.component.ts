@@ -24,19 +24,19 @@ const MAX_CARDS_PER_TYPE = 2;
   template: `
     <app-navbar></app-navbar>
     <div class="deck-builder-container">
-      <h1>Deck Builder</h1>
+      <h1>Constructor de Mazo</h1>
       <div class="builder-content">
         <div class="available-cards">
-          <h2>Available Cards</h2>
+          <h2>Cartas Disponibles</h2>
           <div class="controls">
             <input
               type="text"
-              placeholder="Search cards..."
+              placeholder="Buscar cartas..."
               [(ngModel)]="searchTerm"
               class="search-input"
             >
           </div>
-          <div *ngIf="loading" class="loading">Loading cards...</div>
+          <div *ngIf="loading" class="loading">Cargando cartas...</div>
           <div *ngIf="!loading" class="cards-list">
             <div *ngFor="let card of filteredCards" class="card-option" (click)="addCardToDeck(card)">
               <img [src]="card.image" [alt]="card.name" class="small-card-image">
@@ -50,7 +50,7 @@ const MAX_CARDS_PER_TYPE = 2;
         </div>
 
         <div class="deck-preview">
-          <h2>Current Deck ({{ deckSize }}/{{ MAX_DECK_SIZE }})</h2>
+          <h2>Mazo Actual ({{ deckSize }}/{{ MAX_DECK_SIZE }})</h2>
           <div class="deck-bar" [style.width.%]="(deckSize / MAX_DECK_SIZE) * 100"></div>
 
           <div *ngIf="deck.length > 0" class="deck-list">
@@ -65,7 +65,7 @@ const MAX_CARDS_PER_TYPE = 2;
             </div>
           </div>
           <div *ngIf="deck.length === 0" class="empty-deck">
-            Select cards to build your deck (20 cards max)
+            Selecciona cartas para construir tu mazo (máximo 20 cartas)
           </div>
 
           <div class="deck-controls">
@@ -74,14 +74,14 @@ const MAX_CARDS_PER_TYPE = 2;
               class="btn-control btn-clear"
               [disabled]="deck.length === 0"
             >
-              Clear Deck
+              Limpiar Mazo
             </button>
             <button
               (click)="saveDeck()"
               class="btn-control btn-save"
               [disabled]="deckSize !== MAX_DECK_SIZE"
             >
-              Save Deck
+              Guardar Mazo
             </button>
           </div>
 

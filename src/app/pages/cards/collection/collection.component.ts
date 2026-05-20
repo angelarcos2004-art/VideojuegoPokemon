@@ -16,22 +16,22 @@ import { takeUntil } from 'rxjs/operators';
   template: `
     <app-navbar></app-navbar>
     <div class="collection-container">
-      <h1>Card Collection</h1>
+      <h1>Colección de Cartas</h1>
       <div class="controls">
         <input
           type="text"
-          placeholder="Search cards..."
+          placeholder="Buscar cartas..."
           [(ngModel)]="searchTerm"
           class="search-input"
         >
         <select [(ngModel)]="sortBy" class="sort-select">
-          <option value="name">Sort by Name</option>
-          <option value="rarity">Sort by Rarity</option>
-          <option value="attack">Sort by Attack</option>
+          <option value="name">Ordenar por Nombre</option>
+          <option value="rarity">Ordenar por Rareza</option>
+          <option value="attack">Ordenar por Ataque</option>
         </select>
       </div>
 
-      <div *ngIf="loading" class="loading">Loading Pokémon cards...</div>
+      <div *ngIf="loading" class="loading">Cargando cartas Pokémon...</div>
 
       <div *ngIf="!loading && cards.length > 0" class="cards-grid">
         <div *ngFor="let card of filteredCards" class="card-item">
@@ -53,7 +53,7 @@ import { takeUntil } from 'rxjs/operators';
                 {{ card.rarity }}
               </div>
               <button (click)="addToCollection(card)" class="btn-add">
-                + Add to Collection
+                + Agregar a Colección
               </button>
             </div>
           </div>
@@ -61,7 +61,7 @@ import { takeUntil } from 'rxjs/operators';
       </div>
 
       <div *ngIf="!loading && cards.length === 0" class="no-cards">
-        No cards found
+        No se encontraron cartas
       </div>
     </div>
   `,

@@ -14,29 +14,29 @@ import { takeUntil } from 'rxjs/operators';
   template: `
     <app-navbar></app-navbar>
     <div class="vs-player-container">
-      <h1>Play Online</h1>
+      <h1>Jugar En Línea</h1>
 
       <div *ngIf="!selectedRoom" class="room-selection">
         <div class="options-grid">
           <div class="option-card">
-            <h3>Create Game Room</h3>
-            <p>Start a new game and wait for another player to join</p>
-            <button (click)="createRoom()" class="btn-primary">Create Room</button>
+            <h3>Crear Sala de Juego</h3>
+            <p>Inicia un nuevo juego y espera a que otro jugador se una</p>
+            <button (click)="createRoom()" class="btn-primary">Crear Sala</button>
           </div>
           <div class="option-card">
-            <h3>Join Existing Game</h3>
-            <p>Join an available game room</p>
-            <button (click)="loadAvailableRooms()" class="btn-primary">Browse Rooms</button>
+            <h3>Unirse a Juego Existente</h3>
+            <p>Únete a una sala de juego disponible</p>
+            <button (click)="loadAvailableRooms()" class="btn-primary">Explorar Salas</button>
           </div>
         </div>
 
         <div *ngIf="availableRooms.length > 0" class="rooms-list">
-          <h3>Available Rooms</h3>
+          <h3>Salas Disponibles</h3>
           <div class="room-grid">
             <div *ngFor="let room of availableRooms" class="room-card">
-              <p><strong>Room ID:</strong> {{ room.id }}</p>
-              <p><strong>Status:</strong> {{ room.status }}</p>
-              <button (click)="joinRoom(room.id)" class="btn-join">Join Room</button>
+              <p><strong>ID de Sala:</strong> {{ room.id }}</p>
+              <p><strong>Estado:</strong> {{ room.status }}</p>
+              <button (click)="joinRoom(room.id)" class="btn-join">Unirse a Sala</button>
             </div>
           </div>
         </div>
@@ -47,10 +47,10 @@ import { takeUntil } from 'rxjs/operators';
       </div>
 
       <div *ngIf="selectedRoom" class="game-waiting">
-        <h2>Game Room {{ selectedRoom }}</h2>
-        <p>Waiting for opponent...</p>
+        <h2>Sala de Juego {{ selectedRoom }}</h2>
+        <p>Esperando al oponente...</p>
         <div class="spinner"></div>
-        <button (click)="cancelRoom()" class="btn-cancel">Cancel</button>
+        <button (click)="cancelRoom()" class="btn-cancel">Cancelar</button>
       </div>
     </div>
   `,
@@ -251,7 +251,7 @@ export class VsPlayerComponent implements OnInit, OnDestroy {
   async createRoom(): Promise<void> {
     try {
       if (!this.currentUserId) {
-        this.errorMessage = 'User not authenticated';
+        this.errorMessage = 'Usuario no autenticado';
         return;
       }
 
@@ -259,7 +259,7 @@ export class VsPlayerComponent implements OnInit, OnDestroy {
       this.selectedRoom = room.id;
     } catch (error) {
       console.error('Failed to create room:', error);
-      this.errorMessage = 'Failed to create game room';
+      this.errorMessage = 'Falló al crear la sala de juego';
     }
   }
 
@@ -267,18 +267,18 @@ export class VsPlayerComponent implements OnInit, OnDestroy {
     try {
       this.availableRooms = await this.supabaseService.getAvailableRooms();
       if (this.availableRooms.length === 0) {
-        this.errorMessage = 'No available rooms at the moment';
+        this.errorMessage = 'No hay salas disponibles en este momento';
       }
     } catch (error) {
       console.error('Failed to load rooms:', error);
-      this.errorMessage = 'Failed to load available rooms';
+      this.errorMessage = 'Falló al cargar las salas disponibles';
     }
   }
 
   async joinRoom(roomId: string): Promise<void> {
     try {
       if (!this.currentUserId) {
-        this.errorMessage = 'User not authenticated';
+        this.errorMessage = 'Usuario no autenticado';
         return;
       }
 
@@ -286,7 +286,7 @@ export class VsPlayerComponent implements OnInit, OnDestroy {
       this.selectedRoom = roomId;
     } catch (error) {
       console.error('Failed to join room:', error);
-      this.errorMessage = 'Failed to join game room';
+      this.errorMessage = 'Falló al unirse a la sala de juego';
     }
   }
 

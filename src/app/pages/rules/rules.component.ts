@@ -9,31 +9,31 @@ import { NavbarComponent } from '../../shared/components/navbar/navbar.component
   template: `
     <app-navbar></app-navbar>
     <div class="rules-container">
-      <h1>Game Rules</h1>
+      <h1>Reglas del Juego</h1>
       <div class="rules-content">
         <section>
-          <h2>Objective</h2>
-          <p>Reduce your opponent's HP to 0 to win the game.</p>
+          <h2>Objetivo</h2>
+          <p>Reduce la vida (HP) de tu oponente a 0 para ganar el juego.</p>
         </section>
         <section>
-          <h2>Game Start</h2>
-          <p>Each player starts with 4000 HP and draws 5 cards from their deck.</p>
+          <h2>Inicio del Juego</h2>
+          <p>Cada jugador comienza con 4000 HP y roba 5 cartas de su mazo.</p>
         </section>
         <section>
-          <h2>Turn Phases</h2>
+          <h2>Fases del Turno</h2>
           <ul>
-            <li><strong>Draw Phase:</strong> Draw 1 card from your deck</li>
-            <li><strong>Main Phase:</strong> Play cards from your hand</li>
-            <li><strong>Battle Phase:</strong> Attack opponent's cards or directly</li>
-            <li><strong>End Phase:</strong> End your turn</li>
+            <li><strong>Fase de Robo:</strong> Roba 1 carta de tu mazo</li>
+            <li><strong>Fase Principal:</strong> Juega cartas de tu mano</li>
+            <li><strong>Fase de Batalla:</strong> Ataca las cartas del oponente o directamente</li>
+            <li><strong>Fase de Término:</strong> Termina tu turno</li>
           </ul>
         </section>
         <section>
-          <h2>Card Mechanics</h2>
+          <h2>Mecánicas de Cartas</h2>
           <ul>
-            <li>Maximum 5 cards on field at once</li>
-            <li>Damage = Attacker's Attack - Defender's Defense</li>
-            <li>Use special abilities strategically</li>
+            <li>Máximo 5 cartas en el campo a la vez</li>
+            <li>Daño = Ataque del Atacante - Defensa del Defensor</li>
+            <li>Usa las habilidades especiales estratégicamente</li>
           </ul>
         </section>
       </div>

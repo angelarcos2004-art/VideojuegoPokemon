@@ -11,25 +11,25 @@ import { NavbarComponent } from '../../shared/components/navbar/navbar.component
     <app-navbar></app-navbar>
     <div class="home-container">
       <div class="hero">
-        <h1>Pokémon Card Battle</h1>
-        <p class="subtitle">Strategic card game inspired by Pokémon & Yu-Gi-Oh!</p>
+        <h1>Batalla de Cartas Pokémon</h1>
+        <p class="subtitle">Juego de cartas estratégico inspirado en Pokémon y Yu-Gi-Oh!</p>
         <div class="buttons">
-          <a routerLink="/login" class="btn btn-primary">Login</a>
-          <a routerLink="/register" class="btn btn-secondary">Register</a>
+          <a routerLink="/login" class="btn btn-primary">Iniciar Sesión</a>
+          <a routerLink="/register" class="btn btn-secondary">Registrarse</a>
         </div>
       </div>
       <div class="features">
         <div class="feature">
-          <h3>Play vs CPU</h3>
-          <p>Challenge the computer with strategic card play</p>
+          <h3>Jugar vs CPU</h3>
+          <p>Desafía a la computadora con estrategia de cartas</p>
         </div>
         <div class="feature">
-          <h3>Multiplayer</h3>
-          <p>Battle against other players online in real-time</p>
+          <h3>Multijugador</h3>
+          <p>Batalla contra otros jugadores en línea en tiempo real</p>
         </div>
         <div class="feature">
-          <h3>Collect Cards</h3>
-          <p>Build your deck from hundreds of Pokémon cards</p>
+          <h3>Colecciona Cartas</h3>
+          <p>Crea tu mazo con cientos de cartas Pokémon</p>
         </div>
       </div>
     </div>

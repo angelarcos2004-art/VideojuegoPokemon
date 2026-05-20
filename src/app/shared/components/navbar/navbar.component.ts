@@ -13,20 +13,20 @@ import { AuthService } from '../../../core/services/auth.service';
       <div class="nav-container">
         <a routerLink="/" class="logo">
           <span class="logo-icon">⚡</span>
-          Pokémon Battle
+          Batalla Pokémon
         </a>
         <div class="nav-links">
-          <a routerLink="/" class="nav-link">Home</a>
-          <a routerLink="/rules" class="nav-link">Rules</a>
+          <a routerLink="/" class="nav-link">Inicio</a>
+          <a routerLink="/rules" class="nav-link">Reglas</a>
           <div *ngIf="isAuthenticated$ | async as isAuth">
             <ng-container *ngIf="isAuth; else notAuth">
-              <a routerLink="/menu" class="nav-link">Menu</a>
-              <a routerLink="/history" class="nav-link">History</a>
-              <button (click)="logout()" class="nav-link logout-btn">Logout</button>
+              <a routerLink="/menu" class="nav-link">Menú</a>
+              <a routerLink="/history" class="nav-link">Historial</a>
+              <button (click)="logout()" class="nav-link logout-btn">Cerrar Sesión</button>
             </ng-container>
             <ng-template #notAuth>
-              <a routerLink="/login" class="nav-link">Login</a>
-              <a routerLink="/register" class="nav-link register-link">Register</a>
+              <a routerLink="/login" class="nav-link">Iniciar Sesión</a>
+              <a routerLink="/register" class="nav-link register-link">Registrarse</a>
             </ng-template>
           </div>
         </div>

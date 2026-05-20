@@ -14,7 +14,7 @@ import { takeUntil } from 'rxjs/operators';
   template: `
     <app-navbar></app-navbar>
     <div class="history-container">
-      <h1>Game History</h1>
+      <h1>Historial de Juegos</h1>
 
       <div class="filter-tabs">
         <button
@@ -22,64 +22,64 @@ import { takeUntil } from 'rxjs/operators';
           (click)="activeTab = 'all'; loadHistory()"
           class="tab-btn"
         >
-          All Games
+          Todos los Juegos
         </button>
         <button
           [class.active]="activeTab === 'wins'"
           (click)="activeTab = 'wins'; loadHistory()"
           class="tab-btn"
         >
-          Wins
+          Victorias
         </button>
         <button
           [class.active]="activeTab === 'losses'"
           (click)="activeTab = 'losses'; loadHistory()"
           class="tab-btn"
         >
-          Losses
+          Derrotas
         </button>
       </div>
 
-      <div *ngIf="loading" class="loading">Loading game history...</div>
+      <div *ngIf="loading" class="loading">Cargando historial de juegos...</div>
 
       <div *ngIf="!loading && games.length > 0" class="games-table">
         <div class="table-header">
-          <div class="col-date">Date</div>
-          <div class="col-mode">Mode</div>
-          <div class="col-result">Result</div>
-          <div class="col-opponent">Opponent</div>
+          <div class="col-date">Fecha</div>
+          <div class="col-mode">Modo</div>
+          <div class="col-result">Resultado</div>
+          <div class="col-opponent">Oponente</div>
         </div>
         <div *ngFor="let game of games" class="table-row" [class.win]="game.winner === 'player'">
           <div class="col-date">{{ formatDate(game.played_at) }}</div>
           <div class="col-mode">{{ formatMode(game.mode) }}</div>
           <div class="col-result" [class.win]="game.winner === 'player'">
-            {{ game.winner === 'player' ? '✓ Win' : '✗ Loss' }}
+            {{ game.winner === 'player' ? '✓ Victoria' : '✗ Derrota' }}
           </div>
           <div class="col-opponent">{{ game.opponent || 'CPU' }}</div>
         </div>
       </div>
 
       <div *ngIf="!loading && games.length === 0" class="no-games">
-        <p>No games in history yet. Play a game to get started!</p>
+        <p>No hay juegos en el historial aún. ¡Juega para comenzar!</p>
       </div>
 
       <div *ngIf="!loading && games.length > 0" class="stats-summary">
-        <h3>Statistics</h3>
+        <h3>Estadísticas</h3>
         <div class="stats-grid">
           <div class="stat-item">
-            <span class="stat-label">Total Games</span>
+            <span class="stat-label">Total de Juegos</span>
             <span class="stat-value">{{ getTotalGames() }}</span>
           </div>
           <div class="stat-item">
-            <span class="stat-label">Wins</span>
+            <span class="stat-label">Victorias</span>
             <span class="stat-value win">{{ getWins() }}</span>
           </div>
           <div class="stat-item">
-            <span class="stat-label">Losses</span>
+            <span class="stat-label">Derrotas</span>
             <span class="stat-value loss">{{ getLosses() }}</span>
           </div>
           <div class="stat-item">
-            <span class="stat-label">Win Rate</span>
+            <span class="stat-label">Tasa de Victoria</span>
             <span class="stat-value">{{ getWinRate() }}%</span>
           </div>
         </div>
@@ -314,7 +314,7 @@ export class HistoryComponent implements OnInit, OnDestroy {
   }
 
   formatMode(mode: string): string {
-    return mode === 'cpu' ? 'vs CPU' : 'vs Player';
+    return mode === 'cpu' ? 'vs CPU' : 'vs Jugador';
   }
 
   getTotalGames(): number {
