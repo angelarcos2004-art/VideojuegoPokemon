@@ -1,59 +1,210 @@
-# VideojuegoPokemon
+# 🎮 Batalla de Cartas Pokémon - Videojuego Web
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.11.
+Videojuego interactivo de cartas por turnos inspirado en Pokémon y Yu-Gi-Oh!, desarrollado con **Angular 21**, **Supabase** y **SQLite**. Completamente en **español**.
 
-## Development server
+## ✨ Características
 
-To start a local development server, run:
+- ✅ **Autenticación con Supabase** - Registro e inicio de sesión seguros
+- ✅ **Colección de Cartas** - Navega y colecciona cartas Pokémon desde PokeAPI
+- ✅ **Constructor de Mazo** - Arma mazos de 20 cartas (máx 2 copias por carta)
+- ✅ **Juego vs CPU** - Batalla contra IA con turnos y habilidades especiales
+- ✅ **Juego Multijugador** - Salas de juego en línea con Supabase Realtime
+- ✅ **Historial de Juegos** - Estadísticas y registro de victorias/derrotas
+- ✅ **Interfaz Completamente en Español**
+- ✅ **Base de Datos Local** - SQLite con sql.js para caché offline
+- ✅ **Seguridad RLS** - Row Level Security en todas las tablas
 
+## 🛠️ Stack Tecnológico
+
+| Capa | Tecnología |
+|------|-----------|
+| **Frontend** | Angular 21 (Standalone Components) |
+| **Auth & BD Remota** | Supabase (PostgreSQL + Auth) |
+| **BD Local** | sql.js (SQLite en WebAssembly) |
+| **Cartas Pokémon** | PokeAPI v2 (https://pokeapi.co/api/v2) |
+| **Estilos** | CSS3 Puro (Tema oscuro dorado) |
+
+## 📦 Instalación
+
+### Requisitos Previos
+- **Node.js** 20+ y **npm** 11+
+- **Git**
+- Cuenta en **Supabase** con BD ya configurada
+
+### Pasos
+
+1. **Clonar y navegar al proyecto**
 ```bash
-ng serve
+cd "C:\TESE\6 SEMESTRE\DESARROLLO WEB PRACTICAS\3er Departamental\Proyecto3erDept\VideojuegoPokemon"
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+2. **Instalar dependencias**
 ```bash
-ng generate component component-name
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+3. **Verificar configuración de Supabase**
+El archivo `src/environments/environment.ts` debe tener:
+```typescript
+export const environment = {
+  production: false,
+  supabase: {
+    url: 'https://bwlezijlqunjmomrrrkh.supabase.co',
+    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...'
+  },
+  pokeapi: {
+    baseUrl: 'https://pokeapi.co/api/v2'
+  }
+};
 ```
 
-## Building
+## 🚀 Ejecutar la Aplicación
 
-To build the project run:
-
+### Desarrollo (con hot reload)
 ```bash
-ng build
+npm start
+```
+Accede a `http://localhost:4200`
+
+### Build para Producción
+```bash
+npm run build
+```
+Output en `dist/videojuego-pokemon/`
+
+## 🎮 Cómo Jugar
+
+1. **Registrarse** - Crea una cuenta con email y contraseña
+2. **Coleccionar Cartas** - Navega la colección y agrega cartas
+3. **Construir Mazo** - Crea un mazo de 20 cartas para jugar
+4. **Jugar vs CPU** - Batalla automática contra la IA
+5. **Ver Historial** - Revisa tus estadísticas y resultados
+
+### Mecánicas
+- **HP Inicial:** 4000 por jugador
+- **Mazo:** 20 cartas (máx 2 copias iguales)
+- **Campo:** Máximo 5 cartas activas
+- **Turnos:** Robo → Principal → Batalla → Término
+- **Daño:** `Ataque - Defensa` del oponente
+
+## 📁 Estructura del Proyecto
+
+```
+src/app/
+├── core/                          # Servicios y modelos
+│   ├── services/
+│   │   ├── supabase.service.ts   # BD remota
+│   │   ├── auth.service.ts       # Autenticación
+│   │   ├── pokemon.service.ts    # PokeAPI + caché
+│   │   ├── game.service.ts       # Motor del juego
+│   │   └── sqlite.service.ts     # BD local
+│   ├── models/
+│   │   ├── pokemon-card.model.ts
+│   │   ├── game-state.model.ts
+│   │   └── player.model.ts
+│   └── guards/
+│       └── auth.guard.ts         # Rutas protegidas
+├── pages/                         # Componentes de página
+│   ├── home/                     # Inicio
+│   ├── auth/                     # Login/Registro
+│   ├── menu/                     # Menú principal
+│   ├── cards/                    # Colección y Deck
+│   ├── game/                     # Juego CPU y Online
+│   ├── history/                  # Historial
+│   ├── results/                  # Resultados
+│   └── rules/                    # Reglas
+├── shared/
+│   └── components/
+│       └── navbar/               # Navegación
+└── environments/                 # Configuración
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🗄️ Base de Datos (Supabase)
 
-## Running unit tests
+### Tablas
+- **profiles** - Usuarios
+- **pokemon_cards** - Catálogo de cartas
+- **user_collection** - Colecciones personales
+- **decks** - Mazos guardados
+- **deck_cards** - Cartas en mazos
+- **game_rooms** - Salas multijugador
+- **game_state** - Estado de partidas
+- **game_results** - Historial
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Seguridad
+- RLS habilitado en todas las tablas
+- Los usuarios solo ven sus propios datos
+- Las cartas Pokémon son públicas
+- Las partidas son privadas por jugador
 
+## 🚀 Deployment
+
+### Vercel (Recomendado)
 ```bash
-ng test
+npm i -g vercel
+vercel
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
+### Netlify
 ```bash
-ng e2e
+npm i -g netlify-cli
+netlify deploy --prod --dir=dist/videojuego-pokemon
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Render
+- Conecta GitHub
+- Build: `npm run build`
+- Publish dir: `dist/videojuego-pokemon`
 
-## Additional Resources
+## 📊 Habilidades Implementadas
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Las cartas tienen 7 tipos diferentes de habilidades especiales:
+
+| Tipo | Habilidad | Efecto |
+|------|-----------|--------|
+| 🔥 Fuego | Quemar | Aumenta ataque +10 |
+| 💧 Agua | Cura Acuática | Restaura 50 HP |
+| 🌿 Planta | Escudo de Esporas | Bloquea ataque |
+| ⚡ Eléctrico | Rayo | 50 daño directo |
+| 👁️ Psíquico | Lectura Mental | Roba carta extra |
+| ❄️ Hielo | Congelamiento | Reduce defensa -15 |
+| 👻 Fantasma | Revivir | Restaura Pokémon |
+
+## 🔧 Tecnologías Aprendidas
+
+- ✅ Angular 21 standalone components
+- ✅ RxJS Observables y reactive programming
+- ✅ Supabase Auth y PostgreSQL
+- ✅ Row Level Security (RLS)
+- ✅ REST APIs e integración PokeAPI
+- ✅ SQLite con sql.js (WASM)
+- ✅ Gestión de estado con BehaviorSubject
+- ✅ CSS3 avanzado y responsive design
+- ✅ TypeScript interfaces y tipos
+- ✅ Git y control de versiones
+
+## 🐛 Solución de Problemas
+
+| Problema | Solución |
+|----------|----------|
+| Puerto 4200 ocupado | `ng serve --port 4300` |
+| Error de Supabase | Verifica `environment.ts` |
+| Cartas no cargan | Revisa conexión a PokeAPI |
+| RLS bloqueando datos | Inicia sesión en Supabase |
+
+## 📝 Datos de Prueba
+
+Se incluyen 12 Pokémon legendarios para pruebas iniciales.
+Para agregar más, inserta en la tabla `pokemon_cards` de Supabase.
+
+## 📞 Información del Proyecto
+
+- **Asignatura:** Desarrollo de Aplicaciones Web (3er Departamental)
+- **Institución:** Instituto Tecnológico
+- **Estado:** ✅ Completado y Funcional
+- **Fecha:** Mayo 2026
+- **Licencia:** MIT
+
+---
+
+¡Disfruta el juego! 🎮⚡
