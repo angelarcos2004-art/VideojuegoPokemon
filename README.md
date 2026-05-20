@@ -121,20 +121,35 @@ src/app/
 
 ## 🗄️ Base de Datos (Supabase)
 
-### Tablas
+### Tablas en Uso
 - **profiles** - Usuarios
-- **pokemon_cards** - Catálogo de cartas
-- **user_collection** - Colecciones personales
-- **decks** - Mazos guardados
-- **deck_cards** - Cartas en mazos
+- **user_collection** - Preferencias de colección (opcional)
+- **decks** - Mazos guardados (solo IDs de Pokémon)
+- **deck_cards** - IDs de cartas en mazos
 - **game_rooms** - Salas multijugador
 - **game_state** - Estado de partidas
 - **game_results** - Historial
 
+### Tabla `pokemon_cards` (NO USADA)
+- Se creó como parte del schema pero **no es necesaria**
+- Los Pokémon se obtienen directamente de **PokeAPI v2**
+- Se cachean localmente en **SQLite** para offline
+- Si necesitas cartas especiales, puedes usarla
+
+### Flujo de Datos
+```
+PokeAPI (898+ Pokémon)
+    ↓
+PokemonService (mapeo a PokemonCard)
+    ↓
+SQLite Cache (offline)
+    ↓
+Colección Supabase (guardar preferencias)
+```
+
 ### Seguridad
-- RLS habilitado en todas las tablas
+- RLS habilitado en tablas de usuario
 - Los usuarios solo ven sus propios datos
-- Las cartas Pokémon son públicas
 - Las partidas son privadas por jugador
 
 ## 🚀 Deployment
@@ -192,10 +207,20 @@ Las cartas tienen 7 tipos diferentes de habilidades especiales:
 | Cartas no cargan | Revisa conexión a PokeAPI |
 | RLS bloqueando datos | Inicia sesión en Supabase |
 
-## 📝 Datos de Prueba
+## 📝 Cartas Pokémon
 
-Se incluyen 12 Pokémon legendarios para pruebas iniciales.
-Para agregar más, inserta en la tabla `pokemon_cards` de Supabase.
+**✨ IMPORTANTE:** No necesitas insertar datos.
+
+- La aplicación descarga Pokémon directamente de **PokeAPI v2**
+- Hay **898+ Pokémon** disponibles automáticamente
+- Se cachean en **SQLite** la primera vez (offline)
+- La tabla `pokemon_cards` no se usa en el flujo normal
+
+### Obtener Cartas
+1. Abre la app
+2. Ve a **Colección**
+3. Las cartas se cargan automáticamente desde PokeAPI
+4. Busca, filtra y colecciona cualquier Pokémon
 
 ## 📞 Información del Proyecto
 
