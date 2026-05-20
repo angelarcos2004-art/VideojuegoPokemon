@@ -1,5 +1,7 @@
 import { PlayerState } from './player.model';
 
+export type { PlayerState };
+
 export interface GameState {
   roomId?: string;
   gameMode: 'cpu' | 'online';

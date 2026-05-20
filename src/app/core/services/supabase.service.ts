@@ -170,4 +170,14 @@ export class SupabaseService {
     if (error) throw error;
     return data || [];
   }
+
+  async getUserGameResults(userId: string): Promise<any[]> {
+    const { data, error } = await this.supabase
+      .from('game_results')
+      .select('*')
+      .or(`winner_id.eq.${userId},loser_id.eq.${userId}`);
+
+    if (error) throw error;
+    return data || [];
+  }
 }
