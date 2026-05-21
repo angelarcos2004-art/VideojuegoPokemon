@@ -94,16 +94,23 @@ const MAX_CARDS_PER_TYPE = 2;
   `,
   styles: [`
     .deck-builder-container {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: calc(100vh - 60px);
+      background: var(--pk-light);
+      background-image: var(--pk-bg-image);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       padding: 40px 20px;
-      color: white;
+      color: var(--pk-text);
     }
 
     .deck-builder-container h1 {
       text-align: center;
-      color: #ffed4e;
+      color: var(--pk-red);
+      font-family: var(--font-title);
+      font-size: 2.5rem;
       margin-bottom: 30px;
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
     }
 
     .builder-content {
@@ -122,74 +129,88 @@ const MAX_CARDS_PER_TYPE = 2;
 
     .available-cards,
     .deck-preview {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 215, 0, 0.2);
-      border-radius: 10px;
+      background: var(--pk-white);
+      border: 4px solid var(--pk-dark);
+      border-radius: 12px;
       padding: 20px;
+      box-shadow: 6px 6px 0px var(--pk-dark);
     }
 
     .available-cards h2,
     .deck-preview h2 {
-      color: #ffed4e;
+      color: var(--pk-blue);
+      font-family: var(--font-title);
       margin-top: 0;
+      border-bottom: 3px solid var(--pk-dark);
+      padding-bottom: 10px;
     }
 
     .controls {
       margin-bottom: 20px;
+      margin-top: 10px;
     }
 
     .search-input {
       width: 100%;
-      padding: 10px;
-      border: 1px solid rgba(255, 215, 0, 0.2);
-      border-radius: 5px;
-      background: rgba(255, 255, 255, 0.05);
-      color: white;
+      padding: 12px;
+      border: 3px solid var(--pk-dark);
+      border-radius: 8px;
+      background: var(--pk-light);
+      color: var(--pk-text);
+      font-family: var(--font-game);
+      font-size: 1rem;
       box-sizing: border-box;
+      box-shadow: 4px 4px 0px var(--pk-dark);
     }
 
     .search-input:focus {
       outline: none;
-      border-color: #ffed4e;
+      border-color: var(--pk-blue);
+      box-shadow: 0 0 0 3px rgba(59, 76, 202, 0.2), 4px 4px 0px var(--pk-dark);
     }
 
     .loading {
       text-align: center;
-      color: #ffed4e;
+      color: var(--pk-red);
+      font-family: var(--font-title);
       padding: 20px;
     }
 
     .cards-list {
       max-height: 600px;
       overflow-y: auto;
-      border: 1px solid rgba(255, 215, 0, 0.1);
-      border-radius: 5px;
+      border: 3px solid var(--pk-dark);
+      border-radius: 8px;
       padding: 10px;
+      background: var(--pk-light);
     }
 
     .card-option {
       display: flex;
-      gap: 10px;
+      gap: 15px;
       padding: 10px;
       margin-bottom: 10px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 215, 0, 0.1);
-      border-radius: 5px;
+      background: var(--pk-white);
+      border: 2px solid var(--pk-dark);
+      border-radius: 8px;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: all 0.2s;
       align-items: center;
+      box-shadow: 3px 3px 0px var(--pk-dark);
     }
 
     .card-option:hover {
-      background: rgba(255, 215, 0, 0.1);
-      border-color: #ffed4e;
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px var(--pk-dark);
+      border-color: var(--pk-blue);
     }
 
     .small-card-image {
       width: 60px;
       height: 60px;
       object-fit: cover;
-      border-radius: 3px;
+      border-radius: 5px;
+      border: 2px solid var(--pk-dark);
     }
 
     .card-details {
@@ -199,37 +220,44 @@ const MAX_CARDS_PER_TYPE = 2;
 
     .card-details h4 {
       margin: 0 0 5px;
-      color: #ffed4e;
-      font-size: 0.95rem;
+      color: var(--pk-blue);
+      font-family: var(--font-title);
+      font-size: 1rem;
     }
 
     .card-details p {
       margin: 0 0 5px;
-      color: #aaa;
+      color: var(--pk-text);
+      opacity: 0.8;
+      font-weight: bold;
       font-size: 0.85rem;
     }
 
     .type-badge {
       display: inline-block;
       padding: 2px 6px;
-      border-radius: 3px;
+      border-radius: 4px;
       font-size: 0.75rem;
       font-weight: bold;
+      border: 2px solid var(--pk-dark);
+      color: #111;
     }
 
-    .type-fire { background: rgba(255, 100, 100, 0.6); }
-    .type-water { background: rgba(100, 150, 255, 0.6); }
-    .type-grass { background: rgba(100, 200, 100, 0.6); }
-    .type-electric { background: rgba(255, 255, 100, 0.6); color: #000; }
-    .type-psychic { background: rgba(255, 150, 255, 0.6); }
-    .type-ice { background: rgba(150, 200, 255, 0.6); }
-    .type-default { background: rgba(100, 100, 100, 0.6); }
+    .type-fire { background: #ff9d5c; }
+    .type-water { background: #5c9dff; }
+    .type-grass { background: #5cff9d; }
+    .type-electric { background: #ffed4e; }
+    .type-psychic { background: #ff5c9d; }
+    .type-ice { background: #9dffff; }
+    .type-default { background: #cccccc; }
 
     .deck-bar {
-      height: 6px;
-      background: #ffed4e;
-      border-radius: 3px;
+      height: 10px;
+      background: var(--pk-red);
+      border-radius: 5px;
+      border: 2px solid var(--pk-dark);
       margin-bottom: 20px;
+      margin-top: 15px;
       transition: width 0.3s;
     }
 
@@ -237,9 +265,10 @@ const MAX_CARDS_PER_TYPE = 2;
       max-height: 400px;
       overflow-y: auto;
       margin-bottom: 20px;
-      border: 1px solid rgba(255, 215, 0, 0.1);
-      border-radius: 5px;
+      border: 3px solid var(--pk-dark);
+      border-radius: 8px;
       padding: 10px;
+      background: var(--pk-light);
     }
 
     .deck-item {
@@ -247,10 +276,11 @@ const MAX_CARDS_PER_TYPE = 2;
       justify-content: space-between;
       align-items: center;
       padding: 10px;
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 5px;
+      background: var(--pk-white);
+      border-radius: 8px;
       margin-bottom: 8px;
-      border: 1px solid rgba(255, 215, 0, 0.1);
+      border: 2px solid var(--pk-dark);
+      box-shadow: 2px 2px 0px var(--pk-dark);
     }
 
     .deck-card-info {
@@ -259,13 +289,19 @@ const MAX_CARDS_PER_TYPE = 2;
 
     .deck-card-info h5 {
       margin: 0 0 3px;
-      color: #ffed4e;
-      font-size: 0.95rem;
+      color: var(--pk-blue);
+      font-family: var(--font-title);
+      font-size: 1rem;
     }
 
     .quantity {
-      color: #aaa;
-      font-size: 0.85rem;
+      color: var(--pk-text);
+      font-weight: bold;
+      font-size: 0.9rem;
+      background: var(--pk-yellow);
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid var(--pk-dark);
     }
 
     .deck-actions {
@@ -274,79 +310,97 @@ const MAX_CARDS_PER_TYPE = 2;
     }
 
     .btn-remove {
-      padding: 5px 10px;
-      background: #ff6b6b;
+      padding: 5px 12px;
+      background: var(--pk-red);
       color: white;
-      border: none;
-      border-radius: 3px;
+      border: 2px solid var(--pk-dark);
+      border-radius: 5px;
       cursor: pointer;
-      transition: all 0.3s;
+      font-weight: bold;
+      transition: all 0.2s;
+      box-shadow: 2px 2px 0px var(--pk-dark);
     }
 
     .btn-remove:hover {
-      background: #ff8888;
+      transform: translate(1px, 1px);
+      box-shadow: 1px 1px 0px var(--pk-dark);
+      background: #ff4444;
     }
 
     .empty-deck {
       text-align: center;
       padding: 40px 20px;
-      color: #aaa;
+      color: var(--pk-text);
+      opacity: 0.7;
+      font-weight: bold;
     }
 
     .deck-controls {
       display: flex;
-      gap: 10px;
+      gap: 15px;
     }
 
     .btn-control {
       flex: 1;
       padding: 12px;
-      border: none;
-      border-radius: 5px;
+      border: 2px solid var(--pk-dark);
+      border-radius: 8px;
+      font-family: var(--font-title);
+      font-size: 1rem;
       font-weight: bold;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: all 0.2s;
+      box-shadow: 4px 4px 0px var(--pk-dark);
     }
 
     .btn-clear {
-      background: #666;
-      color: white;
+      background: #e0e0e0;
+      color: #111;
     }
 
     .btn-clear:hover:not(:disabled) {
-      background: #888;
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px var(--pk-dark);
+      background: #cccccc;
     }
 
     .btn-save {
-      background: linear-gradient(45deg, #ffd700, #ffed4e);
-      color: #1a1a2e;
+      background: var(--pk-yellow);
+      color: #111;
     }
 
     .btn-save:hover:not(:disabled) {
-      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px var(--pk-dark);
+      background: #ffdf40;
     }
 
     .btn-control:disabled {
       opacity: 0.5;
       cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
     }
 
     .success,
     .error {
       margin-top: 15px;
-      padding: 10px;
-      border-radius: 5px;
+      padding: 12px;
+      border-radius: 8px;
       text-align: center;
+      font-weight: bold;
+      border: 2px solid var(--pk-dark);
+      box-shadow: 4px 4px 0px var(--pk-dark);
     }
 
     .success {
-      background: rgba(100, 200, 100, 0.3);
-      color: #7fff7f;
+      background: #5cff9d;
+      color: #111;
     }
 
     .error {
-      background: rgba(255, 100, 100, 0.3);
-      color: #ff6b6b;
+      background: #ff9d9d;
+      color: #111;
     }
   `]
 })

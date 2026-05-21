@@ -88,16 +88,23 @@ import { takeUntil } from 'rxjs/operators';
   `,
   styles: [`
     .history-container {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: calc(100vh - 60px);
+      background: var(--pk-light);
+      background-image: var(--pk-bg-image);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       padding: 40px 20px;
-      color: white;
+      color: var(--pk-text);
     }
 
     .history-container h1 {
       text-align: center;
-      color: #ffed4e;
+      color: var(--pk-yellow);
+      font-size: 3rem;
+      font-family: var(--font-title);
       margin-bottom: 30px;
+      text-shadow: 3px 3px 0px var(--pk-blue), -1px -1px 0px var(--pk-dark), 1px -1px 0px var(--pk-dark), -1px 1px 0px var(--pk-dark), 1px 1px 0px var(--pk-dark);
     }
 
     .filter-tabs {
@@ -110,38 +117,42 @@ import { takeUntil } from 'rxjs/operators';
 
     .tab-btn {
       padding: 10px 20px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 215, 0, 0.2);
-      color: #aaa;
-      border-radius: 5px;
+      background: var(--pk-white);
+      border: 3px solid var(--pk-dark);
+      color: var(--pk-text);
+      border-radius: 10px;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: all 0.2s;
+      font-weight: bold;
+      box-shadow: 4px 4px 0px var(--pk-dark);
     }
 
     .tab-btn:hover {
-      border-color: #ffed4e;
-      color: #ffed4e;
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px var(--pk-dark);
+      background-color: #f0f0f0;
     }
 
     .tab-btn.active {
-      background: rgba(255, 215, 0, 0.2);
-      border-color: #ffed4e;
-      color: #ffed4e;
+      background: var(--pk-yellow);
+      color: var(--pk-text);
     }
 
     .loading {
       text-align: center;
       padding: 40px;
-      color: #ffed4e;
+      color: var(--pk-text);
+      font-weight: bold;
     }
 
     .games-table {
       max-width: 1000px;
       margin: 0 auto 30px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 215, 0, 0.2);
-      border-radius: 10px;
+      background: var(--pk-white);
+      border: 4px solid var(--pk-dark);
+      border-radius: 15px;
       overflow: hidden;
+      box-shadow: 8px 8px 0px var(--pk-dark);
     }
 
     .table-header {
@@ -149,10 +160,11 @@ import { takeUntil } from 'rxjs/operators';
       grid-template-columns: 150px 120px 120px 1fr;
       gap: 15px;
       padding: 15px;
-      background: rgba(255, 215, 0, 0.1);
-      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+      background: var(--pk-blue);
+      border-bottom: 4px solid var(--pk-dark);
       font-weight: bold;
-      color: #ffed4e;
+      color: var(--pk-yellow);
+      text-shadow: 1px 1px 0px var(--pk-dark);
     }
 
     .table-row {
@@ -160,55 +172,66 @@ import { takeUntil } from 'rxjs/operators';
       grid-template-columns: 150px 120px 120px 1fr;
       gap: 15px;
       padding: 15px;
-      border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+      border-bottom: 2px solid var(--pk-dark);
       align-items: center;
-      transition: background 0.3s;
+      transition: background 0.2s;
+      color: var(--pk-text);
+      font-weight: 500;
+    }
+    
+    .table-row:last-child {
+      border-bottom: none;
     }
 
     .table-row:hover {
-      background: rgba(255, 215, 0, 0.05);
+      background: #f0f0f0;
     }
 
     .table-row.win {
-      background: rgba(100, 200, 100, 0.1);
+      background: rgba(100, 200, 100, 0.2);
     }
 
     .col-date,
     .col-mode,
-    .col-result,
     .col-opponent {
-      color: #aaa;
+      color: var(--pk-text);
     }
 
     .col-result.win {
-      color: #7fff7f;
+      color: #1e7025;
       font-weight: bold;
     }
 
     .col-result:not(.win) {
-      color: #ff6b6b;
+      color: var(--pk-red);
       font-weight: bold;
     }
 
     .no-games {
       text-align: center;
       padding: 60px 20px;
-      color: #aaa;
+      color: var(--pk-text);
       font-size: 1.1rem;
+      font-weight: bold;
     }
 
     .stats-summary {
       max-width: 1000px;
       margin: 0 auto;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 215, 0, 0.2);
-      border-radius: 10px;
+      background: var(--pk-white);
+      border: 4px solid var(--pk-dark);
+      border-radius: 15px;
       padding: 30px;
+      box-shadow: 8px 8px 0px var(--pk-dark);
     }
 
     .stats-summary h3 {
-      color: #ffed4e;
+      color: var(--pk-red);
       margin-top: 0;
+      font-family: var(--font-title);
+      font-size: 1.8rem;
+      border-bottom: 2px dashed var(--pk-dark);
+      padding-bottom: 10px;
     }
 
     .stats-grid {
@@ -219,9 +242,10 @@ import { takeUntil } from 'rxjs/operators';
     }
 
     .stat-item {
-      background: rgba(0, 0, 0, 0.3);
+      background: var(--pk-light);
       padding: 20px;
-      border-radius: 5px;
+      border-radius: 10px;
+      border: 2px solid var(--pk-dark);
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -229,22 +253,24 @@ import { takeUntil } from 'rxjs/operators';
     }
 
     .stat-label {
-      color: #aaa;
-      font-size: 0.9rem;
-    }
-
-    .stat-value {
-      color: #ffed4e;
-      font-size: 1.8rem;
+      color: var(--pk-text);
+      font-size: 1rem;
       font-weight: bold;
     }
 
+    .stat-value {
+      color: var(--pk-blue);
+      font-size: 2rem;
+      font-weight: bold;
+      font-family: var(--font-title);
+    }
+
     .stat-value.win {
-      color: #7fff7f;
+      color: #1e7025;
     }
 
     .stat-value.loss {
-      color: #ff6b6b;
+      color: var(--pk-red);
     }
   `]
 })

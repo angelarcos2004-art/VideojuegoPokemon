@@ -35,53 +35,61 @@ import { NavbarComponent } from '../../shared/components/navbar/navbar.component
   `,
   styles: [`
     .menu-container {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: calc(100vh - 60px);
+      background: var(--pk-light);
+      background-image: var(--pk-bg-image);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       padding: 40px 20px;
-      color: white;
+      color: var(--pk-text);
     }
 
     .menu-container h1 {
       text-align: center;
-      color: #ffed4e;
-      font-size: 2.5rem;
+      color: var(--pk-yellow);
+      font-size: 3rem;
+      font-family: var(--font-title);
       margin: 40px 0;
+      text-shadow: 3px 3px 0px var(--pk-blue), -1px -1px 0px var(--pk-dark), 1px -1px 0px var(--pk-dark), -1px 1px 0px var(--pk-dark), 1px 1px 0px var(--pk-dark);
     }
 
     .menu-options {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
       max-width: 900px;
       margin: 0 auto;
     }
 
     .menu-btn {
-      background: rgba(255, 215, 0, 0.1);
-      border: 2px solid rgba(255, 215, 0, 0.3);
-      border-radius: 10px;
+      background: var(--pk-white);
+      border: 4px solid var(--pk-dark);
+      border-radius: 15px;
       padding: 30px;
       text-decoration: none;
-      color: white;
+      color: var(--pk-text);
       text-align: center;
-      transition: all 0.3s;
+      transition: all 0.2s;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 15px;
       font-size: 1.2rem;
+      font-family: var(--font-title);
       font-weight: bold;
+      box-shadow: 8px 8px 0px var(--pk-dark);
     }
 
     .menu-btn span {
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
 
     .menu-btn:hover {
-      background: rgba(255, 215, 0, 0.2);
-      border-color: #ffed4e;
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+      background: var(--pk-yellow);
+      transform: translate(4px, 4px);
+      box-shadow: 4px 4px 0px var(--pk-dark);
+      color: var(--pk-blue);
     }
   `]
 })

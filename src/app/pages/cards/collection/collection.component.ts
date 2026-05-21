@@ -67,16 +67,23 @@ import { takeUntil } from 'rxjs/operators';
   `,
   styles: [`
     .collection-container {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: calc(100vh - 60px);
+      background: var(--pk-light);
+      background-image: var(--pk-bg-image);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       padding: 40px 20px;
-      color: white;
+      color: var(--pk-text);
     }
 
     .collection-container h1 {
       text-align: center;
-      color: #ffed4e;
+      color: var(--pk-red);
+      font-family: var(--font-title);
+      font-size: 2.5rem;
       margin-bottom: 30px;
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
     }
 
     .controls {
@@ -91,35 +98,36 @@ import { takeUntil } from 'rxjs/operators';
     .sort-select {
       flex: 1;
       min-width: 150px;
-      padding: 10px;
-      border: 1px solid rgba(255, 215, 0, 0.2);
-      border-radius: 5px;
-      background: rgba(255, 255, 255, 0.05);
-      color: white;
+      padding: 12px;
+      border: 3px solid var(--pk-dark);
+      border-radius: 8px;
+      background: var(--pk-white);
+      color: var(--pk-text);
+      font-family: var(--font-game);
       font-size: 1rem;
-    }
-
-    .search-input::placeholder {
-      color: #666;
+      box-shadow: 4px 4px 0px var(--pk-dark);
     }
 
     .search-input:focus,
     .sort-select:focus {
       outline: none;
-      border-color: #ffed4e;
+      border-color: var(--pk-blue);
+      box-shadow: 0 0 0 3px rgba(59, 76, 202, 0.2), 4px 4px 0px var(--pk-dark);
     }
 
     .loading {
       text-align: center;
       padding: 40px;
-      color: #ffed4e;
+      color: var(--pk-red);
+      font-family: var(--font-title);
+      font-size: 1.5rem;
     }
 
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1400px;
+      gap: 25px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
@@ -128,28 +136,30 @@ import { takeUntil } from 'rxjs/operators';
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 2px solid rgba(255, 215, 0, 0.2);
-      border-radius: 10px;
+      background: var(--pk-white);
+      border: 4px solid var(--pk-dark);
+      border-radius: 12px;
       overflow: hidden;
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
       cursor: pointer;
       display: flex;
       flex-direction: column;
       height: 100%;
+      box-shadow: 6px 6px 0px var(--pk-dark);
     }
 
     .card:hover {
-      border-color: #ffed4e;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
       transform: translateY(-5px);
+      box-shadow: 8px 8px 0px var(--pk-dark);
+      border-color: var(--pk-blue);
     }
 
     .card-image {
       width: 100%;
       height: 200px;
       object-fit: cover;
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.1);
+      border-bottom: 3px solid var(--pk-dark);
     }
 
     .card-info {
@@ -162,8 +172,9 @@ import { takeUntil } from 'rxjs/operators';
 
     .card-info h3 {
       margin: 0;
-      color: #ffed4e;
-      font-size: 1.1rem;
+      color: var(--pk-blue);
+      font-family: var(--font-title);
+      font-size: 1.2rem;
     }
 
     .card-types {
@@ -173,69 +184,81 @@ import { takeUntil } from 'rxjs/operators';
     }
 
     .type-badge {
-      padding: 3px 8px;
-      border-radius: 3px;
-      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 5px;
+      font-size: 0.8rem;
       font-weight: bold;
-      background: rgba(100, 100, 100, 0.5);
+      border: 2px solid var(--pk-dark);
+      color: #111;
     }
 
-    .type-fire { background: rgba(255, 100, 100, 0.6); }
-    .type-water { background: rgba(100, 150, 255, 0.6); }
-    .type-grass { background: rgba(100, 200, 100, 0.6); }
-    .type-electric { background: rgba(255, 255, 100, 0.6); color: #000; }
-    .type-psychic { background: rgba(255, 150, 255, 0.6); }
-    .type-ice { background: rgba(150, 200, 255, 0.6); }
-    .type-default { background: rgba(100, 100, 100, 0.6); }
+    .type-fire { background: #ff9d5c; }
+    .type-water { background: #5c9dff; }
+    .type-grass { background: #5cff9d; }
+    .type-electric { background: #ffed4e; }
+    .type-psychic { background: #ff5c9d; }
+    .type-ice { background: #9dffff; }
+    .type-default { background: #cccccc; }
 
     .card-stats {
       display: flex;
       gap: 10px;
       font-size: 0.9rem;
-      color: #aaa;
+      color: var(--pk-text);
+      opacity: 0.8;
+      font-weight: bold;
     }
 
     .stat {
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.05);
       padding: 3px 8px;
-      border-radius: 3px;
+      border-radius: 5px;
+      border: 1px solid var(--pk-dark);
     }
 
     .card-rarity {
       font-weight: bold;
       text-transform: capitalize;
       padding: 5px;
-      border-radius: 3px;
+      border-radius: 5px;
       text-align: center;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
+      border: 2px solid var(--pk-dark);
+      margin-top: 5px;
     }
 
-    .rarity-common { background: rgba(100, 200, 100, 0.3); color: #7fff7f; }
-    .rarity-rare { background: rgba(150, 150, 255, 0.3); color: #9f9fff; }
-    .rarity-legendary { background: rgba(255, 215, 0, 0.3); color: #ffed4e; }
+    .rarity-common { background: #e0e0e0; color: #111; }
+    .rarity-rare { background: #9dbfff; color: #111; }
+    .rarity-legendary { background: #ffd700; color: #111; }
 
     .btn-add {
-      padding: 8px;
-      background: linear-gradient(45deg, #ffd700, #ffed4e);
-      color: #1a1a2e;
-      border: none;
-      border-radius: 5px;
+      padding: 10px;
+      background: var(--pk-yellow);
+      color: #111;
+      border: 2px solid var(--pk-dark);
+      border-radius: 8px;
+      font-family: var(--font-title);
       font-weight: bold;
+      font-size: 0.9rem;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: all 0.2s;
       margin-top: auto;
+      box-shadow: 3px 3px 0px var(--pk-dark);
     }
 
     .btn-add:hover {
-      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
-      transform: translateY(-2px);
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px var(--pk-dark);
+      background: #ffdf40;
     }
 
     .no-cards {
       text-align: center;
       padding: 60px 20px;
-      color: #aaa;
+      color: var(--pk-text);
+      opacity: 0.7;
       font-size: 1.2rem;
+      font-weight: bold;
     }
   `]
 })

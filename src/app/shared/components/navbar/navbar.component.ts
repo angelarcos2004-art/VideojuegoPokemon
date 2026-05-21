@@ -11,36 +11,40 @@ import { AuthService } from '../../../core/services/auth.service';
   template: `
     <nav class="navbar">
       <div class="nav-container">
-        <a routerLink="/" class="logo">
-          <span class="logo-icon">⚡</span>
+        <a routerLink="/" class="logo font-title">
+          <img src="assets/images/logo.png" alt="Logo" class="logo-img">
           Batalla Pokémon
         </a>
-        <div class="nav-links">
+        <div class="nav-links font-game">
           <a routerLink="/" class="nav-link">Inicio</a>
           <a routerLink="/rules" class="nav-link">Reglas</a>
-          <div *ngIf="isAuthenticated$ | async as isAuth">
-            <ng-container *ngIf="isAuth; else notAuth">
+          <ng-container *ngIf="isAuthenticated$ | async as isAuth; else notAuth">
+            <ng-container *ngIf="isAuth">
               <a routerLink="/menu" class="nav-link">Menú</a>
               <a routerLink="/history" class="nav-link">Historial</a>
-              <button (click)="logout()" class="nav-link logout-btn">Cerrar Sesión</button>
+              <button (click)="logout()" class="nav-link logout-btn font-game">Cerrar Sesión</button>
             </ng-container>
-            <ng-template #notAuth>
-              <a routerLink="/login" class="nav-link">Iniciar Sesión</a>
-              <a routerLink="/register" class="nav-link register-link">Registrarse</a>
-            </ng-template>
-          </div>
+          </ng-container>
+          <ng-template #notAuth>
+            <a routerLink="/login" class="nav-link">Iniciar Sesión</a>
+            <a routerLink="/register" class="nav-link register-link">Registrarse</a>
+          </ng-template>
+          <button class="theme-toggle" (click)="toggleTheme()" title="Alternar tema">
+            {{ isDarkMode ? '🌙' : '☀️' }}
+          </button>
         </div>
       </div>
     </nav>
   `,
   styles: [`
     .navbar {
-      background: rgba(26, 26, 46, 0.95);
-      border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+      background: var(--pk-red);
+      border-bottom: 4px solid var(--pk-dark);
       padding: 15px 0;
       position: sticky;
       top: 0;
       z-index: 100;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .nav-container {
@@ -53,17 +57,19 @@ import { AuthService } from '../../../core/services/auth.service';
     }
 
     .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #ffed4e;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--pk-yellow);
       text-decoration: none;
       display: flex;
       align-items: center;
       gap: 8px;
+      text-shadow: 2px 2px 0px var(--pk-blue);
     }
 
-    .logo-icon {
-      font-size: 1.8rem;
+    .logo-img {
+      height: 40px;
+      object-fit: contain;
     }
 
     .nav-links {
@@ -74,46 +80,74 @@ import { AuthService } from '../../../core/services/auth.service';
     }
 
     .nav-link {
-      color: #aaa;
+      color: var(--pk-white);
       text-decoration: none;
-      transition: color 0.3s;
+      transition: all 0.3s;
       background: none;
       border: none;
       cursor: pointer;
       padding: 5px 0;
-      font-size: 1rem;
+      font-size: 1.1rem;
+      font-weight: 700;
     }
 
     .nav-link:hover {
-      color: #ffed4e;
+      color: var(--pk-yellow);
+      transform: translateY(-2px);
     }
 
     .register-link {
-      color: #ffed4e;
-      border: 1px solid #ffed4e;
+      color: var(--pk-yellow);
+      background-color: var(--pk-blue);
+      border: 2px solid var(--pk-dark);
       padding: 8px 16px;
-      border-radius: 5px;
+      border-radius: 20px;
+      box-shadow: 2px 2px 0px var(--pk-dark);
     }
 
     .register-link:hover {
-      background: rgba(255, 237, 74, 0.1);
+      background-color: var(--pk-yellow);
+      color: var(--pk-blue);
     }
 
     .logout-btn {
-      color: #ff6b6b;
-      border: 1px solid #ff6b6b;
+      color: var(--pk-text);
+      background-color: var(--pk-white);
+      border: 2px solid var(--pk-dark);
       padding: 8px 16px;
-      border-radius: 5px;
+      border-radius: 20px;
+      box-shadow: 2px 2px 0px var(--pk-dark);
     }
 
     .logout-btn:hover {
-      background: rgba(255, 107, 107, 0.1);
-      color: #ff8888;
+      background-color: #ffcccc;
+      color: var(--pk-text);
+    }
+
+    .theme-toggle {
+      background: var(--pk-dark);
+      color: var(--pk-yellow);
+      border: 2px solid var(--pk-white);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 2px 2px 0px var(--pk-white);
+      transition: all 0.2s;
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.1);
     }
   `]
 })
 export class NavbarComponent implements OnInit {
   isAuthenticated$!: Observable<boolean>;
+  isDarkMode = false;
 
   constructor(
     private authService: AuthService,
@@ -122,7 +156,24 @@ export class NavbarComponent implements OnInit {
     this.isAuthenticated$ = this.authService.isAuthenticated();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      this.isDarkMode = true;
+      document.body.classList.add('dark-theme');
+    }
+  }
+
+  toggleTheme(): void {
+    this.isDarkMode = !this.isDarkMode;
+    if (this.isDarkMode) {
+      document.body.classList.add('dark-theme');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark-theme');
+      localStorage.setItem('theme', 'light');
+    }
+  }
 
   async logout(): Promise<void> {
     try {

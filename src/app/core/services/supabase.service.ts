@@ -22,14 +22,15 @@ export class SupabaseService {
   async signUp(email: string, password: string, username: string): Promise<any> {
     const { data, error } = await this.supabase.auth.signUp({
       email,
-      password
+      password,
+      options: {
+        data: {
+          username: username
+        }
+      }
     });
 
     if (error) throw error;
-
-    if (data.user) {
-      await this.createProfile(data.user.id, email, username);
-    }
 
     return data;
   }

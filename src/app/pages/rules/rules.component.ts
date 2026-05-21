@@ -41,26 +41,33 @@ import { NavbarComponent } from '../../shared/components/navbar/navbar.component
   `,
   styles: [`
     .rules-container {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: calc(100vh - 60px);
+      background: var(--pk-light);
+      background-image: var(--pk-bg-image);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       padding: 40px 20px;
-      color: white;
+      color: var(--pk-text);
     }
 
     .rules-container h1 {
       text-align: center;
-      color: #ffed4e;
-      font-size: 2.5rem;
+      color: var(--pk-yellow);
+      font-size: 3rem;
+      font-family: var(--font-title);
       margin: 20px 0;
+      text-shadow: 3px 3px 0px var(--pk-blue), -1px -1px 0px var(--pk-dark), 1px -1px 0px var(--pk-dark), -1px 1px 0px var(--pk-dark), 1px 1px 0px var(--pk-dark);
     }
 
     .rules-content {
       max-width: 800px;
       margin: 0 auto;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 215, 0, 0.2);
-      border-radius: 10px;
+      background: var(--pk-white);
+      border: 4px solid var(--pk-dark);
+      border-radius: 15px;
       padding: 30px;
+      box-shadow: 8px 8px 0px var(--pk-dark);
     }
 
     section {
@@ -68,13 +75,17 @@ import { NavbarComponent } from '../../shared/components/navbar/navbar.component
     }
 
     section h2 {
-      color: #ffed4e;
+      color: var(--pk-red);
+      font-family: var(--font-title);
       margin-bottom: 10px;
+      border-bottom: 2px dashed var(--pk-dark);
+      padding-bottom: 5px;
     }
 
     section p, section ul {
-      color: #aaa;
+      color: var(--pk-text);
       line-height: 1.6;
+      font-weight: 500;
     }
 
     section ul {
@@ -86,7 +97,8 @@ import { NavbarComponent } from '../../shared/components/navbar/navbar.component
     }
 
     strong {
-      color: #ffed4e;
+      color: var(--pk-blue);
+      font-weight: bold;
     }
   `]
 })

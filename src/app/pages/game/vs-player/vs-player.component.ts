@@ -56,16 +56,23 @@ import { takeUntil } from 'rxjs/operators';
   `,
   styles: [`
     .vs-player-container {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: calc(100vh - 60px);
+      background: var(--pk-light);
+      background-image: var(--pk-bg-image);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       padding: 40px 20px;
-      color: white;
+      color: var(--pk-text);
     }
 
     .vs-player-container h1 {
       text-align: center;
-      color: #ffed4e;
+      color: var(--pk-red);
+      font-family: var(--font-title);
+      font-size: 2.5rem;
       margin-bottom: 40px;
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
     }
 
     .room-selection {
@@ -81,39 +88,46 @@ import { takeUntil } from 'rxjs/operators';
     }
 
     .option-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 2px solid rgba(255, 215, 0, 0.2);
-      border-radius: 10px;
+      background: var(--pk-white);
+      border: 4px solid var(--pk-dark);
+      border-radius: 12px;
       padding: 30px;
       text-align: center;
+      box-shadow: 6px 6px 0px var(--pk-dark);
     }
 
     .option-card h3 {
-      color: #ffed4e;
-      font-size: 1.3rem;
+      color: var(--pk-blue);
+      font-family: var(--font-title);
+      font-size: 1.5rem;
       margin: 0 0 15px;
     }
 
     .option-card p {
-      color: #aaa;
+      color: var(--pk-text);
+      opacity: 0.8;
+      font-weight: bold;
       margin: 0 0 20px;
     }
 
     .btn-primary {
       padding: 12px 30px;
-      background: linear-gradient(45deg, #ffd700, #ffed4e);
-      color: #1a1a2e;
-      border: none;
-      border-radius: 5px;
+      background: var(--pk-yellow);
+      color: #111;
+      border: 3px solid var(--pk-dark);
+      border-radius: 8px;
+      font-family: var(--font-title);
+      font-size: 1.1rem;
       font-weight: bold;
-      font-size: 1rem;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: all 0.2s;
+      box-shadow: 4px 4px 0px var(--pk-dark);
     }
 
     .btn-primary:hover {
-      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
-      transform: translateY(-2px);
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px var(--pk-dark);
+      background: #ffdf40;
     }
 
     .rooms-list {
@@ -121,7 +135,9 @@ import { takeUntil } from 'rxjs/operators';
     }
 
     .rooms-list h3 {
-      color: #ffed4e;
+      color: var(--pk-blue);
+      font-family: var(--font-title);
+      font-size: 1.8rem;
       margin-bottom: 20px;
       text-align: center;
     }
@@ -133,59 +149,74 @@ import { takeUntil } from 'rxjs/operators';
     }
 
     .room-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 215, 0, 0.2);
+      background: var(--pk-white);
+      border: 3px solid var(--pk-dark);
       border-radius: 8px;
       padding: 20px;
+      box-shadow: 4px 4px 0px var(--pk-dark);
     }
 
     .room-card p {
-      color: #aaa;
+      color: var(--pk-text);
+      font-weight: bold;
       margin: 10px 0;
     }
 
     .room-card strong {
-      color: #ffed4e;
+      color: var(--pk-blue);
     }
 
     .btn-join {
       width: 100%;
-      padding: 10px;
-      background: linear-gradient(45deg, #ffd700, #ffed4e);
-      color: #1a1a2e;
-      border: none;
-      border-radius: 5px;
+      padding: 12px;
+      background: var(--pk-blue);
+      color: white;
+      border: 3px solid var(--pk-dark);
+      border-radius: 8px;
+      font-family: var(--font-title);
       font-weight: bold;
+      font-size: 1rem;
       cursor: pointer;
       margin-top: 15px;
-      transition: all 0.3s;
+      transition: all 0.2s;
+      box-shadow: 3px 3px 0px var(--pk-dark);
     }
 
     .btn-join:hover {
-      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px var(--pk-dark);
     }
 
     .game-waiting {
       text-align: center;
       padding: 60px 20px;
+      background: var(--pk-white);
+      border: 4px solid var(--pk-dark);
+      border-radius: 12px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 8px 8px 0px var(--pk-dark);
     }
 
     .game-waiting h2 {
-      color: #ffed4e;
+      color: var(--pk-red);
+      font-family: var(--font-title);
+      font-size: 2rem;
       margin-bottom: 30px;
     }
 
     .game-waiting p {
-      color: #aaa;
-      font-size: 1.1rem;
+      color: var(--pk-text);
+      font-weight: bold;
+      font-size: 1.2rem;
       margin-bottom: 30px;
     }
 
     .spinner {
       width: 50px;
       height: 50px;
-      border: 4px solid rgba(255, 215, 0, 0.2);
-      border-top-color: #ffed4e;
+      border: 6px solid var(--pk-light);
+      border-top-color: var(--pk-yellow);
       border-radius: 50%;
       animation: spin 1s linear infinite;
       margin: 0 auto 30px;
@@ -197,27 +228,34 @@ import { takeUntil } from 'rxjs/operators';
 
     .btn-cancel {
       padding: 12px 30px;
-      background: #666;
-      color: white;
-      border: none;
-      border-radius: 5px;
+      background: #e0e0e0;
+      color: #111;
+      border: 3px solid var(--pk-dark);
+      border-radius: 8px;
+      font-family: var(--font-title);
       font-weight: bold;
+      font-size: 1rem;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: all 0.2s;
+      box-shadow: 3px 3px 0px var(--pk-dark);
     }
 
     .btn-cancel:hover {
-      background: #888;
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px var(--pk-dark);
+      background: #cccccc;
     }
 
     .error-message {
-      background: rgba(255, 100, 100, 0.3);
-      border: 1px solid #ff6b6b;
-      color: #ff6b6b;
+      background: #ff9d9d;
+      border: 3px solid var(--pk-red);
+      color: #111;
+      font-weight: bold;
       padding: 15px;
-      border-radius: 5px;
+      border-radius: 8px;
       margin-top: 20px;
       text-align: center;
+      box-shadow: 4px 4px 0px var(--pk-dark);
     }
   `]
 })

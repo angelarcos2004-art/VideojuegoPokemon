@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
+import { AuthService } from '../../core/services/auth.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -11,11 +13,18 @@ import { NavbarComponent } from '../../shared/components/navbar/navbar.component
     <app-navbar></app-navbar>
     <div class="home-container">
       <div class="hero">
+        <img src="assets/images/logo.png" alt="Logo" class="hero-logo">
         <h1>Batalla de Cartas Pokémon</h1>
         <p class="subtitle">Juego de cartas estratégico inspirado en Pokémon y Yu-Gi-Oh!</p>
         <div class="buttons">
-          <a routerLink="/login" class="btn btn-primary">Iniciar Sesión</a>
-          <a routerLink="/register" class="btn btn-secondary">Registrarse</a>
+          <ng-container *ngIf="isAuthenticated$ | async; else unauthButtons">
+            <a routerLink="/menu" class="btn btn-primary">Ir al Menú</a>
+            <a routerLink="/game/vs-cpu" class="btn btn-secondary">Partida Rápida</a>
+          </ng-container>
+          <ng-template #unauthButtons>
+            <a routerLink="/login" class="btn btn-primary">Iniciar Sesión</a>
+            <a routerLink="/register" class="btn btn-secondary">Registrarse</a>
+          </ng-template>
         </div>
       </div>
       <div class="features">
@@ -36,30 +45,50 @@ import { NavbarComponent } from '../../shared/components/navbar/navbar.component
   `,
   styles: [`
     .home-container {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: calc(100vh - 60px);
+      background: var(--pk-light);
+      background-image: var(--pk-bg-image);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       padding: 40px 20px;
     }
 
     .hero {
       text-align: center;
-      margin: 80px 0 60px;
-      color: white;
+      margin: 40px 0 60px;
+      color: var(--pk-text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-logo {
+      max-width: 300px;
+      width: 100%;
+      margin-bottom: 20px;
+      filter: drop-shadow(4px 4px 0px var(--pk-dark));
+      transition: transform 0.3s;
+    }
+
+    .hero-logo:hover {
+      transform: scale(1.05);
     }
 
     .hero h1 {
-      font-size: 4rem;
+      font-size: 4.5rem;
+      font-family: var(--font-title);
       margin: 0;
-      background: linear-gradient(45deg, #ffd700, #ffed4e);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      color: var(--pk-yellow);
+      text-shadow: 4px 4px 0px var(--pk-blue), -2px -2px 0px var(--pk-dark), 2px -2px 0px var(--pk-dark), -2px 2px 0px var(--pk-dark), 2px 2px 0px var(--pk-dark);
+      letter-spacing: 2px;
     }
 
     .subtitle {
-      font-size: 1.3rem;
-      color: #aaa;
-      margin: 10px 0 30px;
+      font-size: 1.4rem;
+      color: var(--pk-text);
+      margin: 15px 0 40px;
+      font-weight: bold;
     }
 
     .buttons {
@@ -70,65 +99,79 @@ import { NavbarComponent } from '../../shared/components/navbar/navbar.component
     }
 
     .btn {
-      padding: 12px 30px;
-      font-size: 1rem;
+      padding: 14px 35px;
+      font-family: var(--font-title);
+      font-size: 1.2rem;
       text-decoration: none;
-      border-radius: 5px;
-      border: 2px solid;
-      transition: all 0.3s;
+      border-radius: 12px;
+      border: 3px solid var(--pk-dark);
+      transition: all 0.2s;
       cursor: pointer;
-    }
-
-    .btn-primary {
-      background: linear-gradient(45deg, #ffd700, #ffed4e);
-      color: #1a1a2e;
-      border-color: #ffd700;
+      box-shadow: 5px 5px 0px var(--pk-dark);
       font-weight: bold;
     }
 
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+    .btn:hover {
+      transform: translate(3px, 3px);
+      box-shadow: 2px 2px 0px var(--pk-dark);
+    }
+
+    .btn-primary {
+      background-color: var(--pk-yellow);
+      color: #111;
     }
 
     .btn-secondary {
-      background: transparent;
-      color: #fff;
-      border-color: #fff;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateY(-2px);
+      background-color: var(--pk-white);
+      color: var(--pk-text);
     }
 
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
       max-width: 1000px;
       margin: 0 auto;
     }
 
     .feature {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 30px;
-      border-radius: 10px;
-      border: 1px solid rgba(255, 215, 0, 0.2);
-      color: white;
+      background: var(--pk-white);
+      padding: 35px 25px;
+      border-radius: 15px;
+      border: 4px solid var(--pk-dark);
+      color: var(--pk-text);
       text-align: center;
+      box-shadow: 8px 8px 0px var(--pk-dark);
+      transition: transform 0.2s;
+    }
+    
+    .feature:hover {
+      transform: translateY(-5px);
     }
 
     .feature h3 {
-      color: #ffed4e;
-      font-size: 1.5rem;
-      margin: 0 0 10px;
+      color: var(--pk-red);
+      font-family: var(--font-title);
+      font-size: 1.6rem;
+      margin: 0 0 15px;
+      text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
     }
 
     .feature p {
       margin: 0;
-      color: #aaa;
+      color: var(--pk-text);
+      opacity: 0.8;
+      font-size: 1.1rem;
+      font-weight: 500;
     }
   `]
 })
-export class HomeComponent {}
+export class HomeComponent implements OnInit {
+  isAuthenticated$!: Observable<boolean>;
+
+  constructor(private authService: AuthService) {}
+
+  ngOnInit(): void {
+    this.isAuthenticated$ = this.authService.isAuthenticated();
+  }
+}

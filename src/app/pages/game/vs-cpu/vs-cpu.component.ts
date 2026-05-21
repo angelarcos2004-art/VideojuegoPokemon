@@ -112,10 +112,14 @@ import { takeUntil } from 'rxjs/operators';
   `,
   styles: [`
     .game-container {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: calc(100vh - 60px);
+      background: var(--pk-light);
+      background-image: var(--pk-bg-image);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       padding: 20px;
-      color: white;
+      color: var(--pk-text);
     }
 
     .game-board {
@@ -124,25 +128,26 @@ import { takeUntil } from 'rxjs/operators';
       display: flex;
       flex-direction: column;
       gap: 20px;
-      height: 100vh;
+      height: calc(100vh - 100px);
     }
 
     .player-section {
       flex: 1;
-      background: rgba(255, 255, 255, 0.05);
-      border: 2px solid rgba(255, 215, 0, 0.2);
-      border-radius: 10px;
+      background: var(--pk-white);
+      border: 4px solid var(--pk-dark);
+      border-radius: 12px;
       padding: 20px;
       display: flex;
       flex-direction: column;
+      box-shadow: 6px 6px 0px var(--pk-dark);
     }
 
     .cpu-section {
-      border-color: rgba(255, 100, 100, 0.3);
+      border-color: var(--pk-red);
     }
 
     .player-section-main {
-      border-color: rgba(100, 200, 100, 0.3);
+      border-color: var(--pk-blue);
     }
 
     .player-header {
@@ -151,20 +156,28 @@ import { takeUntil } from 'rxjs/operators';
 
     .player-header h2 {
       margin: 0 0 10px;
-      color: #ffed4e;
+      color: var(--pk-blue);
+      font-family: var(--font-title);
+      font-size: 1.5rem;
+    }
+
+    .cpu-section .player-header h2 {
+      color: var(--pk-red);
     }
 
     .hp-bar {
-      height: 20px;
-      background: #ff6b6b;
-      border-radius: 5px;
+      height: 25px;
+      background: var(--pk-red);
+      border-radius: 8px;
+      border: 3px solid var(--pk-dark);
       margin-bottom: 5px;
       transition: width 0.3s;
     }
 
     .hp-text {
-      font-size: 0.9rem;
-      color: #aaa;
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--pk-text);
     }
 
     .player-field {
@@ -178,11 +191,16 @@ import { takeUntil } from 'rxjs/operators';
       display: flex;
       flex-direction: column;
       gap: 10px;
+      background: rgba(0, 0, 0, 0.05);
+      border: 2px dashed var(--pk-dark);
+      border-radius: 8px;
+      padding: 10px;
     }
 
     .zone-label {
-      font-size: 0.85rem;
-      color: #ffed4e;
+      font-size: 0.9rem;
+      color: var(--pk-blue);
+      font-family: var(--font-title);
       text-transform: uppercase;
       font-weight: bold;
     }
@@ -190,7 +208,7 @@ import { takeUntil } from 'rxjs/operators';
     .field-cards,
     .hand-cards {
       display: flex;
-      gap: 10px;
+      gap: 15px;
       overflow-x: auto;
       padding: 10px 0;
     }
@@ -198,43 +216,51 @@ import { takeUntil } from 'rxjs/operators';
     .field-card,
     .hand-card {
       min-width: 120px;
-      background: rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 215, 0, 0.2);
-      border-radius: 5px;
+      background: var(--pk-white);
+      border: 3px solid var(--pk-dark);
+      border-radius: 8px;
       padding: 10px;
       text-align: center;
+      box-shadow: 3px 3px 0px var(--pk-dark);
     }
 
     .field-card.interactive,
     .hand-card.interactive {
       cursor: pointer;
-      transition: all 0.3s;
+      transition: all 0.2s;
     }
 
     .field-card.interactive:hover,
     .hand-card.interactive:hover {
-      border-color: #ffed4e;
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+      border-color: var(--pk-blue);
+      transform: translateY(-5px);
+      box-shadow: 5px 5px 0px var(--pk-dark);
     }
 
     .card-image {
       width: 100%;
       height: 80px;
       object-fit: cover;
-      border-radius: 3px;
+      border-radius: 5px;
+      border: 2px solid var(--pk-dark);
       margin-bottom: 5px;
     }
 
     .card-name {
-      font-size: 0.8rem;
-      color: #ffed4e;
+      font-size: 0.9rem;
+      color: var(--pk-text);
+      font-weight: bold;
       margin-bottom: 3px;
     }
 
     .card-hp,
     .card-attack {
-      font-size: 0.75rem;
-      color: #aaa;
+      font-size: 0.8rem;
+      color: var(--pk-text);
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+      padding: 2px;
+      border: 1px solid var(--pk-dark);
     }
 
     .player-hand {
@@ -247,16 +273,17 @@ import { takeUntil } from 'rxjs/operators';
     .player-resources {
       display: flex;
       gap: 20px;
-      padding-top: 10px;
-      border-top: 1px solid rgba(255, 215, 0, 0.1);
-      font-size: 0.9rem;
-      color: #aaa;
+      padding-top: 15px;
+      border-top: 3px dashed var(--pk-dark);
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--pk-text);
     }
 
     .game-center {
-      background: rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 215, 0, 0.2);
-      border-radius: 10px;
+      background: var(--pk-white);
+      border: 4px solid var(--pk-dark);
+      border-radius: 12px;
       padding: 20px;
       text-align: center;
       position: relative;
@@ -264,78 +291,111 @@ import { takeUntil } from 'rxjs/operators';
       display: flex;
       flex-direction: column;
       justify-content: center;
+      box-shadow: 6px 6px 0px var(--pk-dark);
     }
 
     .game-phase h3 {
-      color: #ffed4e;
+      color: var(--pk-yellow);
+      font-family: var(--font-title);
+      font-size: 2rem;
       margin: 0 0 10px;
+      text-shadow: -2px -2px 0 var(--pk-dark), 2px -2px 0 var(--pk-dark), -2px 2px 0 var(--pk-dark), 2px 2px 0 var(--pk-dark);
     }
 
     .game-phase p {
-      color: #aaa;
+      color: var(--pk-text);
+      font-weight: bold;
+      font-size: 1.2rem;
       margin: 0;
     }
 
     .player-actions {
       display: flex;
-      gap: 10px;
+      gap: 15px;
       justify-content: center;
-      margin-top: 10px;
+      margin-top: 15px;
     }
 
     .btn-action {
-      padding: 10px 20px;
-      background: linear-gradient(45deg, #ffd700, #ffed4e);
-      color: #1a1a2e;
-      border: none;
-      border-radius: 5px;
+      padding: 12px 24px;
+      background: var(--pk-yellow);
+      color: #111;
+      border: 3px solid var(--pk-dark);
+      border-radius: 8px;
+      font-family: var(--font-title);
+      font-size: 1.1rem;
       font-weight: bold;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: all 0.2s;
+      box-shadow: 4px 4px 0px var(--pk-dark);
     }
 
     .btn-action:hover {
-      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px var(--pk-dark);
+      background: #ffdf40;
     }
 
     .winner-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.8);
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 10px;
+      border-radius: 8px;
+      z-index: 10;
     }
 
     .winner-message {
       text-align: center;
+      background: var(--pk-white);
+      padding: 40px;
+      border: 4px solid var(--pk-dark);
+      border-radius: 12px;
+      box-shadow: 8px 8px 0px var(--pk-dark);
     }
 
     .winner-message h2 {
-      font-size: 2.5rem;
-      color: #ffed4e;
-      margin: 0 0 20px;
+      font-family: var(--font-title);
+      font-size: 3rem;
+      color: var(--pk-yellow);
+      margin: 0 0 30px;
+      text-shadow: -2px -2px 0 var(--pk-dark), 2px -2px 0 var(--pk-dark), -2px 2px 0 var(--pk-dark), 2px 2px 0 var(--pk-dark);
     }
 
     .btn-back {
-      padding: 12px 30px;
-      background: linear-gradient(45deg, #ffd700, #ffed4e);
-      color: #1a1a2e;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      font-size: 1rem;
+      padding: 15px 40px;
+      background: var(--pk-blue);
+      color: white;
+      border: 3px solid var(--pk-dark);
+      border-radius: 8px;
+      font-family: var(--font-title);
+      font-size: 1.2rem;
       cursor: pointer;
+      box-shadow: 4px 4px 0px var(--pk-dark);
+      transition: all 0.2s;
+    }
+
+    .btn-back:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px var(--pk-dark);
     }
 
     .loading-screen {
-      min-height: 100vh;
+      min-height: calc(100vh - 60px);
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-      color: #ffed4e;
+      background: var(--pk-light);
+      background-image: var(--pk-bg-image);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: var(--pk-red);
+      font-family: var(--font-title);
+      font-size: 2rem;
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
     }
   `]
 })

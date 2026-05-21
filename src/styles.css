@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@500;700&display=swap');
+
+/* Global styles and variables */
+
+:root {
+  --font-title: 'Poppins', sans-serif;
+  --font-game: 'Nunito', sans-serif;
+  
+  /* Pokemon Theme Colors (Light) */
+  --pk-red: #ee1515;
+  --pk-blue: #3b4cca;
+  --pk-yellow: #ffcb05;
+  --pk-light: #f4f4f4;
+  --pk-white: #ffffff;
+  --pk-dark: #333333;
+  --pk-text: #333333;
+  --pk-bg-image: url('/assets/images/bg-light.png');
+}
+
+body.dark-theme {
+  /* Pokemon Theme Colors (Dark) */
+  --pk-red: #ff6b6b;
+  --pk-blue: #5a85ff;
+  --pk-yellow: #ffdf40;
+  --pk-light: #1a2035;
+  --pk-white: #252d47;
+  --pk-dark: #0f1524;
+  --pk-text: #f8fafc;
+  --pk-bg-image: url('/assets/images/bg-dark.png');
+}
+
+body {
+  font-family: var(--font-game);
+  font-size: 1.1rem;
+  background-color: var(--pk-light);
+  color: var(--pk-text);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.font-title {
+  font-family: var(--font-title) !important;
+}
+
+.font-game {
+  font-family: var(--font-game) !important;
+}
