@@ -17,17 +17,25 @@ import { takeUntil } from 'rxjs/operators';
     <app-navbar></app-navbar>
     <div class="collection-container">
       <h1>Colección de Cartas</h1>
+
+      <div *ngIf="message" [ngClass]="{'success': messageType === 'success', 'error': messageType === 'error'}" style="max-width: 600px; margin: 0 auto 20px;">
+        {{ message }}
+      </div>
+
       <div class="controls">
         <input
           type="text"
           placeholder="Buscar cartas..."
           [(ngModel)]="searchTerm"
+          (ngModelChange)="applyFiltersAndSort()"
           class="search-input"
         >
-        <select [(ngModel)]="sortBy" class="sort-select">
+        <select [(ngModel)]="sortBy" (ngModelChange)="applyFiltersAndSort()" class="sort-select">
           <option value="name">Ordenar por Nombre</option>
           <option value="rarity">Ordenar por Rareza</option>
           <option value="attack">Ordenar por Ataque</option>
+          <option value="defense">Ordenar por Defensa</option>
+          <option value="generation">Ordenar por Generación</option>
         </select>
       </div>
 
@@ -260,6 +268,27 @@ import { takeUntil } from 'rxjs/operators';
       font-size: 1.2rem;
       font-weight: bold;
     }
+
+    .success,
+    .error {
+      margin: 0 auto 20px;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      border: 2px solid var(--pk-dark);
+      box-shadow: 4px 4px 0px var(--pk-dark);
+    }
+
+    .success {
+      background: #5cff9d;
+      color: #111;
+    }
+
+    .error {
+      background: #ff9d9d;
+      color: #111;
+    }
   `]
 })
 export class CollectionComponent implements OnInit, OnDestroy {
@@ -269,7 +298,10 @@ export class CollectionComponent implements OnInit, OnDestroy {
   searchTerm = '';
   sortBy = 'name';
   currentUserId: string | null = null;
+  message = '';
+  messageType: 'error' | 'success' = 'error';
   private destroy$ = new Subject<void>();
+  private messageTimeout: any;
 
   constructor(
     private pokemonService: PokemonService,
@@ -297,8 +329,8 @@ export class CollectionComponent implements OnInit, OnDestroy {
   async loadCards(): Promise<void> {
     try {
       this.loading = true;
-      const randomCards = await this.pokemonService.getRandomPokemons(20);
-      this.cards = randomCards;
+      const allCards = await this.pokemonService.getAllPokemons();
+      this.cards = allCards;
       this.applyFiltersAndSort();
     } catch (error) {
       console.error('Failed to load cards:', error);
@@ -315,10 +347,17 @@ export class CollectionComponent implements OnInit, OnDestroy {
     switch (this.sortBy) {
       case 'rarity':
         const rarityOrder = { legendary: 0, rare: 1, common: 2 };
-        filtered.sort((a, b) => rarityOrder[a.rarity] - rarityOrder[b.rarity]);
+        filtered.sort((a, b) => (rarityOrder[a.rarity as keyof typeof rarityOrder] ?? 3) - (rarityOrder[b.rarity as keyof typeof rarityOrder] ?? 3));
         break;
       case 'attack':
         filtered.sort((a, b) => b.attack - a.attack);
+        break;
+      case 'defense':
+        filtered.sort((a, b) => b.defense - a.defense);
+        break;
+      case 'generation':
+        // generation is effectively mapped by ID (1-151 Gen1, etc)
+        filtered.sort((a, b) => a.id - b.id);
         break;
       case 'name':
       default:
@@ -329,6 +368,19 @@ export class CollectionComponent implements OnInit, OnDestroy {
     this.filteredCards = filtered;
   }
 
+  private showMessage(text: string, type: 'error' | 'success' = 'error'): void {
+    this.message = text;
+    this.messageType = type;
+
+    if (this.messageTimeout) {
+      clearTimeout(this.messageTimeout);
+    }
+
+    this.messageTimeout = setTimeout(() => {
+      this.message = '';
+    }, 3000);
+  }
+
   async addToCollection(card: PokemonCard): Promise<void> {
     if (!this.currentUserId) {
       console.error('User not authenticated');
@@ -336,11 +388,12 @@ export class CollectionComponent implements OnInit, OnDestroy {
     }
 
     try {
-      await this.supabaseService.addToCollection(this.currentUserId, card.id);
-      alert(`${card.name} added to collection!`);
-    } catch (error) {
+      await this.supabaseService.addToCollection(this.currentUserId, card);
+      this.showMessage(`${card.name} añadido a tu colección!`, 'success');
+    } catch (error: any) {
       console.error('Failed to add card to collection:', error);
-      alert('Failed to add card');
+      const errorMsg = error?.message || error?.details || 'Error desconocido';
+      this.showMessage(`Error al agregar carta: ${errorMsg}`);
     }
   }
 }

@@ -68,6 +68,10 @@ const MAX_CARDS_PER_TYPE = 2;
             Selecciona cartas para construir tu mazo (máximo 20 cartas)
           </div>
 
+          <div *ngIf="message" [ngClass]="{'success': messageType === 'success', 'error': messageType === 'error'}">
+            {{ message }}
+          </div>
+
           <div class="deck-controls">
             <button
               (click)="clearDeck()"
@@ -87,6 +91,19 @@ const MAX_CARDS_PER_TYPE = 2;
 
           <div *ngIf="deckSaveMessage" [ngClass]="{'success': !deckSaveError, 'error': deckSaveError}">
             {{ deckSaveMessage }}
+          </div>
+
+          <!-- Modal de Guardado -->
+          <div *ngIf="showSaveModal" class="modal-overlay">
+            <div class="modal-content">
+              <h3>Nombrar Mazo</h3>
+              <p>Escribe un nombre increíble para tu mazo (máximo 20 caracteres):</p>
+              <input type="text" [(ngModel)]="newDeckName" placeholder="Mi Mazo Invencible" maxlength="20" class="search-input" style="width: 100%; margin-bottom: 20px;">
+              <div class="modal-actions">
+                <button (click)="showSaveModal = false" class="btn-control btn-cancel">Cancelar</button>
+                <button (click)="confirmSaveDeck()" class="btn-control btn-save" [disabled]="!newDeckName.trim()">Guardar</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -402,6 +419,46 @@ const MAX_CARDS_PER_TYPE = 2;
       background: #ff9d9d;
       color: #111;
     }
+
+    /* Modal Styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    
+    .modal-content {
+      background: var(--pk-light);
+      padding: 30px;
+      border-radius: 15px;
+      border: 4px solid var(--pk-dark);
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 8px 8px 0px var(--pk-dark);
+      text-align: center;
+    }
+
+    .modal-content h3 {
+      color: var(--pk-red);
+      font-family: var(--font-title);
+      font-size: 1.5rem;
+      margin-top: 0;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .btn-cancel {
+      background: #e0e0e0;
+      color: #111;
+    }
   `]
 })
 export class DeckBuilderComponent implements OnInit, OnDestroy {
@@ -412,9 +469,14 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   searchTerm = '';
   deckSaveMessage = '';
   deckSaveError = false;
+  showSaveModal = false;
+  newDeckName = '';
   currentUserId: string | null = null;
   MAX_DECK_SIZE = MAX_DECK_SIZE;
+  message = '';
+  messageType: 'error' | 'success' = 'error';
   private destroy$ = new Subject<void>();
+  private messageTimeout: any;
 
   constructor(
     private pokemonService: PokemonService,
@@ -442,8 +504,8 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   async loadCards(): Promise<void> {
     try {
       this.loading = true;
-      const randomCards = await this.pokemonService.getRandomPokemons(30);
-      this.availableCards = randomCards;
+      const allCards = await this.pokemonService.getAllPokemons();
+      this.availableCards = allCards;
       this.applyFilter();
     } catch (error) {
       console.error('Failed to load cards:', error);
@@ -453,9 +515,23 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   }
 
   applyFilter(): void {
+    const term = this.searchTerm.toLowerCase();
     this.filteredCards = this.availableCards.filter(card =>
-      card.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+      card.name.toLowerCase().includes(term) || card.types.some(t => t.includes(term))
     );
+  }
+
+  private showMessage(text: string, type: 'error' | 'success' = 'error'): void {
+    this.message = text;
+    this.messageType = type;
+
+    if (this.messageTimeout) {
+      clearTimeout(this.messageTimeout);
+    }
+
+    this.messageTimeout = setTimeout(() => {
+      this.message = '';
+    }, 3000);
   }
 
   get deckSize(): number {
@@ -464,14 +540,14 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
 
   addCardToDeck(card: PokemonCard): void {
     if (this.deckSize >= MAX_DECK_SIZE) {
-      alert('Deck is full! Maximum 20 cards allowed.');
+      this.showMessage('¡El mazo está lleno! Máximo 20 cartas permitidas.');
       return;
     }
 
     const existingCard = this.deck.find(item => item.card.id === card.id);
     if (existingCard) {
       if (existingCard.quantity >= MAX_CARDS_PER_TYPE) {
-        alert(`You can only add up to ${MAX_CARDS_PER_TYPE} copies of ${card.name}`);
+        this.showMessage(`Sólo puedes agregar hasta ${MAX_CARDS_PER_TYPE} copias de ${card.name}`);
         return;
       }
       existingCard.quantity++;
@@ -494,35 +570,40 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     }
   }
 
-  async saveDeck(): Promise<void> {
+  saveDeck(): void {
     if (this.deckSize !== MAX_DECK_SIZE) {
-      alert('Your deck must contain exactly 20 cards');
+      this.showMessage('Tu mazo debe contener exactamente 20 cartas para guardarlo.');
       return;
     }
 
     if (!this.currentUserId) {
-      alert('You must be logged in to save a deck');
+      this.showMessage('Debes iniciar sesión para guardar un mazo.');
       return;
     }
 
-    try {
-      const deckName = prompt('Enter deck name:');
-      if (!deckName) return;
+    this.newDeckName = '';
+    this.showSaveModal = true;
+  }
 
+  async confirmSaveDeck(): Promise<void> {
+    if (!this.newDeckName.trim() || !this.currentUserId) return;
+    this.showSaveModal = false;
+
+    try {
       const cards = this.deck.flatMap(item =>
         Array(item.quantity).fill(item.card)
       );
 
-      await this.supabaseService.saveDeck(this.currentUserId, deckName, cards);
-      this.deckSaveMessage = 'Deck saved successfully!';
+      await this.supabaseService.saveDeck(this.currentUserId, this.newDeckName.trim(), cards);
+      this.deckSaveMessage = '¡Mazo guardado exitosamente!';
       this.deckSaveError = false;
-      this.clearDeck();
+      this.newDeckName = '';
 
       setTimeout(() => {
         this.deckSaveMessage = '';
       }, 3000);
     } catch (error) {
-      this.deckSaveMessage = 'Failed to save deck';
+      this.deckSaveMessage = 'Error al guardar el mazo. Inténtalo de nuevo.';
       this.deckSaveError = true;
       console.error('Failed to save deck:', error);
     }
