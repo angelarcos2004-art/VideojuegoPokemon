@@ -46,3 +46,25 @@ body {
 .font-game {
   font-family: var(--font-game) !important;
 }
+
+/* Global Card Type Styles */
+.card-type-fire { background: linear-gradient(135deg, #ff9d5c 0%, #ee1515 100%); color: white; border-color: #8b0000 !important; }
+.card-type-water { background: linear-gradient(135deg, #8dc6ff 0%, #3b4cca 100%); color: white; border-color: #000080 !important; }
+.card-type-grass { background: linear-gradient(135deg, #8ae890 0%, #228b22 100%); color: white; border-color: #006400 !important; }
+.card-type-electric { background: linear-gradient(135deg, #fff275 0%, #ffcb05 100%); color: #333; border-color: #b8860b !important; }
+.card-type-psychic { background: linear-gradient(135deg, #ff9ce6 0%, #9b30ff 100%); color: white; border-color: #4b0082 !important; }
+.card-type-ice { background: linear-gradient(135deg, #e0ffff 0%, #00ced1 100%); color: #333; border-color: #008b8b !important; }
+.card-type-default { background: linear-gradient(135deg, #f0f0f0 0%, #a9a9a9 100%); color: #333; border-color: #696969 !important; }
+
+/* Enhanced Card Visuals */
+.pk-card-visual {
+  position: relative;
+  overflow: hidden;
+}
+.pk-card-visual::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(125deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.1) 100%);
+  pointer-events: none;
+}

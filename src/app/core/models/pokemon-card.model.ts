@@ -17,4 +17,6 @@ export interface PokemonCard {
   level: number;
   rarity: 'common' | 'rare' | 'legendary';
   description: string;
+  hasAttacked?: boolean;
+  hasUsedAbility?: boolean;
 }
