@@ -136,7 +136,7 @@ import { AuthService } from '../../../core/services/auth.service';
       justify-content: center;
       font-size: 1.2rem;
       cursor: pointer;
-      box-shadow: 2px 2px 0px var(--pk-white);
+      box-shadow: 2px 2px 0px var(--pk-dark);
       transition: all 0.2s;
     }
 

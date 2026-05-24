@@ -13,10 +13,15 @@ export interface PokemonCard {
   hp: number;
   attack: number;
   defense: number;
-  specialAbility: SpecialAbility;
+  specialAbility?: SpecialAbility;
   level: number;
   rarity: 'common' | 'rare' | 'legendary';
   description: string;
+  cardClass?: 'pokemon' | 'magic' | 'trap';
+  magicEffect?: 'heal' | 'boost_atk' | 'boost_def' | 'field';
+  trapTrigger?: 'on_attack' | 'on_summon';
+  effectValue?: number;
   hasAttacked?: boolean;
   hasUsedAbility?: boolean;
+  isFaceDown?: boolean;
 }

@@ -11,10 +11,17 @@ export class SqliteService {
   async initialize(): Promise<void> {
     if (this.initialized) return;
 
-    const SQL = await initSqlJs();
-    this.db = new SQL.Database();
-    this.createTables();
-    this.initialized = true;
+    try {
+      const SQL = await initSqlJs({
+        locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/${file}`
+      });
+      this.db = new SQL.Database();
+      this.createTables();
+      this.initialized = true;
+    } catch (e) {
+      console.error('Failed to init SqlJs:', e);
+      throw e;
+    }
   }
 
   private createTables(): void {
@@ -107,9 +114,15 @@ export class SqliteService {
   }
 
   getLocalGames(userId: string): any[] {
-    return this.query(
+    const results = this.query(
       `SELECT * FROM cpu_games WHERE user_id = ? ORDER BY played_at DESC`,
       [userId]
     );
+    return results.map(r => ({
+      ...r,
+      mode: 'cpu',
+      winner: r.result,
+      created_at: r.played_at
+    }));
   }
 }

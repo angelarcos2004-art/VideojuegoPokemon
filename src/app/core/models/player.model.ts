@@ -7,6 +7,8 @@ export interface PlayerState {
   hand: PokemonCard[];
   deck: PokemonCard[];
   field: PokemonCard[];
+  spellZone: PokemonCard[];
+  fieldCard?: PokemonCard;
   graveyard: PokemonCard[];
 }
 

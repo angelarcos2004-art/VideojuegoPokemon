@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
 import { SupabaseService } from '../../core/services/supabase.service';
 import { SqliteService } from '../../core/services/sqlite.service';
@@ -10,10 +11,14 @@ import { takeUntil } from 'rxjs/operators';
 @Component({
   selector: 'app-history',
   standalone: true,
-  imports: [CommonModule, NavbarComponent],
+  imports: [CommonModule, RouterLink, NavbarComponent],
   template: `
     <app-navbar></app-navbar>
+
     <div class="history-container">
+      <div class="page-header" style="max-width: 1200px; margin: 0 auto 20px; padding: 0 20px;">
+        <a routerLink="/menu" class="btn-global-back">← Volver al Menú</a>
+      </div>
       <h1>Historial de Juegos</h1>
 
       <div class="filter-tabs">

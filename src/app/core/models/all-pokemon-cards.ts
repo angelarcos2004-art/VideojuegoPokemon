@@ -2,6 +2,66 @@ import { PokemonCard } from './pokemon-card.model';
 
 export const ALL_POKEMON_CARDS: PokemonCard[] = [
   {
+    "id": 2001,
+    "name": "Poción",
+    "image": "assets/images/hq_potion.png",
+    "types": ["magic"],
+    "hp": 0,
+    "attack": 0,
+    "defense": 0,
+    "cardClass": "magic",
+    "magicEffect": "heal",
+    "effectValue": 1000,
+    "level": 1,
+    "rarity": "common",
+    "description": "Carta Mágica de Curación. Recupera 1000 puntos de vida a tu héroe inmediatamente."
+  },
+  {
+    "id": 2002,
+    "name": "Danza Lluvia",
+    "image": "assets/images/hq_raindance.png",
+    "types": ["magic"],
+    "hp": 0,
+    "attack": 0,
+    "defense": 0,
+    "cardClass": "magic",
+    "magicEffect": "field",
+    "effectValue": 20,
+    "level": 2,
+    "rarity": "common",
+    "description": "Carta Mágica de Campo. Una lluvia torrencial inunda el campo, potenciando los ataques de tipo Agua en 20 puntos."
+  },
+  {
+    "id": 2003,
+    "name": "Protección",
+    "image": "assets/images/hq_protect.png",
+    "types": ["trap"],
+    "hp": 0,
+    "attack": 0,
+    "defense": 0,
+    "cardClass": "trap",
+    "trapTrigger": "on_attack",
+    "effectValue": 0,
+    "level": 3,
+    "rarity": "common",
+    "description": "Carta Trampa Defensiva. Colócala boca abajo. Cuando un monstruo rival ataque, activa esta carta para bloquear completamente el daño."
+  },
+  {
+    "id": 2004,
+    "name": "Trampa Rocas",
+    "image": "assets/images/hq_stealthrock.png",
+    "types": ["trap"],
+    "hp": 0,
+    "attack": 0,
+    "defense": 0,
+    "cardClass": "trap",
+    "trapTrigger": "on_summon",
+    "effectValue": 200,
+    "level": 4,
+    "rarity": "common",
+    "description": "Carta Trampa de Daño. Colócala boca abajo. Cuando el oponente invoque un monstruo, las rocas afiladas le causan 200 puntos de daño directo."
+  },
+  {
     "id": 1,
     "name": "Bulbasaur",
     "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
@@ -20,7 +80,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Bulbasaur mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 2,
@@ -41,7 +101,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Ivysaur ataca sin piedad. Sus 124 puntos de ataque físico lo convierten en un depredador implacable de tipo grass. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 3,
@@ -62,7 +122,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Venusaur es un muro infranqueable de tipo grass. Su asombrosa defensa de 166 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 4,
@@ -82,7 +142,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Consciente de su poder, Charmander ataca sin piedad. Sus 104 puntos de ataque físico lo convierten en un depredador implacable de tipo fire."
   },
   {
     "id": 5,
@@ -102,7 +162,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Consciente de su poder, Charmeleon ataca sin piedad. Sus 128 puntos de ataque físico lo convierten en un depredador implacable de tipo fire. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 6,
@@ -123,7 +183,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Charizard es un muro infranqueable de tipo fire. Su asombrosa defensa de 156 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 7,
@@ -143,7 +203,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Squirtle mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 8,
@@ -163,7 +223,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Wartortle ataca sin piedad. Sus 126 puntos de ataque físico lo convierten en un depredador implacable de tipo water. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 9,
@@ -183,7 +243,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Blastoise es un muro infranqueable de tipo water. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 10,
@@ -203,7 +263,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Caterpie mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 11,
@@ -223,7 +283,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Metapod mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 12,
@@ -244,7 +304,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Butterfree mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 13,
@@ -265,7 +325,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Weedle mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 14,
@@ -286,7 +346,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Kakuna mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 15,
@@ -307,7 +367,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Beedrill ataca sin piedad. Sus 180 puntos de ataque físico lo convierten en un depredador implacable de tipo bug. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 16,
@@ -328,7 +388,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Pidgey mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 17,
@@ -349,7 +409,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Pidgeotto es un muro infranqueable de tipo normal. Su asombrosa defensa de 110 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 18,
@@ -370,7 +430,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Pidgeot es un muro infranqueable de tipo normal. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 19,
@@ -390,7 +450,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Rattata ataca sin piedad. Sus 112 puntos de ataque físico lo convierten en un depredador implacable de tipo normal."
   },
   {
     "id": 20,
@@ -410,7 +470,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Raticate ataca sin piedad. Sus 162 puntos de ataque físico lo convierten en un depredador implacable de tipo normal. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 21,
@@ -431,7 +491,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Spearow ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo normal."
   },
   {
     "id": 22,
@@ -452,7 +512,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Fearow es un muro infranqueable de tipo normal. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 23,
@@ -472,7 +532,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Consciente de su poder, Ekans ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo poison."
   },
   {
     "id": 24,
@@ -492,7 +552,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Consciente de su poder, Arbok ataca sin piedad. Sus 190 puntos de ataque físico lo convierten en un depredador implacable de tipo poison. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 25,
@@ -512,7 +572,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Consciente de su poder, Pikachu ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo electric. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 26,
@@ -532,7 +592,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Consciente de su poder, Raichu ataca sin piedad. Sus 180 puntos de ataque físico lo convierten en un depredador implacable de tipo electric. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 27,
@@ -552,7 +612,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Consciente de su poder, Sandshrew ataca sin piedad. Sus 150 puntos de ataque físico lo convierten en un depredador implacable de tipo ground."
   },
   {
     "id": 28,
@@ -572,7 +632,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Sandslash es un muro infranqueable de tipo ground. Su asombrosa defensa de 220 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 29,
@@ -592,7 +652,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Una criatura versátil de tipo poison. Nidoran-f mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 30,
@@ -612,7 +672,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Nidorina es un muro infranqueable de tipo poison. Su asombrosa defensa de 134 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 31,
@@ -633,7 +693,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Nidoqueen es un muro infranqueable de tipo poison. Su asombrosa defensa de 174 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 32,
@@ -653,7 +713,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Consciente de su poder, Nidoran-m ataca sin piedad. Sus 114 puntos de ataque físico lo convierten en un depredador implacable de tipo poison."
   },
   {
     "id": 33,
@@ -673,7 +733,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Nidorino es un muro infranqueable de tipo poison. Su asombrosa defensa de 114 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 34,
@@ -694,7 +754,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Nidoking es un muro infranqueable de tipo poison. Su asombrosa defensa de 154 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 35,
@@ -714,7 +774,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "rare",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Una criatura versátil de tipo fairy. Clefairy mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 36,
@@ -734,7 +794,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Clefable es un muro infranqueable de tipo fairy. Su asombrosa defensa de 146 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 37,
@@ -754,7 +814,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Una criatura versátil de tipo fire. Vulpix mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 38,
@@ -774,7 +834,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Ninetales es un muro infranqueable de tipo fire. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 39,
@@ -795,7 +855,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Jigglypuff mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 40,
@@ -816,7 +876,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Wigglytuff ataca sin piedad. Sus 140 puntos de ataque físico lo convierten en un depredador implacable de tipo normal. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 41,
@@ -837,7 +897,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Una criatura versátil de tipo poison. Zubat mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 42,
@@ -858,7 +918,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Golbat es un muro infranqueable de tipo poison. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 43,
@@ -879,7 +939,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Oddish mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 44,
@@ -900,7 +960,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Gloom ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo grass. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 45,
@@ -921,7 +981,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Vileplume es un muro infranqueable de tipo grass. Su asombrosa defensa de 170 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 46,
@@ -942,7 +1002,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Paras ataca sin piedad. Sus 140 puntos de ataque físico lo convierten en un depredador implacable de tipo bug."
   },
   {
     "id": 47,
@@ -963,7 +1023,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Parasect ataca sin piedad. Sus 190 puntos de ataque físico lo convierten en un depredador implacable de tipo bug. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 48,
@@ -984,7 +1044,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Venonat ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo bug."
   },
   {
     "id": 49,
@@ -1005,7 +1065,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Venomoth es un muro infranqueable de tipo bug. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 50,
@@ -1025,7 +1085,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Consciente de su poder, Diglett ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo ground."
   },
   {
     "id": 51,
@@ -1045,7 +1105,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Consciente de su poder, Dugtrio ataca sin piedad. Sus 200 puntos de ataque físico lo convierten en un depredador implacable de tipo ground. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 52,
@@ -1065,7 +1125,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Meowth mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 53,
@@ -1085,7 +1145,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Persian es un muro infranqueable de tipo normal. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 54,
@@ -1105,7 +1165,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Psyduck ataca sin piedad. Sus 104 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 55,
@@ -1125,7 +1185,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Golduck es un muro infranqueable de tipo water. Su asombrosa defensa de 156 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 56,
@@ -1145,7 +1205,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Consciente de su poder, Mankey ataca sin piedad. Sus 160 puntos de ataque físico lo convierten en un depredador implacable de tipo fighting."
   },
   {
     "id": 57,
@@ -1165,7 +1225,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Primeape es un muro infranqueable de tipo fighting. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 58,
@@ -1185,7 +1245,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Consciente de su poder, Growlithe ataca sin piedad. Sus 140 puntos de ataque físico lo convierten en un depredador implacable de tipo fire."
   },
   {
     "id": 59,
@@ -1205,7 +1265,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Arcanine es un muro infranqueable de tipo fire. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 60,
@@ -1225,7 +1285,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Poliwag mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 61,
@@ -1245,7 +1305,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Poliwhirl es un muro infranqueable de tipo water. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 62,
@@ -1266,7 +1326,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Poliwrath es un muro infranqueable de tipo water. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 63,
@@ -1286,7 +1346,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Abra mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 64,
@@ -1306,7 +1366,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Kadabra mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 65,
@@ -1326,7 +1386,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Alakazam mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 66,
@@ -1346,7 +1406,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Consciente de su poder, Machop ataca sin piedad. Sus 160 puntos de ataque físico lo convierten en un depredador implacable de tipo fighting."
   },
   {
     "id": 67,
@@ -1366,7 +1426,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Machoke es un muro infranqueable de tipo fighting. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 68,
@@ -1386,7 +1446,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Machamp es un muro infranqueable de tipo fighting. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 69,
@@ -1407,7 +1467,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Bellsprout ataca sin piedad. Sus 150 puntos de ataque físico lo convierten en un depredador implacable de tipo grass."
   },
   {
     "id": 70,
@@ -1428,7 +1488,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Weepinbell ataca sin piedad. Sus 180 puntos de ataque físico lo convierten en un depredador implacable de tipo grass. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 71,
@@ -1449,7 +1509,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Victreebel es un muro infranqueable de tipo grass. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 72,
@@ -1470,7 +1530,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Tentacool mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 73,
@@ -1491,7 +1551,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Tentacruel es un muro infranqueable de tipo water. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 74,
@@ -1512,7 +1572,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Consciente de su poder, Geodude ataca sin piedad. Sus 160 puntos de ataque físico lo convierten en un depredador implacable de tipo rock."
   },
   {
     "id": 75,
@@ -1533,7 +1593,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Consciente de su poder, Graveler ataca sin piedad. Sus 190 puntos de ataque físico lo convierten en un depredador implacable de tipo rock. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 76,
@@ -1554,7 +1614,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Golem es un muro infranqueable de tipo rock. Su asombrosa defensa de 260 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 77,
@@ -1574,7 +1634,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Consciente de su poder, Ponyta ataca sin piedad. Sus 170 puntos de ataque físico lo convierten en un depredador implacable de tipo fire."
   },
   {
     "id": 78,
@@ -1594,7 +1654,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Rapidash es un muro infranqueable de tipo fire. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 79,
@@ -1615,7 +1675,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Slowpoke es un muro infranqueable de tipo water. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 80,
@@ -1636,7 +1696,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Slowbro es un muro infranqueable de tipo water. Su asombrosa defensa de 220 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 81,
@@ -1657,7 +1717,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Una criatura versátil de tipo electric. Magnemite mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 82,
@@ -1678,7 +1738,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Consciente de su poder, Magneton ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo electric. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 83,
@@ -1699,7 +1759,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Farfetchd ataca sin piedad. Sus 180 puntos de ataque físico lo convierten en un depredador implacable de tipo normal. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 84,
@@ -1720,7 +1780,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Doduo ataca sin piedad. Sus 170 puntos de ataque físico lo convierten en un depredador implacable de tipo normal."
   },
   {
     "id": 85,
@@ -1741,7 +1801,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Dodrio ataca sin piedad. Sus 220 puntos de ataque físico lo convierten en un depredador implacable de tipo normal. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 86,
@@ -1761,7 +1821,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Seel es un muro infranqueable de tipo water. Su asombrosa defensa de 110 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 87,
@@ -1782,7 +1842,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Dewgong es un muro infranqueable de tipo water. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 88,
@@ -1802,7 +1862,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Consciente de su poder, Grimer ataca sin piedad. Sus 160 puntos de ataque físico lo convierten en un depredador implacable de tipo poison."
   },
   {
     "id": 89,
@@ -1822,7 +1882,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Muk es un muro infranqueable de tipo poison. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 90,
@@ -1842,7 +1902,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Shellder ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 91,
@@ -1863,7 +1923,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Cloyster ataca sin piedad. Sus 190 puntos de ataque físico lo convierten en un depredador implacable de tipo water. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 92,
@@ -1884,7 +1944,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Una criatura versátil de tipo ghost. Gastly mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 93,
@@ -1905,7 +1965,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Una criatura versátil de tipo ghost. Haunter mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 94,
@@ -1926,7 +1986,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Consciente de su poder, Gengar ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo ghost. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 95,
@@ -1947,7 +2007,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Una criatura versátil de tipo rock. Onix mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 96,
@@ -1967,7 +2027,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Drowzee mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 97,
@@ -1987,7 +2047,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Hypno es un muro infranqueable de tipo psychic. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 98,
@@ -2007,7 +2067,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Krabby ataca sin piedad. Sus 210 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 99,
@@ -2027,7 +2087,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Kingler ataca sin piedad. Sus 260 puntos de ataque físico lo convierten en un depredador implacable de tipo water. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 100,
@@ -2047,7 +2107,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Una criatura versátil de tipo electric. Voltorb mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 101,
@@ -2067,7 +2127,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Una criatura versátil de tipo electric. Electrode mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 102,
@@ -2088,7 +2148,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Exeggcute mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 103,
@@ -2109,7 +2169,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Exeggutor es un muro infranqueable de tipo grass. Su asombrosa defensa de 170 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 104,
@@ -2129,7 +2189,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Una criatura versátil de tipo ground. Cubone mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 105,
@@ -2149,7 +2209,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Consciente de su poder, Marowak ataca sin piedad. Sus 160 puntos de ataque físico lo convierten en un depredador implacable de tipo ground. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 106,
@@ -2169,7 +2229,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Consciente de su poder, Hitmonlee ataca sin piedad. Sus 240 puntos de ataque físico lo convierten en un depredador implacable de tipo fighting. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 107,
@@ -2189,7 +2249,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Consciente de su poder, Hitmonchan ataca sin piedad. Sus 210 puntos de ataque físico lo convierten en un depredador implacable de tipo fighting. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 108,
@@ -2209,7 +2269,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Lickitung es un muro infranqueable de tipo normal. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 109,
@@ -2229,7 +2289,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Consciente de su poder, Koffing ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo poison."
   },
   {
     "id": 110,
@@ -2249,7 +2309,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Weezing es un muro infranqueable de tipo poison. Su asombrosa defensa de 240 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 111,
@@ -2270,7 +2330,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Rhyhorn es un muro infranqueable de tipo ground. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 112,
@@ -2291,7 +2351,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Rhydon es un muro infranqueable de tipo ground. Su asombrosa defensa de 240 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 113,
@@ -2311,7 +2371,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 13,
     "rarity": "legendary",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Chansey mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 114,
@@ -2331,7 +2391,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Tangela es un muro infranqueable de tipo grass. Su asombrosa defensa de 230 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 115,
@@ -2351,7 +2411,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Kangaskhan es un muro infranqueable de tipo normal. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 116,
@@ -2371,7 +2431,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Horsea mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 117,
@@ -2391,7 +2451,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Seadra ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo water. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 118,
@@ -2411,7 +2471,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Goldeen ataca sin piedad. Sus 134 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 119,
@@ -2431,7 +2491,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Seaking es un muro infranqueable de tipo water. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 120,
@@ -2451,7 +2511,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Staryu mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 121,
@@ -2472,7 +2532,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Starmie ataca sin piedad. Sus 150 puntos de ataque físico lo convierten en un depredador implacable de tipo water. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 122,
@@ -2493,7 +2553,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Mr-mime mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 123,
@@ -2514,7 +2574,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Scyther es un muro infranqueable de tipo bug. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 124,
@@ -2535,7 +2595,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Una criatura versátil de tipo ice. Jynx mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 125,
@@ -2555,7 +2615,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Electabuzz es un muro infranqueable de tipo electric. Su asombrosa defensa de 114 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 126,
@@ -2575,7 +2635,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Magmar es un muro infranqueable de tipo fire. Su asombrosa defensa de 114 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 127,
@@ -2595,7 +2655,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Pinsir es un muro infranqueable de tipo bug. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 128,
@@ -2615,7 +2675,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Tauros es un muro infranqueable de tipo normal. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 129,
@@ -2635,7 +2695,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Magikarp mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 130,
@@ -2656,7 +2716,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Gyarados es un muro infranqueable de tipo water. Su asombrosa defensa de 158 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 131,
@@ -2677,7 +2737,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Lapras es un muro infranqueable de tipo water. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 132,
@@ -2697,7 +2757,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Ditto mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 133,
@@ -2717,7 +2777,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Eevee ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo normal."
   },
   {
     "id": 134,
@@ -2737,7 +2797,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Vaporeon es un muro infranqueable de tipo water. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 135,
@@ -2757,7 +2817,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Jolteon es un muro infranqueable de tipo electric. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 136,
@@ -2777,7 +2837,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Flareon es un muro infranqueable de tipo fire. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 137,
@@ -2797,7 +2857,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Porygon es un muro infranqueable de tipo normal. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 138,
@@ -2818,7 +2878,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Una criatura versátil de tipo rock. Omanyte mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 139,
@@ -2839,7 +2899,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Omastar es un muro infranqueable de tipo rock. Su asombrosa defensa de 250 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 140,
@@ -2860,7 +2920,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Consciente de su poder, Kabuto ataca sin piedad. Sus 160 puntos de ataque físico lo convierten en un depredador implacable de tipo rock."
   },
   {
     "id": 141,
@@ -2881,7 +2941,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Consciente de su poder, Kabutops ataca sin piedad. Sus 230 puntos de ataque físico lo convierten en un depredador implacable de tipo rock. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 142,
@@ -2902,7 +2962,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Aerodactyl es un muro infranqueable de tipo rock. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 143,
@@ -2922,7 +2982,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Snorlax es un muro infranqueable de tipo normal. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 144,
@@ -2943,7 +3003,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Articuno es un muro infranqueable de tipo ice. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 145,
@@ -2964,7 +3024,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Zapdos es un muro infranqueable de tipo electric. Su asombrosa defensa de 170 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 146,
@@ -2985,7 +3045,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Moltres es un muro infranqueable de tipo fire. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 147,
@@ -3005,7 +3065,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Consciente de su poder, Dratini ataca sin piedad. Sus 128 puntos de ataque físico lo convierten en un depredador implacable de tipo dragon."
   },
   {
     "id": 148,
@@ -3025,7 +3085,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Dragonair es un muro infranqueable de tipo dragon. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 149,
@@ -3046,7 +3106,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Dragonite es un muro infranqueable de tipo dragon. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 150,
@@ -3066,7 +3126,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Mewtwo es un muro infranqueable de tipo psychic. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 151,
@@ -3086,7 +3146,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Mew es un muro infranqueable de tipo psychic. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 152,
@@ -3106,7 +3166,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Chikorita mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 153,
@@ -3126,7 +3186,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Bayleef ataca sin piedad. Sus 124 puntos de ataque físico lo convierten en un depredador implacable de tipo grass. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 154,
@@ -3146,7 +3206,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Meganium es un muro infranqueable de tipo grass. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 155,
@@ -3166,7 +3226,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Consciente de su poder, Cyndaquil ataca sin piedad. Sus 104 puntos de ataque físico lo convierten en un depredador implacable de tipo fire."
   },
   {
     "id": 156,
@@ -3186,7 +3246,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Consciente de su poder, Quilava ataca sin piedad. Sus 128 puntos de ataque físico lo convierten en un depredador implacable de tipo fire. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 157,
@@ -3206,7 +3266,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Typhlosion es un muro infranqueable de tipo fire. Su asombrosa defensa de 156 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 158,
@@ -3226,7 +3286,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Totodile ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 159,
@@ -3246,7 +3306,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Croconaw es un muro infranqueable de tipo water. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 160,
@@ -3266,7 +3326,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Feraligatr es un muro infranqueable de tipo water. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 161,
@@ -3286,7 +3346,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Sentret mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 162,
@@ -3306,7 +3366,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Furret es un muro infranqueable de tipo normal. Su asombrosa defensa de 128 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 163,
@@ -3327,7 +3387,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Hoothoot mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 164,
@@ -3348,7 +3408,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Noctowl mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 165,
@@ -3369,7 +3429,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Ledyba mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 166,
@@ -3390,7 +3450,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Ledian mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 167,
@@ -3411,7 +3471,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Spinarak ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo bug."
   },
   {
     "id": 168,
@@ -3432,7 +3492,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Ariados es un muro infranqueable de tipo bug. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 169,
@@ -3453,7 +3513,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Crobat es un muro infranqueable de tipo poison. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 170,
@@ -3474,7 +3534,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Chinchou mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 171,
@@ -3495,7 +3555,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Lanturn es un muro infranqueable de tipo water. Su asombrosa defensa de 116 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 172,
@@ -3515,7 +3575,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Una criatura versátil de tipo electric. Pichu mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 173,
@@ -3535,7 +3595,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Una criatura versátil de tipo fairy. Cleffa mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 174,
@@ -3556,7 +3616,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Igglybuff mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 175,
@@ -3576,7 +3636,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Una criatura versátil de tipo fairy. Togepi mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 176,
@@ -3597,7 +3657,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Una criatura versátil de tipo fairy. Togetic mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 177,
@@ -3618,7 +3678,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Natu mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 178,
@@ -3639,7 +3699,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Xatu es un muro infranqueable de tipo psychic. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 179,
@@ -3659,7 +3719,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Una criatura versátil de tipo electric. Mareep mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 180,
@@ -3679,7 +3739,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Flaaffy es un muro infranqueable de tipo electric. Su asombrosa defensa de 110 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 181,
@@ -3699,7 +3759,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Ampharos es un muro infranqueable de tipo electric. Su asombrosa defensa de 170 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 182,
@@ -3719,7 +3779,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Bellossom es un muro infranqueable de tipo grass. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 183,
@@ -3740,7 +3800,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Marill mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 184,
@@ -3761,7 +3821,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Azumarill es un muro infranqueable de tipo water. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 185,
@@ -3781,7 +3841,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Sudowoodo es un muro infranqueable de tipo rock. Su asombrosa defensa de 230 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 186,
@@ -3801,7 +3861,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Politoed es un muro infranqueable de tipo water. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 187,
@@ -3822,7 +3882,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Hoppip mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 188,
@@ -3843,7 +3903,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Skiploom mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 189,
@@ -3864,7 +3924,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Jumpluff es un muro infranqueable de tipo grass. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 190,
@@ -3884,7 +3944,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Aipom ataca sin piedad. Sus 140 puntos de ataque físico lo convierten en un depredador implacable de tipo normal."
   },
   {
     "id": 191,
@@ -3904,7 +3964,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Sunkern mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 192,
@@ -3924,7 +3984,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Sunflora es un muro infranqueable de tipo grass. Su asombrosa defensa de 110 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 193,
@@ -3945,7 +4005,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Yanma ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo bug."
   },
   {
     "id": 194,
@@ -3966,7 +4026,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Wooper mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 195,
@@ -3987,7 +4047,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Quagsire es un muro infranqueable de tipo water. Su asombrosa defensa de 170 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 196,
@@ -4007,7 +4067,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Espeon es un muro infranqueable de tipo psychic. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 197,
@@ -4027,7 +4087,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Umbreon es un muro infranqueable de tipo dark. Su asombrosa defensa de 220 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 198,
@@ -4048,7 +4108,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Consciente de su poder, Murkrow ataca sin piedad. Sus 170 puntos de ataque físico lo convierten en un depredador implacable de tipo dark."
   },
   {
     "id": 199,
@@ -4069,7 +4129,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Slowking es un muro infranqueable de tipo water. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 200,
@@ -4089,7 +4149,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Consciente de su poder, Misdreavus ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo ghost."
   },
   {
     "id": 201,
@@ -4109,7 +4169,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "rare",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Consciente de su poder, Unown ataca sin piedad. Sus 144 puntos de ataque físico lo convierten en un depredador implacable de tipo psychic. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 202,
@@ -4129,7 +4189,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Wobbuffet es un muro infranqueable de tipo psychic. Su asombrosa defensa de 116 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 203,
@@ -4150,7 +4210,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Girafarig es un muro infranqueable de tipo normal. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 204,
@@ -4170,7 +4230,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Pineco ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo bug."
   },
   {
     "id": 205,
@@ -4191,7 +4251,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Forretress es un muro infranqueable de tipo bug. Su asombrosa defensa de 280 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 206,
@@ -4211,7 +4271,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Dunsparce es un muro infranqueable de tipo normal. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 207,
@@ -4232,7 +4292,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Gligar es un muro infranqueable de tipo ground. Su asombrosa defensa de 210 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 208,
@@ -4253,7 +4313,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Steelix es un muro infranqueable de tipo steel. Su asombrosa defensa de 400 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 209,
@@ -4273,7 +4333,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Consciente de su poder, Snubbull ataca sin piedad. Sus 160 puntos de ataque físico lo convierten en un depredador implacable de tipo fairy."
   },
   {
     "id": 210,
@@ -4293,7 +4353,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Granbull es un muro infranqueable de tipo fairy. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 211,
@@ -4314,7 +4374,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Qwilfish es un muro infranqueable de tipo water. Su asombrosa defensa de 170 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 212,
@@ -4335,7 +4395,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Scizor es un muro infranqueable de tipo bug. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 213,
@@ -4356,7 +4416,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Shuckle mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 214,
@@ -4377,7 +4437,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Heracross es un muro infranqueable de tipo bug. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 215,
@@ -4398,7 +4458,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Consciente de su poder, Sneasel ataca sin piedad. Sus 190 puntos de ataque físico lo convierten en un depredador implacable de tipo dark."
   },
   {
     "id": 216,
@@ -4418,7 +4478,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Teddiursa ataca sin piedad. Sus 160 puntos de ataque físico lo convierten en un depredador implacable de tipo normal."
   },
   {
     "id": 217,
@@ -4438,7 +4498,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Ursaring es un muro infranqueable de tipo normal. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 218,
@@ -4458,7 +4518,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Una criatura versátil de tipo fire. Slugma mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 219,
@@ -4479,7 +4539,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Una criatura versátil de tipo fire. Magcargo mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 220,
@@ -4500,7 +4560,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Una criatura versátil de tipo ice. Swinub mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 221,
@@ -4521,7 +4581,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Piloswine es un muro infranqueable de tipo ice. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 222,
@@ -4542,7 +4602,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Corsola es un muro infranqueable de tipo water. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 223,
@@ -4562,7 +4622,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Remoraid ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 224,
@@ -4582,7 +4642,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Octillery es un muro infranqueable de tipo water. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 225,
@@ -4603,7 +4663,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "rare",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Consciente de su poder, Delibird ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo ice. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 226,
@@ -4624,7 +4684,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Mantine es un muro infranqueable de tipo water. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 227,
@@ -4645,7 +4705,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Skarmory es un muro infranqueable de tipo steel. Su asombrosa defensa de 280 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 228,
@@ -4666,7 +4726,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Consciente de su poder, Houndour ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo dark."
   },
   {
     "id": 229,
@@ -4687,7 +4747,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Consciente de su poder, Houndoom ataca sin piedad. Sus 180 puntos de ataque físico lo convierten en un depredador implacable de tipo dark. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 230,
@@ -4708,7 +4768,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Kingdra es un muro infranqueable de tipo water. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 231,
@@ -4728,7 +4788,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Phanpy es un muro infranqueable de tipo ground. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 232,
@@ -4748,7 +4808,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Donphan es un muro infranqueable de tipo ground. Su asombrosa defensa de 240 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 233,
@@ -4768,7 +4828,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Porygon2 es un muro infranqueable de tipo normal. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 234,
@@ -4788,7 +4848,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Stantler es un muro infranqueable de tipo normal. Su asombrosa defensa de 124 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 235,
@@ -4808,7 +4868,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Smeargle mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 236,
@@ -4828,7 +4888,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Una criatura versátil de tipo fighting. Tyrogue mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 237,
@@ -4848,7 +4908,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Consciente de su poder, Hitmontop ataca sin piedad. Sus 190 puntos de ataque físico lo convierten en un depredador implacable de tipo fighting. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 238,
@@ -4869,7 +4929,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Una criatura versátil de tipo ice. Smoochum mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 239,
@@ -4889,7 +4949,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Consciente de su poder, Elekid ataca sin piedad. Sus 126 puntos de ataque físico lo convierten en un depredador implacable de tipo electric."
   },
   {
     "id": 240,
@@ -4909,7 +4969,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Consciente de su poder, Magby ataca sin piedad. Sus 150 puntos de ataque físico lo convierten en un depredador implacable de tipo fire."
   },
   {
     "id": 241,
@@ -4929,7 +4989,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Miltank es un muro infranqueable de tipo normal. Su asombrosa defensa de 210 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 242,
@@ -4949,7 +5009,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 20,
     "rarity": "legendary",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Blissey mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 243,
@@ -4969,7 +5029,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Raikou es un muro infranqueable de tipo electric. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 244,
@@ -4989,7 +5049,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Entei es un muro infranqueable de tipo fire. Su asombrosa defensa de 170 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 245,
@@ -5009,7 +5069,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Suicune es un muro infranqueable de tipo water. Su asombrosa defensa de 230 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 246,
@@ -5030,7 +5090,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Consciente de su poder, Larvitar ataca sin piedad. Sus 128 puntos de ataque físico lo convierten en un depredador implacable de tipo rock."
   },
   {
     "id": 247,
@@ -5051,7 +5111,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Pupitar es un muro infranqueable de tipo rock. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 248,
@@ -5072,7 +5132,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Tyranitar es un muro infranqueable de tipo rock. Su asombrosa defensa de 220 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 249,
@@ -5093,7 +5153,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Lugia es un muro infranqueable de tipo psychic. Su asombrosa defensa de 260 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 250,
@@ -5114,7 +5174,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Ho-oh es un muro infranqueable de tipo fire. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 251,
@@ -5135,7 +5195,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Celebi es un muro infranqueable de tipo psychic. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 252,
@@ -5155,7 +5215,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Treecko mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 253,
@@ -5175,7 +5235,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Grovyle ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo grass. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 254,
@@ -5195,7 +5255,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Sceptile es un muro infranqueable de tipo grass. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 255,
@@ -5215,7 +5275,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Consciente de su poder, Torchic ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo fire."
   },
   {
     "id": 256,
@@ -5236,7 +5296,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Consciente de su poder, Combusken ataca sin piedad. Sus 170 puntos de ataque físico lo convierten en un depredador implacable de tipo fire. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 257,
@@ -5257,7 +5317,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Blaziken es un muro infranqueable de tipo fire. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 258,
@@ -5277,7 +5337,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Mudkip ataca sin piedad. Sus 140 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 259,
@@ -5298,7 +5358,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Marshtomp es un muro infranqueable de tipo water. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 260,
@@ -5319,7 +5379,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Swampert es un muro infranqueable de tipo water. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 261,
@@ -5339,7 +5399,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Consciente de su poder, Poochyena ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo dark."
   },
   {
     "id": 262,
@@ -5359,7 +5419,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Mightyena es un muro infranqueable de tipo dark. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 263,
@@ -5379,7 +5439,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Zigzagoon mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 264,
@@ -5399,7 +5459,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Linoone es un muro infranqueable de tipo normal. Su asombrosa defensa de 122 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 265,
@@ -5419,7 +5479,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Wurmple mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 266,
@@ -5439,7 +5499,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Silcoon mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 267,
@@ -5460,7 +5520,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Beautifly ataca sin piedad. Sus 140 puntos de ataque físico lo convierten en un depredador implacable de tipo bug. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 268,
@@ -5480,7 +5540,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Cascoon mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 269,
@@ -5501,7 +5561,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Dustox mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 270,
@@ -5522,7 +5582,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Lotad mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 271,
@@ -5543,7 +5603,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Lombre mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 272,
@@ -5564,7 +5624,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Ludicolo es un muro infranqueable de tipo water. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 273,
@@ -5584,7 +5644,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Seedot mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 274,
@@ -5605,7 +5665,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Nuzleaf ataca sin piedad. Sus 140 puntos de ataque físico lo convierten en un depredador implacable de tipo grass. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 275,
@@ -5626,7 +5686,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Shiftry es un muro infranqueable de tipo grass. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 276,
@@ -5647,7 +5707,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Taillow ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo normal."
   },
   {
     "id": 277,
@@ -5668,7 +5728,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Swellow ataca sin piedad. Sus 170 puntos de ataque físico lo convierten en un depredador implacable de tipo normal. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 278,
@@ -5689,7 +5749,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Wingull mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 279,
@@ -5710,7 +5770,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Pelipper mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 280,
@@ -5731,7 +5791,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Ralts mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 281,
@@ -5752,7 +5812,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "common",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Kirlia mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 282,
@@ -5773,7 +5833,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Gardevoir es un muro infranqueable de tipo psychic. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 283,
@@ -5794,7 +5854,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Surskit mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 284,
@@ -5815,7 +5875,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Masquerain es un muro infranqueable de tipo bug. Su asombrosa defensa de 124 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 285,
@@ -5835,7 +5895,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Shroomish mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 286,
@@ -5856,7 +5916,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Breloom ataca sin piedad. Sus 260 puntos de ataque físico lo convierten en un depredador implacable de tipo grass. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 287,
@@ -5876,7 +5936,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Slakoth ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo normal."
   },
   {
     "id": 288,
@@ -5896,7 +5956,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Vigoroth es un muro infranqueable de tipo normal. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 289,
@@ -5916,7 +5976,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Slaking es un muro infranqueable de tipo normal. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 290,
@@ -5937,7 +5997,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Nincada mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 291,
@@ -5958,7 +6018,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Ninjask ataca sin piedad. Sus 180 puntos de ataque físico lo convierten en un depredador implacable de tipo bug. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 292,
@@ -5979,7 +6039,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Shedinja ataca sin piedad. Sus 180 puntos de ataque físico lo convierten en un depredador implacable de tipo bug."
   },
   {
     "id": 293,
@@ -5999,7 +6059,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Whismur ataca sin piedad. Sus 102 puntos de ataque físico lo convierten en un depredador implacable de tipo normal."
   },
   {
     "id": 294,
@@ -6019,7 +6079,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Loudred ataca sin piedad. Sus 142 puntos de ataque físico lo convierten en un depredador implacable de tipo normal. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 295,
@@ -6039,7 +6099,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Exploud es un muro infranqueable de tipo normal. Su asombrosa defensa de 126 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 296,
@@ -6059,7 +6119,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Consciente de su poder, Makuhita ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo fighting."
   },
   {
     "id": 297,
@@ -6079,7 +6139,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Hariyama es un muro infranqueable de tipo fighting. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 298,
@@ -6100,7 +6160,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Azurill mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 299,
@@ -6120,7 +6180,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Una criatura versátil de tipo rock. Nosepass mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 300,
@@ -6140,7 +6200,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Skitty mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 301,
@@ -6160,7 +6220,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Delcatty es un muro infranqueable de tipo normal. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 302,
@@ -6181,7 +6241,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Consciente de su poder, Sableye ataca sin piedad. Sus 150 puntos de ataque físico lo convierten en un depredador implacable de tipo dark. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 303,
@@ -6202,7 +6262,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Consciente de su poder, Mawile ataca sin piedad. Sus 170 puntos de ataque físico lo convierten en un depredador implacable de tipo steel. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 304,
@@ -6223,7 +6283,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Consciente de su poder, Aron ataca sin piedad. Sus 140 puntos de ataque físico lo convierten en un depredador implacable de tipo steel."
   },
   {
     "id": 305,
@@ -6244,7 +6304,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Consciente de su poder, Lairon ataca sin piedad. Sus 180 puntos de ataque físico lo convierten en un depredador implacable de tipo steel. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 306,
@@ -6265,7 +6325,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Aggron es un muro infranqueable de tipo steel. Su asombrosa defensa de 360 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 307,
@@ -6286,7 +6346,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Una criatura versátil de tipo fighting. Meditite mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 308,
@@ -6307,7 +6367,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Consciente de su poder, Medicham ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo fighting. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 309,
@@ -6327,7 +6387,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Una criatura versátil de tipo electric. Electrike mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 310,
@@ -6347,7 +6407,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Manectric es un muro infranqueable de tipo electric. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 311,
@@ -6367,7 +6427,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Una criatura versátil de tipo electric. Plusle mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 312,
@@ -6387,7 +6447,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Una criatura versátil de tipo electric. Minun mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 313,
@@ -6407,7 +6467,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Volbeat es un muro infranqueable de tipo bug. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 314,
@@ -6427,7 +6487,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Illumise es un muro infranqueable de tipo bug. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 315,
@@ -6448,7 +6508,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Roselia ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo grass. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 316,
@@ -6468,7 +6528,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Gulpin es un muro infranqueable de tipo poison. Su asombrosa defensa de 106 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 317,
@@ -6488,7 +6548,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Swalot es un muro infranqueable de tipo poison. Su asombrosa defensa de 166 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 318,
@@ -6509,7 +6569,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Carvanha ataca sin piedad. Sus 180 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 319,
@@ -6530,7 +6590,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Sharpedo ataca sin piedad. Sus 240 puntos de ataque físico lo convierten en un depredador implacable de tipo water. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 320,
@@ -6550,7 +6610,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Wailmer ataca sin piedad. Sus 140 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 321,
@@ -6570,7 +6630,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Wailord ataca sin piedad. Sus 180 puntos de ataque físico lo convierten en un depredador implacable de tipo water. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 322,
@@ -6591,7 +6651,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Consciente de su poder, Numel ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo fire."
   },
   {
     "id": 323,
@@ -6612,7 +6672,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Camerupt es un muro infranqueable de tipo fire. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 324,
@@ -6632,7 +6692,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Torkoal es un muro infranqueable de tipo fire. Su asombrosa defensa de 280 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 325,
@@ -6652,7 +6712,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Spoink mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 326,
@@ -6672,7 +6732,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Grumpig es un muro infranqueable de tipo psychic. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 327,
@@ -6692,7 +6752,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Spinda ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo normal. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 328,
@@ -6712,7 +6772,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Consciente de su poder, Trapinch ataca sin piedad. Sus 200 puntos de ataque físico lo convierten en un depredador implacable de tipo ground."
   },
   {
     "id": 329,
@@ -6733,7 +6793,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "rare",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Consciente de su poder, Vibrava ataca sin piedad. Sus 140 puntos de ataque físico lo convierten en un depredador implacable de tipo ground. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 330,
@@ -6754,7 +6814,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Flygon es un muro infranqueable de tipo ground. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 331,
@@ -6774,7 +6834,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Cacnea ataca sin piedad. Sus 170 puntos de ataque físico lo convierten en un depredador implacable de tipo grass."
   },
   {
     "id": 332,
@@ -6795,7 +6855,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Cacturne es un muro infranqueable de tipo grass. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 333,
@@ -6816,7 +6876,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Swablu mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 334,
@@ -6837,7 +6897,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Altaria es un muro infranqueable de tipo dragon. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 335,
@@ -6857,7 +6917,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Zangoose es un muro infranqueable de tipo normal. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 336,
@@ -6877,7 +6937,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Seviper es un muro infranqueable de tipo poison. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 337,
@@ -6898,7 +6958,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Lunatone es un muro infranqueable de tipo rock. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 338,
@@ -6919,7 +6979,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Solrock es un muro infranqueable de tipo rock. Su asombrosa defensa de 170 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 339,
@@ -6940,7 +7000,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Barboach mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 340,
@@ -6961,7 +7021,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Whiscash es un muro infranqueable de tipo water. Su asombrosa defensa de 146 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 341,
@@ -6981,7 +7041,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Corphish ataca sin piedad. Sus 160 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 342,
@@ -7002,7 +7062,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Crawdaunt es un muro infranqueable de tipo water. Su asombrosa defensa de 170 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 343,
@@ -7023,7 +7083,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Una criatura versátil de tipo ground. Baltoy mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 344,
@@ -7044,7 +7104,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Consciente de su poder, Claydol ataca sin piedad. Sus 140 puntos de ataque físico lo convierten en un depredador implacable de tipo ground. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 345,
@@ -7065,7 +7125,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Lileep es un muro infranqueable de tipo rock. Su asombrosa defensa de 154 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 346,
@@ -7086,7 +7146,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Cradily es un muro infranqueable de tipo rock. Su asombrosa defensa de 194 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 347,
@@ -7107,7 +7167,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Consciente de su poder, Anorith ataca sin piedad. Sus 190 puntos de ataque físico lo convierten en un depredador implacable de tipo rock."
   },
   {
     "id": 348,
@@ -7128,7 +7188,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Armaldo es un muro infranqueable de tipo rock. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 349,
@@ -7148,7 +7208,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Feebas mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 350,
@@ -7168,7 +7228,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Milotic es un muro infranqueable de tipo water. Su asombrosa defensa de 158 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 351,
@@ -7188,7 +7248,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Castform es un muro infranqueable de tipo normal. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 352,
@@ -7208,7 +7268,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Kecleon ataca sin piedad. Sus 180 puntos de ataque físico lo convierten en un depredador implacable de tipo normal. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 353,
@@ -7228,7 +7288,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Consciente de su poder, Shuppet ataca sin piedad. Sus 150 puntos de ataque físico lo convierten en un depredador implacable de tipo ghost."
   },
   {
     "id": 354,
@@ -7248,7 +7308,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Banette es un muro infranqueable de tipo ghost. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 355,
@@ -7268,7 +7328,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Una criatura versátil de tipo ghost. Duskull mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 356,
@@ -7288,7 +7348,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Consciente de su poder, Dusclops ataca sin piedad. Sus 140 puntos de ataque físico lo convierten en un depredador implacable de tipo ghost. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 357,
@@ -7309,7 +7369,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Tropius es un muro infranqueable de tipo grass. Su asombrosa defensa de 166 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 358,
@@ -7329,7 +7389,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Chimecho es un muro infranqueable de tipo psychic. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 359,
@@ -7349,7 +7409,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Absol es un muro infranqueable de tipo dark. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 360,
@@ -7369,7 +7429,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Wynaut mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 361,
@@ -7389,7 +7449,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Una criatura versátil de tipo ice. Snorunt mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 362,
@@ -7409,7 +7469,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Glalie es un muro infranqueable de tipo ice. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 363,
@@ -7430,7 +7490,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Una criatura versátil de tipo ice. Spheal mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 364,
@@ -7451,7 +7511,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Sealeo es un muro infranqueable de tipo ice. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 365,
@@ -7472,7 +7532,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Walrein es un muro infranqueable de tipo ice. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 366,
@@ -7492,7 +7552,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Clamperl ataca sin piedad. Sus 128 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 367,
@@ -7512,7 +7572,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Huntail ataca sin piedad. Sus 208 puntos de ataque físico lo convierten en un depredador implacable de tipo water. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 368,
@@ -7532,7 +7592,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Gorebyss ataca sin piedad. Sus 168 puntos de ataque físico lo convierten en un depredador implacable de tipo water. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 369,
@@ -7553,7 +7613,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Relicanth es un muro infranqueable de tipo water. Su asombrosa defensa de 260 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 370,
@@ -7573,7 +7633,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Luvdisc mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 371,
@@ -7593,7 +7653,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Consciente de su poder, Bagon ataca sin piedad. Sus 150 puntos de ataque físico lo convierten en un depredador implacable de tipo dragon."
   },
   {
     "id": 372,
@@ -7613,7 +7673,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Shelgon es un muro infranqueable de tipo dragon. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 373,
@@ -7634,7 +7694,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Salamence es un muro infranqueable de tipo dragon. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 374,
@@ -7655,7 +7715,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Consciente de su poder, Beldum ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo steel."
   },
   {
     "id": 375,
@@ -7676,7 +7736,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Consciente de su poder, Metang ataca sin piedad. Sus 150 puntos de ataque físico lo convierten en un depredador implacable de tipo steel. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 376,
@@ -7697,7 +7757,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Metagross es un muro infranqueable de tipo steel. Su asombrosa defensa de 260 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 377,
@@ -7717,7 +7777,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Regirock es un muro infranqueable de tipo rock. Su asombrosa defensa de 400 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 378,
@@ -7737,7 +7797,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Regice es un muro infranqueable de tipo ice. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 379,
@@ -7757,7 +7817,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Registeel es un muro infranqueable de tipo steel. Su asombrosa defensa de 300 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 380,
@@ -7778,7 +7838,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Latias es un muro infranqueable de tipo dragon. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 381,
@@ -7799,7 +7859,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Latios es un muro infranqueable de tipo dragon. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 382,
@@ -7819,7 +7879,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Kyogre es un muro infranqueable de tipo water. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 383,
@@ -7839,7 +7899,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Groudon es un muro infranqueable de tipo ground. Su asombrosa defensa de 280 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 384,
@@ -7860,7 +7920,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Rayquaza es un muro infranqueable de tipo dragon. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 385,
@@ -7881,7 +7941,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Jirachi es un muro infranqueable de tipo steel. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 386,
@@ -7901,7 +7961,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Consciente de su poder, Deoxys-normal ataca sin piedad. Sus 300 puntos de ataque físico lo convierten en un depredador implacable de tipo psychic. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 387,
@@ -7921,7 +7981,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Turtwig ataca sin piedad. Sus 136 puntos de ataque físico lo convierten en un depredador implacable de tipo grass."
   },
   {
     "id": 388,
@@ -7941,7 +8001,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Grotle es un muro infranqueable de tipo grass. Su asombrosa defensa de 170 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 389,
@@ -7962,7 +8022,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Torterra es un muro infranqueable de tipo grass. Su asombrosa defensa de 210 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 390,
@@ -7982,7 +8042,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Consciente de su poder, Chimchar ataca sin piedad. Sus 116 puntos de ataque físico lo convierten en un depredador implacable de tipo fire."
   },
   {
     "id": 391,
@@ -8003,7 +8063,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Monferno es un muro infranqueable de tipo fire. Su asombrosa defensa de 104 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 392,
@@ -8024,7 +8084,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Infernape es un muro infranqueable de tipo fire. Su asombrosa defensa de 142 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 393,
@@ -8044,7 +8104,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Piplup ataca sin piedad. Sus 102 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 394,
@@ -8064,7 +8124,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Prinplup es un muro infranqueable de tipo water. Su asombrosa defensa de 136 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 395,
@@ -8085,7 +8145,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Empoleon es un muro infranqueable de tipo water. Su asombrosa defensa de 176 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 396,
@@ -8106,7 +8166,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Starly ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo normal."
   },
   {
     "id": 397,
@@ -8127,7 +8187,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Staravia ataca sin piedad. Sus 150 puntos de ataque físico lo convierten en un depredador implacable de tipo normal. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 398,
@@ -8148,7 +8208,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Staraptor es un muro infranqueable de tipo normal. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 399,
@@ -8168,7 +8228,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Bidoof mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 400,
@@ -8189,7 +8249,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Bibarel es un muro infranqueable de tipo normal. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 401,
@@ -8209,7 +8269,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Kricketot mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 402,
@@ -8229,7 +8289,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Kricketune es un muro infranqueable de tipo bug. Su asombrosa defensa de 102 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 403,
@@ -8249,7 +8309,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Consciente de su poder, Shinx ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo electric."
   },
   {
     "id": 404,
@@ -8269,7 +8329,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Consciente de su poder, Luxio ataca sin piedad. Sus 170 puntos de ataque físico lo convierten en un depredador implacable de tipo electric. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 405,
@@ -8289,7 +8349,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Luxray es un muro infranqueable de tipo electric. Su asombrosa defensa de 158 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 406,
@@ -8310,7 +8370,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Budew mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 407,
@@ -8331,7 +8391,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Roserade ataca sin piedad. Sus 140 puntos de ataque físico lo convierten en un depredador implacable de tipo grass. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 408,
@@ -8351,7 +8411,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Consciente de su poder, Cranidos ataca sin piedad. Sus 250 puntos de ataque físico lo convierten en un depredador implacable de tipo rock."
   },
   {
     "id": 409,
@@ -8371,7 +8431,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Rampardos es un muro infranqueable de tipo rock. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 410,
@@ -8392,7 +8452,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Una criatura versátil de tipo rock. Shieldon mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 411,
@@ -8413,7 +8473,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Consciente de su poder, Bastiodon ataca sin piedad. Sus 104 puntos de ataque físico lo convierten en un depredador implacable de tipo rock. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 412,
@@ -8433,7 +8493,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Burmy mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 413,
@@ -8454,7 +8514,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Wormadam-plant ataca sin piedad. Sus 118 puntos de ataque físico lo convierten en un depredador implacable de tipo bug. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 414,
@@ -8475,7 +8535,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Mothim ataca sin piedad. Sus 188 puntos de ataque físico lo convierten en un depredador implacable de tipo bug. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 415,
@@ -8496,7 +8556,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Combee mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 416,
@@ -8517,7 +8577,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Vespiquen es un muro infranqueable de tipo bug. Su asombrosa defensa de 204 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 417,
@@ -8537,7 +8597,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Una criatura versátil de tipo electric. Pachirisu mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 418,
@@ -8557,7 +8617,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Buizel ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 419,
@@ -8577,7 +8637,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Floatzel es un muro infranqueable de tipo water. Su asombrosa defensa de 110 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 420,
@@ -8597,7 +8657,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Cherubi mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 421,
@@ -8617,7 +8677,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Cherrim es un muro infranqueable de tipo grass. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 422,
@@ -8637,7 +8697,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Shellos mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 423,
@@ -8658,7 +8718,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Gastrodon es un muro infranqueable de tipo water. Su asombrosa defensa de 136 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 424,
@@ -8678,7 +8738,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Ambipom es un muro infranqueable de tipo normal. Su asombrosa defensa de 132 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 425,
@@ -8699,7 +8759,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Una criatura versátil de tipo ghost. Drifloon mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 426,
@@ -8720,7 +8780,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Consciente de su poder, Drifblim ataca sin piedad. Sus 160 puntos de ataque físico lo convierten en un depredador implacable de tipo ghost. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 427,
@@ -8740,7 +8800,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Buneary ataca sin piedad. Sus 132 puntos de ataque físico lo convierten en un depredador implacable de tipo normal."
   },
   {
     "id": 428,
@@ -8760,7 +8820,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Lopunny es un muro infranqueable de tipo normal. Su asombrosa defensa de 168 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 429,
@@ -8780,7 +8840,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Consciente de su poder, Mismagius ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo ghost. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 430,
@@ -8801,7 +8861,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Honchkrow es un muro infranqueable de tipo dark. Su asombrosa defensa de 104 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 431,
@@ -8821,7 +8881,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Glameow ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo normal."
   },
   {
     "id": 432,
@@ -8841,7 +8901,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Purugly es un muro infranqueable de tipo normal. Su asombrosa defensa de 128 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 433,
@@ -8861,7 +8921,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Chingling mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 434,
@@ -8882,7 +8942,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Consciente de su poder, Stunky ataca sin piedad. Sus 126 puntos de ataque físico lo convierten en un depredador implacable de tipo poison."
   },
   {
     "id": 435,
@@ -8903,7 +8963,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Skuntank es un muro infranqueable de tipo poison. Su asombrosa defensa de 134 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 436,
@@ -8924,7 +8984,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Una criatura versátil de tipo steel. Bronzor mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 437,
@@ -8945,7 +9005,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Bronzong es un muro infranqueable de tipo steel. Su asombrosa defensa de 232 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 438,
@@ -8965,7 +9025,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Consciente de su poder, Bonsly ataca sin piedad. Sus 160 puntos de ataque físico lo convierten en un depredador implacable de tipo rock."
   },
   {
     "id": 439,
@@ -8986,7 +9046,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Mime-jr mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 440,
@@ -9006,7 +9066,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Happiny mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 441,
@@ -9027,7 +9087,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Chatot ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo normal. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 442,
@@ -9048,7 +9108,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Consciente de su poder, Spiritomb ataca sin piedad. Sus 184 puntos de ataque físico lo convierten en un depredador implacable de tipo ghost. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 443,
@@ -9069,7 +9129,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Consciente de su poder, Gible ataca sin piedad. Sus 140 puntos de ataque físico lo convierten en un depredador implacable de tipo dragon."
   },
   {
     "id": 444,
@@ -9090,7 +9150,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Gabite es un muro infranqueable de tipo dragon. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 445,
@@ -9111,7 +9171,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Garchomp es un muro infranqueable de tipo dragon. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 446,
@@ -9131,7 +9191,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Munchlax ataca sin piedad. Sus 170 puntos de ataque físico lo convierten en un depredador implacable de tipo normal."
   },
   {
     "id": 447,
@@ -9151,7 +9211,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Consciente de su poder, Riolu ataca sin piedad. Sus 140 puntos de ataque físico lo convierten en un depredador implacable de tipo fighting."
   },
   {
     "id": 448,
@@ -9172,7 +9232,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Lucario es un muro infranqueable de tipo fighting. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 449,
@@ -9192,7 +9252,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Hippopotas es un muro infranqueable de tipo ground. Su asombrosa defensa de 156 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 450,
@@ -9212,7 +9272,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Hippowdon es un muro infranqueable de tipo ground. Su asombrosa defensa de 236 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 451,
@@ -9233,7 +9293,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Una criatura versátil de tipo poison. Skorupi mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 452,
@@ -9254,7 +9314,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Drapion es un muro infranqueable de tipo poison. Su asombrosa defensa de 220 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 453,
@@ -9275,7 +9335,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Consciente de su poder, Croagunk ataca sin piedad. Sus 122 puntos de ataque físico lo convierten en un depredador implacable de tipo poison."
   },
   {
     "id": 454,
@@ -9296,7 +9356,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Toxicroak es un muro infranqueable de tipo poison. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 455,
@@ -9316,7 +9376,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Carnivine es un muro infranqueable de tipo grass. Su asombrosa defensa de 144 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 456,
@@ -9336,7 +9396,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Finneon mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 457,
@@ -9356,7 +9416,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Lumineon es un muro infranqueable de tipo water. Su asombrosa defensa de 152 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 458,
@@ -9377,7 +9437,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Mantyke mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 459,
@@ -9398,7 +9458,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Snover ataca sin piedad. Sus 124 puntos de ataque físico lo convierten en un depredador implacable de tipo grass."
   },
   {
     "id": 460,
@@ -9419,7 +9479,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Abomasnow es un muro infranqueable de tipo grass. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 461,
@@ -9440,7 +9500,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Weavile es un muro infranqueable de tipo dark. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 462,
@@ -9461,7 +9521,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Magnezone es un muro infranqueable de tipo electric. Su asombrosa defensa de 230 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 463,
@@ -9481,7 +9541,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Lickilicky es un muro infranqueable de tipo normal. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 464,
@@ -9502,7 +9562,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Rhyperior es un muro infranqueable de tipo ground. Su asombrosa defensa de 260 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 465,
@@ -9522,7 +9582,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Tangrowth es un muro infranqueable de tipo grass. Su asombrosa defensa de 250 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 466,
@@ -9542,7 +9602,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Electivire es un muro infranqueable de tipo electric. Su asombrosa defensa de 134 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 467,
@@ -9562,7 +9622,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Magmortar es un muro infranqueable de tipo fire. Su asombrosa defensa de 134 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 468,
@@ -9583,7 +9643,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Togekiss es un muro infranqueable de tipo fairy. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 469,
@@ -9604,7 +9664,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Yanmega es un muro infranqueable de tipo bug. Su asombrosa defensa de 172 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 470,
@@ -9624,7 +9684,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Leafeon es un muro infranqueable de tipo grass. Su asombrosa defensa de 260 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 471,
@@ -9644,7 +9704,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Glaceon es un muro infranqueable de tipo ice. Su asombrosa defensa de 220 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 472,
@@ -9665,7 +9725,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Gliscor es un muro infranqueable de tipo ground. Su asombrosa defensa de 250 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 473,
@@ -9686,7 +9746,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Mamoswine es un muro infranqueable de tipo ice. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 474,
@@ -9706,7 +9766,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Porygon-z es un muro infranqueable de tipo normal. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 475,
@@ -9727,7 +9787,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Gallade es un muro infranqueable de tipo psychic. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 476,
@@ -9748,7 +9808,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Consciente de su poder, Probopass ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo rock. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 477,
@@ -9768,7 +9828,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Consciente de su poder, Dusknoir ataca sin piedad. Sus 200 puntos de ataque físico lo convierten en un depredador implacable de tipo ghost. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 478,
@@ -9789,7 +9849,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Froslass es un muro infranqueable de tipo ice. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 479,
@@ -9810,7 +9870,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Una criatura versátil de tipo electric. Rotom mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 480,
@@ -9830,7 +9890,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Uxie es un muro infranqueable de tipo psychic. Su asombrosa defensa de 260 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 481,
@@ -9850,7 +9910,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Mesprit es un muro infranqueable de tipo psychic. Su asombrosa defensa de 210 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 482,
@@ -9870,7 +9930,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Azelf es un muro infranqueable de tipo psychic. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 483,
@@ -9891,7 +9951,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Dialga es un muro infranqueable de tipo steel. Su asombrosa defensa de 240 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 484,
@@ -9912,7 +9972,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Palkia es un muro infranqueable de tipo water. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 485,
@@ -9933,7 +9993,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Heatran es un muro infranqueable de tipo fire. Su asombrosa defensa de 212 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 486,
@@ -9953,7 +10013,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Regigigas es un muro infranqueable de tipo normal. Su asombrosa defensa de 220 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 487,
@@ -9974,7 +10034,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Giratina-altered es un muro infranqueable de tipo ghost. Su asombrosa defensa de 240 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 488,
@@ -9994,7 +10054,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Cresselia es un muro infranqueable de tipo psychic. Su asombrosa defensa de 220 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 489,
@@ -10014,7 +10074,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Phione es un muro infranqueable de tipo water. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 490,
@@ -10034,7 +10094,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Manaphy es un muro infranqueable de tipo water. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 491,
@@ -10054,7 +10114,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Darkrai es un muro infranqueable de tipo dark. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 492,
@@ -10074,7 +10134,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Shaymin-land es un muro infranqueable de tipo grass. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 493,
@@ -10094,7 +10154,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Arceus es un muro infranqueable de tipo normal. Su asombrosa defensa de 240 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 494,
@@ -10115,7 +10175,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Victini es un muro infranqueable de tipo psychic. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 495,
@@ -10135,7 +10195,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Snivy mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 496,
@@ -10155,7 +10215,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Servine ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo grass. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 497,
@@ -10175,7 +10235,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Serperior es un muro infranqueable de tipo grass. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 498,
@@ -10195,7 +10255,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Consciente de su poder, Tepig ataca sin piedad. Sus 126 puntos de ataque físico lo convierten en un depredador implacable de tipo fire."
   },
   {
     "id": 499,
@@ -10216,7 +10276,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Pignite es un muro infranqueable de tipo fire. Su asombrosa defensa de 110 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 500,
@@ -10237,7 +10297,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Emboar es un muro infranqueable de tipo fire. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 501,
@@ -10257,7 +10317,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Oshawott ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 502,
@@ -10277,7 +10337,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Dewott es un muro infranqueable de tipo water. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 503,
@@ -10297,7 +10357,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Samurott es un muro infranqueable de tipo water. Su asombrosa defensa de 170 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 504,
@@ -10317,7 +10377,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Patrat ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo normal."
   },
   {
     "id": 505,
@@ -10337,7 +10397,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Watchog ataca sin piedad. Sus 170 puntos de ataque físico lo convierten en un depredador implacable de tipo normal. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 506,
@@ -10357,7 +10417,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Lillipup ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo normal."
   },
   {
     "id": 507,
@@ -10377,7 +10437,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Herdier es un muro infranqueable de tipo normal. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 508,
@@ -10397,7 +10457,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Stoutland es un muro infranqueable de tipo normal. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 509,
@@ -10417,7 +10477,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Una criatura versátil de tipo dark. Purrloin mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 510,
@@ -10437,7 +10497,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Consciente de su poder, Liepard ataca sin piedad. Sus 176 puntos de ataque físico lo convierten en un depredador implacable de tipo dark. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 511,
@@ -10457,7 +10517,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Pansage ataca sin piedad. Sus 106 puntos de ataque físico lo convierten en un depredador implacable de tipo grass."
   },
   {
     "id": 512,
@@ -10477,7 +10537,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Simisage es un muro infranqueable de tipo grass. Su asombrosa defensa de 126 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 513,
@@ -10497,7 +10557,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Consciente de su poder, Pansear ataca sin piedad. Sus 106 puntos de ataque físico lo convierten en un depredador implacable de tipo fire."
   },
   {
     "id": 514,
@@ -10517,7 +10577,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Simisear es un muro infranqueable de tipo fire. Su asombrosa defensa de 126 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 515,
@@ -10537,7 +10597,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Panpour ataca sin piedad. Sus 106 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 516,
@@ -10557,7 +10617,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Simipour es un muro infranqueable de tipo water. Su asombrosa defensa de 126 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 517,
@@ -10577,7 +10637,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Munna mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 518,
@@ -10597,7 +10657,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Musharna es un muro infranqueable de tipo psychic. Su asombrosa defensa de 170 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 519,
@@ -10618,7 +10678,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Pidove ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo normal."
   },
   {
     "id": 520,
@@ -10639,7 +10699,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Tranquill es un muro infranqueable de tipo normal. Su asombrosa defensa de 124 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 521,
@@ -10660,7 +10720,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Unfezant es un muro infranqueable de tipo normal. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 522,
@@ -10680,7 +10740,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Consciente de su poder, Blitzle ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo electric."
   },
   {
     "id": 523,
@@ -10700,7 +10760,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Zebstrika es un muro infranqueable de tipo electric. Su asombrosa defensa de 126 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 524,
@@ -10720,7 +10780,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Consciente de su poder, Roggenrola ataca sin piedad. Sus 150 puntos de ataque físico lo convierten en un depredador implacable de tipo rock."
   },
   {
     "id": 525,
@@ -10740,7 +10800,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Boldore es un muro infranqueable de tipo rock. Su asombrosa defensa de 210 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 526,
@@ -10760,7 +10820,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Gigalith es un muro infranqueable de tipo rock. Su asombrosa defensa de 260 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 527,
@@ -10781,7 +10841,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Woobat mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 528,
@@ -10802,7 +10862,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Swoobat es un muro infranqueable de tipo psychic. Su asombrosa defensa de 110 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 529,
@@ -10822,7 +10882,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Consciente de su poder, Drilbur ataca sin piedad. Sus 170 puntos de ataque físico lo convierten en un depredador implacable de tipo ground."
   },
   {
     "id": 530,
@@ -10843,7 +10903,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Excadrill es un muro infranqueable de tipo ground. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 531,
@@ -10863,7 +10923,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 13,
     "rarity": "legendary",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Audino es un muro infranqueable de tipo normal. Su asombrosa defensa de 172 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 532,
@@ -10883,7 +10943,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Timburr es un muro infranqueable de tipo fighting. Su asombrosa defensa de 110 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 533,
@@ -10903,7 +10963,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Gurdurr es un muro infranqueable de tipo fighting. Su asombrosa defensa de 170 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 534,
@@ -10923,7 +10983,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Conkeldurr es un muro infranqueable de tipo fighting. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 535,
@@ -10943,7 +11003,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Tympole mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 536,
@@ -10964,7 +11024,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Palpitoad es un muro infranqueable de tipo water. Su asombrosa defensa de 110 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 537,
@@ -10985,7 +11045,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Seismitoad es un muro infranqueable de tipo water. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 538,
@@ -11005,7 +11065,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Throh es un muro infranqueable de tipo fighting. Su asombrosa defensa de 170 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 539,
@@ -11025,7 +11085,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Sawk es un muro infranqueable de tipo fighting. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 540,
@@ -11046,7 +11106,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Sewaddle ataca sin piedad. Sus 106 puntos de ataque físico lo convierten en un depredador implacable de tipo bug."
   },
   {
     "id": 541,
@@ -11067,7 +11127,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Swadloon ataca sin piedad. Sus 126 puntos de ataque físico lo convierten en un depredador implacable de tipo bug. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 542,
@@ -11088,7 +11148,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Leavanny es un muro infranqueable de tipo bug. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 543,
@@ -11109,7 +11169,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Venipede mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 544,
@@ -11130,7 +11190,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Whirlipede ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo bug. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 545,
@@ -11151,7 +11211,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Scolipede ataca sin piedad. Sus 200 puntos de ataque físico lo convierten en un depredador implacable de tipo bug. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 546,
@@ -11172,7 +11232,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Cottonee mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 547,
@@ -11193,7 +11253,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Whimsicott ataca sin piedad. Sus 134 puntos de ataque físico lo convierten en un depredador implacable de tipo grass. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 548,
@@ -11213,7 +11273,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Petilil mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 549,
@@ -11233,7 +11293,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Lilligant es un muro infranqueable de tipo grass. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 550,
@@ -11253,7 +11313,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Basculin-red-striped es un muro infranqueable de tipo water. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 551,
@@ -11274,7 +11334,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Consciente de su poder, Sandile ataca sin piedad. Sus 144 puntos de ataque físico lo convierten en un depredador implacable de tipo ground."
   },
   {
     "id": 552,
@@ -11295,7 +11355,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Consciente de su poder, Krokorok ataca sin piedad. Sus 164 puntos de ataque físico lo convierten en un depredador implacable de tipo ground. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 553,
@@ -11316,7 +11376,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Krookodile es un muro infranqueable de tipo ground. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 554,
@@ -11336,7 +11396,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Consciente de su poder, Darumaka ataca sin piedad. Sus 180 puntos de ataque físico lo convierten en un depredador implacable de tipo fire."
   },
   {
     "id": 555,
@@ -11356,7 +11416,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Darmanitan-standard es un muro infranqueable de tipo fire. Su asombrosa defensa de 110 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 556,
@@ -11376,7 +11436,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Maractus es un muro infranqueable de tipo grass. Su asombrosa defensa de 134 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 557,
@@ -11397,7 +11457,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Dwebble ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo bug."
   },
   {
     "id": 558,
@@ -11418,7 +11478,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Crustle es un muro infranqueable de tipo bug. Su asombrosa defensa de 250 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 559,
@@ -11439,7 +11499,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Consciente de su poder, Scraggy ataca sin piedad. Sus 150 puntos de ataque físico lo convierten en un depredador implacable de tipo dark."
   },
   {
     "id": 560,
@@ -11460,7 +11520,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Scrafty es un muro infranqueable de tipo dark. Su asombrosa defensa de 230 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 561,
@@ -11481,7 +11541,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Sigilyph es un muro infranqueable de tipo psychic. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 562,
@@ -11501,7 +11561,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Una criatura versátil de tipo ghost. Yamask mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 563,
@@ -11521,7 +11581,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Una criatura versátil de tipo ghost. Cofagrigus mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 564,
@@ -11542,7 +11602,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Tirtouga ataca sin piedad. Sus 156 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 565,
@@ -11563,7 +11623,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Carracosta es un muro infranqueable de tipo water. Su asombrosa defensa de 266 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 566,
@@ -11584,7 +11644,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Consciente de su poder, Archen ataca sin piedad. Sus 224 puntos de ataque físico lo convierten en un depredador implacable de tipo rock."
   },
   {
     "id": 567,
@@ -11605,7 +11665,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Archeops es un muro infranqueable de tipo rock. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 568,
@@ -11625,7 +11685,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Una criatura versátil de tipo poison. Trubbish mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 569,
@@ -11645,7 +11705,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Garbodor es un muro infranqueable de tipo poison. Su asombrosa defensa de 164 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 570,
@@ -11665,7 +11725,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Consciente de su poder, Zorua ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo dark."
   },
   {
     "id": 571,
@@ -11685,7 +11745,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Consciente de su poder, Zoroark ataca sin piedad. Sus 210 puntos de ataque físico lo convierten en un depredador implacable de tipo dark. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 572,
@@ -11705,7 +11765,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Minccino mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 573,
@@ -11725,7 +11785,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Cinccino es un muro infranqueable de tipo normal. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 574,
@@ -11745,7 +11805,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Gothita mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 575,
@@ -11765,7 +11825,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Gothorita mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 576,
@@ -11785,7 +11845,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Gothitelle es un muro infranqueable de tipo psychic. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 577,
@@ -11805,7 +11865,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Solosis mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 578,
@@ -11825,7 +11885,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Duosion mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 579,
@@ -11845,7 +11905,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Reuniclus es un muro infranqueable de tipo psychic. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 580,
@@ -11866,7 +11926,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Ducklett mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 581,
@@ -11887,7 +11947,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Swanna es un muro infranqueable de tipo water. Su asombrosa defensa de 126 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 582,
@@ -11907,7 +11967,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Una criatura versátil de tipo ice. Vanillite mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 583,
@@ -11927,7 +11987,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Consciente de su poder, Vanillish ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo ice. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 584,
@@ -11947,7 +12007,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Vanilluxe es un muro infranqueable de tipo ice. Su asombrosa defensa de 170 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 585,
@@ -11968,7 +12028,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Deerling ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo normal."
   },
   {
     "id": 586,
@@ -11989,7 +12049,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Sawsbuck es un muro infranqueable de tipo normal. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 587,
@@ -12010,7 +12070,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Consciente de su poder, Emolga ataca sin piedad. Sus 150 puntos de ataque físico lo convierten en un depredador implacable de tipo electric. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 588,
@@ -12030,7 +12090,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Karrablast ataca sin piedad. Sus 150 puntos de ataque físico lo convierten en un depredador implacable de tipo bug."
   },
   {
     "id": 589,
@@ -12051,7 +12111,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Escavalier es un muro infranqueable de tipo bug. Su asombrosa defensa de 210 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 590,
@@ -12072,7 +12132,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Foongus ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo grass."
   },
   {
     "id": 591,
@@ -12093,7 +12153,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Amoonguss es un muro infranqueable de tipo grass. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 592,
@@ -12114,7 +12174,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Frillish-male mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 593,
@@ -12135,7 +12195,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Jellicent-male es un muro infranqueable de tipo water. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 594,
@@ -12155,7 +12215,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Alomomola es un muro infranqueable de tipo water. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 595,
@@ -12176,7 +12236,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Joltik mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 596,
@@ -12197,7 +12257,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Galvantula es un muro infranqueable de tipo bug. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 597,
@@ -12218,7 +12278,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Ferroseed mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 598,
@@ -12239,7 +12299,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Ferrothorn es un muro infranqueable de tipo grass. Su asombrosa defensa de 262 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 599,
@@ -12259,7 +12319,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Consciente de su poder, Klink ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo steel."
   },
   {
     "id": 600,
@@ -12279,7 +12339,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Consciente de su poder, Klang ataca sin piedad. Sus 160 puntos de ataque físico lo convierten en un depredador implacable de tipo steel. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 601,
@@ -12299,7 +12359,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Consciente de su poder, Klinklang ataca sin piedad. Sus 200 puntos de ataque físico lo convierten en un depredador implacable de tipo steel. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 602,
@@ -12319,7 +12379,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Consciente de su poder, Tynamo ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo electric."
   },
   {
     "id": 603,
@@ -12339,7 +12399,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Eelektrik es un muro infranqueable de tipo electric. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 604,
@@ -12359,7 +12419,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Eelektross es un muro infranqueable de tipo electric. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 605,
@@ -12379,7 +12439,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Consciente de su poder, Elgyem ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo psychic."
   },
   {
     "id": 606,
@@ -12399,7 +12459,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Beheeyem es un muro infranqueable de tipo psychic. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 607,
@@ -12420,7 +12480,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Una criatura versátil de tipo ghost. Litwick mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 608,
@@ -12441,7 +12501,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Una criatura versátil de tipo ghost. Lampent mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 609,
@@ -12462,7 +12522,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Consciente de su poder, Chandelure ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo ghost. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 610,
@@ -12482,7 +12542,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Consciente de su poder, Axew ataca sin piedad. Sus 174 puntos de ataque físico lo convierten en un depredador implacable de tipo dragon."
   },
   {
     "id": 611,
@@ -12502,7 +12562,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Fraxure es un muro infranqueable de tipo dragon. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 612,
@@ -12522,7 +12582,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Haxorus es un muro infranqueable de tipo dragon. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 613,
@@ -12542,7 +12602,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Consciente de su poder, Cubchoo ataca sin piedad. Sus 140 puntos de ataque físico lo convierten en un depredador implacable de tipo ice."
   },
   {
     "id": 614,
@@ -12562,7 +12622,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Beartic es un muro infranqueable de tipo ice. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 615,
@@ -12582,7 +12642,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Una criatura versátil de tipo ice. Cryogonal mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 616,
@@ -12602,7 +12662,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Shelmet mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 617,
@@ -12622,7 +12682,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Accelgor ataca sin piedad. Sus 140 puntos de ataque físico lo convierten en un depredador implacable de tipo bug. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 618,
@@ -12643,7 +12703,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Stunfisk es un muro infranqueable de tipo ground. Su asombrosa defensa de 168 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 619,
@@ -12663,7 +12723,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Consciente de su poder, Mienfoo ataca sin piedad. Sus 170 puntos de ataque físico lo convierten en un depredador implacable de tipo fighting."
   },
   {
     "id": 620,
@@ -12683,7 +12743,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Mienshao es un muro infranqueable de tipo fighting. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 621,
@@ -12703,7 +12763,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Druddigon es un muro infranqueable de tipo dragon. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 622,
@@ -12724,7 +12784,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Consciente de su poder, Golett ataca sin piedad. Sus 148 puntos de ataque físico lo convierten en un depredador implacable de tipo ground."
   },
   {
     "id": 623,
@@ -12745,7 +12805,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Golurk es un muro infranqueable de tipo ground. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 624,
@@ -12766,7 +12826,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Consciente de su poder, Pawniard ataca sin piedad. Sus 170 puntos de ataque físico lo convierten en un depredador implacable de tipo dark."
   },
   {
     "id": 625,
@@ -12787,7 +12847,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Bisharp es un muro infranqueable de tipo dark. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 626,
@@ -12807,7 +12867,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Bouffalant es un muro infranqueable de tipo normal. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 627,
@@ -12828,7 +12888,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Rufflet ataca sin piedad. Sus 166 puntos de ataque físico lo convierten en un depredador implacable de tipo normal."
   },
   {
     "id": 628,
@@ -12849,7 +12909,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Braviary es un muro infranqueable de tipo normal. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 629,
@@ -12870,7 +12930,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Vullaby es un muro infranqueable de tipo dark. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 630,
@@ -12891,7 +12951,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Mandibuzz es un muro infranqueable de tipo dark. Su asombrosa defensa de 210 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 631,
@@ -12911,7 +12971,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Heatmor es un muro infranqueable de tipo fire. Su asombrosa defensa de 132 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 632,
@@ -12932,7 +12992,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Durant ataca sin piedad. Sus 218 puntos de ataque físico lo convierten en un depredador implacable de tipo bug. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 633,
@@ -12953,7 +13013,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Consciente de su poder, Deino ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo dark."
   },
   {
     "id": 634,
@@ -12974,7 +13034,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Zweilous es un muro infranqueable de tipo dark. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 635,
@@ -12995,7 +13055,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Hydreigon es un muro infranqueable de tipo dark. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 636,
@@ -13016,7 +13076,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Larvesta ataca sin piedad. Sus 170 puntos de ataque físico lo convierten en un depredador implacable de tipo bug."
   },
   {
     "id": 637,
@@ -13037,7 +13097,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Volcarona es un muro infranqueable de tipo bug. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 638,
@@ -13058,7 +13118,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Cobalion es un muro infranqueable de tipo steel. Su asombrosa defensa de 258 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 639,
@@ -13079,7 +13139,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Terrakion es un muro infranqueable de tipo rock. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 640,
@@ -13100,7 +13160,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Virizion es un muro infranqueable de tipo grass. Su asombrosa defensa de 144 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 641,
@@ -13120,7 +13180,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful flying-type Pokémon."
+    "description": "Tornadus-incarnate es un muro infranqueable de tipo flying. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 642,
@@ -13141,7 +13201,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Thundurus-incarnate es un muro infranqueable de tipo electric. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 643,
@@ -13162,7 +13222,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Reshiram es un muro infranqueable de tipo dragon. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 644,
@@ -13183,7 +13243,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Zekrom es un muro infranqueable de tipo dragon. Su asombrosa defensa de 240 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 645,
@@ -13204,7 +13264,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Landorus-incarnate es un muro infranqueable de tipo ground. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 646,
@@ -13225,7 +13285,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Kyurem es un muro infranqueable de tipo dragon. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 647,
@@ -13246,7 +13306,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Keldeo-ordinary es un muro infranqueable de tipo water. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 648,
@@ -13267,7 +13327,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Meloetta-aria es un muro infranqueable de tipo normal. Su asombrosa defensa de 154 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 649,
@@ -13288,7 +13348,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Genesect es un muro infranqueable de tipo bug. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 650,
@@ -13308,7 +13368,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Chespin ataca sin piedad. Sus 122 puntos de ataque físico lo convierten en un depredador implacable de tipo grass."
   },
   {
     "id": 651,
@@ -13328,7 +13388,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Quilladin es un muro infranqueable de tipo grass. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 652,
@@ -13349,7 +13409,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Chesnaught es un muro infranqueable de tipo grass. Su asombrosa defensa de 244 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 653,
@@ -13369,7 +13429,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Una criatura versátil de tipo fire. Fennekin mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 654,
@@ -13389,7 +13449,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Consciente de su poder, Braixen ataca sin piedad. Sus 118 puntos de ataque físico lo convierten en un depredador implacable de tipo fire. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 655,
@@ -13410,7 +13470,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Delphox es un muro infranqueable de tipo fire. Su asombrosa defensa de 144 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 656,
@@ -13430,7 +13490,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Froakie ataca sin piedad. Sus 112 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 657,
@@ -13450,7 +13510,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Frogadier ataca sin piedad. Sus 126 puntos de ataque físico lo convierten en un depredador implacable de tipo water. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 658,
@@ -13471,7 +13531,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Greninja es un muro infranqueable de tipo water. Su asombrosa defensa de 134 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 659,
@@ -13491,7 +13551,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Bunnelby mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 660,
@@ -13512,7 +13572,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Diggersby es un muro infranqueable de tipo normal. Su asombrosa defensa de 154 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 661,
@@ -13533,7 +13593,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Fletchling mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 662,
@@ -13554,7 +13614,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Fletchinder es un muro infranqueable de tipo fire. Su asombrosa defensa de 110 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 663,
@@ -13575,7 +13635,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Talonflame es un muro infranqueable de tipo fire. Su asombrosa defensa de 142 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 664,
@@ -13595,7 +13655,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Scatterbug mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 665,
@@ -13615,7 +13675,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Spewpa mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 666,
@@ -13636,7 +13696,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Vivillon ataca sin piedad. Sus 104 puntos de ataque físico lo convierten en un depredador implacable de tipo bug. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 667,
@@ -13657,7 +13717,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Litleo es un muro infranqueable de tipo fire. Su asombrosa defensa de 116 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 668,
@@ -13678,7 +13738,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Pyroar-male es un muro infranqueable de tipo fire. Su asombrosa defensa de 144 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 669,
@@ -13698,7 +13758,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Una criatura versátil de tipo fairy. Flabebe mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 670,
@@ -13718,7 +13778,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Una criatura versátil de tipo fairy. Floette mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 671,
@@ -13738,7 +13798,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Florges es un muro infranqueable de tipo fairy. Su asombrosa defensa de 136 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 672,
@@ -13758,7 +13818,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Skiddo ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo grass."
   },
   {
     "id": 673,
@@ -13778,7 +13838,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Gogoat es un muro infranqueable de tipo grass. Su asombrosa defensa de 124 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 674,
@@ -13798,7 +13858,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Pancham es un muro infranqueable de tipo fighting. Su asombrosa defensa de 124 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 675,
@@ -13819,7 +13879,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Pangoro es un muro infranqueable de tipo fighting. Su asombrosa defensa de 156 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 676,
@@ -13839,7 +13899,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Furfrou es un muro infranqueable de tipo normal. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 677,
@@ -13859,7 +13919,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Espurr es un muro infranqueable de tipo psychic. Su asombrosa defensa de 108 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 678,
@@ -13879,7 +13939,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Meowstic-male es un muro infranqueable de tipo psychic. Su asombrosa defensa de 152 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 679,
@@ -13900,7 +13960,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Consciente de su poder, Honedge ataca sin piedad. Sus 160 puntos de ataque físico lo convierten en un depredador implacable de tipo steel."
   },
   {
     "id": 680,
@@ -13921,7 +13981,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Consciente de su poder, Doublade ataca sin piedad. Sus 220 puntos de ataque físico lo convierten en un depredador implacable de tipo steel. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 681,
@@ -13942,7 +14002,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Una criatura versátil de tipo steel. Aegislash-shield mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 682,
@@ -13962,7 +14022,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Spritzee es un muro infranqueable de tipo fairy. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 683,
@@ -13982,7 +14042,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Aromatisse es un muro infranqueable de tipo fairy. Su asombrosa defensa de 144 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 684,
@@ -14002,7 +14062,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Swirlix es un muro infranqueable de tipo fairy. Su asombrosa defensa de 132 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 685,
@@ -14022,7 +14082,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Slurpuff es un muro infranqueable de tipo fairy. Su asombrosa defensa de 172 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 686,
@@ -14043,7 +14103,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Consciente de su poder, Inkay ataca sin piedad. Sus 108 puntos de ataque físico lo convierten en un depredador implacable de tipo dark."
   },
   {
     "id": 687,
@@ -14064,7 +14124,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Malamar es un muro infranqueable de tipo dark. Su asombrosa defensa de 176 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 688,
@@ -14085,7 +14145,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Consciente de su poder, Binacle ataca sin piedad. Sus 104 puntos de ataque físico lo convierten en un depredador implacable de tipo rock."
   },
   {
     "id": 689,
@@ -14106,7 +14166,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Barbaracle es un muro infranqueable de tipo rock. Su asombrosa defensa de 230 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 690,
@@ -14127,7 +14187,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Consciente de su poder, Skrelp ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo poison."
   },
   {
     "id": 691,
@@ -14148,7 +14208,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Dragalge es un muro infranqueable de tipo poison. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 692,
@@ -14168,7 +14228,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Clauncher ataca sin piedad. Sus 106 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 693,
@@ -14188,7 +14248,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Clawitzer es un muro infranqueable de tipo water. Su asombrosa defensa de 176 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 694,
@@ -14209,7 +14269,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Una criatura versátil de tipo electric. Helioptile mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 695,
@@ -14230,7 +14290,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Heliolisk es un muro infranqueable de tipo electric. Su asombrosa defensa de 104 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 696,
@@ -14251,7 +14311,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Consciente de su poder, Tyrunt ataca sin piedad. Sus 178 puntos de ataque físico lo convierten en un depredador implacable de tipo rock."
   },
   {
     "id": 697,
@@ -14272,7 +14332,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Tyrantrum es un muro infranqueable de tipo rock. Su asombrosa defensa de 238 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 698,
@@ -14293,7 +14353,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Consciente de su poder, Amaura ataca sin piedad. Sus 118 puntos de ataque físico lo convierten en un depredador implacable de tipo rock."
   },
   {
     "id": 699,
@@ -14314,7 +14374,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Aurorus es un muro infranqueable de tipo rock. Su asombrosa defensa de 144 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 700,
@@ -14334,7 +14394,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Sylveon es un muro infranqueable de tipo fairy. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 701,
@@ -14355,7 +14415,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Hawlucha es un muro infranqueable de tipo fighting. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 702,
@@ -14376,7 +14436,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Dedenne es un muro infranqueable de tipo electric. Su asombrosa defensa de 114 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 703,
@@ -14397,7 +14457,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "common",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Una criatura versátil de tipo rock. Carbink mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 704,
@@ -14417,7 +14477,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Una criatura versátil de tipo dragon. Goomy mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 705,
@@ -14437,7 +14497,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Sliggoo es un muro infranqueable de tipo dragon. Su asombrosa defensa de 106 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 706,
@@ -14457,7 +14517,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Goodra es un muro infranqueable de tipo dragon. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 707,
@@ -14478,7 +14538,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Consciente de su poder, Klefki ataca sin piedad. Sus 160 puntos de ataque físico lo convierten en un depredador implacable de tipo steel. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 708,
@@ -14499,7 +14559,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Consciente de su poder, Phantump ataca sin piedad. Sus 140 puntos de ataque físico lo convierten en un depredador implacable de tipo ghost."
   },
   {
     "id": 709,
@@ -14520,7 +14580,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Trevenant es un muro infranqueable de tipo ghost. Su asombrosa defensa de 152 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 710,
@@ -14541,7 +14601,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Consciente de su poder, Pumpkaboo-average ataca sin piedad. Sus 132 puntos de ataque físico lo convierten en un depredador implacable de tipo ghost."
   },
   {
     "id": 711,
@@ -14562,7 +14622,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Gourgeist-average es un muro infranqueable de tipo ghost. Su asombrosa defensa de 244 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 712,
@@ -14582,7 +14642,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Consciente de su poder, Bergmite ataca sin piedad. Sus 138 puntos de ataque físico lo convierten en un depredador implacable de tipo ice."
   },
   {
     "id": 713,
@@ -14602,7 +14662,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Avalugg es un muro infranqueable de tipo ice. Su asombrosa defensa de 368 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 714,
@@ -14623,7 +14683,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful flying-type Pokémon."
+    "description": "Una criatura versátil de tipo flying. Noibat mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 715,
@@ -14644,7 +14704,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful flying-type Pokémon."
+    "description": "Noivern es un muro infranqueable de tipo flying. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 716,
@@ -14664,7 +14724,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Xerneas es un muro infranqueable de tipo fairy. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 717,
@@ -14685,7 +14745,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Yveltal es un muro infranqueable de tipo dark. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 718,
@@ -14706,7 +14766,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Zygarde-50 es un muro infranqueable de tipo dragon. Su asombrosa defensa de 242 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 719,
@@ -14727,7 +14787,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Consciente de su poder, Diancie ataca sin piedad. Sus 200 puntos de ataque físico lo convierten en un depredador implacable de tipo rock. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 720,
@@ -14748,7 +14808,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Hoopa es un muro infranqueable de tipo psychic. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 721,
@@ -14769,7 +14829,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Volcanion es un muro infranqueable de tipo fire. Su asombrosa defensa de 240 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 722,
@@ -14790,7 +14850,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Rowlet es un muro infranqueable de tipo grass. Su asombrosa defensa de 110 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 723,
@@ -14811,7 +14871,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Dartrix es un muro infranqueable de tipo grass. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 724,
@@ -14832,7 +14892,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Decidueye es un muro infranqueable de tipo grass. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 725,
@@ -14852,7 +14912,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Consciente de su poder, Litten ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo fire."
   },
   {
     "id": 726,
@@ -14872,7 +14932,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Consciente de su poder, Torracat ataca sin piedad. Sus 170 puntos de ataque físico lo convierten en un depredador implacable de tipo fire. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 727,
@@ -14893,7 +14953,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Incineroar es un muro infranqueable de tipo fire. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 728,
@@ -14913,7 +14973,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Popplio ataca sin piedad. Sus 108 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 729,
@@ -14933,7 +14993,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Brionne ataca sin piedad. Sus 138 puntos de ataque físico lo convierten en un depredador implacable de tipo water. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 730,
@@ -14954,7 +15014,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Primarina es un muro infranqueable de tipo water. Su asombrosa defensa de 148 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 731,
@@ -14975,7 +15035,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Pikipek ataca sin piedad. Sus 150 puntos de ataque físico lo convierten en un depredador implacable de tipo normal."
   },
   {
     "id": 732,
@@ -14996,7 +15056,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Trumbeak ataca sin piedad. Sus 170 puntos de ataque físico lo convierten en un depredador implacable de tipo normal. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 733,
@@ -15017,7 +15077,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Toucannon es un muro infranqueable de tipo normal. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 734,
@@ -15037,7 +15097,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Yungoos ataca sin piedad. Sus 140 puntos de ataque físico lo convierten en un depredador implacable de tipo normal."
   },
   {
     "id": 735,
@@ -15057,7 +15117,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Gumshoos es un muro infranqueable de tipo normal. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 736,
@@ -15077,7 +15137,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Grubbin ataca sin piedad. Sus 124 puntos de ataque físico lo convierten en un depredador implacable de tipo bug."
   },
   {
     "id": 737,
@@ -15098,7 +15158,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Charjabug ataca sin piedad. Sus 164 puntos de ataque físico lo convierten en un depredador implacable de tipo bug. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 738,
@@ -15119,7 +15179,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Vikavolt es un muro infranqueable de tipo bug. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 739,
@@ -15139,7 +15199,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Consciente de su poder, Crabrawler ataca sin piedad. Sus 164 puntos de ataque físico lo convierten en un depredador implacable de tipo fighting."
   },
   {
     "id": 740,
@@ -15160,7 +15220,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Crabominable es un muro infranqueable de tipo fighting. Su asombrosa defensa de 154 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 741,
@@ -15181,7 +15241,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Oricorio-baile es un muro infranqueable de tipo fire. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 742,
@@ -15202,7 +15262,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Cutiefly mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 743,
@@ -15223,7 +15283,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Ribombee ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo bug. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 744,
@@ -15243,7 +15303,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Consciente de su poder, Rockruff ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo rock."
   },
   {
     "id": 745,
@@ -15263,7 +15323,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Lycanroc-midday es un muro infranqueable de tipo rock. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 746,
@@ -15283,7 +15343,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Wishiwashi-solo mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 747,
@@ -15304,7 +15364,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Consciente de su poder, Mareanie ataca sin piedad. Sus 106 puntos de ataque físico lo convierten en un depredador implacable de tipo poison."
   },
   {
     "id": 748,
@@ -15325,7 +15385,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Consciente de su poder, Toxapex ataca sin piedad. Sus 126 puntos de ataque físico lo convierten en un depredador implacable de tipo poison. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 749,
@@ -15345,7 +15405,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Mudbray es un muro infranqueable de tipo ground. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 750,
@@ -15365,7 +15425,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Mudsdale es un muro infranqueable de tipo ground. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 751,
@@ -15386,7 +15446,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Dewpider mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 752,
@@ -15407,7 +15467,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Araquanid es un muro infranqueable de tipo water. Su asombrosa defensa de 184 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 753,
@@ -15427,7 +15487,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Fomantis ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo grass."
   },
   {
     "id": 754,
@@ -15447,7 +15507,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Lurantis es un muro infranqueable de tipo grass. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 755,
@@ -15468,7 +15528,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Morelull mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 756,
@@ -15489,7 +15549,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Shiinotic mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 757,
@@ -15510,7 +15570,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Una criatura versátil de tipo poison. Salandit mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 758,
@@ -15531,7 +15591,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Salazzle es un muro infranqueable de tipo poison. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 759,
@@ -15552,7 +15612,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Consciente de su poder, Stufful ataca sin piedad. Sus 150 puntos de ataque físico lo convierten en un depredador implacable de tipo normal."
   },
   {
     "id": 760,
@@ -15573,7 +15633,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Bewear es un muro infranqueable de tipo normal. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 761,
@@ -15593,7 +15653,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Bounsweet mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 762,
@@ -15613,7 +15673,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Steenee mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 763,
@@ -15633,7 +15693,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 7,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Tsareena es un muro infranqueable de tipo grass. Su asombrosa defensa de 196 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 764,
@@ -15653,7 +15713,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Consciente de su poder, Comfey ataca sin piedad. Sus 104 puntos de ataque físico lo convierten en un depredador implacable de tipo fairy. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 765,
@@ -15674,7 +15734,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Oranguru es un muro infranqueable de tipo normal. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 766,
@@ -15694,7 +15754,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Passimian es un muro infranqueable de tipo fighting. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 767,
@@ -15715,7 +15775,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Wimpod mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 768,
@@ -15736,7 +15796,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Golisopod es un muro infranqueable de tipo bug. Su asombrosa defensa de 280 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 769,
@@ -15757,7 +15817,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Consciente de su poder, Sandygast ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo ghost."
   },
   {
     "id": 770,
@@ -15778,7 +15838,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Palossand es un muro infranqueable de tipo ghost. Su asombrosa defensa de 220 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 771,
@@ -15798,7 +15858,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Pyukumuku ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo water. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 772,
@@ -15818,7 +15878,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Type-null es un muro infranqueable de tipo normal. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 773,
@@ -15838,7 +15898,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Silvally es un muro infranqueable de tipo normal. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 774,
@@ -15859,7 +15919,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Consciente de su poder, Minior-red-meteor ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo rock. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 775,
@@ -15879,7 +15939,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Komala es un muro infranqueable de tipo normal. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 776,
@@ -15900,7 +15960,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Consciente de su poder, Turtonator ataca sin piedad. Sus 156 puntos de ataque físico lo convierten en un depredador implacable de tipo fire. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 777,
@@ -15921,7 +15981,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Togedemaru es un muro infranqueable de tipo electric. Su asombrosa defensa de 126 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 778,
@@ -15942,7 +16002,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Consciente de su poder, Mimikyu-disguised ataca sin piedad. Sus 180 puntos de ataque físico lo convierten en un depredador implacable de tipo ghost. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 779,
@@ -15963,7 +16023,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Bruxish es un muro infranqueable de tipo water. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 780,
@@ -15984,7 +16044,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Drampa es un muro infranqueable de tipo normal. Su asombrosa defensa de 170 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 781,
@@ -16005,7 +16065,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Dhelmise es un muro infranqueable de tipo ghost. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 782,
@@ -16025,7 +16085,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Consciente de su poder, Jangmo-o ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo dragon."
   },
   {
     "id": 783,
@@ -16046,7 +16106,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Consciente de su poder, Hakamo-o ataca sin piedad. Sus 150 puntos de ataque físico lo convierten en un depredador implacable de tipo dragon. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 784,
@@ -16067,7 +16127,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Kommo-o es un muro infranqueable de tipo dragon. Su asombrosa defensa de 250 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 785,
@@ -16088,7 +16148,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Tapu-koko es un muro infranqueable de tipo electric. Su asombrosa defensa de 170 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 786,
@@ -16109,7 +16169,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Tapu-lele es un muro infranqueable de tipo psychic. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 787,
@@ -16130,7 +16190,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Tapu-bulu es un muro infranqueable de tipo grass. Su asombrosa defensa de 230 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 788,
@@ -16151,7 +16211,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Tapu-fini es un muro infranqueable de tipo water. Su asombrosa defensa de 230 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 789,
@@ -16171,7 +16231,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Cosmog mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 790,
@@ -16191,7 +16251,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Cosmoem mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 791,
@@ -16212,7 +16272,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Solgaleo es un muro infranqueable de tipo psychic. Su asombrosa defensa de 214 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 792,
@@ -16233,7 +16293,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Lunala es un muro infranqueable de tipo psychic. Su asombrosa defensa de 178 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 793,
@@ -16254,7 +16314,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Consciente de su poder, Nihilego ataca sin piedad. Sus 106 puntos de ataque físico lo convierten en un depredador implacable de tipo rock. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 794,
@@ -16275,7 +16335,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Buzzwole es un muro infranqueable de tipo bug. Su asombrosa defensa de 278 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 795,
@@ -16296,7 +16356,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Pheromosa ataca sin piedad. Sus 274 puntos de ataque físico lo convierten en un depredador implacable de tipo bug. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 796,
@@ -16316,7 +16376,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Xurkitree es un muro infranqueable de tipo electric. Su asombrosa defensa de 142 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 797,
@@ -16337,7 +16397,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Celesteela es un muro infranqueable de tipo steel. Su asombrosa defensa de 206 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 798,
@@ -16358,7 +16418,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Kartana ataca sin piedad. Sus 362 puntos de ataque físico lo convierten en un depredador implacable de tipo grass. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 799,
@@ -16379,7 +16439,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Guzzlord es un muro infranqueable de tipo dark. Su asombrosa defensa de 106 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 800,
@@ -16399,7 +16459,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Necrozma es un muro infranqueable de tipo psychic. Su asombrosa defensa de 202 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 801,
@@ -16420,7 +16480,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Magearna es un muro infranqueable de tipo steel. Su asombrosa defensa de 230 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 802,
@@ -16441,7 +16501,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Marshadow es un muro infranqueable de tipo fighting. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 803,
@@ -16461,7 +16521,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Poipole es un muro infranqueable de tipo poison. Su asombrosa defensa de 134 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 804,
@@ -16482,7 +16542,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Naganadel es un muro infranqueable de tipo poison. Su asombrosa defensa de 146 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 805,
@@ -16503,7 +16563,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Stakataka es un muro infranqueable de tipo rock. Su asombrosa defensa de 422 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 806,
@@ -16524,7 +16584,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Consciente de su poder, Blacephalon ataca sin piedad. Sus 254 puntos de ataque físico lo convierten en un depredador implacable de tipo fire. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 807,
@@ -16544,7 +16604,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Zeraora es un muro infranqueable de tipo electric. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 808,
@@ -16564,7 +16624,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Consciente de su poder, Meltan ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo steel. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 809,
@@ -16584,7 +16644,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Melmetal es un muro infranqueable de tipo steel. Su asombrosa defensa de 286 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 810,
@@ -16604,7 +16664,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Grookey ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo grass."
   },
   {
     "id": 811,
@@ -16624,7 +16684,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Thwackey es un muro infranqueable de tipo grass. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 812,
@@ -16644,7 +16704,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Rillaboom es un muro infranqueable de tipo grass. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 813,
@@ -16664,7 +16724,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Consciente de su poder, Scorbunny ataca sin piedad. Sus 142 puntos de ataque físico lo convierten en un depredador implacable de tipo fire."
   },
   {
     "id": 814,
@@ -16684,7 +16744,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Raboot es un muro infranqueable de tipo fire. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 815,
@@ -16704,7 +16764,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Cinderace es un muro infranqueable de tipo fire. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 816,
@@ -16724,7 +16784,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Sobble mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 817,
@@ -16744,7 +16804,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Drizzile es un muro infranqueable de tipo water. Su asombrosa defensa de 110 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 818,
@@ -16764,7 +16824,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Inteleon es un muro infranqueable de tipo water. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 819,
@@ -16784,7 +16844,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Skwovet es un muro infranqueable de tipo normal. Su asombrosa defensa de 110 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 820,
@@ -16804,7 +16864,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Greedent es un muro infranqueable de tipo normal. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 821,
@@ -16824,7 +16884,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful flying-type Pokémon."
+    "description": "Una criatura versátil de tipo flying. Rookidee mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 822,
@@ -16844,7 +16904,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful flying-type Pokémon."
+    "description": "Corvisquire es un muro infranqueable de tipo flying. Su asombrosa defensa de 110 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 823,
@@ -16865,7 +16925,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful flying-type Pokémon."
+    "description": "Corviknight es un muro infranqueable de tipo flying. Su asombrosa defensa de 210 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 824,
@@ -16885,7 +16945,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Blipbug mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 825,
@@ -16906,7 +16966,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Dottler mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 826,
@@ -16927,7 +16987,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Orbeetle mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 827,
@@ -16947,7 +17007,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Una criatura versátil de tipo dark. Nickit mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 828,
@@ -16967,7 +17027,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Thievul es un muro infranqueable de tipo dark. Su asombrosa defensa de 116 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 829,
@@ -16987,7 +17047,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Gossifleur mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 830,
@@ -17007,7 +17067,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Eldegoss mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 831,
@@ -17027,7 +17087,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Wooloo mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 832,
@@ -17047,7 +17107,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Dubwool es un muro infranqueable de tipo normal. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 833,
@@ -17067,7 +17127,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Chewtle ataca sin piedad. Sus 128 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 834,
@@ -17088,7 +17148,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Drednaw es un muro infranqueable de tipo water. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 835,
@@ -17108,7 +17168,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Una criatura versátil de tipo electric. Yamper mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 836,
@@ -17128,7 +17188,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Boltund es un muro infranqueable de tipo electric. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 837,
@@ -17148,7 +17208,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Una criatura versátil de tipo rock. Rolycoly mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 838,
@@ -17169,7 +17229,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Carkol es un muro infranqueable de tipo rock. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 839,
@@ -17190,7 +17250,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Coalossal es un muro infranqueable de tipo rock. Su asombrosa defensa de 240 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 840,
@@ -17211,7 +17271,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Applin mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 841,
@@ -17232,7 +17292,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Flapple es un muro infranqueable de tipo grass. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 842,
@@ -17253,7 +17313,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Appletun es un muro infranqueable de tipo grass. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 843,
@@ -17273,7 +17333,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Consciente de su poder, Silicobra ataca sin piedad. Sus 114 puntos de ataque físico lo convierten en un depredador implacable de tipo ground."
   },
   {
     "id": 844,
@@ -17293,7 +17353,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Sandaconda es un muro infranqueable de tipo ground. Su asombrosa defensa de 250 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 845,
@@ -17314,7 +17374,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful flying-type Pokémon."
+    "description": "Cramorant es un muro infranqueable de tipo flying. Su asombrosa defensa de 110 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 846,
@@ -17334,7 +17394,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Arrokuda ataca sin piedad. Sus 126 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 847,
@@ -17354,7 +17414,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Barraskewda es un muro infranqueable de tipo water. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 848,
@@ -17375,7 +17435,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Una criatura versátil de tipo electric. Toxel mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 849,
@@ -17396,7 +17456,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Toxtricity-amped es un muro infranqueable de tipo electric. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 850,
@@ -17417,7 +17477,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Consciente de su poder, Sizzlipede ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo fire."
   },
   {
     "id": 851,
@@ -17438,7 +17498,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Centiskorch es un muro infranqueable de tipo fire. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 852,
@@ -17458,7 +17518,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Consciente de su poder, Clobbopus ataca sin piedad. Sus 136 puntos de ataque físico lo convierten en un depredador implacable de tipo fighting."
   },
   {
     "id": 853,
@@ -17478,7 +17538,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Grapploct es un muro infranqueable de tipo fighting. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 854,
@@ -17498,7 +17558,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Una criatura versátil de tipo ghost. Sinistea mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 855,
@@ -17518,7 +17578,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Consciente de su poder, Polteageist ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo ghost. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 856,
@@ -17538,7 +17598,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Hatenna mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 857,
@@ -17558,7 +17618,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Hattrem mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 858,
@@ -17579,7 +17639,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Consciente de su poder, Hatterene ataca sin piedad. Sus 180 puntos de ataque físico lo convierten en un depredador implacable de tipo psychic. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 859,
@@ -17600,7 +17660,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Una criatura versátil de tipo dark. Impidimp mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 860,
@@ -17621,7 +17681,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Consciente de su poder, Morgrem ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo dark. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 861,
@@ -17642,7 +17702,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Grimmsnarl es un muro infranqueable de tipo dark. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 862,
@@ -17663,7 +17723,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Obstagoon es un muro infranqueable de tipo dark. Su asombrosa defensa de 202 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 863,
@@ -17683,7 +17743,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Perrserker es un muro infranqueable de tipo steel. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 864,
@@ -17703,7 +17763,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Consciente de su poder, Cursola ataca sin piedad. Sus 190 puntos de ataque físico lo convierten en un depredador implacable de tipo ghost. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 865,
@@ -17723,7 +17783,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Sirfetchd es un muro infranqueable de tipo fighting. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 866,
@@ -17744,7 +17804,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Mr-rime es un muro infranqueable de tipo ice. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 867,
@@ -17765,7 +17825,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Consciente de su poder, Runerigus ataca sin piedad. Sus 190 puntos de ataque físico lo convierten en un depredador implacable de tipo ground. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 868,
@@ -17785,7 +17845,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Una criatura versátil de tipo fairy. Milcery mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 869,
@@ -17805,7 +17865,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Alcremie es un muro infranqueable de tipo fairy. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 870,
@@ -17825,7 +17885,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Falinks es un muro infranqueable de tipo fighting. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 871,
@@ -17845,7 +17905,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Consciente de su poder, Pincurchin ataca sin piedad. Sus 202 puntos de ataque físico lo convierten en un depredador implacable de tipo electric. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 872,
@@ -17866,7 +17926,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Una criatura versátil de tipo ice. Snom mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 873,
@@ -17887,7 +17947,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Frosmoth es un muro infranqueable de tipo ice. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 874,
@@ -17907,7 +17967,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Stonjourner es un muro infranqueable de tipo rock. Su asombrosa defensa de 270 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 875,
@@ -17927,7 +17987,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Eiscue-ice es un muro infranqueable de tipo ice. Su asombrosa defensa de 220 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 876,
@@ -17948,7 +18008,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Consciente de su poder, Indeedee-male ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo psychic. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 877,
@@ -17969,7 +18029,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Consciente de su poder, Morpeko-full-belly ataca sin piedad. Sus 190 puntos de ataque físico lo convierten en un depredador implacable de tipo electric. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 878,
@@ -17989,7 +18049,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Consciente de su poder, Cufant ataca sin piedad. Sus 160 puntos de ataque físico lo convierten en un depredador implacable de tipo steel."
   },
   {
     "id": 879,
@@ -18009,7 +18069,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Copperajah es un muro infranqueable de tipo steel. Su asombrosa defensa de 138 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 880,
@@ -18030,7 +18090,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Dracozolt es un muro infranqueable de tipo electric. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 881,
@@ -18051,7 +18111,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Arctozolt es un muro infranqueable de tipo electric. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 882,
@@ -18072,7 +18132,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Dracovish es un muro infranqueable de tipo water. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 883,
@@ -18093,7 +18153,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Arctovish es un muro infranqueable de tipo water. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 884,
@@ -18114,7 +18174,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Duraludon es un muro infranqueable de tipo steel. Su asombrosa defensa de 230 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 885,
@@ -18135,7 +18195,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Consciente de su poder, Dreepy ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo dragon."
   },
   {
     "id": 886,
@@ -18156,7 +18216,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Consciente de su poder, Drakloak ataca sin piedad. Sus 160 puntos de ataque físico lo convierten en un depredador implacable de tipo dragon. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 887,
@@ -18177,7 +18237,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Dragapult es un muro infranqueable de tipo dragon. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 888,
@@ -18197,7 +18257,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 11,
     "rarity": "legendary",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Zacian es un muro infranqueable de tipo fairy. Su asombrosa defensa de 230 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 889,
@@ -18217,7 +18277,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 11,
     "rarity": "legendary",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Zamazenta es un muro infranqueable de tipo fighting. Su asombrosa defensa de 230 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 890,
@@ -18238,7 +18298,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 11,
     "rarity": "legendary",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Eternatus es un muro infranqueable de tipo poison. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 891,
@@ -18258,7 +18318,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Consciente de su poder, Kubfu ataca sin piedad. Sus 180 puntos de ataque físico lo convierten en un depredador implacable de tipo fighting."
   },
   {
     "id": 892,
@@ -18279,7 +18339,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Urshifu-single-strike es un muro infranqueable de tipo fighting. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 893,
@@ -18300,7 +18360,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Zarude es un muro infranqueable de tipo dark. Su asombrosa defensa de 210 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 894,
@@ -18320,7 +18380,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Consciente de su poder, Regieleki ataca sin piedad. Sus 200 puntos de ataque físico lo convierten en un depredador implacable de tipo electric. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 895,
@@ -18340,7 +18400,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Consciente de su poder, Regidrago ataca sin piedad. Sus 200 puntos de ataque físico lo convierten en un depredador implacable de tipo dragon. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 896,
@@ -18360,7 +18420,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Glastrier es un muro infranqueable de tipo ice. Su asombrosa defensa de 260 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 897,
@@ -18380,7 +18440,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Spectrier es un muro infranqueable de tipo ghost. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 898,
@@ -18401,7 +18461,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Calyrex es un muro infranqueable de tipo psychic. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 899,
@@ -18422,7 +18482,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Wyrdeer es un muro infranqueable de tipo normal. Su asombrosa defensa de 144 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 900,
@@ -18443,7 +18503,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Kleavor es un muro infranqueable de tipo bug. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 901,
@@ -18464,7 +18524,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Ursaluna es un muro infranqueable de tipo ground. Su asombrosa defensa de 210 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 902,
@@ -18485,7 +18545,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Basculegion-male es un muro infranqueable de tipo water. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 903,
@@ -18506,7 +18566,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "rare",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Sneasler es un muro infranqueable de tipo fighting. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 904,
@@ -18527,7 +18587,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Overqwil es un muro infranqueable de tipo dark. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 905,
@@ -18548,7 +18608,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "rare",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Enamorus-incarnate es un muro infranqueable de tipo fairy. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 906,
@@ -18568,7 +18628,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Sprigatito ataca sin piedad. Sus 122 puntos de ataque físico lo convierten en un depredador implacable de tipo grass."
   },
   {
     "id": 907,
@@ -18588,7 +18648,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Floragato es un muro infranqueable de tipo grass. Su asombrosa defensa de 126 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 908,
@@ -18609,7 +18669,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Meowscarada es un muro infranqueable de tipo grass. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 909,
@@ -18629,7 +18689,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Fuecoco es un muro infranqueable de tipo fire. Su asombrosa defensa de 118 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 910,
@@ -18649,7 +18709,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Crocalor es un muro infranqueable de tipo fire. Su asombrosa defensa de 156 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 911,
@@ -18670,7 +18730,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Skeledirge es un muro infranqueable de tipo fire. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 912,
@@ -18690,7 +18750,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Quaxly ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 913,
@@ -18710,7 +18770,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Quaxwell es un muro infranqueable de tipo water. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 914,
@@ -18731,7 +18791,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Quaquaval es un muro infranqueable de tipo water. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 915,
@@ -18751,7 +18811,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Lechonk mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 916,
@@ -18771,7 +18831,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Oinkologne-male es un muro infranqueable de tipo normal. Su asombrosa defensa de 150 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 917,
@@ -18791,7 +18851,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Tarountula mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 918,
@@ -18811,7 +18871,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Consciente de su poder, Spidops ataca sin piedad. Sus 158 puntos de ataque físico lo convierten en un depredador implacable de tipo bug. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 919,
@@ -18831,7 +18891,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Nymble mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 920,
@@ -18852,7 +18912,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Lokix es un muro infranqueable de tipo bug. Su asombrosa defensa de 156 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 921,
@@ -18872,7 +18932,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Una criatura versátil de tipo electric. Pawmi mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 922,
@@ -18893,7 +18953,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Consciente de su poder, Pawmo ataca sin piedad. Sus 150 puntos de ataque físico lo convierten en un depredador implacable de tipo electric. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 923,
@@ -18914,7 +18974,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Pawmot es un muro infranqueable de tipo electric. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 924,
@@ -18934,7 +18994,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Una criatura versátil de tipo normal. Tandemaus mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 925,
@@ -18954,7 +19014,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Maushold-family-of-four es un muro infranqueable de tipo normal. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 926,
@@ -18974,7 +19034,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Consciente de su poder, Fidough ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo fairy."
   },
   {
     "id": 927,
@@ -18994,7 +19054,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Consciente de su poder, Dachsbun ataca sin piedad. Sus 160 puntos de ataque físico lo convierten en un depredador implacable de tipo fairy. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 928,
@@ -19015,7 +19075,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Smoliv mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 929,
@@ -19036,7 +19096,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Dolliv ataca sin piedad. Sus 106 puntos de ataque físico lo convierten en un depredador implacable de tipo grass. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 930,
@@ -19057,7 +19117,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Arboliva es un muro infranqueable de tipo grass. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 931,
@@ -19078,7 +19138,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Squawkabilly-green-plumage es un muro infranqueable de tipo normal. Su asombrosa defensa de 102 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 932,
@@ -19098,7 +19158,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Consciente de su poder, Nacli ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo rock."
   },
   {
     "id": 933,
@@ -19118,7 +19178,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Consciente de su poder, Naclstack ataca sin piedad. Sus 120 puntos de ataque físico lo convierten en un depredador implacable de tipo rock. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 934,
@@ -19138,7 +19198,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Garganacl es un muro infranqueable de tipo rock. Su asombrosa defensa de 260 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 935,
@@ -19158,7 +19218,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Una criatura versátil de tipo fire. Charcadet mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 936,
@@ -19179,7 +19239,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Armarouge es un muro infranqueable de tipo fire. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 937,
@@ -19200,7 +19260,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Ceruledge es un muro infranqueable de tipo fire. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 938,
@@ -19220,7 +19280,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Una criatura versátil de tipo electric. Tadbulb mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 939,
@@ -19240,7 +19300,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Bellibolt es un muro infranqueable de tipo electric. Su asombrosa defensa de 182 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 940,
@@ -19261,7 +19321,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Una criatura versátil de tipo electric. Wattrel mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 941,
@@ -19282,7 +19342,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Kilowattrel es un muro infranqueable de tipo electric. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 942,
@@ -19302,7 +19362,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Consciente de su poder, Maschiff ataca sin piedad. Sus 156 puntos de ataque físico lo convierten en un depredador implacable de tipo dark."
   },
   {
     "id": 943,
@@ -19322,7 +19382,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Mabosstiff es un muro infranqueable de tipo dark. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 944,
@@ -19343,7 +19403,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Consciente de su poder, Shroodle ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo poison."
   },
   {
     "id": 945,
@@ -19364,7 +19424,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Grafaiai es un muro infranqueable de tipo poison. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 946,
@@ -19385,7 +19445,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Bramblin ataca sin piedad. Sus 130 puntos de ataque físico lo convierten en un depredador implacable de tipo grass."
   },
   {
     "id": 947,
@@ -19406,7 +19466,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Brambleghast ataca sin piedad. Sus 230 puntos de ataque físico lo convierten en un depredador implacable de tipo grass. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 948,
@@ -19427,7 +19487,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Una criatura versátil de tipo ground. Toedscool mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 949,
@@ -19448,7 +19508,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Toedscruel es un muro infranqueable de tipo ground. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 950,
@@ -19468,7 +19528,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Klawf es un muro infranqueable de tipo rock. Su asombrosa defensa de 230 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 951,
@@ -19488,7 +19548,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Consciente de su poder, Capsakid ataca sin piedad. Sus 124 puntos de ataque físico lo convierten en un depredador implacable de tipo grass."
   },
   {
     "id": 952,
@@ -19509,7 +19569,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Scovillain es un muro infranqueable de tipo grass. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 953,
@@ -19529,7 +19589,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Una criatura versátil de tipo bug. Rellor mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 954,
@@ -19550,7 +19610,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Rabsca es un muro infranqueable de tipo bug. Su asombrosa defensa de 170 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 955,
@@ -19570,7 +19630,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Una criatura versátil de tipo psychic. Flittle mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 956,
@@ -19590,7 +19650,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful psychic-type Pokémon."
+    "description": "Espathra es un muro infranqueable de tipo psychic. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 957,
@@ -19611,7 +19671,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Una criatura versátil de tipo fairy. Tinkatink mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 958,
@@ -19632,7 +19692,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Tinkatuff es un muro infranqueable de tipo fairy. Su asombrosa defensa de 110 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 959,
@@ -19653,7 +19713,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Tinkaton es un muro infranqueable de tipo fairy. Su asombrosa defensa de 154 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 960,
@@ -19673,7 +19733,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Wiglett ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo water."
   },
   {
     "id": 961,
@@ -19693,7 +19753,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Consciente de su poder, Wugtrio ataca sin piedad. Sus 200 puntos de ataque físico lo convierten en un depredador implacable de tipo water. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 962,
@@ -19714,7 +19774,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful flying-type Pokémon."
+    "description": "Bombirdier es un muro infranqueable de tipo flying. Su asombrosa defensa de 170 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 963,
@@ -19734,7 +19794,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful water-type Pokémon."
+    "description": "Una criatura versátil de tipo water. Finizen mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 964,
@@ -19754,7 +19814,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Palafin-zero es un muro infranqueable de tipo water. Su asombrosa defensa de 144 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 965,
@@ -19775,7 +19835,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Consciente de su poder, Varoom ataca sin piedad. Sus 140 puntos de ataque físico lo convierten en un depredador implacable de tipo steel."
   },
   {
     "id": 966,
@@ -19796,7 +19856,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Revavroom es un muro infranqueable de tipo steel. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 967,
@@ -19817,7 +19877,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Cyclizar es un muro infranqueable de tipo dragon. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 968,
@@ -19837,7 +19897,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Orthworm es un muro infranqueable de tipo steel. Su asombrosa defensa de 290 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 969,
@@ -19858,7 +19918,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Una criatura versátil de tipo rock. Glimmet mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 970,
@@ -19879,7 +19939,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Glimmora es un muro infranqueable de tipo rock. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 971,
@@ -19899,7 +19959,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 1,
     "rarity": "common",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Consciente de su poder, Greavard ataca sin piedad. Sus 122 puntos de ataque físico lo convierten en un depredador implacable de tipo ghost."
   },
   {
     "id": 972,
@@ -19919,7 +19979,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Houndstone es un muro infranqueable de tipo ghost. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 973,
@@ -19940,7 +20000,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful flying-type Pokémon."
+    "description": "Flamigo es un muro infranqueable de tipo flying. Su asombrosa defensa de 148 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 974,
@@ -19960,7 +20020,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Consciente de su poder, Cetoddle ataca sin piedad. Sus 136 puntos de ataque físico lo convierten en un depredador implacable de tipo ice."
   },
   {
     "id": 975,
@@ -19980,7 +20040,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Cetitan es un muro infranqueable de tipo ice. Su asombrosa defensa de 130 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 976,
@@ -20001,7 +20061,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful water-type Pokémon."
+    "description": "Veluza es un muro infranqueable de tipo water. Su asombrosa defensa de 146 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 977,
@@ -20021,7 +20081,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Dondozo es un muro infranqueable de tipo water. Su asombrosa defensa de 230 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 978,
@@ -20042,7 +20102,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Tatsugiri-curly es un muro infranqueable de tipo dragon. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 979,
@@ -20063,7 +20123,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Annihilape es un muro infranqueable de tipo fighting. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 980,
@@ -20084,7 +20144,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Clodsire es un muro infranqueable de tipo poison. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 981,
@@ -20105,7 +20165,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 8,
     "rarity": "legendary",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Farigiraf es un muro infranqueable de tipo normal. Su asombrosa defensa de 140 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 982,
@@ -20125,7 +20185,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 6,
     "rarity": "rare",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Dudunsparce-two-segment es un muro infranqueable de tipo normal. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 983,
@@ -20146,7 +20206,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Kingambit es un muro infranqueable de tipo dark. Su asombrosa defensa de 240 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 984,
@@ -20167,7 +20227,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Great-tusk es un muro infranqueable de tipo ground. Su asombrosa defensa de 262 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 985,
@@ -20188,7 +20248,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Scream-tail es un muro infranqueable de tipo fairy. Su asombrosa defensa de 198 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 986,
@@ -20209,7 +20269,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Brute-bonnet es un muro infranqueable de tipo grass. Su asombrosa defensa de 198 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 987,
@@ -20230,7 +20290,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Consciente de su poder, Flutter-mane ataca sin piedad. Sus 110 puntos de ataque físico lo convierten en un depredador implacable de tipo ghost. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 988,
@@ -20251,7 +20311,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful bug-type Pokémon."
+    "description": "Slither-wing es un muro infranqueable de tipo bug. Su asombrosa defensa de 158 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 989,
@@ -20272,7 +20332,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Sandy-shocks es un muro infranqueable de tipo electric. Su asombrosa defensa de 194 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 990,
@@ -20293,7 +20353,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful ground-type Pokémon."
+    "description": "Iron-treads es un muro infranqueable de tipo ground. Su asombrosa defensa de 240 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 991,
@@ -20314,7 +20374,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful ice-type Pokémon."
+    "description": "Consciente de su poder, Iron-bundle ataca sin piedad. Sus 160 puntos de ataque físico lo convierten en un depredador implacable de tipo ice. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 992,
@@ -20335,7 +20395,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Iron-hands es un muro infranqueable de tipo fighting. Su asombrosa defensa de 216 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 993,
@@ -20356,7 +20416,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Iron-jugulis es un muro infranqueable de tipo dark. Su asombrosa defensa de 172 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 994,
@@ -20377,7 +20437,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Iron-moth es un muro infranqueable de tipo fire. Su asombrosa defensa de 120 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 995,
@@ -20398,7 +20458,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Iron-thorns es un muro infranqueable de tipo rock. Su asombrosa defensa de 220 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 996,
@@ -20419,7 +20479,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Consciente de su poder, Frigibax ataca sin piedad. Sus 150 puntos de ataque físico lo convierten en un depredador implacable de tipo dragon."
   },
   {
     "id": 997,
@@ -20440,7 +20500,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 4,
     "rarity": "rare",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Arctibax es un muro infranqueable de tipo dragon. Su asombrosa defensa de 132 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 998,
@@ -20461,7 +20521,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Baxcalibur es un muro infranqueable de tipo dragon. Su asombrosa defensa de 184 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 999,
@@ -20481,7 +20541,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful ghost-type Pokémon."
+    "description": "Una criatura versátil de tipo ghost. Gimmighoul mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 1000,
@@ -20502,7 +20562,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Gholdengo es un muro infranqueable de tipo steel. Su asombrosa defensa de 190 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 1001,
@@ -20523,7 +20583,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Wo-chien es un muro infranqueable de tipo dark. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 1002,
@@ -20544,7 +20604,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Chien-pao es un muro infranqueable de tipo dark. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 1003,
@@ -20565,7 +20625,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Ting-lu es un muro infranqueable de tipo dark. Su asombrosa defensa de 250 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 1004,
@@ -20586,7 +20646,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful dark-type Pokémon."
+    "description": "Consciente de su poder, Chi-yu ataca sin piedad. Sus 160 puntos de ataque físico lo convierten en un depredador implacable de tipo dark. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 1005,
@@ -20607,7 +20667,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful dragon-type Pokémon."
+    "description": "Roaring-moon es un muro infranqueable de tipo dragon. Su asombrosa defensa de 142 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 1006,
@@ -20628,7 +20688,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful fairy-type Pokémon."
+    "description": "Iron-valiant es un muro infranqueable de tipo fairy. Su asombrosa defensa de 180 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 1007,
@@ -20649,7 +20709,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 11,
     "rarity": "legendary",
-    "description": "A powerful fighting-type Pokémon."
+    "description": "Koraidon es un muro infranqueable de tipo fighting. Su asombrosa defensa de 230 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 1008,
@@ -20670,7 +20730,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 11,
     "rarity": "legendary",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Miraidon es un muro infranqueable de tipo electric. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 1009,
@@ -20691,7 +20751,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful water-type Pokémon."
+    "description": "Walking-wake es un muro infranqueable de tipo water. Su asombrosa defensa de 182 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 1010,
@@ -20712,7 +20772,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Iron-leaves es un muro infranqueable de tipo grass. Su asombrosa defensa de 176 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 1011,
@@ -20733,7 +20793,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Dipplin es un muro infranqueable de tipo grass. Su asombrosa defensa de 220 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 1012,
@@ -20754,7 +20814,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 2,
     "rarity": "common",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Una criatura versátil de tipo grass. Poltchageist mantiene un equilibrio perfecto entre ataque y defensa, adaptándose a cualquier estrategia de su entrenador."
   },
   {
     "id": 1013,
@@ -20775,7 +20835,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 5,
     "rarity": "rare",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Sinistcha es un muro infranqueable de tipo grass. Su asombrosa defensa de 212 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Es un espécimen difícil de encontrar en estado salvaje."
   },
   {
     "id": 1014,
@@ -20796,7 +20856,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Okidogi es un muro infranqueable de tipo poison. Su asombrosa defensa de 230 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 1015,
@@ -20817,7 +20877,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Munkidori es un muro infranqueable de tipo poison. Su asombrosa defensa de 132 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 1016,
@@ -20838,7 +20898,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Fezandipiti es un muro infranqueable de tipo poison. Su asombrosa defensa de 164 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 1017,
@@ -20858,7 +20918,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Ogerpon es un muro infranqueable de tipo grass. Su asombrosa defensa de 168 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 1018,
@@ -20879,7 +20939,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Archaludon es un muro infranqueable de tipo steel. Su asombrosa defensa de 260 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 1019,
@@ -20900,7 +20960,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful grass-type Pokémon."
+    "description": "Hydrapple es un muro infranqueable de tipo grass. Su asombrosa defensa de 220 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 1020,
@@ -20921,7 +20981,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful fire-type Pokémon."
+    "description": "Gouging-fire es un muro infranqueable de tipo fire. Su asombrosa defensa de 242 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 1021,
@@ -20942,7 +21002,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful electric-type Pokémon."
+    "description": "Raging-bolt es un muro infranqueable de tipo electric. Su asombrosa defensa de 182 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 1022,
@@ -20963,7 +21023,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful rock-type Pokémon."
+    "description": "Iron-boulder es un muro infranqueable de tipo rock. Su asombrosa defensa de 160 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 1023,
@@ -20984,7 +21044,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 9,
     "rarity": "legendary",
-    "description": "A powerful steel-type Pokémon."
+    "description": "Iron-crown es un muro infranqueable de tipo steel. Su asombrosa defensa de 200 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   },
   {
     "id": 1024,
@@ -21004,7 +21064,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 3,
     "rarity": "common",
-    "description": "A powerful normal-type Pokémon."
+    "description": "Terapagos es un muro infranqueable de tipo normal. Su asombrosa defensa de 170 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla."
   },
   {
     "id": 1025,
@@ -21025,6 +21085,6 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     },
     "level": 10,
     "rarity": "legendary",
-    "description": "A powerful poison-type Pokémon."
+    "description": "Pecharunt es un muro infranqueable de tipo poison. Su asombrosa defensa de 320 puntos lo hace ideal para resistir los asedios más duros en el campo de batalla. Su presencia mitológica infunde terror en sus enemigos."
   }
 ];

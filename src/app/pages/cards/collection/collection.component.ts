@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from '../../../shared/components/navbar/navbar.component';
 import { PokemonService } from '../../../core/services/pokemon.service';
@@ -12,16 +13,25 @@ import { takeUntil } from 'rxjs/operators';
 @Component({
   selector: 'app-collection',
   standalone: true,
-  imports: [CommonModule, FormsModule, NavbarComponent],
+  imports: [CommonModule, RouterLink, FormsModule, NavbarComponent],
   template: `
     <app-navbar></app-navbar>
+
     <div class="collection-container">
+      <div class="page-header" style="max-width: 1200px; margin: 0 auto 20px; padding: 0 20px;">
+        <a routerLink="/menu" class="btn-global-back">← Volver al Menú</a>
+      </div>
       <h1>Colección de Cartas</h1>
 
       <div *ngIf="message" [ngClass]="{'success': messageType === 'success', 'error': messageType === 'error'}" style="max-width: 600px; margin: 0 auto 20px;">
         {{ message }}
       </div>
 
+      
+      <div class="tabs-container" style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
+        <button class="btn-tab" [class.active]="activeTab === 'pokemon'" (click)="activeTab = 'pokemon'; applyFiltersAndSort()">Pokémon</button>
+        <button class="btn-tab" [class.active]="activeTab === 'spells'" (click)="activeTab = 'spells'; applyFiltersAndSort()">Magias y Trampas</button>
+      </div>
       <div class="controls">
         <input
           type="text"
@@ -74,6 +84,24 @@ import { takeUntil } from 'rxjs/operators';
     </div>
   `,
   styles: [`
+    .btn-tab {
+      background: var(--pk-white);
+      border: 3px solid var(--pk-dark);
+      border-radius: 8px;
+      padding: 10px 30px;
+      font-size: 1.2rem;
+      font-family: var(--font-title);
+      color: var(--pk-text);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 4px 4px 0px var(--pk-dark);
+      margin: 0 10px;
+    }
+    .btn-tab.active, .btn-tab:hover {
+      background: var(--pk-yellow);
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px var(--pk-dark);
+    }
     .collection-container {
       min-height: calc(100vh - 60px);
       background: var(--pk-light);
@@ -292,6 +320,7 @@ import { takeUntil } from 'rxjs/operators';
   `]
 })
 export class CollectionComponent implements OnInit, OnDestroy {
+  activeTab: 'pokemon' | 'spells' = 'pokemon';
   cards: PokemonCard[] = [];
   filteredCards: PokemonCard[] = [];
   loading = false;
@@ -340,9 +369,11 @@ export class CollectionComponent implements OnInit, OnDestroy {
   }
 
   applyFiltersAndSort(): void {
-    let filtered = this.cards.filter(card =>
-      card.name.toLowerCase().includes(this.searchTerm.toLowerCase())
-    );
+    let filtered = this.cards.filter(card => {
+      const matchesTab = this.activeTab === 'pokemon' ? (!card.cardClass || card.cardClass === 'pokemon') : (card.cardClass === 'magic' || card.cardClass === 'trap');
+      if (!matchesTab) return false;
+      return card.name.toLowerCase().includes(this.searchTerm.toLowerCase());
+    });
 
     switch (this.sortBy) {
       case 'rarity':

@@ -12,13 +12,18 @@ import { PokemonCard } from '../../../core/models/pokemon-card.model';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
+import { RouterModule } from '@angular/router';
+
 @Component({
   selector: 'app-vs-player',
   standalone: true,
-  imports: [CommonModule, FormsModule, NavbarComponent],
+  imports: [CommonModule, FormsModule, RouterModule, NavbarComponent],
   template: `
     <app-navbar></app-navbar>
     <div class="vs-player-container" *ngIf="!gameState">
+      <div class="page-header" style="max-width: 1200px; margin: 0 auto 20px; padding: 0 20px;">
+        <a routerLink="/menu" class="btn-global-back">← Volver al Menú</a>
+      </div>
       <h1>Jugar En Línea</h1>
 
       <div *ngIf="!selectedRoom" class="room-selection">
@@ -105,6 +110,7 @@ import { takeUntil } from 'rxjs/operators';
           <div *ngIf="isMyTurn() && !gameState.winner" class="player-actions">
             <button (click)="playPhase()" class="btn-action">Terminar Fase</button>
             <button (click)="drawPhase()" class="btn-action">Robar Carta</button>
+             <button (click)="surrender()" class="btn-action" style="background: var(--pk-red); color: white;">Rendirse</button>
           </div>
         </div>
 
@@ -245,8 +251,16 @@ import { takeUntil } from 'rxjs/operators';
     .winner-overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.8); display: flex; align-items: center; justify-content: center; border-radius: 8px; z-index: 10; }
     .winner-message { text-align: center; background: var(--pk-white); padding: 40px; border: 4px solid var(--pk-dark); border-radius: 12px; box-shadow: 8px 8px 0px var(--pk-dark); }
     .winner-message h2 { font-family: var(--font-title); font-size: 3rem; color: var(--pk-yellow); margin: 0 0 30px; text-shadow: -2px -2px 0 var(--pk-dark), 2px -2px 0 var(--pk-dark), -2px 2px 0 var(--pk-dark), 2px 2px 0 var(--pk-dark); }
-    .btn-back { padding: 15px 40px; background: var(--pk-blue); color: white; border: 3px solid var(--pk-dark); border-radius: 8px; font-family: var(--font-title); font-size: 1.2rem; cursor: pointer; box-shadow: 4px 4px 0px var(--pk-dark); transition: all 0.2s; }
-    .btn-back:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px var(--pk-dark); }
+    .btn-back { padding: 15px 40px; background: var(--pk-blue); color: white; border: 3px solid var(--pk-dark); border-radius: 8px; font-family: var(--font-title); font-size: 1.2rem; cursor: pointer; box-shadow: 10px 10px 0px var(--pk-dark);
+      animation: modal-pop-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    @keyframes modal-pop-in {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .custom-modal h2 { transform: translate(2px, 2px); box-shadow: 2px 2px 0px var(--pk-dark); }
   `]
 })
 export class VsPlayerComponent implements OnInit, OnDestroy {
@@ -461,6 +475,21 @@ export class VsPlayerComponent implements OnInit, OnDestroy {
     if (this.gameState && this.selectedRoom) {
       await this.supabaseService.updateGameState(this.selectedRoom, this.gameState);
     }
+  }
+
+  
+  showSurrenderModal = false;
+  
+  surrender() {
+    this.showSurrenderModal = true;
+  }
+
+  confirmSurrender() {
+    this.showSurrenderModal = false;
+    if (this.gameState && this.currentUserId) {
+      this.gameState.winner = (this.myPlayerKey === 'player1') ? 'player2' : 'player1';
+    }
+    this.endGame();
   }
 
   async endGame(): Promise<void> {

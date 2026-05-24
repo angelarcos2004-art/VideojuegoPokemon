@@ -1,14 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
 
 @Component({
   selector: 'app-rules',
   standalone: true,
-  imports: [CommonModule, NavbarComponent],
+  imports: [CommonModule, RouterLink, NavbarComponent],
   template: `
     <app-navbar></app-navbar>
+
     <div class="rules-container">
+      <div class="page-header" style="max-width: 1200px; margin: 0 auto 20px; padding: 0 20px;">
+        <a routerLink="/menu" class="btn-global-back">← Volver al Menú</a>
+      </div>
       <h1>Reglas del Juego</h1>
       <div class="rules-content">
         <section>

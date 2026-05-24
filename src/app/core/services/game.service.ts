@@ -20,6 +20,7 @@ export class GameService {
       hand: this.drawCards(playerDeck, 5),
       deck: playerDeck.slice(5),
       field: [],
+      spellZone: [],
       graveyard: []
     };
 
@@ -30,6 +31,7 @@ export class GameService {
       hand: this.drawCards(cpuDeck, 5),
       deck: cpuDeck.slice(5),
       field: [],
+      spellZone: [],
       graveyard: []
     };
 
@@ -54,6 +56,7 @@ export class GameService {
       hand: this.drawCards(player1Deck, 5),
       deck: player1Deck.slice(5),
       field: [],
+      spellZone: [],
       graveyard: []
     };
 
@@ -64,6 +67,7 @@ export class GameService {
       hand: this.drawCards(player2Deck, 5),
       deck: player2Deck.slice(5),
       field: [],
+      spellZone: [],
       graveyard: []
     };
 
@@ -109,14 +113,71 @@ export class GameService {
       return false;
     }
     
-    if (cardIndex >= 0 && cardIndex < player.hand.length && player.field.length < 5) {
-      const card = player.hand.splice(cardIndex, 1)[0];
-      card.hasAttacked = false;
-      card.hasUsedAbility = false;
-      player.field.push(card);
-      return true;
+    if (cardIndex >= 0 && cardIndex < player.hand.length) {
+      const cardToPlay = player.hand[cardIndex];
+      const isSpellOrTrap = cardToPlay.cardClass === 'magic' || cardToPlay.cardClass === 'trap';
+      
+      if (!isSpellOrTrap && player.field.length < 5) {
+        const card = player.hand.splice(cardIndex, 1)[0];
+        card.hasAttacked = false;
+        card.hasUsedAbility = false;
+        player.field.push(card);
+        return true;
+      } else if (isSpellOrTrap && player.spellZone && player.spellZone.length < 5) {
+        const card = player.hand.splice(cardIndex, 1)[0];
+        card.isFaceDown = true; // Set face-down by default
+        player.spellZone.push(card);
+        return true;
+      }
     }
     return false;
+  }
+
+  activateSpellTrap(state: GameState, cardIndex: number, isPlayer1: boolean): void {
+    if (state.currentTurn !== (isPlayer1 ? 'player1' : 'player2') || state.phase !== 'main') {
+      return;
+    }
+    const player = isPlayer1 ? state.player1 : state.player2;
+    const opponent = isPlayer1 ? state.player2 : state.player1;
+    if(!player.spellZone) player.spellZone = [];
+    const card = player.spellZone[cardIndex];
+
+    if (card && card.isFaceDown) {
+      card.isFaceDown = false; // Flip card
+      // Apply effect based on specialAbility or magicEffect
+      if (card.specialAbility || card.magicEffect) {
+        const effectName = card.specialAbility ? card.specialAbility.effect : card.magicEffect;
+        const effectValue = card.specialAbility ? card.specialAbility.value : (card.effectValue || 0);
+        
+        switch (effectName) {
+          case 'heal':
+            player.hp = Math.min(player.hp + effectValue, 4000);
+            break;
+          case 'boost_attack':
+          case 'boost_atk':
+            player.field.forEach(c => c.attack += effectValue);
+            break;
+          case 'reduce_defense':
+            opponent.field.forEach(c => c.defense = Math.max(0, c.defense - effectValue));
+            break;
+          case 'draw_card':
+            this.drawCard(state, isPlayer1);
+            break;
+          case 'direct_damage':
+            opponent.hp -= effectValue;
+            break;
+          case 'field':
+            player.field.forEach(c => { c.attack += effectValue; c.defense += effectValue; });
+            break;
+        }
+      }
+      
+      // Move to graveyard after effect resolves
+      player.spellZone.splice(cardIndex, 1);
+      if(!player.graveyard) player.graveyard = [];
+      player.graveyard.push(card);
+      this.checkWinCondition(state);
+    }
   }
 
   attack(state: GameState, attackerIndex: number, defenderIndex: number, isPlayer1: boolean): void {
@@ -139,6 +200,7 @@ export class GameService {
 
         if (defender.hp <= 0) {
           const deadCard = defenderPlayer.field.splice(defenderIndex, 1)[0];
+          if(!defenderPlayer.graveyard) defenderPlayer.graveyard = [];
           defenderPlayer.graveyard.push(deadCard);
         }
       }
@@ -163,6 +225,7 @@ export class GameService {
     const card = player.field[cardIndex];
 
     if (card && !card.hasUsedAbility) {
+      if (!card.specialAbility) return;
       const ability = card.specialAbility;
       card.hasUsedAbility = true;
       
@@ -185,7 +248,7 @@ export class GameService {
           opponent.hp -= ability.value;
           break;
         case 'revive':
-          if (player.graveyard.length > 0) {
+          if (player.graveyard && player.graveyard.length > 0) {
             const revivedCard = player.graveyard.shift();
             if (revivedCard && player.field.length < 5) {
               revivedCard.hasAttacked = false;

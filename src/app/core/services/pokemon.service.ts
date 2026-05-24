@@ -5,6 +5,8 @@ import { environment } from '../../../environments/environment';
 import { PokemonCard, SpecialAbility } from '../models/pokemon-card.model';
 import { SqliteService } from './sqlite.service';
 
+import { ALL_POKEMON_CARDS } from '../models/all-pokemon-cards';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -26,42 +28,58 @@ export class PokemonService {
   ) {}
 
   async getPokemon(id: number): Promise<PokemonCard> {
-    const cached = this.sqliteService.getPokemonCache(`pokemon_${id}`);
-    if (cached) return cached;
+    return this.searchPokemonByName(id.toString());
+  }
+
+  async searchPokemonByName(nameOrId: string): Promise<PokemonCard> {
+    const cacheKey = `pokemon_${nameOrId}`;
+    
+    // Fast, synchronous local storage cache
+    try {
+      const cachedStr = localStorage.getItem(cacheKey);
+      if (cachedStr) {
+        return JSON.parse(cachedStr) as PokemonCard;
+      }
+    } catch (e) {
+      console.warn('LocalStorage unavailable', e);
+    }
 
     try {
       const response = await firstValueFrom(
-        this.http.get<any>(`${this.baseUrl}/pokemon/${id}`)
+        this.http.get<any>(`${this.baseUrl}/pokemon/${nameOrId}`)
       );
       const card = this.mapToPokemonCard(response);
-      this.sqliteService.insertPokemonCache(`pokemon_${id}`, card);
+      
+      try {
+        localStorage.setItem(cacheKey, JSON.stringify(card));
+        // Also cache by ID if searched by name
+        localStorage.setItem(`pokemon_${card.id}`, JSON.stringify(card));
+      } catch (e) {
+        // Ignore cache save error
+      }
+      
       return card;
     } catch (error) {
-      console.error(`Failed to fetch Pokémon ${id}:`, error);
+      console.error(`Failed to fetch Pokémon ${nameOrId}:`, error);
       throw error;
     }
   }
 
+  async getAllPokemons(): Promise<PokemonCard[]> {
+    // 100% INMEDIATO: Usar la base de datos interna con 1025 Pokémon
+    return ALL_POKEMON_CARDS;
+  }
+
   async getRandomPokemons(count: number): Promise<PokemonCard[]> {
-    const cards: PokemonCard[] = [];
-    const ids = this.generateRandomIds(count);
-
-    for (const id of ids) {
-      try {
-        const card = await this.getPokemon(id);
-        cards.push(card);
-      } catch (error) {
-        console.error(`Failed to get Pokémon:`, error);
-      }
-    }
-
-    return cards;
+    const shuffled = [...ALL_POKEMON_CARDS].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
   }
 
   private generateRandomIds(count: number): number[] {
     const ids: number[] = [];
     for (let i = 0; i < count; i++) {
-      ids.push(Math.floor(Math.random() * 898) + 1);
+      // Existen 1025 Pokémon en la Pokédex Nacional actualmente (hasta la Generación 9)
+      ids.push(Math.floor(Math.random() * 1025) + 1);
     }
     return ids;
   }
@@ -86,7 +104,7 @@ export class PokemonService {
       specialAbility: this.abilityMap[type] || this.abilityMap['default'],
       level: Math.max(1, level),
       rarity,
-      description: `A powerful ${type}-type Pokémon.`
+      description: ALL_POKEMON_CARDS.find(c => c.id === data.id)?.description || `A powerful ${type}-type Pokémon.`
     };
   }
 }

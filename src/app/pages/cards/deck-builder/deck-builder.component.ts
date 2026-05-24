@@ -28,11 +28,16 @@ const MAX_CARDS_PER_TYPE = 2;
       <div class="builder-content">
         <div class="available-cards">
           <h2>Cartas Disponibles</h2>
+          
+          <div class="tabs-container" style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
+            <button class="btn-tab" [class.active]="activeTab === 'pokemon'" (click)="activeTab = 'pokemon'; applyFilter()">Pokémon</button>
+            <button class="btn-tab" [class.active]="activeTab === 'spells'" (click)="activeTab = 'spells'; applyFilter()">Magias y Trampas</button>
+          </div>
           <div class="controls">
             <input
               type="text"
               placeholder="Buscar cartas..."
-              [(ngModel)]="searchTerm"
+              [(ngModel)]="searchTerm" (ngModelChange)="applyFilter()"
               class="search-input"
             >
           </div>
@@ -110,6 +115,24 @@ const MAX_CARDS_PER_TYPE = 2;
     </div>
   `,
   styles: [`
+    .btn-tab {
+      background: var(--pk-white);
+      border: 3px solid var(--pk-dark);
+      border-radius: 8px;
+      padding: 10px 30px;
+      font-size: 1.2rem;
+      font-family: var(--font-title);
+      color: var(--pk-text);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 4px 4px 0px var(--pk-dark);
+      margin: 0 10px;
+    }
+    .btn-tab.active, .btn-tab:hover {
+      background: var(--pk-yellow);
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px var(--pk-dark);
+    }
     .deck-builder-container {
       min-height: calc(100vh - 60px);
       background: var(--pk-light);
@@ -462,6 +485,7 @@ const MAX_CARDS_PER_TYPE = 2;
   `]
 })
 export class DeckBuilderComponent implements OnInit, OnDestroy {
+  activeTab: 'pokemon' | 'spells' = 'pokemon';
   availableCards: PokemonCard[] = [];
   filteredCards: PokemonCard[] = [];
   deck: DeckCard[] = [];
@@ -516,9 +540,13 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
 
   applyFilter(): void {
     const term = this.searchTerm.toLowerCase();
-    this.filteredCards = this.availableCards.filter(card =>
-      card.name.toLowerCase().includes(term) || card.types.some(t => t.includes(term))
-    );
+    this.filteredCards = this.availableCards.filter(card => {
+      const matchesTab = this.activeTab === 'pokemon' ? (!card.cardClass || card.cardClass === 'pokemon') : (card.cardClass === 'magic' || card.cardClass === 'trap');
+      if (!matchesTab) return false;
+      const matchName = card.name?.toLowerCase().includes(term);
+      const matchType = Array.isArray(card.types) && card.types.some(t => t?.toLowerCase().includes(term));
+      return matchName || matchType;
+    });
   }
 
   private showMessage(text: string, type: 'error' | 'success' = 'error'): void {

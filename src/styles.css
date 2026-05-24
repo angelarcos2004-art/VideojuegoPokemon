@@ -68,3 +68,26 @@ body {
   background: linear-gradient(125deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.1) 100%);
   pointer-events: none;
 }
+
+
+/* Global Cel-Shaded Button for Back Navigation */
+.btn-global-back {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--pk-white);
+  color: var(--pk-text);
+  border: 3px solid var(--pk-dark);
+  border-radius: 8px;
+  font-family: var(--font-title);
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 4px 4px 0px var(--pk-dark);
+  transition: all 0.2s;
+  text-align: center;
+}
+.btn-global-back:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--pk-dark);
+}

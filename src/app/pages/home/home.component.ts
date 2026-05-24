@@ -19,7 +19,7 @@ import { Observable } from 'rxjs';
         <div class="buttons">
           <ng-container *ngIf="isAuthenticated$ | async; else unauthButtons">
             <a routerLink="/menu" class="btn btn-primary">Ir al Menú</a>
-            <a routerLink="/game/vs-cpu" class="btn btn-secondary">Partida Rápida</a>
+            <a routerLink="/game/cpu" class="btn btn-secondary">Partida Rápida</a>
           </ng-container>
           <ng-template #unauthButtons>
             <a routerLink="/login" class="btn btn-primary">Iniciar Sesión</a>
