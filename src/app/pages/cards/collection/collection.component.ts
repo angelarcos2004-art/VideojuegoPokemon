@@ -57,22 +57,23 @@ import { takeUntil } from 'rxjs/operators';
             <img [src]="card.image" [alt]="card.name" class="card-image">
             <div class="card-info">
               <h3>{{ card.name }}</h3>
-              <div class="card-types">
-                <span *ngFor="let type of card.types" class="type-badge" [class]="'type-' + type">
-                  {{ type }}
-                </span>
-              </div>
               <div class="card-stats">
-                <span class="stat">HP: {{ card.hp }}</span>
-                <span class="stat">ATK: {{ card.attack }}</span>
-                <span class="stat">DEF: {{ card.defense }}</span>
+                <span class="atk">⚔️ {{ card.attack }}</span>
+                <span class="hp">❤️ {{ card.hp }}</span>
+                <span class="def">🛡️ {{ card.defense }}</span>
               </div>
-              <div class="card-rarity" [class]="'rarity-' + card.rarity">
-                {{ card.rarity }}
+              <div class="card-meta">
+                <span class="type-badge" [class]="'type-' + card.types[0]">{{ translateType(card.types[0]) }}</span>
+                <span>Nvl {{ card.level || 1 }}</span>
+                <span>{{ card.rarity === 'legendary' ? 'Legendario' : (card.rarity === 'rare' ? 'Raro' : 'Común') }}</span>
               </div>
-              <button (click)="addToCollection(card)" class="btn-add">
-                + Agregar a Colección
-              </button>
+              <div class="card-desc" *ngIf="card.specialAbility">
+                <strong>{{ translateAbilityName(card.specialAbility.name) }}:</strong>
+                {{ translateAbilityDesc(card.specialAbility.description) }}
+              </div>
+              <div class="card-flavor">
+                {{ card.description }}
+              </div>
             </div>
           </div>
         </div>
@@ -238,34 +239,46 @@ import { takeUntil } from 'rxjs/operators';
 
     .card-stats {
       display: flex;
-      gap: 10px;
-      font-size: 0.9rem;
-      color: var(--pk-text);
-      opacity: 0.8;
-      font-weight: bold;
-    }
-
-    .stat {
-      background: rgba(0, 0, 0, 0.05);
-      padding: 3px 8px;
-      border-radius: 5px;
-      border: 1px solid var(--pk-dark);
-    }
-
-    .card-rarity {
-      font-weight: bold;
-      text-transform: capitalize;
-      padding: 5px;
-      border-radius: 5px;
-      text-align: center;
-      font-size: 0.9rem;
+      justify-content: space-between;
+      background: var(--pk-light);
+      padding: 8px;
+      border-radius: 6px;
       border: 2px solid var(--pk-dark);
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    .atk { color: #d32f2f; }
+    .hp { color: #388e3c; }
+    .def { color: #1976d2; }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      font-weight: bold;
       margin-top: 5px;
     }
 
-    .rarity-common { background: #e0e0e0; color: #111; }
-    .rarity-rare { background: #9dbfff; color: #111; }
-    .rarity-legendary { background: #ffd700; color: #111; }
+    .card-desc {
+      background: #fdfdfd;
+      border-left: 4px solid var(--pk-yellow);
+      padding: 8px;
+      font-size: 0.8rem;
+      line-height: 1.4;
+      border-radius: 4px;
+      margin-top: 5px;
+    }
+    
+    .card-flavor {
+      font-size: 0.75rem;
+      font-style: italic;
+      color: #666;
+      line-height: 1.3;
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px dashed #ccc;
+    }
 
     .btn-add {
       padding: 10px;
@@ -412,19 +425,44 @@ export class CollectionComponent implements OnInit, OnDestroy {
     }, 3000);
   }
 
-  async addToCollection(card: PokemonCard): Promise<void> {
-    if (!this.currentUserId) {
-      console.error('User not authenticated');
-      return;
-    }
+  translateType(type: string | undefined): string {
+    if (!type) return 'Normal';
+    const t = type.toLowerCase();
+    const translations: {[key: string]: string} = {
+      'fire': 'Fuego', 'water': 'Agua', 'grass': 'Planta', 'electric': 'Eléctrico',
+      'psychic': 'Psíquico', 'ice': 'Hielo', 'dragon': 'Dragón', 'dark': 'Siniestro',
+      'fairy': 'Hada', 'normal': 'Normal', 'fighting': 'Lucha', 'flying': 'Volador',
+      'poison': 'Veneno', 'ground': 'Tierra', 'rock': 'Roca', 'bug': 'Bicho',
+      'ghost': 'Fantasma', 'steel': 'Acero'
+    };
+    return (translations[t] || type).toUpperCase();
+  }
 
-    try {
-      await this.supabaseService.addToCollection(this.currentUserId, card);
-      this.showMessage(`${card.name} añadido a tu colección!`, 'success');
-    } catch (error: any) {
-      console.error('Failed to add card to collection:', error);
-      const errorMsg = error?.message || error?.details || 'Error desconocido';
-      this.showMessage(`Error al agregar carta: ${errorMsg}`);
-    }
+  translateAbilityName(name: string | undefined): string {
+    if (!name) return 'Habilidad';
+    const translations: {[key: string]: string} = {
+      'Burn': 'Quemadura',
+      'Aqua Heal': 'Cura Acuática',
+      'Spore Shield': 'Escudo de Esporas',
+      'Thunder Strike': 'Impactrueno',
+      'Mind Read': 'Lectura Mental',
+      'Freeze': 'Congelar',
+      'Basic Attack': 'Ataque Básico'
+    };
+    return translations[name] || name;
+  }
+
+  translateAbilityDesc(desc: string | undefined): string {
+    if (!desc) return 'Sin efecto';
+    const translations: {[key: string]: string} = {
+      'Boost attack for next turn': 'Aumenta el ataque para el próximo turno',
+      'Restore 50 HP': 'Restaura 50 puntos de salud',
+      'Block next attack': 'Bloquea el próximo ataque',
+      'Direct damage to opponent': 'Daño directo al oponente',
+      'Draw extra card': 'Roba una carta extra',
+      'Reduce opponent defense': 'Reduce la defensa del oponente',
+      'Standard attack': 'Ataque estándar'
+    };
+    return translations[desc] || desc;
   }
 }

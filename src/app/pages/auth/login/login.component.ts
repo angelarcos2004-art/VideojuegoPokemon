@@ -1,6 +1,6 @@
 import { Component, OnInit, NgZone, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
 import { NavbarComponent } from '../../../shared/components/navbar/navbar.component';
@@ -8,33 +8,49 @@ import { NavbarComponent } from '../../../shared/components/navbar/navbar.compon
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink, NavbarComponent],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink, NavbarComponent],
   template: `
     <app-navbar></app-navbar>
     <div class="login-container">
       <div class="login-box">
         <h2>Iniciar Sesión</h2>
-        
+
         <div *ngIf="isLocked" class="error" style="margin-bottom: 20px;">
-          Demasiados intentos fallidos. Inténtalo de nuevo más tarde.
+          ⏱️ Demasiados intentos fallidos. Inténtalo de nuevo más tarde.
         </div>
 
-        <form (ngSubmit)="login()" [class.loading]="loading" *ngIf="!isLocked">
+        <form [formGroup]="form" (ngSubmit)="login()" [class.loading]="loading" *ngIf="!isLocked">
           <div class="form-group">
             <label>Email:</label>
-            <input type="email" [(ngModel)]="email" name="email" required [disabled]="loading" autocomplete="username">
+            <input type="email" formControlName="email" [disabled]="loading" autocomplete="username">
+            <div class="error-message" *ngIf="isFieldInvalid('email')">
+              <span *ngIf="form.get('email')?.errors?.['required']">El email es requerido</span>
+              <span *ngIf="form.get('email')?.errors?.['email']">Email inválido (ejemplo: usuario@dominio.com)</span>
+            </div>
           </div>
+
           <div class="form-group">
             <label>Contraseña:</label>
-            <input type="password" [(ngModel)]="password" name="password" required [disabled]="loading" autocomplete="current-password">
+            <input type="password" formControlName="password" [disabled]="loading" autocomplete="current-password">
+            <div class="error-message" *ngIf="isFieldInvalid('password')">
+              <span *ngIf="form.get('password')?.errors?.['required']">La contraseña es requerida</span>
+              <span *ngIf="form.get('password')?.errors?.['minlength']">Mínimo 6 caracteres</span>
+            </div>
           </div>
-          <button type="submit" class="btn-submit" [disabled]="loading">
+
+          <button type="submit" class="btn-submit" [disabled]="loading || !form.valid">
             {{ loading ? 'Iniciando sesión...' : 'Iniciar Sesión' }}
           </button>
+
           <div *ngIf="error" class="error">{{ error }}</div>
         </form>
+
         <p class="signup-link">
           ¿No tienes cuenta? <a routerLink="/register">Regístrate aquí</a>
+        </p>
+
+        <p class="forgot-password-link">
+          <a (click)="goToPasswordRecovery()" style="cursor: pointer; color: var(--pk-blue);">¿Olvidaste tu contraseña?</a>
         </p>
       </div>
     </div>
@@ -163,15 +179,30 @@ import { NavbarComponent } from '../../../shared/components/navbar/navbar.compon
       text-decoration: underline;
       color: var(--pk-red);
     }
+
+    .forgot-password-link {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .error-message {
+      color: var(--pk-red);
+      font-size: 0.85rem;
+      margin-top: 5px;
+    }
+
+    .form-group input.ng-invalid.ng-touched {
+      border-color: var(--pk-red);
+      background-color: #ffe8e8;
+    }
   `]
 })
 export class LoginComponent implements OnInit {
-  email = '';
-  password = '';
+  form!: FormGroup;
   error = '';
   loading = false;
   isLocked = false;
-  
+
   private maxAttempts = 3;
   private lockoutDurationMinutes = 3;
 
@@ -179,43 +210,45 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private ngZone: NgZone,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private fb: FormBuilder
   ) {}
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
     this.checkLockout();
   }
 
-  private checkLockout() {
+  isFieldInvalid(fieldName: string): boolean {
+    const field = this.form.get(fieldName);
+    return !!(field && field.invalid && (field.dirty || field.touched));
+  }
+
+  private checkLockout(): void {
     const lockoutUntil = localStorage.getItem('loginLockoutUntil');
-    if (lockoutUntil) {
-      if (new Date().getTime() < parseInt(lockoutUntil, 10)) {
-        this.isLocked = true;
-      } else {
-        // Bloqueo expirado
-        localStorage.removeItem('loginLockoutUntil');
-        localStorage.setItem('loginAttempts', '0');
-        this.isLocked = false;
-      }
+    if (lockoutUntil && new Date().getTime() < parseInt(lockoutUntil, 10)) {
+      this.isLocked = true;
+    } else {
+      localStorage.removeItem('loginLockoutUntil');
+      localStorage.setItem('loginAttempts', '0');
+      this.isLocked = false;
     }
   }
 
   async login(): Promise<void> {
-    if (this.isLocked) return;
+    if (this.isLocked || !this.form.valid) return;
 
-    if (!this.email.trim() || !this.password.trim()) {
-      this.error = 'Email y contraseña son requeridos';
-      return;
-    }
-
+    const { email, password } = this.form.value;
     this.loading = true;
     this.error = '';
 
     try {
-      await this.authService.signIn(this.email, this.password);
-      
+      await this.authService.signIn(email.trim(), password.trim());
+
       this.ngZone.run(() => {
-        // Resetear intentos si el login es exitoso
         localStorage.setItem('loginAttempts', '0');
         this.loading = false;
         this.router.navigate(['/menu']);
@@ -223,41 +256,31 @@ export class LoginComponent implements OnInit {
       });
     } catch (error: any) {
       this.ngZone.run(() => {
-        console.error('Login error:', error);
-        this.loading = false; // Quitar loading de inmediato
-        
-        try {
-          this.handleFailedAttempt();
-        } catch (e) {
-          console.error("Error in handleFailedAttempt", e);
-          this.error = 'Email o contraseña incorrectos.';
-        }
-        
-        this.cdr.detectChanges(); // Forzar actualización visual
+        this.loading = false;
+        this.handleFailedAttempt(error);
+        this.cdr.detectChanges();
       });
     }
   }
 
-  private handleFailedAttempt() {
+  private handleFailedAttempt(error: any): void {
     let attempts = parseInt(localStorage.getItem('loginAttempts') || '0', 10);
     attempts++;
-    
+
     if (attempts >= this.maxAttempts) {
-      // Bloquear
       const lockoutTime = new Date().getTime() + (this.lockoutDurationMinutes * 60 * 1000);
       localStorage.setItem('loginLockoutUntil', lockoutTime.toString());
       this.isLocked = true;
-      this.error = ''; // Limpiar mensaje normal
-      
-      // Redirigir al menú principal después de 2 segundos para que vean el mensaje
-      setTimeout(() => {
-        this.ngZone.run(() => {
-          this.router.navigate(['/']);
-        });
-      }, 2000);
+      this.error = '❌ Demasiados intentos fallidos. Bloqueo de 3 minutos activado.';
+
+      setTimeout(() => this.ngZone.run(() => this.router.navigate(['/'])), 2000);
     } else {
       localStorage.setItem('loginAttempts', attempts.toString());
-      this.error = 'Email o contraseña incorrectos. Intento ' + attempts + ' de ' + this.maxAttempts;
+      this.error = `❌ Email o contraseña incorrectos. Intento ${attempts}/${this.maxAttempts}`;
     }
+  }
+
+  goToPasswordRecovery(): void {
+    this.router.navigate(['/password-recovery']);
   }
 }

@@ -123,7 +123,7 @@ export class SupabaseService {
       .eq('room_id', roomId)
       .single();
 
-    if (error && error.code !== 'PGRST116') throw error; // ignore row not found
+    if (error && error.code !== 'PGRST116') throw error;
     return data ? JSON.parse(data.state_json) : null;
   }
 
@@ -167,7 +167,6 @@ export class SupabaseService {
   }
 
   async saveDeck(userId: string, deckName: string, cards: any[]): Promise<void> {
-    // 1. Crear el mazo y obtener su ID
     const { data: deckData, error: deckError } = await this.supabase
       .from('decks')
       .insert([{ user_id: userId, name: deckName }])
@@ -177,13 +176,29 @@ export class SupabaseService {
     if (deckError) throw deckError;
     const deckId = deckData.id;
 
-    // 2. Calcular cantidades
+    // Ensure all cards exist in pokemon_cards before linking
+    const uniqueCards = Array.from(new Map(cards.map(c => [c.id, c])).values());
+    const cardsToUpsert = uniqueCards.map(c => ({
+      id: c.id,
+      name: c.name,
+      image: c.image,
+      types: c.types,
+      hp: c.hp,
+      attack: c.attack,
+      defense: c.defense,
+      special_ability: c.special_ability,
+      level: c.level,
+      rarity: c.rarity,
+      description: c.description
+    }));
+    
+    await this.supabase.from('pokemon_cards').upsert(cardsToUpsert, { onConflict: 'id' });
+
     const cardCounts = new Map<number, number>();
     for (const card of cards) {
       cardCounts.set(card.id, (cardCounts.get(card.id) || 0) + 1);
     }
 
-    // 3. Insertar las cartas en deck_cards
     const deckCardsData = Array.from(cardCounts.entries()).map(([cardId, qty]) => ({
       deck_id: deckId,
       pokemon_card_id: cardId,
@@ -198,7 +213,6 @@ export class SupabaseService {
   }
 
   async updateDeck(deckId: string, deckName: string, cards: any[]): Promise<void> {
-    // 1. Actualizar el nombre del mazo
     const { error: deckError } = await this.supabase
       .from('decks')
       .update({ name: deckName })
@@ -206,7 +220,6 @@ export class SupabaseService {
 
     if (deckError) throw deckError;
 
-    // 2. Eliminar las cartas antiguas asociadas al mazo
     const { error: deleteError } = await this.supabase
       .from('deck_cards')
       .delete()
@@ -214,7 +227,24 @@ export class SupabaseService {
 
     if (deleteError) throw deleteError;
 
-    // 3. Insertar las nuevas cartas
+    // Ensure all cards exist in pokemon_cards before linking
+    const uniqueCards = Array.from(new Map(cards.map(c => [c.id, c])).values());
+    const cardsToUpsert = uniqueCards.map(c => ({
+      id: c.id,
+      name: c.name,
+      image: c.image,
+      types: c.types,
+      hp: c.hp,
+      attack: c.attack,
+      defense: c.defense,
+      special_ability: c.special_ability,
+      level: c.level,
+      rarity: c.rarity,
+      description: c.description
+    }));
+    
+    await this.supabase.from('pokemon_cards').upsert(cardsToUpsert, { onConflict: 'id' });
+
     const cardCounts = new Map<number, number>();
     for (const card of cards) {
       cardCounts.set(card.id, (cardCounts.get(card.id) || 0) + 1);
@@ -242,15 +272,29 @@ export class SupabaseService {
     if (error) throw error;
   }
 
+  async setActiveDeck(userId: string, deckId: string): Promise<void> {
+    await this.supabase
+      .from('decks')
+      .update({ is_active: false })
+      .eq('user_id', userId);
+
+    const { error } = await this.supabase
+      .from('decks')
+      .update({ is_active: true })
+      .eq('id', deckId);
+
+    if (error) throw error;
+  }
+
   async getUserDecks(userId: string): Promise<any[]> {
     const { data, error } = await this.supabase
       .from('decks')
-      .select('id, name, created_at, deck_cards(quantity, pokemon_cards(*))')
-      .eq('user_id', userId);
+      .select('id, name, is_active, created_at, deck_cards(quantity, pokemon_cards(*))')
+      .eq('user_id', userId)
+      .order('created_at', { ascending: false });
 
     if (error) throw error;
     
-    // Reconstruir el array de cartas plano que espera el juego
     return (data || []).map(deck => {
       const flatCards: any[] = [];
       if (deck.deck_cards) {
@@ -260,10 +304,9 @@ export class SupabaseService {
              const match = ALL_POKEMON_CARDS.find(c => c.id === card.id);
              const formattedCard = {
                ...card,
-               specialAbility: card.special_ability || card.specialAbility,
-               description: match ? match.description : card.description
+               ...(match || {}),
+               specialAbility: card.special_ability || (match ? match.specialAbility : undefined) || card.specialAbility,
              };
-             // Añadir tantas copias de la carta como indique quantity
              for (let i = 0; i < dc.quantity; i++) {
                flatCards.push(formattedCard);
              }
@@ -300,7 +343,6 @@ export class SupabaseService {
       throw cardError;
     }
 
-    // Check if user already has this card
     const { data: existing } = await this.supabase
       .from('user_collection')
       .select('quantity')
@@ -343,9 +385,44 @@ export class SupabaseService {
     const { data, error } = await this.supabase
       .from('game_results')
       .select('*')
-      .eq('user_id', userId);
+      .or(`winner_id.eq.${userId},loser_id.eq.${userId}`);
 
     if (error) throw error;
-    return data || [];
+
+    return (data || []).map(game => ({
+      ...game,
+      winner: game.winner_id === userId ? 'player' : 'cpu',
+      played_at: game.created_at,
+      opponent: game.mode === 'cpu' ? 'CPU' : 'Jugador'
+    }));
+  }
+
+  async sendPasswordResetEmail(email: string): Promise<void> {
+    const { error } = await this.supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: `${window.location.origin}/reset-password`
+    });
+    if (error) throw error;
+  }
+
+  async resetPassword(newPassword: string, token?: string): Promise<void> {
+    const { error } = await this.supabase.auth.updateUser({
+      password: newPassword
+    });
+    if (error) throw error;
+  }
+
+  async resendVerificationEmail(email: string): Promise<void> {
+    const { error } = await this.supabase.auth.resend({
+      type: 'signup',
+      email: email
+    });
+    if (error) throw error;
+  }
+
+  async updateUserEmail(newEmail: string): Promise<void> {
+    const { error } = await this.supabase.auth.updateUser({
+      email: newEmail
+    });
+    if (error) throw error;
   }
 }

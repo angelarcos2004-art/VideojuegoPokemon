@@ -31,17 +31,23 @@ import { takeUntil } from 'rxjs/operators';
             <span class="def">🛡️ {{ hoveredCard.defense }}</span>
           </div>
           <div class="inspector-meta">
-            <span class="type-badge">{{ hoveredCard.types[0] }}</span>
+            <span class="type-badge">{{ translateType(hoveredCard.types[0]) }}</span>
             <span>Nvl {{ hoveredCard.level }}</span>
-            <span>{{ hoveredCard.rarity }}</span>
+            <span>{{ hoveredCard.rarity === 'legendary' ? 'Legendario' : (hoveredCard.rarity === 'rare' ? 'Raro' : 'Común') }}</span>
           </div>
           <div class="inspector-desc">
-            <strong>{{ hoveredCard.specialAbility?.name || 'Habilidad' }}:</strong>
-            {{ hoveredCard.specialAbility?.description || 'Sin efecto' }}
+            <strong>{{ translateAbilityName(hoveredCard.specialAbility?.name) }}:</strong>
+            {{ translateAbilityDesc(hoveredCard.specialAbility?.description) }}
           </div>
           <div class="inspector-flavor">
             {{ hoveredCard.description }}
           </div>
+          <!-- Activate button if face-down spell in zone -->
+          <button *ngIf="hoveredCard.isFaceDown && gameState.phase === 'main' && gameState.currentTurn === 'player1'" 
+                  class="btn-action" style="margin-top: 10px; width: 100%;" 
+                  (click)="activateSpell(gameState.player1.spellZone.indexOf(hoveredCard))">
+            Activar Mágica/Trampa
+          </button>
         </div>
       </div>
 
@@ -84,7 +90,10 @@ import { takeUntil } from 'rxjs/operators';
             <!-- Top row for CPU -->
             <div class="mat-row cpu-monsters">
               <div class="mat-zone graveyard-zone">
-                <div class="zone-label">GY ({{ gameState.player2.graveyard.length }})</div>
+                <div class="zone-label">Cementerio ({{ gameState.player2.graveyard.length }})</div>
+                <div *ngIf="gameState.player2.graveyard.length > 0" class="field-card pk-card-visual" style="position: absolute; width: 100%; height: 100%; pointer-events: none;">
+                  <img [src]="gameState.player2.graveyard[gameState.player2.graveyard.length-1].image" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
               </div>
               
               <div class="monster-zones">
@@ -111,25 +120,34 @@ import { takeUntil } from 'rxjs/operators';
 
               <div class="mat-zone deck-zone">
                 <div class="deck-stack"></div>
-                <div class="zone-label">Deck ({{ gameState.player2.deck.length }})</div>
+                <div class="zone-label">Mazo ({{ gameState.player2.deck.length }})</div>
               </div>
             </div>
 
             <!-- Bottom row for CPU Spells/Traps -->
             <div class="mat-row cpu-spells">
               <div class="mat-zone extra-zone">
-                <div class="zone-label">Extra (0)</div>
+                <div class="zone-label">Extra ({{ gameState.player2.extraDeck.length }})</div>
+                <div *ngIf="gameState.player2.extraDeck.length > 0" class="field-card pk-card-visual" style="position: absolute; width: 100%; height: 100%; pointer-events: none;">
+                  <img src="/assets/images/fondo_carta_pokemon.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                </div>
               </div>
               <div class="monster-zones spell-zones">
                 <div *ngFor="let slot of [0,1,2,3,4]" class="monster-slot spell-slot">
-                  <div *ngIf="gameState.player2.spellZone[slot]" class="field-card face-down"
-                       (mouseenter)="hoveredCard = gameState.player2.spellZone[slot]" (mouseleave)="hoveredCard = null">
+                  <div *ngIf="gameState.player2.spellZone[slot] as spellCard" 
+                       class="field-card" 
+                       [class.face-down]="spellCard.isFaceDown"
+                       [class.pk-card-visual]="!spellCard.isFaceDown"
+                       (mouseenter)="hoveredCard = spellCard" (mouseleave)="hoveredCard = null">
+                     <img *ngIf="!spellCard.isFaceDown" [src]="spellCard.image" class="card-image" style="height: 100%;">
                   </div>
                 </div>
               </div>
               <div class="mat-zone field-zone">
-                <div class="zone-label">Field</div>
-                <div *ngIf="gameState.player2.fieldCard" class="card-mini">{{gameState.player2.fieldCard.name}}</div>
+                <div class="zone-label">Campo</div>
+                <div *ngIf="gameState.player2.fieldCard" class="field-card pk-card-visual" style="position: absolute; width: 100%; height: 100%; pointer-events: none; border-color: var(--pk-red);">
+                  <img [src]="gameState.player2.fieldCard.image" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
               </div>
             </div>
           </div>
@@ -144,19 +162,29 @@ import { takeUntil } from 'rxjs/operators';
           <div class="mat-half player-half">
             <!-- Top row for Player Spells/Traps -->
             <div class="mat-row player-spells">
-              <div class="mat-zone field-zone">
-                <div class="zone-label">Field</div>
-                <div *ngIf="gameState.player1.fieldCard" class="card-mini">{{gameState.player1.fieldCard.name}}</div>
+              <div class="mat-zone field-zone interactive" (click)="placeFieldCard()" [class.highlight-slot]="selectedHandCardIndex !== null && isSelectedFieldSpell()">
+                <div class="zone-label">Campo</div>
+                <div *ngIf="gameState.player1.fieldCard" class="field-card pk-card-visual" style="position: absolute; width: 100%; height: 100%; pointer-events: none; border-color: var(--pk-yellow);">
+                  <img [src]="gameState.player1.fieldCard.image" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
               </div>
               <div class="monster-zones spell-zones">
-                <div *ngFor="let slot of [0,1,2,3,4]" class="monster-slot spell-slot">
-                  <div *ngIf="gameState.player1.spellZone[slot]" class="field-card face-down"
-                       (mouseenter)="hoveredCard = gameState.player1.spellZone[slot]" (mouseleave)="hoveredCard = null">
+                <div *ngFor="let slot of [0,1,2,3,4]" class="monster-slot spell-slot" (click)="!gameState.player1.spellZone[slot] && placeCardInSlot(slot, true)" [class.highlight-slot]="selectedHandCardIndex !== null && isSelectedSpell()">
+                  <div *ngIf="gameState.player1.spellZone[slot] as spellCard" 
+                       class="field-card interactive" 
+                       [class.face-down]="spellCard.isFaceDown"
+                       [class.pk-card-visual]="!spellCard.isFaceDown"
+                       (click)="$event.stopPropagation(); activateSpell(slot)"
+                       (mouseenter)="hoveredCard = spellCard" (mouseleave)="hoveredCard = null">
+                     <img *ngIf="!spellCard.isFaceDown" [src]="spellCard.image" class="card-image" style="height: 100%;">
                   </div>
                 </div>
               </div>
-              <div class="mat-zone extra-zone">
-                <div class="zone-label">Extra (0)</div>
+              <div class="mat-zone extra-zone interactive" (click)="openExtraDeck()">
+                <div class="zone-label">Extra ({{ gameState.player1.extraDeck.length }})</div>
+                <div *ngIf="gameState.player1.extraDeck.length > 0" class="field-card pk-card-visual" style="position: absolute; width: 100%; height: 100%; pointer-events: none;">
+                  <img src="/assets/images/fondo_carta_pokemon.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                </div>
               </div>
             </div>
 
@@ -164,11 +192,11 @@ import { takeUntil } from 'rxjs/operators';
             <div class="mat-row player-monsters">
               <div class="mat-zone deck-zone">
                 <div class="deck-stack"></div>
-                <div class="zone-label">Deck ({{ gameState.player1.deck.length }})</div>
+                <div class="zone-label">Mazo ({{ gameState.player1.deck.length }})</div>
               </div>
               
               <div class="monster-zones">
-                <div *ngFor="let slot of [0,1,2,3,4]" class="monster-slot">
+                <div *ngFor="let slot of [0,1,2,3,4]" class="monster-slot" (click)="!gameState.player1.field[slot] && placeCardInSlot(slot, false)" [class.highlight-slot]="selectedHandCardIndex !== null && !isSelectedSpell()">
                   <div *ngIf="gameState.player1.field[slot]"
                        class="field-card pk-card-visual interactive"
                        [ngClass]="[
@@ -177,7 +205,7 @@ import { takeUntil } from 'rxjs/operators';
                        ]"
                        [class.selected]="selectedAttackerIndex === slot"
                        [class.exhausted]="gameState.player1.field[slot].hasAttacked || gameState.player1.field[slot].hasUsedAbility"
-                       (click)="selectFieldCard(slot)"
+                       (click)="$event.stopPropagation(); selectFieldCard(slot)"
                        (mouseenter)="hoveredCard = gameState.player1.field[slot]" (mouseleave)="hoveredCard = null">
                     <img [src]="gameState.player1.field[slot].image" [alt]="gameState.player1.field[slot].name" class="card-image">
                     <div class="card-name">{{ gameState.player1.field[slot].name }}</div>
@@ -190,7 +218,10 @@ import { takeUntil } from 'rxjs/operators';
               </div>
 
               <div class="mat-zone graveyard-zone">
-                <div class="zone-label">GY ({{ gameState.player1.graveyard.length }})</div>
+                <div class="zone-label">Cementerio ({{ gameState.player1.graveyard.length }})</div>
+                <div *ngIf="gameState.player1.graveyard.length > 0" class="field-card pk-card-visual" style="position: absolute; width: 100%; height: 100%; pointer-events: none;">
+                  <img [src]="gameState.player1.graveyard[gameState.player1.graveyard.length-1].image" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
               </div>
             </div>
           </div>
@@ -202,6 +233,29 @@ import { takeUntil } from 'rxjs/operators';
           <div class="winner-message">
             <h2>{{ gameState.winner === 'player1' ? '¡Ganaste!' : '¡Perdiste!' }}</h2>
             <button (click)="endGame()" class="btn-action">Volver al Menú</button>
+          </div>
+        </div>
+
+        <!-- Extra Deck Modal -->
+        <div *ngIf="showExtraDeckModal" class="winner-overlay" style="z-index: 101;" (click)="closeExtraDeck()">
+          <div class="winner-message" style="max-width: 80%; background: var(--pk-light);" (click)="$event.stopPropagation()">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">Tu Deck Extra (Evoluciones)</h2>
+            <p *ngIf="gameState.player1.extraDeck.length === 0" style="margin-bottom: 20px; font-family: var(--font-text);">No tienes evoluciones disponibles.</p>
+            
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;">
+               <div *ngFor="let card of gameState.player1.extraDeck; let i = index" 
+                    class="field-card pk-card-visual interactive" 
+                    [ngClass]="'card-type-' + (card.types[0] || 'default')"
+                    style="position: relative; width: 140px; height: 200px;"
+                    (click)="selectExtraCardToEvolve(i)"
+                    (mouseenter)="hoveredCard = card" (mouseleave)="hoveredCard = null">
+                 <img [src]="card.image" class="card-image" style="width: 100%; height: 60%; object-fit: cover; border-bottom: 2px solid var(--pk-dark);">
+                 <div class="card-name" style="font-size: 0.8rem; padding: 5px;">{{ card.name }} (Nvl {{ card.level }})</div>
+                 <div style="font-size: 0.7rem; text-align: center; font-family: var(--font-text);">Click para Evolucionar</div>
+               </div>
+            </div>
+            
+            <button (click)="closeExtraDeck()" class="btn-action btn-danger">Cerrar</button>
           </div>
         </div>
       </div>
@@ -226,7 +280,9 @@ import { takeUntil } from 'rxjs/operators';
       <div class="hand-container">
         <div class="hand-cards">
           <div *ngFor="let card of gameState.player1.hand; let i = index"
-               class="hand-card pk-card-visual interactive"
+               class="hand-card anim-draw pk-card-visual interactive"
+               [class.selected-for-play]="selectedHandCardIndex === i"
+               [style.animation-delay]="(i * 0.1) + 's'"
                [ngClass]="'card-type-' + (card?.types?.[0] || 'default')"
                (click)="playCardFromHand(i)"
                (mouseenter)="hoveredCard = card" (mouseleave)="hoveredCard = null">
@@ -346,7 +402,6 @@ import { takeUntil } from 'rxjs/operators';
       display: flex;
       align-items: center;
       justify-content: center;
-      perspective: 1000px;
       padding: 20px;
     }
 
@@ -361,8 +416,6 @@ import { takeUntil } from 'rxjs/operators';
       flex-direction: column;
       padding: 30px;
       gap: 20px;
-      transform: rotateX(10deg);
-      transform-style: preserve-3d;
       position: relative;
     }
 
@@ -423,12 +476,15 @@ import { takeUntil } from 'rxjs/operators';
     }
 
     .deck-zone { border-color: var(--pk-yellow); background: var(--pk-white); }
-    .graveyard-zone { border-color: #888; background: #ddd; }
+    .graveyard-zone { border-color: #888; background: rgba(136, 136, 136, 0.2); }
 
     .deck-stack {
-      width: 80%;
-      height: 80%;
-      background: var(--pk-blue);
+      width: 85%;
+      height: 85%;
+      background-image: url('/assets/images/card-back.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 1;
       border: 3px solid var(--pk-dark);
       border-radius: 6px;
       box-shadow: 2px 2px 0 var(--pk-dark), 4px 4px 0 var(--pk-dark), 6px 6px 0 var(--pk-dark);
@@ -511,6 +567,27 @@ import { takeUntil } from 'rxjs/operators';
       border-top: 4px solid var(--pk-dark);
       box-shadow: 0 -5px 0px rgba(0,0,0,0.1);
       z-index: 20;
+    }
+
+    .interactive:hover {
+      transform: translateY(-10px) scale(1.05);
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+      z-index: 100;
+    }
+    .selected-for-play {
+      transform: translateY(-20px) scale(1.1) !important;
+      box-shadow: 0 0 15px 5px var(--pk-yellow) !important;
+      border-color: var(--pk-yellow) !important;
+      z-index: 110;
+    }
+    .highlight-slot {
+      border: 2px dashed var(--pk-yellow) !important;
+      background-color: rgba(255, 203, 5, 0.2) !important;
+      cursor: pointer;
+    }
+    .highlight-slot:hover {
+      background-color: rgba(255, 203, 5, 0.4) !important;
     }
 
     .hand-cards {
@@ -628,7 +705,7 @@ import { takeUntil } from 'rxjs/operators';
     }
     .inspector-stats .atk { color: var(--pk-red); }
     .inspector-stats .hp { color: var(--pk-blue); }
-    .inspector-stats .def { color: #555; }
+    .inspector-stats .def { color: var(--pk-text); opacity: 0.7; }
 
     .inspector-meta {
       display: flex;
@@ -643,6 +720,7 @@ import { takeUntil } from 'rxjs/operators';
       padding: 2px 8px;
       border-radius: 10px;
       border: 2px solid var(--pk-dark);
+      color: #111; /* Always dark text on yellow badge */
     }
 
     .inspector-desc {
@@ -650,14 +728,16 @@ import { takeUntil } from 'rxjs/operators';
       line-height: 1.3;
       margin-bottom: 10px;
       padding: 8px;
-      background: #f9f9f9;
+      background: var(--pk-light);
+      color: var(--pk-text);
       border-left: 4px solid var(--pk-yellow);
     }
 
     .inspector-flavor {
       font-size: 0.8rem;
       font-style: italic;
-      color: #666;
+      color: var(--pk-text);
+      opacity: 0.7;
       text-align: center;
     }
 
@@ -735,12 +815,12 @@ import { takeUntil } from 'rxjs/operators';
     .face-down {
       width: 100%;
       height: 100%;
-      background: url('https://upload.wikimedia.org/wikipedia/en/3/3b/Pokemon_Trading_Card_Game_cardback.jpg') center/cover;
+      background: url('/assets/images/fondo_carta_pokemon.jpg') center/cover;
       border-radius: 6px;
       border: 3px solid var(--pk-dark);
     }
-    .extra-zone { border-color: #6a0dad; background: #e6e6fa; }
-    .field-zone { border-color: #2e8b57; background: #f0fff0; }
+    .extra-zone { border-color: #6a0dad; background: rgba(106, 13, 173, 0.2); }
+    .field-zone { border-color: #2e8b57; background: rgba(46, 139, 87, 0.2); }
     .field-zone.active { background: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/mystic-water.png') center/cover; }
 
     /* Interactive States */
@@ -884,7 +964,71 @@ import { takeUntil } from 'rxjs/operators';
       margin-bottom: 20px;
       box-shadow: 4px 4px 0px var(--pk-dark);
     }
+    
+    .deck-stack {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url('/assets/images/fondo_carta_pokemon.jpg');
+      background-size: cover;
+      background-position: center;
+      border: 3px solid var(--pk-dark);
+      border-radius: 8px;
+      box-shadow: -2px -2px 0 var(--pk-dark), -4px -4px 0 var(--pk-dark), -6px -6px 0 var(--pk-dark);
+      transform: translate(6px, 6px);
+    }
+    
+    .anim-draw {
+      animation: draw-card 0.5s ease-out both;
+    }
+    @keyframes draw-card {
+      0% { 
+        transform: translate(var(--dx, -380px), var(--dy, -450px)) scale(0.4) rotateY(180deg); 
+      }
+      100% { 
+        transform: translate(0, 0) scale(1) rotateY(0deg); 
+      }
+    }
+
+    /* Battle State Classes */
+    .selected {
+      border-color: #facc15 !important;
+      box-shadow: 0 0 20px rgba(250, 204, 21, 0.8) !important;
+      transform: translateY(-15px) !important;
+      z-index: 10;
+    }
+    
+    .targetable {
+      animation: pulse-red 1.5s infinite;
+      cursor: crosshair !important;
+      border-color: var(--pk-red) !important;
+    }
+    
+    @keyframes pulse-red {
+      0% { box-shadow: 0 0 0px var(--pk-red); }
+      50% { box-shadow: 0 0 20px var(--pk-red); }
+      100% { box-shadow: 0 0 0px var(--pk-red); }
+    }
+
+    /* Battle Animations */
+    .anim-attack-up { animation: attack-up 0.4s ease-in-out; }
+    @keyframes attack-up {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-50px) scale(1.1); z-index: 10; }
+      100% { transform: translateY(0); }
+    }
+
+    .anim-damage { animation: damage-shake 0.4s ease-in-out; }
+    @keyframes damage-shake {
+      0%, 100% { transform: translateX(0); filter: brightness(1); }
+      25% { transform: translateX(-10px); filter: brightness(2) hue-rotate(-50deg); }
+      75% { transform: translateX(10px); filter: brightness(2) hue-rotate(-50deg); }
+    }
+
+    .anim-die { animation: die-fade 0.5s forwards; }
+
     @keyframes spin { to { transform: rotate(360deg); } }
+
   `]
 })
 export class VsCpuComponent implements OnInit, OnDestroy {
@@ -900,9 +1044,15 @@ export class VsCpuComponent implements OnInit, OnDestroy {
   toastMessage = '';
   toastTimeout: any;
 
-  playerAnimations: { [slot: number]: string } = {};
-  cpuAnimations: { [slot: number]: string } = {};
+  playerAnimations: string[] = ['', '', '', '', ''];
+  cpuAnimations: string[] = ['', '', '', '', ''];
+  selectedHandCardIndex: number | null = null;
 
+  showExtraDeckModal = false;
+  selectedExtraCardIndex: number | null = null;
+  isEvolving = false;
+
+  private turnTimer: any;
   private destroy$ = new Subject<void>();
 
   constructor(
@@ -931,6 +1081,11 @@ export class VsCpuComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    // If game is not finished and user leaves, count it as a loss automatically
+    if (this.gameState && !this.gameState.winner) {
+      this.gameState.winner = 'player2';
+      this.endGame();
+    }
     this.destroy$.next();
     this.destroy$.complete();
   }
@@ -956,12 +1111,28 @@ export class VsCpuComponent implements OnInit, OnDestroy {
       } else {
         this.debugLog = 'Paso 3: Sin usuario actual, jugando como invitado...'; this.cdr.detectChanges();
       }
-      
+
+      // Validar que existe al menos un deck y uno esté marcado como activo
+      if (userDecks.length === 0) {
+        this.showToast('❌ No tienes mazos. Por favor, crea uno en el Constructor de Mazo.');
+        this.router.navigate(['/cards/deck-builder']);
+        return;
+      }
+
+      let activeDeck = userDecks.find(d => d.is_active);
+      if (!activeDeck) {
+        // Auto-marcar el primer deck como activo
+        this.debugLog = 'Paso 4b: Ningún mazo activo, marcando el primero...'; this.cdr.detectChanges();
+        await this.supabaseService.setActiveDeck(this.currentUserId!, userDecks[0].id);
+        activeDeck = userDecks[0];
+        this.showToast(`✓ Mazo "${activeDeck.name}" establecido como activo automáticamente.`);
+      }
+
       let playerDeck: PokemonCard[] = [];
-      if (userDecks.length > 0 && userDecks[0].cards) {
-        this.debugLog = 'Paso 5: Extrayendo cartas del mazo...'; this.cdr.detectChanges();
-        playerDeck = [...userDecks[0].cards];
-        playerDeck = playerDeck.sort(() => 0.5 - Math.random());
+      this.debugLog = 'Paso 5: Extrayendo cartas del mazo...'; this.cdr.detectChanges();
+      if (activeDeck.cards) {
+         playerDeck = [...activeDeck.cards];
+         playerDeck = playerDeck.sort(() => 0.5 - Math.random());
       }
       
       this.debugLog = `Paso 6: Verificando tamaño del mazo (${playerDeck.length})...`; this.cdr.detectChanges();
@@ -996,6 +1167,26 @@ export class VsCpuComponent implements OnInit, OnDestroy {
             this.debugLog = 'Paso 12: ¡Juego cargado!';
             if (this.gameState?.turnNumber === 1 && this.gameState?.currentTurn === 'player1') {
               this.showToast('¡Comienza el Duelo! Fase Principal: Invoca monstruos.');
+              // Set dynamic origin for animation
+              setTimeout(() => {
+                const deckEl = document.querySelector('.player-half .deck-zone');
+                const deckRect = deckEl ? deckEl.getBoundingClientRect() : null;
+                const handElements = document.querySelectorAll('.hand-card');
+                
+                handElements.forEach((el, i) => {
+                  if (deckRect) {
+                    const handRect = el.getBoundingClientRect();
+                    const dx = deckRect.left + (deckRect.width / 2) - (handRect.left + (handRect.width / 2));
+                    const dy = deckRect.top + (deckRect.height / 2) - (handRect.top + (handRect.height / 2));
+                    (el as HTMLElement).style.setProperty('--dx', `${dx}px`);
+                    (el as HTMLElement).style.setProperty('--dy', `${dy}px`);
+                  }
+                  
+                  el.classList.remove('anim-draw');
+                  void (el as HTMLElement).offsetWidth; // trigger reflow
+                  el.classList.add('anim-draw');
+                });
+              }, 50);
             }
           }
           this.cdr.detectChanges();
@@ -1034,6 +1225,7 @@ export class VsCpuComponent implements OnInit, OnDestroy {
       this.gameService.endTurn(this.gameState);
       
       const phase = this.gameState.phase;
+      this.selectedHandCardIndex = null; // Clear selection on phase end
       if (phase === 'main') this.showToast('Fase Principal: Juega cartas o activa habilidades.');
       if (phase === 'battle') this.showToast('Fase de Batalla: Selecciona un monstruo para atacar.');
 
@@ -1052,30 +1244,98 @@ export class VsCpuComponent implements OnInit, OnDestroy {
       return;
     }
     if (this.gameState.phase !== 'main') {
-      this.showToast('Sólo puedes invocar cartas durante la Fase Principal.');
+      this.showToast('Sólo puedes jugar cartas durante la Fase Principal.');
       return;
     }
 
-    const slot = this.gameState.player1.field.length;
-    if (slot < 5) {
-      const success = this.gameService.playCard(this.gameState, true, index);
-      if (success) {
-        this.playerAnimations[slot] = 'anim-summon';
-        this.cdr.detectChanges();
-        setTimeout(() => {
-          this.playerAnimations[slot] = '';
-          this.cdr.detectChanges();
-        }, 600);
-      }
+    if (this.selectedHandCardIndex === index) {
+      this.selectedHandCardIndex = null;
     } else {
-      this.showToast('El campo de batalla está lleno.');
+      this.selectedHandCardIndex = index;
+      this.showToast('Carta seleccionada. Haz clic en una zona vacía para colocarla.');
     }
+    this.cdr.detectChanges();
+  }
+
+  isSelectedSpell(): boolean {
+    if (!this.gameState || this.selectedHandCardIndex === null) return false;
+    const cardToPlay = this.gameState.player1.hand[this.selectedHandCardIndex];
+    if (cardToPlay.cardClass === 'magic' && cardToPlay.magicEffect === 'field') return false;
+    return cardToPlay.cardClass === 'magic' || cardToPlay.cardClass === 'trap';
+  }
+
+  isSelectedFieldSpell(): boolean {
+    if (!this.gameState || this.selectedHandCardIndex === null) return false;
+    const cardToPlay = this.gameState.player1.hand[this.selectedHandCardIndex];
+    return cardToPlay.cardClass === 'magic' && cardToPlay.magicEffect === 'field';
+  }
+
+  placeFieldCard() {
+    if (!this.gameState || this.gameState.currentTurn !== 'player1' || this.gameState.phase !== 'main') return;
+    if (this.selectedHandCardIndex === null || !this.isSelectedFieldSpell()) {
+       if (this.gameState.player1.fieldCard) {
+           this.hoveredCard = this.gameState.player1.fieldCard;
+       }
+       return;
+    }
+    
+    const success = this.gameService.playCard(this.gameState, true, this.selectedHandCardIndex);
+    if (success) {
+      this.selectedHandCardIndex = null;
+      this.showToast('¡Carta de Estadio activada globalmente!');
+      this.cdr.detectChanges();
+    }
+  }
+
+  placeCardInSlot(slot: number, isSpellZone: boolean) {
+    if (!this.gameState || this.gameState.currentTurn !== 'player1' || this.gameState.phase !== 'main') return;
+    if (this.selectedHandCardIndex === null) return;
+    
+    const cardToPlay = this.gameState.player1.hand[this.selectedHandCardIndex];
+    const isSpell = cardToPlay.cardClass === 'magic' || cardToPlay.cardClass === 'trap';
+    
+    if (cardToPlay.cardClass === 'magic' && cardToPlay.magicEffect === 'field') {
+      this.showToast('Las cartas de Campo deben colocarse en la zona de Campo a la izquierda.');
+      return;
+    }
+
+    if (isSpell !== isSpellZone) {
+      this.showToast(isSpell ? 'Esta carta debe ir en la zona de magias y trampas.' : 'Esta carta debe ir en la zona de monstruos.');
+      return;
+    }
+    
+    const success = this.gameService.playCard(this.gameState, true, this.selectedHandCardIndex, slot);
+    if (success) {
+      this.selectedHandCardIndex = null;
+      if (isSpell) {
+         this.showToast('Colocada boca abajo.');
+      } else {
+         this.playerAnimations[slot] = 'anim-summon';
+         setTimeout(() => { this.playerAnimations[slot] = ''; this.cdr.detectChanges(); }, 600);
+      }
+    }
+    this.cdr.detectChanges();
   }
 
   selectFieldCard(index: number): void {
     if (!this.gameState || this.gameState.currentTurn !== 'player1') return;
     
     const card = this.gameState.player1.field[index];
+
+    if (this.isEvolving && this.selectedExtraCardIndex !== null) {
+      const success = this.gameService.evolvePokemon(this.gameState, true, index, this.selectedExtraCardIndex);
+      if (success) {
+        this.showToast(`¡Tu Pokémon ha evolucionado a ${this.gameState.player1.field[index].name}!`);
+        this.playerAnimations[index] = 'anim-summon';
+        setTimeout(() => { this.playerAnimations[index] = ''; this.cdr.detectChanges(); }, 600);
+      } else {
+        this.showToast('No puedes evolucionar este Pokémon. Debe ser el mismo tipo y nivel inferior.');
+      }
+      this.isEvolving = false;
+      this.selectedExtraCardIndex = null;
+      this.cdr.detectChanges();
+      return;
+    }
 
     if (this.gameState.phase === 'main') {
       if (!card.hasUsedAbility) {
@@ -1109,6 +1369,52 @@ export class VsCpuComponent implements OnInit, OnDestroy {
         }
       }
     }
+    this.cdr.detectChanges(); // FORZAR ACTUALIZACIÓN VISUAL DE LA SELECCIÓN
+  }
+
+  
+  openExtraDeck(): void {
+    if (!this.gameState || this.gameState.currentTurn !== 'player1') return;
+    if (this.gameState.phase !== 'main') {
+       this.showToast('Solo puedes acceder al Deck Extra en tu Fase Principal.');
+       return;
+    }
+    this.showExtraDeckModal = true;
+    this.isEvolving = false;
+    this.selectedExtraCardIndex = null;
+    this.cdr.detectChanges();
+  }
+
+  closeExtraDeck(): void {
+    this.showExtraDeckModal = false;
+    this.isEvolving = false;
+    this.selectedExtraCardIndex = null;
+    this.cdr.detectChanges();
+  }
+
+  selectExtraCardToEvolve(index: number): void {
+    this.selectedExtraCardIndex = index;
+    this.isEvolving = true;
+    this.showExtraDeckModal = false;
+    this.showToast('Selecciona a qué Pokémon en tu campo deseas evolucionar.');
+    this.cdr.detectChanges();
+  }
+
+  activateSpell(index: number): void {
+    if (!this.gameState || this.gameState.phase !== 'main' || this.gameState.currentTurn !== 'player1') return;
+    const card = this.gameState.player1.spellZone[index];
+    if (card && card.isFaceDown) {
+      if (card.cardClass === 'trap') {
+        this.showToast('Las trampas se activan automáticamente en respuesta a eventos.');
+      } else {
+        const effectMessage = this.gameService.activateSpellTrap(this.gameState, index, true);
+        if (effectMessage) {
+          this.showToast(effectMessage);
+        }
+      }
+      this.hoveredCard = null;
+      this.cdr.detectChanges();
+    }
   }
 
   selectTarget(index: number): void {
@@ -1123,25 +1429,27 @@ export class VsCpuComponent implements OnInit, OnDestroy {
     this.isSelectingTarget = false;
     this.selectedAttackerIndex = null;
 
+    // Efectuar logica en el engine PRIMERO
+    const result = this.gameService.attack(this.gameState, attackerIdx, targetIdx, true);
+
+    if (result.cancelled) {
+      this.showToast(result.trapMessage || '¡Ataque bloqueado por una trampa!');
+      return;
+    }
+
     // Animación de ataque (Player sube hacia arriba)
     this.playerAnimations[attackerIdx] = 'anim-attack-up';
     this.cdr.detectChanges();
     await new Promise(r => setTimeout(r, 200)); // Espera al climax de la animación
 
-    let targetDied = false;
-
     if (targetIdx !== -1) {
       // Animación de daño al objetivo
       this.cpuAnimations[targetIdx] = 'anim-damage';
       this.cdr.detectChanges();
-
-      const targetCard = this.gameState.player2.field[targetIdx];
-      const damage = Math.max(0, this.gameState.player1.field[attackerIdx].attack - targetCard.defense);
-      if (targetCard.hp - damage <= 0) targetDied = true;
       
       await new Promise(r => setTimeout(r, 400));
       
-      if (targetDied) {
+      if (result.targetDied) {
         this.cpuAnimations[targetIdx] = 'anim-die';
         this.cdr.detectChanges();
         await new Promise(r => setTimeout(r, 500));
@@ -1150,9 +1458,6 @@ export class VsCpuComponent implements OnInit, OnDestroy {
       // Daño directo
       await new Promise(r => setTimeout(r, 400));
     }
-
-    // Efectuar logica en el engine
-    this.gameService.attack(this.gameState, attackerIdx, targetIdx, true);
     
     // Limpiar animaciones
     this.playerAnimations[attackerIdx] = '';
@@ -1162,22 +1467,53 @@ export class VsCpuComponent implements OnInit, OnDestroy {
 
   private async executeCPUTurn(): Promise<void> {
     if (!this.gameState) return;
+    try {
 
     const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
     // MAIN PHASE
     this.showToast('CPU: Fase Principal');
+    
+    // Wait for the draw phase 1000ms timeout to complete before playing cards
+    let waitTime = 0;
+    while (this.gameState?.phase !== 'main' && waitTime < 2000) {
+      await delay(100);
+      waitTime += 100;
+    }
+    
     await delay(200);
 
     // Jugar cartas (Invocación)
     for (let i = this.gameState.player2.hand.length - 1; i >= 0; i--) {
-      if (this.gameState.player2.field.length < 5) {
+      const fieldCount = this.gameState.player2.field.filter(c => !!c).length;
+      if (fieldCount < 5) {
         await delay(200);
-        const slot = this.gameState.player2.field.length;
+
+        // Find empty slot for animation
+        let emptySlot = 0;
+        for (let s = 0; s < 5; s++) {
+          if (!this.gameState.player2.field[s]) { emptySlot = s; break; }
+        }
+
         this.gameService.playCard(this.gameState, false, i);
-        this.cpuAnimations[slot] = 'anim-summon';
+        this.cpuAnimations[emptySlot] = 'anim-summon';
         this.cdr.detectChanges();
-        setTimeout(() => { this.cpuAnimations[slot] = ''; this.cdr.detectChanges(); }, 600);
+        setTimeout(() => { this.cpuAnimations[emptySlot] = ''; this.cdr.detectChanges(); }, 600);
+      }
+    }
+
+    // Activar cartas mágicas de la CPU (no trampas)
+    if (this.gameState.player2.spellZone) {
+      for (let i = 0; i < this.gameState.player2.spellZone.length; i++) {
+        const card = this.gameState.player2.spellZone[i];
+        if (card && card.isFaceDown && card.cardClass !== 'trap') {
+          await delay(300);
+          const effectMessage = this.gameService.activateSpellTrap(this.gameState, i, false);
+          if (effectMessage) {
+            this.showToast(`CPU: ${effectMessage}`);
+          }
+          this.cdr.detectChanges();
+        }
       }
     }
 
@@ -1188,21 +1524,23 @@ export class VsCpuComponent implements OnInit, OnDestroy {
     await delay(150);
 
     // Atacar
-    if (this.gameState.player2.field.length > 0) {
-      for (let i = 0; i < this.gameState.player2.field.length; i++) {
+    if (this.gameState.player2.field.some(c => !!c)) {
+      for (let i = 0; i < 5; i++) {
         const attacker = this.gameState.player2.field[i];
         if (!attacker || attacker.hasAttacked) continue;
 
         await delay(150);
         let targetIdx = -1;
 
-        if (this.gameState.player1.field.length === 0) {
+        const hasDefenders = this.gameState.player1.field.some(c => !!c);
+        if (!hasDefenders) {
           targetIdx = -1; // Ataque directo
         } else {
           // Buscar objetivo mas debil
           let minHpDef = 9999;
-          for (let j = 0; j < this.gameState.player1.field.length; j++) {
+          for (let j = 0; j < 5; j++) {
             const def = this.gameState.player1.field[j];
+            if (!def) continue;
             if ((def.hp + def.defense) < minHpDef) {
               minHpDef = def.hp + def.defense;
               targetIdx = j;
@@ -1215,15 +1553,22 @@ export class VsCpuComponent implements OnInit, OnDestroy {
         this.cdr.detectChanges();
         await delay(200);
 
-        let targetDied = false;
+        // Ejecutar ataque primero para ver si hay bloqueos
+        const result = this.gameService.attack(this.gameState, i, targetIdx, false);
+
+        if (result.cancelled) {
+           this.showToast(result.trapMessage || '¡Tu trampa bloqueó el ataque enemigo!');
+           this.cpuAnimations[i] = '';
+           this.cdr.detectChanges();
+           await delay(400);
+           continue;
+        }
+
+        let targetDied = result.targetDied;
         if (targetIdx !== -1) {
           this.playerAnimations[targetIdx] = 'anim-damage';
           this.cdr.detectChanges();
 
-          const targetCard = this.gameState.player1.field[targetIdx];
-          const damage = Math.max(0, attacker.attack - targetCard.defense);
-          if (targetCard.hp - damage <= 0) targetDied = true;
-          
           await delay(150);
 
           if (targetDied) {
@@ -1234,9 +1579,6 @@ export class VsCpuComponent implements OnInit, OnDestroy {
         } else {
           await delay(150);
         }
-
-        // Ejecutar ataque
-        this.gameService.attack(this.gameState, i, targetIdx, false);
         this.cpuAnimations[i] = '';
         if (targetIdx !== -1) this.playerAnimations[targetIdx] = '';
         this.cdr.detectChanges();
@@ -1252,6 +1594,14 @@ export class VsCpuComponent implements OnInit, OnDestroy {
     this.gameService.endTurn(this.gameState); // draw -> player1 main
     this.showToast('¡Tu Turno! Fase Principal');
     this.cdr.detectChanges();
+    } catch (e) {
+      console.error('Error in CPU turn', e);
+      this.showToast('Error en turno CPU, forzando pase de turno.');
+      // Force end turn safely
+      this.gameState.currentTurn = 'player1';
+      this.gameState.phase = 'main';
+      this.cdr.detectChanges();
+    }
   }
 
   
@@ -1269,10 +1619,11 @@ export class VsCpuComponent implements OnInit, OnDestroy {
 
   async endGame(): Promise<void> {
     if (this.gameState && this.currentUserId) {
+      const isPlayerWinner = this.gameState.winner === 'player1';
       const result = {
-        user_id: this.currentUserId,
         mode: 'cpu',
-        winner: this.gameState.winner === 'player1' ? 'player' : 'cpu',
+        winner_id: isPlayerWinner ? this.currentUserId : null,
+        loser_id: !isPlayerWinner ? this.currentUserId : null,
         created_at: new Date().toISOString()
       };
 
@@ -1281,7 +1632,7 @@ export class VsCpuComponent implements OnInit, OnDestroy {
         await this.sqliteService.insertLocalGame(
           Math.random().toString(),
           this.currentUserId,
-          result.winner,
+          isPlayerWinner ? 'player' : 'cpu',
           this.gameState
         );
       } catch (error) {
@@ -1292,5 +1643,46 @@ export class VsCpuComponent implements OnInit, OnDestroy {
     }
 
     this.router.navigate(['/menu']);
+  }
+
+  translateAbilityName(name: string | undefined): string {
+    if (!name) return 'Habilidad';
+    const translations: {[key: string]: string} = {
+      'Burn': 'Quemadura',
+      'Aqua Heal': 'Cura Acuática',
+      'Spore Shield': 'Escudo de Esporas',
+      'Thunder Strike': 'Impactrueno',
+      'Mind Read': 'Lectura Mental',
+      'Freeze': 'Congelar',
+      'Basic Attack': 'Ataque Básico'
+    };
+    return translations[name] || name;
+  }
+
+  translateAbilityDesc(desc: string | undefined): string {
+    if (!desc) return 'Sin efecto';
+    const translations: {[key: string]: string} = {
+      'Boost attack for next turn': 'Aumenta el ataque para el próximo turno',
+      'Restore 50 HP': 'Restaura 50 puntos de salud',
+      'Block next attack': 'Bloquea el próximo ataque',
+      'Direct damage to opponent': 'Daño directo al oponente',
+      'Draw extra card': 'Roba una carta extra',
+      'Reduce opponent defense': 'Reduce la defensa del oponente',
+      'Standard attack': 'Ataque estándar'
+    };
+    return translations[desc] || desc;
+  }
+
+  translateType(type: string | undefined): string {
+    if (!type) return 'Normal';
+    const t = type.toLowerCase();
+    const translations: {[key: string]: string} = {
+      'fire': 'Fuego', 'water': 'Agua', 'grass': 'Planta', 'electric': 'Eléctrico',
+      'psychic': 'Psíquico', 'ice': 'Hielo', 'dragon': 'Dragón', 'dark': 'Siniestro',
+      'fairy': 'Hada', 'normal': 'Normal', 'fighting': 'Lucha', 'flying': 'Volador',
+      'poison': 'Veneno', 'ground': 'Tierra', 'rock': 'Roca', 'bug': 'Bicho',
+      'ghost': 'Fantasma', 'steel': 'Acero'
+    };
+    return (translations[t] || type).toUpperCase();
   }
 }

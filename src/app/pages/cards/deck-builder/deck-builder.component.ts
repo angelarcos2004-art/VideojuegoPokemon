@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from '../../../shared/components/navbar/navbar.component';
 import { PokemonService } from '../../../core/services/pokemon.service';
@@ -24,7 +25,27 @@ const MAX_CARDS_PER_TYPE = 2;
   template: `
     <app-navbar></app-navbar>
     <div class="deck-builder-container">
+      <div style="max-width: 1200px; margin: 0 auto; margin-bottom: 20px;">
+        <button (click)="goBack()" class="btn-global-back" style="margin-bottom: 20px;">← Volver al Menú</button>
+      </div>
       <h1>Constructor de Mazo</h1>
+
+      <div class="user-decks-panel" *ngIf="userDecks.length > 0">
+        <h2>Tus Mazos Armados</h2>
+        <div class="decks-grid">
+           <div class="deck-card" *ngFor="let d of userDecks" [class.active-deck]="d.is_active">
+              <div class="deck-header">
+                 <h3>{{ d.name }}</h3>
+                 <span *ngIf="d.is_active" class="active-badge">ACTIVO</span>
+              </div>
+              <div class="deck-card-actions">
+                 <button (click)="loadDeckToEdit(d)" class="btn-control btn-clear" style="padding: 5px;">✏️ Editar</button>
+                 <button *ngIf="!d.is_active" (click)="setAsActive(d.id)" class="btn-control btn-save" style="padding: 5px;">✓ Usar</button>
+                 <button (click)="requestDeleteDeck(d.id)" class="btn-remove" style="padding: 5px;">🗑️ Eliminar</button>
+              </div>
+           </div>
+        </div>
+      </div>
       <div class="builder-content">
         <div class="available-cards">
           <h2>Cartas Disponibles</h2>
@@ -40,15 +61,35 @@ const MAX_CARDS_PER_TYPE = 2;
               [(ngModel)]="searchTerm" (ngModelChange)="applyFilter()"
               class="search-input"
             >
+            <select [(ngModel)]="sortBy" (ngModelChange)="applyFilter()" class="sort-select">
+              <option value="name">Ordenar por Nombre</option>
+              <option value="rarity">Ordenar por Rareza</option>
+              <option value="attack">Ordenar por Ataque</option>
+              <option value="defense">Ordenar por Defensa</option>
+              <option value="generation">Ordenar por Generación</option>
+            </select>
           </div>
           <div *ngIf="loading" class="loading">Cargando cartas...</div>
           <div *ngIf="!loading" class="cards-list">
             <div *ngFor="let card of filteredCards" class="card-option" (click)="addCardToDeck(card)">
               <img [src]="card.image" [alt]="card.name" class="small-card-image">
               <div class="card-details">
-                <h4>{{ card.name }}</h4>
-                <p>ATK: {{ card.attack }} | DEF: {{ card.defense }}</p>
-                <span class="type-badge" [class]="'type-' + card.types[0]">{{ card.types[0] }}</span>
+                <div class="card-header-row">
+                  <h4>{{ card.name }}</h4>
+                  <span class="type-badge" [class]="'type-' + card.types[0]">{{ translateType(card.types[0]) }}</span>
+                </div>
+                <div class="card-stats-row">
+                  <span class="atk">⚔️ {{ card.attack }}</span>
+                  <span class="hp">❤️ {{ card.hp }}</span>
+                  <span class="def">🛡️ {{ card.defense }}</span>
+                </div>
+                <div class="card-meta-row">
+                  <span>Nvl {{ card.level || 1 }}</span> • 
+                  <span>{{ card.rarity === 'legendary' ? 'Legendario' : (card.rarity === 'rare' ? 'Raro' : 'Común') }}</span>
+                </div>
+                <div class="card-desc-row" *ngIf="card.specialAbility">
+                  <strong>{{ translateAbilityName(card.specialAbility.name) }}:</strong> {{ translateAbilityDesc(card.specialAbility.description) }}
+                </div>
               </div>
             </div>
           </div>
@@ -98,6 +139,30 @@ const MAX_CARDS_PER_TYPE = 2;
             {{ deckSaveMessage }}
           </div>
 
+          <!-- Modal de Limpiar Mazo -->
+          <div *ngIf="showClearModal" class="modal-overlay">
+            <div class="modal-content">
+              <h3>Limpiar Mazo</h3>
+              <p>¿Estás seguro de que deseas vaciar todo el mazo? Perderás todos los cambios no guardados.</p>
+              <div class="modal-actions" style="margin-top: 20px;">
+                <button (click)="showClearModal = false" class="btn-control btn-cancel">Cancelar</button>
+                <button (click)="confirmClearDeck()" class="btn-control btn-remove">Limpiar</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal de Eliminar Mazo -->
+          <div *ngIf="deckToDelete" class="modal-overlay">
+            <div class="modal-content">
+              <h3>Eliminar Mazo</h3>
+              <p>¿Estás seguro de que deseas eliminar este mazo de forma permanente?</p>
+              <div class="modal-actions" style="margin-top: 20px;">
+                <button (click)="deckToDelete = null" class="btn-control btn-cancel">Cancelar</button>
+                <button (click)="confirmDeleteDeck()" class="btn-control btn-remove">Eliminar</button>
+              </div>
+            </div>
+          </div>
+
           <!-- Modal de Guardado -->
           <div *ngIf="showSaveModal" class="modal-overlay">
             <div class="modal-content">
@@ -115,6 +180,64 @@ const MAX_CARDS_PER_TYPE = 2;
     </div>
   `,
   styles: [`
+    .user-decks-panel {
+      max-width: 1200px;
+      margin: 0 auto 30px;
+      background: var(--pk-white);
+      border: 4px solid var(--pk-dark);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 6px 6px 0px var(--pk-dark);
+    }
+    .user-decks-panel h2 {
+      color: var(--pk-blue);
+      font-family: var(--font-title);
+      margin-top: 0;
+      border-bottom: 3px solid var(--pk-dark);
+      padding-bottom: 10px;
+    }
+    .decks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    .deck-card {
+      border: 3px solid var(--pk-dark);
+      border-radius: 8px;
+      padding: 15px;
+      background: var(--pk-light);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      box-shadow: 3px 3px 0px var(--pk-dark);
+    }
+    .deck-card.active-deck {
+      border-color: var(--pk-yellow);
+      background: rgba(255, 237, 78, 0.2);
+    }
+    .deck-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .deck-header h3 {
+      margin: 0;
+      font-family: var(--font-title);
+      font-size: 1.2rem;
+    }
+    .active-badge {
+      background: var(--pk-yellow);
+      color: #111;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 0.8rem;
+      border: 1px solid var(--pk-dark);
+    }
+    .deck-card-actions {
+      display: flex;
+      gap: 5px;
+    }
     .btn-tab {
       background: var(--pk-white);
       border: 3px solid var(--pk-dark);
@@ -188,22 +311,27 @@ const MAX_CARDS_PER_TYPE = 2;
     .controls {
       margin-bottom: 20px;
       margin-top: 10px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
-    .search-input {
-      width: 100%;
+    .search-input,
+    .sort-select {
+      flex: 1;
+      min-width: 150px;
       padding: 12px;
       border: 3px solid var(--pk-dark);
       border-radius: 8px;
-      background: var(--pk-light);
+      background: var(--pk-white);
       color: var(--pk-text);
       font-family: var(--font-game);
       font-size: 1rem;
-      box-sizing: border-box;
       box-shadow: 4px 4px 0px var(--pk-dark);
     }
 
-    .search-input:focus {
+    .search-input:focus,
+    .sort-select:focus {
       outline: none;
       border-color: var(--pk-blue);
       box-shadow: 0 0 0 3px rgba(59, 76, 202, 0.2), 4px 4px 0px var(--pk-dark);
@@ -259,29 +387,65 @@ const MAX_CARDS_PER_TYPE = 2;
     }
 
     .card-details h4 {
-      margin: 0 0 5px;
+      margin: 0;
       color: var(--pk-blue);
       font-family: var(--font-title);
       font-size: 1rem;
     }
 
-    .card-details p {
-      margin: 0 0 5px;
+    .card-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    .card-stats-row {
+      display: flex;
+      gap: 15px;
+      font-weight: bold;
+      font-size: 0.85rem;
+      margin-bottom: 5px;
+    }
+    .atk { color: #d32f2f; }
+    .hp { color: #388e3c; }
+    .def { color: #1976d2; }
+
+    .card-meta-row {
+      font-size: 0.75rem;
       color: var(--pk-text);
       opacity: 0.8;
       font-weight: bold;
-      font-size: 0.85rem;
+      margin-bottom: 5px;
+    }
+
+    .card-desc-row {
+      font-size: 0.75rem;
+      color: #666;
+      background: #fdfdfd;
+      border-left: 2px solid var(--pk-yellow);
+      padding: 4px;
+      line-height: 1.2;
     }
 
     .type-badge {
       display: inline-block;
       padding: 2px 6px;
       border-radius: 4px;
-      font-size: 0.75rem;
+      font-size: 0.65rem;
       font-weight: bold;
-      border: 2px solid var(--pk-dark);
+      border: 1px solid var(--pk-dark);
       color: #111;
+      text-transform: uppercase;
     }
+
+    .type-fire { background: #ff9d5c; }
+    .type-water { background: #5c9dff; }
+    .type-grass { background: #5cff9d; }
+    .type-electric { background: #ffed4e; }
+    .type-psychic { background: #ff5c9d; }
+    .type-ice { background: #9dffff; }
+    .type-default { background: #cccccc; }
 
     .type-fire { background: #ff9d5c; }
     .type-water { background: #5c9dff; }
@@ -491,12 +655,17 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   deck: DeckCard[] = [];
   loading = false;
   searchTerm = '';
+  sortBy = 'name';
   deckSaveMessage = '';
   deckSaveError = false;
   showSaveModal = false;
   newDeckName = '';
   currentUserId: string | null = null;
   MAX_DECK_SIZE = MAX_DECK_SIZE;
+  userDecks: any[] = [];
+  editingDeckId: string | null = null;
+  showClearModal = false;
+  deckToDelete: string | null = null;
   message = '';
   messageType: 'error' | 'success' = 'error';
   private destroy$ = new Subject<void>();
@@ -505,7 +674,8 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   constructor(
     private pokemonService: PokemonService,
     private supabaseService: SupabaseService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -514,6 +684,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
       .subscribe(user => {
         if (user) {
           this.currentUserId = user.id;
+          this.loadUserDecks();
         }
       });
 
@@ -540,13 +711,35 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
 
   applyFilter(): void {
     const term = this.searchTerm.toLowerCase();
-    this.filteredCards = this.availableCards.filter(card => {
+    let filtered = this.availableCards.filter(card => {
       const matchesTab = this.activeTab === 'pokemon' ? (!card.cardClass || card.cardClass === 'pokemon') : (card.cardClass === 'magic' || card.cardClass === 'trap');
       if (!matchesTab) return false;
       const matchName = card.name?.toLowerCase().includes(term);
       const matchType = Array.isArray(card.types) && card.types.some(t => t?.toLowerCase().includes(term));
       return matchName || matchType;
     });
+
+    switch (this.sortBy) {
+      case 'rarity':
+        const rarityOrder = { legendary: 0, rare: 1, common: 2 };
+        filtered.sort((a, b) => (rarityOrder[a.rarity as keyof typeof rarityOrder] ?? 3) - (rarityOrder[b.rarity as keyof typeof rarityOrder] ?? 3));
+        break;
+      case 'attack':
+        filtered.sort((a, b) => b.attack - a.attack);
+        break;
+      case 'defense':
+        filtered.sort((a, b) => b.defense - a.defense);
+        break;
+      case 'generation':
+        filtered.sort((a, b) => a.id - b.id);
+        break;
+      case 'name':
+      default:
+        filtered.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+    }
+
+    this.filteredCards = filtered;
   }
 
   private showMessage(text: string, type: 'error' | 'success' = 'error'): void {
@@ -593,9 +786,13 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   }
 
   clearDeck(): void {
-    if (confirm('Are you sure you want to clear your deck?')) {
-      this.deck = [];
-    }
+    this.showClearModal = true;
+  }
+
+  confirmClearDeck(): void {
+    this.deck = [];
+    this.editingDeckId = null;
+    this.showClearModal = false;
   }
 
   saveDeck(): void {
@@ -622,8 +819,15 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
         Array(item.quantity).fill(item.card)
       );
 
-      await this.supabaseService.saveDeck(this.currentUserId, this.newDeckName.trim(), cards);
-      this.deckSaveMessage = '¡Mazo guardado exitosamente!';
+      if (this.editingDeckId) {
+        await this.supabaseService.updateDeck(this.editingDeckId, this.newDeckName.trim(), cards);
+        this.deckSaveMessage = '¡Mazo actualizado exitosamente!';
+      } else {
+        await this.supabaseService.saveDeck(this.currentUserId, this.newDeckName.trim(), cards);
+        this.deckSaveMessage = '¡Mazo guardado exitosamente!';
+      }
+      await this.loadUserDecks();
+      this.editingDeckId = null;
       this.deckSaveError = false;
       this.newDeckName = '';
 
@@ -635,5 +839,113 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
       this.deckSaveError = true;
       console.error('Failed to save deck:', error);
     }
+  }
+
+  async loadUserDecks() {
+    if (!this.currentUserId) return;
+    try {
+      this.userDecks = await this.supabaseService.getUserDecks(this.currentUserId);
+    } catch (e) {
+      console.error('Failed to load user decks', e);
+    }
+  }
+
+  loadDeckToEdit(deck: any) {
+    this.deck = [];
+    this.editingDeckId = deck.id;
+    
+    const cardCounts = new Map<number, {card: PokemonCard, count: number}>();
+    for (const c of deck.cards) {
+      if (cardCounts.has(c.id)) {
+        cardCounts.get(c.id)!.count++;
+      } else {
+        cardCounts.set(c.id, { card: c, count: 1 });
+      }
+    }
+    
+    for (const [id, data] of cardCounts.entries()) {
+      this.deck.push({ card: data.card, quantity: data.count });
+    }
+    
+    window.scrollTo({ top: 500, behavior: 'smooth' });
+    this.showMessage('Mazo cargado para editar.', 'success');
+  }
+
+  requestDeleteDeck(deckId: string): void {
+    this.deckToDelete = deckId;
+  }
+
+  async confirmDeleteDeck(): Promise<void> {
+    if (!this.deckToDelete) return;
+    const deckId = this.deckToDelete;
+    this.deckToDelete = null;
+
+    try {
+      await this.supabaseService.deleteDeck(deckId);
+      await this.loadUserDecks();
+      if (this.editingDeckId === deckId) {
+         this.deck = [];
+         this.editingDeckId = null;
+      }
+      this.showMessage('Mazo eliminado', 'success');
+    } catch (e) {
+      this.showMessage('Error al eliminar el mazo');
+    }
+  }
+
+  async setAsActive(deckId: string) {
+    if (!this.currentUserId) return;
+    try {
+      await this.supabaseService.setActiveDeck(this.currentUserId, deckId);
+      await this.loadUserDecks();
+      this.showMessage('Mazo establecido como Activo', 'success');
+    } catch (e) {
+      this.showMessage('Error al establecer mazo activo');
+    }
+  }
+
+  goBack() {
+    this.router.navigate(['/menu']);
+  }
+
+  translateType(type: string | undefined): string {
+    if (!type) return 'Normal';
+    const t = type.toLowerCase();
+    const translations: {[key: string]: string} = {
+      'fire': 'Fuego', 'water': 'Agua', 'grass': 'Planta', 'electric': 'Eléctrico',
+      'psychic': 'Psíquico', 'ice': 'Hielo', 'dragon': 'Dragón', 'dark': 'Siniestro',
+      'fairy': 'Hada', 'normal': 'Normal', 'fighting': 'Lucha', 'flying': 'Volador',
+      'poison': 'Veneno', 'ground': 'Tierra', 'rock': 'Roca', 'bug': 'Bicho',
+      'ghost': 'Fantasma', 'steel': 'Acero'
+    };
+    return (translations[t] || type).toUpperCase();
+  }
+
+  translateAbilityName(name: string | undefined): string {
+    if (!name) return 'Habilidad';
+    const translations: {[key: string]: string} = {
+      'Burn': 'Quemadura',
+      'Aqua Heal': 'Cura Acuática',
+      'Spore Shield': 'Escudo de Esporas',
+      'Thunder Strike': 'Impactrueno',
+      'Mind Read': 'Lectura Mental',
+      'Freeze': 'Congelar',
+      'Basic Attack': 'Ataque Básico'
+    };
+    return translations[name] || name;
+  }
+
+  translateAbilityDesc(desc: string | undefined): string {
+    if (!desc) return 'Sin efecto';
+    const translations: {[key: string]: string} = {
+      'Boost attack for next turn': 'Aumenta el ataque para el próximo turno',
+      'Restore 50 HP': 'Restaura 50 puntos de salud',
+      'Block next attack': 'Bloquea el próximo ataque',
+      'Direct damage to opponent': 'Daño directo al oponente',
+      'Draw extra card': 'Roba una carta extra',
+      'Reduce opponent defense': 'Reduce la defensa del oponente',
+      'Standard attack': 'Ataque estándar'
+    };
+    return translations[desc] || desc;
   }
 }

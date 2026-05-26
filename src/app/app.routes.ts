@@ -6,6 +6,7 @@ export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', loadComponent: () => import('./pages/auth/login/login.component').then(m => m.LoginComponent) },
   { path: 'register', loadComponent: () => import('./pages/auth/register/register.component').then(m => m.RegisterComponent) },
+  { path: 'password-recovery', loadComponent: () => import('./pages/auth/password-recovery/password-recovery.component').then(m => m.PasswordRecoveryComponent) },
   { path: 'menu', loadComponent: () => import('./pages/menu/menu.component').then(m => m.MenuComponent), canActivate: [authGuard] },
   { path: 'cards/collection', loadComponent: () => import('./pages/cards/collection/collection.component').then(m => m.CollectionComponent), canActivate: [authGuard] },
   { path: 'cards/deck-builder', loadComponent: () => import('./pages/cards/deck-builder/deck-builder.component').then(m => m.DeckBuilderComponent), canActivate: [authGuard] },

@@ -6,6 +6,7 @@ export interface PlayerState {
   hp: number;
   hand: PokemonCard[];
   deck: PokemonCard[];
+  extraDeck: PokemonCard[];
   field: PokemonCard[];
   spellZone: PokemonCard[];
   fieldCard?: PokemonCard;

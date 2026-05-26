@@ -67,4 +67,36 @@ export class AuthService {
   getCurrentUserValue(): any {
     return this.currentUser$.value;
   }
+
+  async sendPasswordResetEmail(email: string): Promise<void> {
+    try {
+      await this.supabaseService.sendPasswordResetEmail(email);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async resetPassword(newPassword: string, token: string): Promise<void> {
+    try {
+      await this.supabaseService.resetPassword(newPassword, token);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async resendVerificationEmail(email: string): Promise<void> {
+    try {
+      await this.supabaseService.resendVerificationEmail(email);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async updateUserEmail(newEmail: string): Promise<void> {
+    try {
+      await this.supabaseService.updateUserEmail(newEmail);
+    } catch (error) {
+      throw error;
+    }
+  }
 }

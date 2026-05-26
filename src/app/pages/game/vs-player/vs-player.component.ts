@@ -303,9 +303,13 @@ export class VsPlayerComponent implements OnInit, OnDestroy {
       this.loadAvailableRooms();
   }
 
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
+  ngOnDestroy() {
+    // Si el jugador abandona el componente antes de que el juego termine, se le da la victoria al otro
+    if (this.gameState && !this.gameState.winner) {
+      this.gameState.winner = (this.myPlayerKey === 'player1') ? 'player2' : 'player1';
+      this.endGame();
+    }
+    
     if (this.roomSubscription) this.roomSubscription.unsubscribe();
     if (this.gameSubscription) this.gameSubscription.unsubscribe();
   }
@@ -387,10 +391,37 @@ export class VsPlayerComponent implements OnInit, OnDestroy {
   private async initializeOnlineGame(roomId: string, player2Id: string) {
     try {
       const p1Decks = await this.supabaseService.getUserDecks(this.currentUserId!);
-      const p1Deck = p1Decks.length > 0 ? p1Decks[0].cards : await this.pokemonService.getRandomPokemons(10);
-      
+
+      // Validar que el jugador 1 tiene al menos un deck
+      if (p1Decks.length === 0) {
+        this.errorMessage = '❌ No tienes mazos. Por favor, crea uno en el Constructor de Mazo.';
+        this.router.navigate(['/cards/deck-builder']);
+        return;
+      }
+
+      let p1ActiveDeck = p1Decks.find(d => d.is_active);
+      if (!p1ActiveDeck) {
+        // Auto-marcar el primer deck como activo para el jugador 1
+        await this.supabaseService.setActiveDeck(this.currentUserId!, p1Decks[0].id);
+        p1ActiveDeck = p1Decks[0];
+      }
+      const p1Deck = p1ActiveDeck?.cards ? p1ActiveDeck.cards : await this.pokemonService.getRandomPokemons(20);
+
       const p2Decks = await this.supabaseService.getUserDecks(player2Id);
-      const p2Deck = p2Decks.length > 0 ? p2Decks[0].cards : await this.pokemonService.getRandomPokemons(10);
+
+      // Validar que el jugador 2 tiene al menos un deck
+      if (p2Decks.length === 0) {
+        this.errorMessage = '❌ El oponente no tiene mazos creados.';
+        return;
+      }
+
+      let p2ActiveDeck = p2Decks.find(d => d.is_active);
+      if (!p2ActiveDeck) {
+        // Auto-marcar el primer deck como activo para el jugador 2
+        await this.supabaseService.setActiveDeck(player2Id, p2Decks[0].id);
+        p2ActiveDeck = p2Decks[0];
+      }
+      const p2Deck = p2ActiveDeck?.cards ? p2ActiveDeck.cards : await this.pokemonService.getRandomPokemons(20);
       
       const p2Profile = await this.supabaseService.getProfile(player2Id);
 
@@ -496,11 +527,14 @@ export class VsPlayerComponent implements OnInit, OnDestroy {
     if (this.gameState && this.currentUserId) {
       // Save game result only for player 1 to avoid duplicates, or both handle it
       if (this.myPlayerKey === 'player1') {
+        const isMyWin = this.gameState.winner === this.myPlayerKey;
+        const myId = this.currentUserId;
+        const opId = this.myPlayerKey === 'player1' ? this.gameState.player2.userId : this.gameState.player1.userId;
         const result = {
-          user_id: this.gameState.player1.userId,
-          opponent_id: this.gameState.player2.userId,
+          room_id: this.selectedRoom,
           mode: 'online',
-          winner: this.gameState.winner === 'player1' ? 'player1' : 'player2',
+          winner_id: isMyWin ? myId : opId,
+          loser_id: !isMyWin ? myId : opId,
           created_at: new Date().toISOString()
         };
         try { await this.supabaseService.insertGameResult(result); } catch (e) {}

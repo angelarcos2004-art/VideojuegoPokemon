@@ -1,9 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
 import { SupabaseService } from '../../core/services/supabase.service';
-import { SqliteService } from '../../core/services/sqlite.service';
 import { AuthService } from '../../core/services/auth.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -17,7 +16,7 @@ import { takeUntil } from 'rxjs/operators';
 
     <div class="history-container">
       <div class="page-header" style="max-width: 1200px; margin: 0 auto 20px; padding: 0 20px;">
-        <a routerLink="/menu" class="btn-global-back">← Volver al Menú</a>
+        <a routerLink="/menu" class="btn-global-back">&larr; Volver al Men&uacute;</a>
       </div>
       <h1>Historial de Juegos</h1>
 
@@ -58,18 +57,18 @@ import { takeUntil } from 'rxjs/operators';
           <div class="col-date">{{ formatDate(game.played_at) }}</div>
           <div class="col-mode">{{ formatMode(game.mode) }}</div>
           <div class="col-result" [class.win]="game.winner === 'player'">
-            {{ game.winner === 'player' ? '✓ Victoria' : '✗ Derrota' }}
+            {{ game.winner === 'player' ? '&check; Victoria' : '&cross; Derrota' }}
           </div>
           <div class="col-opponent">{{ game.opponent || 'CPU' }}</div>
         </div>
       </div>
 
       <div *ngIf="!loading && games.length === 0" class="no-games">
-        <p>No hay juegos en el historial aún. ¡Juega para comenzar!</p>
+        <p>No hay juegos en el historial a&uacute;n. &iexcl;Juega para comenzar!</p>
       </div>
 
       <div *ngIf="!loading && games.length > 0" class="stats-summary">
-        <h3>Estadísticas</h3>
+        <h3>Estad&iacute;sticas</h3>
         <div class="stats-grid">
           <div class="stat-item">
             <span class="stat-label">Total de Juegos</span>
@@ -288,8 +287,8 @@ export class HistoryComponent implements OnInit, OnDestroy {
 
   constructor(
     private supabaseService: SupabaseService,
-    private sqliteService: SqliteService,
-    private authService: AuthService
+    private authService: AuthService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -314,9 +313,8 @@ export class HistoryComponent implements OnInit, OnDestroy {
       if (!this.currentUserId) return;
 
       const remoteGames = await this.supabaseService.getUserGameResults(this.currentUserId);
-      const localGames = this.sqliteService.getLocalGames(this.currentUserId);
-
-      let allGames = [...remoteGames, ...localGames];
+      
+      let allGames = [...remoteGames];
 
       if (this.activeTab === 'wins') {
         allGames = allGames.filter(g => g.winner === 'player');
@@ -332,6 +330,7 @@ export class HistoryComponent implements OnInit, OnDestroy {
       console.error('Failed to load history:', error);
     } finally {
       this.loading = false;
+      this.cdr.detectChanges();
     }
   }
 

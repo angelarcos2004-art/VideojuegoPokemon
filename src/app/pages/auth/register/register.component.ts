@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
 import { NavbarComponent } from '../../../shared/components/navbar/navbar.component';
@@ -8,34 +8,62 @@ import { NavbarComponent } from '../../../shared/components/navbar/navbar.compon
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink, NavbarComponent],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink, NavbarComponent],
   template: `
     <app-navbar></app-navbar>
     <div class="register-container">
       <div class="register-box">
         <h2>Registrarse</h2>
-        <form (ngSubmit)="register()" [class.loading]="loading">
+        <form [formGroup]="form" (ngSubmit)="register()" [class.loading]="loading">
           <div class="form-group">
             <label>Usuario:</label>
-            <input type="text" [(ngModel)]="username" name="username" required [disabled]="loading">
+            <input type="text" formControlName="username" [disabled]="loading">
+            <div class="error-message" *ngIf="isFieldInvalid('username')">
+              <span *ngIf="form.get('username')?.errors?.['required']">El usuario es requerido</span>
+              <span *ngIf="form.get('username')?.errors?.['minlength']">Mínimo 3 caracteres</span>
+            </div>
           </div>
+
           <div class="form-group">
             <label>Email:</label>
-            <input type="email" [(ngModel)]="email" name="email" required [disabled]="loading">
+            <input type="email" formControlName="email" [disabled]="loading">
+            <div class="error-message" *ngIf="isFieldInvalid('email')">
+              <span *ngIf="form.get('email')?.errors?.['required']">El email es requerido</span>
+              <span *ngIf="form.get('email')?.errors?.['email']">Email inválido (ejemplo: usuario@dominio.com)</span>
+            </div>
           </div>
+
           <div class="form-group">
             <label>Contraseña:</label>
-            <input type="password" [(ngModel)]="password" name="password" required [disabled]="loading" autocomplete="new-password">
+            <input type="password" formControlName="password" [disabled]="loading" autocomplete="new-password">
+            <div class="password-strength" *ngIf="form.get('password')?.value">
+              <div class="strength-bar" [ngClass]="getPasswordStrength()"></div>
+              <span class="strength-text">{{ getPasswordStrengthText() }}</span>
+            </div>
+            <div class="error-message" *ngIf="isFieldInvalid('password')">
+              <span *ngIf="form.get('password')?.errors?.['required']">La contraseña es requerida</span>
+              <span *ngIf="form.get('password')?.errors?.['minlength']">Mínimo 8 caracteres</span>
+              <span *ngIf="form.get('password')?.errors?.['pattern']">Debe incluir mayúscula, minúscula, número y símbolo (!@#$%)</span>
+            </div>
           </div>
+
           <div class="form-group">
             <label>Confirmar Contraseña:</label>
-            <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required [disabled]="loading" autocomplete="new-password">
+            <input type="password" formControlName="confirmPassword" [disabled]="loading" autocomplete="new-password">
+            <div class="error-message" *ngIf="isFieldInvalid('confirmPassword')">
+              <span *ngIf="form.get('confirmPassword')?.errors?.['required']">Confirma la contraseña</span>
+              <span *ngIf="form.errors?.['passwordMismatch']">Las contraseñas no coinciden</span>
+            </div>
           </div>
-          <button type="submit" class="btn-submit" [disabled]="loading">
+
+          <button type="submit" class="btn-submit" [disabled]="loading || !form.valid">
             {{ loading ? 'Registrando...' : 'Registrarse' }}
           </button>
+
           <div *ngIf="error" class="error">{{ error }}</div>
+          <div *ngIf="success" class="success">✅ {{ success }}</div>
         </form>
+
         <p class="login-link">
           ¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión aquí</a>
         </p>
@@ -166,45 +194,164 @@ import { NavbarComponent } from '../../../shared/components/navbar/navbar.compon
       text-decoration: underline;
       color: var(--pk-red);
     }
+
+    .error-message {
+      color: var(--pk-red);
+      font-size: 0.85rem;
+      margin-top: 5px;
+    }
+
+    .form-group input.ng-invalid.ng-touched {
+      border-color: var(--pk-red);
+      background-color: #ffe8e8;
+    }
+
+    .password-strength {
+      margin-top: 5px;
+      font-size: 0.85rem;
+    }
+
+    .strength-bar {
+      height: 4px;
+      border-radius: 2px;
+      margin-bottom: 3px;
+      background: #ddd;
+    }
+
+    .strength-bar.weak {
+      background: #f56565;
+      width: 30%;
+    }
+
+    .strength-bar.fair {
+      background: #f6ad55;
+      width: 60%;
+    }
+
+    .strength-bar.good {
+      background: #4299e1;
+      width: 80%;
+    }
+
+    .strength-bar.strong {
+      background: #48bb78;
+      width: 100%;
+    }
+
+    .strength-text {
+      font-size: 0.75rem;
+    }
+
+    .strength-text.weak { color: #f56565; }
+    .strength-text.fair { color: #f6ad55; }
+    .strength-text.good { color: #4299e1; }
+    .strength-text.strong { color: #48bb78; }
+
+    .success {
+      color: #22543d;
+      background: #c6f6d5;
+      border: 1px solid #22543d;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+    }
   `]
 })
-export class RegisterComponent {
-  username = '';
-  email = '';
-  password = '';
-  confirmPassword = '';
+export class RegisterComponent implements OnInit {
+  form!: FormGroup;
   error = '';
+  success = '';
   loading = false;
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private fb: FormBuilder
   ) {}
 
+  ngOnInit(): void {
+    this.form = this.fb.group({
+      username: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8), this.passwordValidator]],
+      confirmPassword: ['', [Validators.required]]
+    }, { validators: this.passwordMatchValidator });
+  }
+
+  private passwordValidator(control: AbstractControl): ValidationErrors | null {
+    const password = control.value;
+    if (!password) return null;
+
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])/.test(password);
+    return regex ? null : { pattern: true };
+  }
+
+  private passwordMatchValidator(group: AbstractControl): ValidationErrors | null {
+    const password = group.get('password')?.value;
+    const confirmPassword = group.get('confirmPassword')?.value;
+
+    if (password && confirmPassword && password !== confirmPassword) {
+      return { passwordMismatch: true };
+    }
+    return null;
+  }
+
+  isFieldInvalid(fieldName: string): boolean {
+    const field = this.form.get(fieldName);
+    return !!(field && field.invalid && (field.dirty || field.touched));
+  }
+
+  getPasswordStrength(): string {
+    const password = this.form.get('password')?.value || '';
+    let strength = 0;
+
+    if (/[a-z]/.test(password)) strength++;
+    if (/[A-Z]/.test(password)) strength++;
+    if (/\d/.test(password)) strength++;
+    if (/[!@#$%^&*]/.test(password)) strength++;
+    if (password.length >= 12) strength++;
+
+    if (strength <= 1) return 'weak';
+    if (strength <= 2) return 'fair';
+    if (strength <= 3) return 'good';
+    return 'strong';
+  }
+
+  getPasswordStrengthText(): string {
+    const strength = this.getPasswordStrength();
+    const texts: { [key: string]: string } = {
+      weak: '⚠️ Débil',
+      fair: '📊 Aceptable',
+      good: '✓ Buena',
+      strong: '🔒 Muy fuerte'
+    };
+    return texts[strength] || '';
+  }
+
   async register(): Promise<void> {
-    if (this.password !== this.confirmPassword) {
-      this.error = 'Las contraseñas no coinciden';
-      return;
-    }
+    if (!this.form.valid) return;
 
-    if (this.password.length < 6) {
-      this.error = 'La contraseña debe tener al menos 6 caracteres';
-      return;
-    }
-
-    if (!this.username.trim()) {
-      this.error = 'El nombre de usuario es requerido';
-      return;
-    }
+    const { username, email, password } = this.form.value;
+    this.loading = true;
+    this.error = '';
+    this.success = '';
 
     try {
-      this.loading = true;
-      this.error = '';
-      await this.authService.signUp(this.email, this.password, this.username);
-      this.router.navigate(['/menu']);
+      await this.authService.signUp(email.trim(), password, username.trim());
+      this.success = 'Registro exitoso. Verifica tu email para activar la cuenta. Redireccionando a login...';
+
+      setTimeout(() => {
+        this.router.navigate(['/login']);
+      }, 2000);
     } catch (error: any) {
       console.error('Registration error:', error);
-      this.error = error.message || 'Falló el registro. Intenta con otro email.';
+      if (error.message?.includes('already registered')) {
+        this.error = '❌ Este email ya está registrado. ¿Olvidaste tu contraseña?';
+      } else {
+        this.error = `❌ Error en el registro: ${error.message || 'Intenta con otro email'}`;
+      }
     } finally {
       this.loading = false;
     }
