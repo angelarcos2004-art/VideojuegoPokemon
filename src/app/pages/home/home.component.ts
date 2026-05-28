@@ -18,14 +18,18 @@ import { Observable } from 'rxjs';
         <p class="subtitle">Juego de cartas estratégico inspirado en Pokémon y Yu-Gi-Oh!</p>
         <div class="buttons">
           <ng-container *ngIf="isAuthenticated$ | async; else unauthButtons">
-            <a routerLink="/menu" class="btn btn-primary">Ir al Menú</a>
-            <a routerLink="/game/cpu" class="btn btn-secondary">Partida Rápida</a>
+            <div style="display: flex; gap: 20px; justify-content: center; width: 100%;">
+              <a routerLink="/menu" class="btn btn-primary">Ir al Menú</a>
+              <a routerLink="/game/cpu" class="btn btn-secondary">Partida Rápida</a>
+            </div>
+            <div style="display: flex; justify-content: center; width: 100%; margin-top: 10px;">
+              <a routerLink="/game/tutorial" class="btn btn-tutorial">📚 Tutorial</a>
+            </div>
           </ng-container>
           <ng-template #unauthButtons>
             <a routerLink="/login" class="btn btn-primary">Iniciar Sesión</a>
             <a routerLink="/register" class="btn btn-secondary">Registrarse</a>
           </ng-template>
-        </div>
       </div>
       <div class="features">
         <div class="feature">
@@ -124,6 +128,18 @@ import { Observable } from 'rxjs';
     .btn-secondary {
       background-color: var(--pk-white);
       color: var(--pk-text);
+    }
+
+    .btn-tutorial {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 30px;
+      font-size: 1.1rem;
+      margin: 20px 0 30px 0;
+    }
+
+    .btn-tutorial:hover {
+      background-color: #43a047;
     }
 
     .features {

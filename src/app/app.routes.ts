@@ -11,6 +11,7 @@ export const routes: Routes = [
   { path: 'cards/collection', loadComponent: () => import('./pages/cards/collection/collection.component').then(m => m.CollectionComponent), canActivate: [authGuard] },
   { path: 'cards/deck-builder', loadComponent: () => import('./pages/cards/deck-builder/deck-builder.component').then(m => m.DeckBuilderComponent), canActivate: [authGuard] },
   { path: 'game/cpu', loadComponent: () => import('./pages/game/vs-cpu/vs-cpu.component').then(m => m.VsCpuComponent), canActivate: [authGuard] },
+  { path: 'game/tutorial', loadComponent: () => import('./pages/game/vs-cpu/vs-cpu.component').then(m => m.VsCpuComponent), canActivate: [authGuard] },
   { path: 'game/online', loadComponent: () => import('./pages/game/vs-player/vs-player.component').then(m => m.VsPlayerComponent), canActivate: [authGuard] },
   { path: 'history', loadComponent: () => import('./pages/history/history.component').then(m => m.HistoryComponent), canActivate: [authGuard] },
   { path: 'results', loadComponent: () => import('./pages/results/results.component').then(m => m.ResultsComponent), canActivate: [authGuard] },

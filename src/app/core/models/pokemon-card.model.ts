@@ -1,7 +1,7 @@
 export interface SpecialAbility {
   name: string;
   description: string;
-  effect: 'heal' | 'boost_attack' | 'reduce_defense' | 'draw_card' | 'block' | 'direct_damage' | 'revive';
+  effect: 'heal' | 'boost_attack' | 'reduce_defense' | 'draw_card' | 'block' | 'direct_damage' | 'revive' | 'burn' | 'poison' | 'paralyze';
   value: number;
 }
 
@@ -24,4 +24,5 @@ export interface PokemonCard {
   hasAttacked?: boolean;
   hasUsedAbility?: boolean;
   isFaceDown?: boolean;
+  status?: 'burned' | 'poisoned' | 'paralyzed' | null;
 }

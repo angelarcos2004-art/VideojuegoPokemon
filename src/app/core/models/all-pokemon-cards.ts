@@ -5,7 +5,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "id": 2001,
     "name": "Poción",
     "image": "assets/images/hq_potion.png",
-    "types": ["magic"],
+    "types": [
+      "magic"
+    ],
     "hp": 0,
     "attack": 0,
     "defense": 0,
@@ -20,7 +22,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "id": 2002,
     "name": "Danza Lluvia",
     "image": "assets/images/hq_raindance.png",
-    "types": ["magic"],
+    "types": [
+      "magic"
+    ],
     "hp": 0,
     "attack": 0,
     "defense": 0,
@@ -35,7 +39,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "id": 2005,
     "name": "Día Soleado",
     "image": "assets/images/dia_soleado.jpg",
-    "types": ["magic"],
+    "types": [
+      "magic"
+    ],
     "hp": 0,
     "attack": 0,
     "defense": 0,
@@ -50,7 +56,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "id": 2006,
     "name": "Gimnasio Roca",
     "image": "assets/images/gimnasio_roca.jpg",
-    "types": ["magic"],
+    "types": [
+      "magic"
+    ],
     "hp": 0,
     "attack": 0,
     "defense": 0,
@@ -65,7 +73,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "id": 2003,
     "name": "Protección",
     "image": "assets/images/hq_protect.png",
-    "types": ["trap"],
+    "types": [
+      "trap"
+    ],
     "hp": 0,
     "attack": 0,
     "defense": 0,
@@ -80,7 +90,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "id": 2004,
     "name": "Trampa Rocas",
     "image": "assets/images/hq_stealthrock.png",
-    "types": ["trap"],
+    "types": [
+      "trap"
+    ],
     "hp": 0,
     "attack": 0,
     "defense": 0,
@@ -94,8 +106,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
   {
     "id": 2007,
     "name": "Armadura Defensiva",
-    "image": "assets/images/armor_defense.png",
-    "types": ["magic"],
+    "image": "assets/images/armadura_defensiva.png",
+    "types": [
+      "magic"
+    ],
     "hp": 0,
     "attack": 0,
     "defense": 0,
@@ -109,17 +123,19 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
   {
     "id": 2008,
     "name": "Fortaleza Mística",
-    "image": "assets/images/mystical_fortress.png",
-    "types": ["magic"],
+    "image": "assets/images/fortaleza_mistica.jpg",
+    "types": [
+      "magic"
+    ],
     "hp": 0,
     "attack": 0,
     "defense": 0,
     "cardClass": "magic",
-    "magicEffect": "boost_def",
+    "magicEffect": "field",
     "effectValue": 150,
     "level": 1,
     "rarity": "common",
-    "description": "Carta Mágica de Protección. Una barrera mística rodea el campo, potenciando la Defensa de todos tus Pokémon en 150 puntos."
+    "description": "Carta Mágica de Campo. Una barrera mística rodea el campo, potenciando el Ataque y la Defensa de todos tus Pokémon en 150 puntos."
   },
   {
     "id": 1,
@@ -133,9 +149,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 98,
     "defense": 98,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 2,
@@ -154,9 +170,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 124,
     "defense": 126,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 4,
@@ -175,9 +191,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 164,
     "defense": 166,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 7,
@@ -195,10 +211,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 104,
     "defense": 86,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -215,10 +231,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 128,
     "defense": 116,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -236,10 +252,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 168,
     "defense": 156,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -256,10 +272,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 96,
     "defense": 130,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -276,10 +292,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 126,
     "defense": 160,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -296,10 +312,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 166,
     "defense": 200,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -316,9 +332,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 70,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -336,9 +352,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 40,
     "defense": 110,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -357,9 +373,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -378,9 +394,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 70,
     "defense": 60,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -399,9 +415,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 50,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -420,9 +436,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -441,9 +457,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -462,9 +478,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 110,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -483,9 +499,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 150,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 7,
@@ -503,9 +519,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 112,
     "defense": 70,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -523,9 +539,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 162,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -544,9 +560,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 60,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -565,9 +581,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -585,9 +601,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 88,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 1,
@@ -605,9 +621,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 138,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 5,
@@ -625,10 +641,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 80,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 3,
     "rarity": "rare",
@@ -645,10 +661,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 110,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 7,
     "rarity": "legendary",
@@ -665,10 +681,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 170,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -685,10 +701,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 220,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -705,9 +721,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 94,
     "defense": 104,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 1,
@@ -725,9 +741,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 124,
     "defense": 134,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 4,
@@ -746,9 +762,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 184,
     "defense": 174,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 7,
@@ -766,9 +782,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 114,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 1,
@@ -786,9 +802,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 144,
     "defense": 114,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 4,
@@ -807,9 +823,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 204,
     "defense": 154,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 7,
@@ -827,10 +843,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 96,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 3,
     "rarity": "rare",
@@ -847,10 +863,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 146,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -867,10 +883,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 82,
     "defense": 80,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -887,10 +903,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 152,
     "defense": 150,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -908,9 +924,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 40,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 3,
@@ -929,9 +945,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 6,
@@ -950,9 +966,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 70,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 1,
@@ -971,9 +987,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 5,
@@ -992,9 +1008,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 110,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 2,
@@ -1013,9 +1029,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 140,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 4,
@@ -1034,9 +1050,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 170,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 7,
@@ -1055,9 +1071,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 110,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -1076,9 +1092,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -1097,9 +1113,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -1118,9 +1134,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -1138,10 +1154,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 50,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 1,
     "rarity": "common",
@@ -1158,10 +1174,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 4,
     "rarity": "rare",
@@ -1178,9 +1194,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 70,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -1198,9 +1214,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -1218,10 +1234,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 104,
     "defense": 96,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -1238,10 +1254,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 164,
     "defense": 156,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -1258,10 +1274,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 70,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 2,
     "rarity": "common",
@@ -1278,10 +1294,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 210,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 5,
     "rarity": "rare",
@@ -1298,10 +1314,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 90,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -1318,10 +1334,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 220,
     "defense": 160,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 6,
     "rarity": "rare",
@@ -1338,10 +1354,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 80,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -1358,10 +1374,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 130,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -1379,10 +1395,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 190,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -1399,10 +1415,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 40,
     "defense": 30,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -1419,10 +1435,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 70,
     "defense": 60,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -1439,10 +1455,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 90,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 7,
     "rarity": "legendary",
@@ -1459,10 +1475,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 2,
     "rarity": "common",
@@ -1479,10 +1495,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 4,
     "rarity": "rare",
@@ -1499,10 +1515,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 260,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 7,
     "rarity": "legendary",
@@ -1520,9 +1536,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 70,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 2,
@@ -1541,9 +1557,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 100,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 4,
@@ -1562,9 +1578,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 210,
     "defense": 130,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 7,
@@ -1583,10 +1599,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 70,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -1604,10 +1620,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 130,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 6,
     "rarity": "rare",
@@ -1625,10 +1641,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -1646,10 +1662,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 230,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 4,
     "rarity": "rare",
@@ -1667,10 +1683,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 260,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 7,
     "rarity": "legendary",
@@ -1687,10 +1703,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 110,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -1707,10 +1723,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 140,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -1728,10 +1744,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 130,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -1749,10 +1765,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 220,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -1770,10 +1786,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 70,
     "defense": 140,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -1791,10 +1807,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 190,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -1812,9 +1828,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 110,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -1833,9 +1849,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -1854,9 +1870,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 220,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -1874,10 +1890,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 110,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -1895,10 +1911,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 160,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -1915,9 +1931,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 2,
@@ -1935,9 +1951,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 210,
     "defense": 150,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 5,
@@ -1955,10 +1971,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 200,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -1976,10 +1992,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 360,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 6,
     "rarity": "rare",
@@ -1997,10 +2013,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 70,
     "defense": 60,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -2018,10 +2034,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -2039,10 +2055,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -2060,10 +2076,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 320,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -2080,10 +2096,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 96,
     "defense": 90,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -2100,10 +2116,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 146,
     "defense": 140,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -2120,10 +2136,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 210,
     "defense": 180,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -2140,10 +2156,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 260,
     "defense": 230,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -2160,10 +2176,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 100,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -2180,10 +2196,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 140,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -2201,10 +2217,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 160,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -2222,10 +2238,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 170,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 6,
     "rarity": "rare",
@@ -2242,10 +2258,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -2262,10 +2278,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 220,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 4,
     "rarity": "rare",
@@ -2282,10 +2298,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 106,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 5,
     "rarity": "rare",
@@ -2302,10 +2318,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 210,
     "defense": 158,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 5,
     "rarity": "rare",
@@ -2322,9 +2338,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 150,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -2342,9 +2358,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 2,
@@ -2362,9 +2378,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 240,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 5,
@@ -2383,10 +2399,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -2404,10 +2420,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 260,
     "defense": 240,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -2424,9 +2440,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 10,
     "defense": 10,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 13,
@@ -2444,10 +2460,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 230,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -2464,9 +2480,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -2484,10 +2500,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 140,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -2504,10 +2520,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 190,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -2524,10 +2540,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 134,
     "defense": 120,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -2544,10 +2560,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 184,
     "defense": 130,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -2564,10 +2580,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 110,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -2585,10 +2601,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 170,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 6,
     "rarity": "rare",
@@ -2606,10 +2622,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 130,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -2627,9 +2643,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 220,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 3,
@@ -2648,10 +2664,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 70,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -2668,10 +2684,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 166,
     "defense": 114,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -2688,10 +2704,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 114,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -2708,9 +2724,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 250,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -2728,9 +2744,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -2748,10 +2764,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 20,
     "defense": 110,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -2769,10 +2785,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 250,
     "defense": 158,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 6,
     "rarity": "rare",
@@ -2790,10 +2806,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 160,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 6,
     "rarity": "rare",
@@ -2810,9 +2826,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 96,
     "defense": 96,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 3,
@@ -2830,9 +2846,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -2850,10 +2866,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 120,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 6,
     "rarity": "rare",
@@ -2870,10 +2886,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 120,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 6,
     "rarity": "rare",
@@ -2890,10 +2906,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 260,
     "defense": 120,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 6,
     "rarity": "rare",
@@ -2910,9 +2926,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -2931,10 +2947,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -2952,10 +2968,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 250,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -2973,10 +2989,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -2994,10 +3010,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 210,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -3015,10 +3031,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 210,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 6,
     "rarity": "rare",
@@ -3035,9 +3051,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 220,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 6,
@@ -3056,10 +3072,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 200,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -3077,10 +3093,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 170,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -3098,10 +3114,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 180,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -3118,10 +3134,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 128,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 2,
     "rarity": "common",
@@ -3138,10 +3154,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 168,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 4,
     "rarity": "rare",
@@ -3159,10 +3175,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 268,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 9,
     "rarity": "legendary",
@@ -3179,10 +3195,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 220,
     "defense": 180,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 10,
     "rarity": "legendary",
@@ -3199,10 +3215,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 200,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 9,
     "rarity": "legendary",
@@ -3219,10 +3235,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 98,
     "defense": 130,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -3239,10 +3255,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 124,
     "defense": 160,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -3259,10 +3275,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 164,
     "defense": 200,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -3279,10 +3295,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 104,
     "defense": 86,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -3299,10 +3315,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 128,
     "defense": 116,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -3319,10 +3335,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 168,
     "defense": 156,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -3339,10 +3355,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 128,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -3359,10 +3375,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 160,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -3379,10 +3395,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 210,
     "defense": 200,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -3399,9 +3415,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 92,
     "defense": 68,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -3419,9 +3435,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 152,
     "defense": 128,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -3440,9 +3456,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 60,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -3461,9 +3477,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -3482,9 +3498,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 40,
     "defense": 60,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -3503,9 +3519,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 70,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -3524,9 +3540,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -3545,9 +3561,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -3566,9 +3582,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 8,
@@ -3587,10 +3603,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 76,
     "defense": 76,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -3608,10 +3624,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 116,
     "defense": 116,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -3628,10 +3644,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 30,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -3648,10 +3664,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 50,
     "defense": 56,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -3669,9 +3685,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 30,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -3689,10 +3705,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 40,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -3710,10 +3726,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 170,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -3731,10 +3747,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 90,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -3752,10 +3768,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 140,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -3772,10 +3788,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 80,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -3792,10 +3808,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 110,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -3812,10 +3828,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 170,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 7,
     "rarity": "legendary",
@@ -3832,10 +3848,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 190,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -3853,10 +3869,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 40,
     "defense": 100,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -3874,10 +3890,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 160,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 6,
     "rarity": "rare",
@@ -3894,10 +3910,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 230,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 4,
     "rarity": "rare",
@@ -3914,10 +3930,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 150,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -3935,10 +3951,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 70,
     "defense": 80,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -3956,10 +3972,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 100,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 3,
     "rarity": "rare",
@@ -3977,10 +3993,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 140,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 6,
     "rarity": "legendary",
@@ -3997,9 +4013,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 110,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -4017,10 +4033,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 60,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -4037,10 +4053,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 110,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -4058,9 +4074,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -4079,10 +4095,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 90,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -4100,10 +4116,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 170,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -4120,10 +4136,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 120,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 6,
     "rarity": "rare",
@@ -4140,10 +4156,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 220,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 6,
     "rarity": "rare",
@@ -4161,10 +4177,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 84,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -4182,10 +4198,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 160,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -4202,10 +4218,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -4222,10 +4238,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 144,
     "defense": 96,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 3,
     "rarity": "rare",
@@ -4242,10 +4258,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 66,
     "defense": 116,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -4263,9 +4279,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -4283,9 +4299,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -4304,9 +4320,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 280,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -4324,9 +4340,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -4345,10 +4361,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 210,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -4366,10 +4382,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 400,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -4386,10 +4402,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -4406,10 +4422,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 150,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -4427,10 +4443,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 170,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -4448,9 +4464,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 260,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -4469,9 +4485,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 20,
     "defense": 460,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -4490,9 +4506,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 250,
     "defense": 150,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -4511,10 +4527,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 110,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -4531,9 +4547,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -4551,9 +4567,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 260,
     "defense": 150,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -4571,10 +4587,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 80,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -4592,10 +4608,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 240,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -4613,10 +4629,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 80,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -4634,10 +4650,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 160,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -4655,10 +4671,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 190,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -4675,10 +4691,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 70,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -4695,10 +4711,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 210,
     "defense": 150,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -4716,10 +4732,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 90,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 3,
     "rarity": "rare",
@@ -4737,10 +4753,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 140,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -4758,10 +4774,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 280,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -4779,10 +4795,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 60,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -4800,10 +4816,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -4821,10 +4837,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 190,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 8,
     "rarity": "legendary",
@@ -4841,10 +4857,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -4861,10 +4877,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 240,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -4881,9 +4897,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 6,
@@ -4901,9 +4917,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 124,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -4921,9 +4937,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 40,
     "defense": 70,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -4941,10 +4957,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 70,
     "defense": 70,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 1,
     "rarity": "common",
@@ -4961,10 +4977,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 5,
     "rarity": "rare",
@@ -4982,10 +4998,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 30,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -5002,10 +5018,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 126,
     "defense": 74,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -5022,10 +5038,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 74,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -5042,9 +5058,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 210,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -5062,9 +5078,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 20,
     "defense": 20,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 20,
@@ -5082,10 +5098,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 150,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -5102,10 +5118,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 170,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -5122,10 +5138,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 230,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 8,
     "rarity": "legendary",
@@ -5143,10 +5159,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 128,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -5164,10 +5180,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 168,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 4,
     "rarity": "rare",
@@ -5185,10 +5201,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 268,
     "defense": 220,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 9,
     "rarity": "legendary",
@@ -5206,10 +5222,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 260,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 10,
     "rarity": "legendary",
@@ -5227,10 +5243,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 260,
     "defense": 180,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 10,
     "rarity": "legendary",
@@ -5248,10 +5264,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 200,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 9,
     "rarity": "legendary",
@@ -5268,10 +5284,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 70,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -5288,10 +5304,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 90,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -5308,10 +5324,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 130,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -5328,10 +5344,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 80,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -5349,10 +5365,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 120,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -5370,10 +5386,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 140,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 7,
     "rarity": "legendary",
@@ -5390,10 +5406,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 100,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -5411,10 +5427,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 140,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -5432,10 +5448,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 220,
     "defense": 180,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 8,
     "rarity": "legendary",
@@ -5452,10 +5468,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 70,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -5472,10 +5488,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -5492,9 +5508,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 82,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -5512,9 +5528,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 122,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -5532,9 +5548,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 70,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -5552,9 +5568,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 70,
     "defense": 110,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -5573,9 +5589,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -5593,9 +5609,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 70,
     "defense": 110,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -5614,9 +5630,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -5635,10 +5651,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 60,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -5656,10 +5672,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 100,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 3,
     "rarity": "rare",
@@ -5677,10 +5693,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 140,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -5697,10 +5713,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 100,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -5718,10 +5734,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 80,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 3,
     "rarity": "rare",
@@ -5739,10 +5755,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 120,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -5760,9 +5776,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 60,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -5781,9 +5797,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -5802,10 +5818,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 60,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -5823,10 +5839,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 200,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -5844,10 +5860,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 50,
     "defense": 50,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -5865,10 +5881,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 70,
     "defense": 70,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 3,
     "rarity": "common",
@@ -5886,10 +5902,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 130,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 7,
     "rarity": "legendary",
@@ -5907,9 +5923,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 64,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -5928,9 +5944,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 124,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -5948,10 +5964,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 120,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -5969,10 +5985,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 260,
     "defense": 160,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -5989,9 +6005,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -6009,9 +6025,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -6029,9 +6045,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 320,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 8,
@@ -6050,9 +6066,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -6071,9 +6087,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -6092,9 +6108,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -6112,9 +6128,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 102,
     "defense": 46,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -6132,9 +6148,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 142,
     "defense": 86,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -6152,9 +6168,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 182,
     "defense": 126,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 7,
@@ -6172,10 +6188,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 60,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 1,
     "rarity": "common",
@@ -6192,10 +6208,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 5,
     "rarity": "rare",
@@ -6213,9 +6229,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 40,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -6233,10 +6249,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 270,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -6253,9 +6269,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -6273,9 +6289,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -6294,10 +6310,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 150,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -6315,10 +6331,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 170,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 4,
     "rarity": "rare",
@@ -6336,10 +6352,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -6357,10 +6373,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 280,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -6378,10 +6394,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 220,
     "defense": 360,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 7,
     "rarity": "legendary",
@@ -6399,10 +6415,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 110,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 1,
     "rarity": "common",
@@ -6420,10 +6436,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 150,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 4,
     "rarity": "rare",
@@ -6440,10 +6456,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 80,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -6460,10 +6476,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 120,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -6480,10 +6496,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 80,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -6500,10 +6516,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 100,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -6520,9 +6536,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 146,
     "defense": 150,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -6540,9 +6556,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 94,
     "defense": 150,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -6561,9 +6577,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 90,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 4,
@@ -6581,9 +6597,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 86,
     "defense": 106,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 2,
@@ -6601,9 +6617,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 146,
     "defense": 166,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 5,
@@ -6622,10 +6638,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 40,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -6643,10 +6659,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 80,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -6663,10 +6679,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 70,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -6683,10 +6699,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 90,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -6704,10 +6720,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 80,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -6725,10 +6741,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 140,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -6745,10 +6761,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 280,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -6765,10 +6781,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 50,
     "defense": 70,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -6785,10 +6801,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 130,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -6805,9 +6821,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -6825,10 +6841,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 1,
     "rarity": "common",
@@ -6846,10 +6862,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 3,
     "rarity": "rare",
@@ -6867,10 +6883,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 7,
     "rarity": "legendary",
@@ -6887,10 +6903,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 80,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -6908,10 +6924,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 120,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -6929,9 +6945,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -6950,10 +6966,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 5,
     "rarity": "rare",
@@ -6970,9 +6986,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -6990,9 +7006,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 5,
@@ -7011,10 +7027,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -7032,10 +7048,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 170,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -7053,10 +7069,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 96,
     "defense": 86,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -7074,10 +7090,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 156,
     "defense": 146,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -7094,10 +7110,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 130,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -7115,10 +7131,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 170,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -7136,10 +7152,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 110,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -7157,10 +7173,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 210,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -7178,10 +7194,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 82,
     "defense": 154,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -7199,10 +7215,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 162,
     "defense": 194,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -7220,10 +7236,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -7241,10 +7257,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 250,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -7261,10 +7277,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 30,
     "defense": 40,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -7281,10 +7297,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 158,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 6,
     "rarity": "rare",
@@ -7301,9 +7317,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -7321,9 +7337,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -7341,10 +7357,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 70,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -7361,10 +7377,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -7381,10 +7397,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -7401,10 +7417,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 260,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -7422,10 +7438,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 136,
     "defense": 166,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -7442,10 +7458,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 160,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -7462,10 +7478,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 260,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -7482,10 +7498,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 46,
     "defense": 96,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -7502,10 +7518,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 100,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -7522,10 +7538,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 160,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -7543,10 +7559,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 100,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -7564,10 +7580,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 140,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -7585,10 +7601,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 180,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 7,
     "rarity": "legendary",
@@ -7605,10 +7621,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 128,
     "defense": 170,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -7625,10 +7641,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 208,
     "defense": 210,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -7645,10 +7661,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 168,
     "defense": 210,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -7666,10 +7682,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 260,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -7686,10 +7702,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 110,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 3,
     "rarity": "rare",
@@ -7706,10 +7722,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 2,
     "rarity": "common",
@@ -7726,10 +7742,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 4,
     "rarity": "rare",
@@ -7747,10 +7763,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 270,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 9,
     "rarity": "legendary",
@@ -7768,10 +7784,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -7789,10 +7805,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 4,
     "rarity": "rare",
@@ -7810,10 +7826,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 270,
     "defense": 260,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 9,
     "rarity": "legendary",
@@ -7830,10 +7846,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 400,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 8,
     "rarity": "legendary",
@@ -7850,10 +7866,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 200,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -7870,10 +7886,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 300,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 8,
     "rarity": "legendary",
@@ -7891,10 +7907,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 9,
     "rarity": "legendary",
@@ -7912,10 +7928,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 9,
     "rarity": "legendary",
@@ -7932,10 +7948,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 180,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 10,
     "rarity": "legendary",
@@ -7952,10 +7968,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 300,
     "defense": 280,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 10,
     "rarity": "legendary",
@@ -7973,10 +7989,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 300,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 10,
     "rarity": "legendary",
@@ -7994,10 +8010,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 9,
     "rarity": "legendary",
@@ -8014,10 +8030,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 300,
     "defense": 100,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 9,
     "rarity": "legendary",
@@ -8034,10 +8050,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 136,
     "defense": 128,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -8054,10 +8070,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 178,
     "defense": 170,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -8075,10 +8091,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 218,
     "defense": 210,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -8095,10 +8111,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 116,
     "defense": 88,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -8116,10 +8132,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 156,
     "defense": 104,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -8137,10 +8153,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 208,
     "defense": 142,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -8157,10 +8173,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 102,
     "defense": 106,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -8177,10 +8193,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 132,
     "defense": 136,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -8198,10 +8214,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 172,
     "defense": 176,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -8219,9 +8235,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 60,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -8240,9 +8256,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 3,
@@ -8261,9 +8277,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 7,
@@ -8281,9 +8297,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -8302,9 +8318,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -8322,9 +8338,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 50,
     "defense": 82,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -8342,9 +8358,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 102,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -8362,10 +8378,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 68,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -8382,10 +8398,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 98,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -8402,10 +8418,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 158,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 7,
     "rarity": "legendary",
@@ -8423,9 +8439,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 70,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 1,
@@ -8444,9 +8460,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 130,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 7,
@@ -8464,10 +8480,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 250,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -8484,10 +8500,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 330,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -8505,10 +8521,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 84,
     "defense": 236,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -8526,10 +8542,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 104,
     "defense": 336,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -8546,9 +8562,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 58,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -8567,9 +8583,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 118,
     "defense": 170,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -8588,9 +8604,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 188,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -8609,9 +8625,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 84,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -8630,9 +8646,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 204,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -8650,10 +8666,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 140,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -8670,10 +8686,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 70,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -8690,10 +8706,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 210,
     "defense": 110,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -8710,10 +8726,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 70,
     "defense": 90,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -8730,10 +8746,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 140,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -8750,10 +8766,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 96,
     "defense": 96,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -8771,10 +8787,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 166,
     "defense": 136,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -8791,9 +8807,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 132,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -8812,10 +8828,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 68,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -8833,10 +8849,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 88,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -8853,9 +8869,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 132,
     "defense": 88,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -8873,9 +8889,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 152,
     "defense": 168,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -8893,10 +8909,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -8914,10 +8930,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 250,
     "defense": 104,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -8934,9 +8950,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 84,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -8954,9 +8970,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 164,
     "defense": 128,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -8974,10 +8990,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 100,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -8995,9 +9011,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 126,
     "defense": 94,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 2,
@@ -9016,9 +9032,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 186,
     "defense": 134,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 5,
@@ -9037,10 +9053,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 48,
     "defense": 172,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -9058,10 +9074,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 178,
     "defense": 232,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -9078,10 +9094,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 1,
     "rarity": "common",
@@ -9099,10 +9115,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 50,
     "defense": 90,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -9119,9 +9135,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 10,
     "defense": 10,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 3,
@@ -9140,9 +9156,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -9161,10 +9177,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 184,
     "defense": 216,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -9182,10 +9198,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 2,
     "rarity": "common",
@@ -9203,10 +9219,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 4,
     "rarity": "rare",
@@ -9224,10 +9240,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 260,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 9,
     "rarity": "legendary",
@@ -9244,9 +9260,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -9264,10 +9280,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 1,
     "rarity": "common",
@@ -9285,10 +9301,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 220,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 6,
     "rarity": "rare",
@@ -9305,10 +9321,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 144,
     "defense": 156,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -9325,10 +9341,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 224,
     "defense": 236,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 6,
     "rarity": "rare",
@@ -9346,9 +9362,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 2,
@@ -9367,9 +9383,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 220,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 5,
@@ -9388,9 +9404,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 122,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 2,
@@ -9409,9 +9425,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 212,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 5,
@@ -9429,10 +9445,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 144,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -9449,10 +9465,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 98,
     "defense": 112,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -9469,10 +9485,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 138,
     "defense": 152,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -9490,10 +9506,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 40,
     "defense": 100,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -9511,10 +9527,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 124,
     "defense": 100,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -9532,10 +9548,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 184,
     "defense": 150,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -9553,10 +9569,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -9574,10 +9590,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 230,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -9594,9 +9610,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 6,
@@ -9615,10 +9631,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 280,
     "defense": 260,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 8,
     "rarity": "legendary",
@@ -9635,10 +9651,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 250,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 6,
     "rarity": "rare",
@@ -9655,10 +9671,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 246,
     "defense": 134,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -9675,10 +9691,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 134,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -9696,10 +9712,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 8,
     "rarity": "legendary",
@@ -9717,9 +9733,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 152,
     "defense": 172,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 6,
@@ -9737,10 +9753,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 220,
     "defense": 260,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 6,
     "rarity": "rare",
@@ -9757,10 +9773,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 220,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 6,
     "rarity": "rare",
@@ -9778,10 +9794,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 250,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -9799,10 +9815,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 260,
     "defense": 160,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 7,
     "rarity": "legendary",
@@ -9819,9 +9835,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 8,
@@ -9840,10 +9856,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 250,
     "defense": 130,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 7,
     "rarity": "legendary",
@@ -9861,10 +9877,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 290,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 6,
     "rarity": "rare",
@@ -9881,10 +9897,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 270,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -9902,10 +9918,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 140,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -9923,10 +9939,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 154,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -9943,10 +9959,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 260,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -9963,10 +9979,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 210,
     "defense": 210,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -9983,10 +9999,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 250,
     "defense": 140,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -10004,10 +10020,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 240,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 10,
     "rarity": "legendary",
@@ -10025,10 +10041,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 200,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 10,
     "rarity": "legendary",
@@ -10046,10 +10062,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 212,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 9,
     "rarity": "legendary",
@@ -10066,9 +10082,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 320,
     "defense": 220,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 10,
@@ -10087,10 +10103,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 240,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 10,
     "rarity": "legendary",
@@ -10107,10 +10123,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 220,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 9,
     "rarity": "legendary",
@@ -10127,10 +10143,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 160,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -10147,10 +10163,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 200,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 9,
     "rarity": "legendary",
@@ -10167,10 +10183,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 9,
     "rarity": "legendary",
@@ -10187,10 +10203,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 200,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 9,
     "rarity": "legendary",
@@ -10207,9 +10223,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 240,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 10,
@@ -10228,10 +10244,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 200,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 9,
     "rarity": "legendary",
@@ -10248,10 +10264,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 110,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -10268,10 +10284,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 150,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -10288,10 +10304,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 190,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -10308,10 +10324,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 126,
     "defense": 90,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -10329,10 +10345,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 186,
     "defense": 110,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -10350,10 +10366,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 246,
     "defense": 130,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 7,
     "rarity": "legendary",
@@ -10370,10 +10386,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 90,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -10390,10 +10406,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 120,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -10410,10 +10426,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 170,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -10430,9 +10446,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 78,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -10450,9 +10466,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 138,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -10470,9 +10486,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -10490,9 +10506,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -10510,9 +10526,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 220,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 7,
@@ -10530,10 +10546,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 74,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -10550,10 +10566,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 176,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -10570,10 +10586,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 106,
     "defense": 96,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -10590,10 +10606,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 196,
     "defense": 126,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -10610,10 +10626,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 106,
     "defense": 96,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -10630,10 +10646,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 196,
     "defense": 126,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -10650,10 +10666,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 106,
     "defense": 96,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -10670,10 +10686,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 196,
     "defense": 126,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -10690,10 +10706,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 50,
     "defense": 90,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -10710,10 +10726,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 170,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -10731,9 +10747,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -10752,9 +10768,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 154,
     "defense": 124,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -10773,9 +10789,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 7,
@@ -10793,10 +10809,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 64,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -10813,10 +10829,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 126,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -10833,10 +10849,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 170,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 1,
     "rarity": "common",
@@ -10853,10 +10869,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 210,
     "defense": 210,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 4,
     "rarity": "rare",
@@ -10873,10 +10889,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 270,
     "defense": 260,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 7,
     "rarity": "legendary",
@@ -10894,10 +10910,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 86,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -10915,10 +10931,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 114,
     "defense": 110,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -10935,10 +10951,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -10956,10 +10972,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 270,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -10976,9 +10992,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 172,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 13,
@@ -10996,10 +11012,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 110,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 2,
     "rarity": "common",
@@ -11016,10 +11032,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 210,
     "defense": 170,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 4,
     "rarity": "rare",
@@ -11036,10 +11052,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 280,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 7,
     "rarity": "legendary",
@@ -11056,10 +11072,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 80,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -11077,10 +11093,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 110,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -11098,10 +11114,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 150,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -11118,10 +11134,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 170,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 5,
     "rarity": "rare",
@@ -11138,10 +11154,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 250,
     "defense": 150,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 5,
     "rarity": "rare",
@@ -11159,9 +11175,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 106,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -11180,9 +11196,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 126,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -11201,9 +11217,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 206,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 7,
@@ -11222,9 +11238,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 118,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -11243,9 +11259,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 198,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -11264,9 +11280,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 178,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 7,
@@ -11285,10 +11301,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 54,
     "defense": 120,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -11306,10 +11322,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 134,
     "defense": 170,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -11326,10 +11342,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 70,
     "defense": 100,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -11346,10 +11362,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 150,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -11366,10 +11382,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 184,
     "defense": 130,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -11387,10 +11403,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 144,
     "defense": 70,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 1,
     "rarity": "common",
@@ -11408,10 +11424,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 164,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 4,
     "rarity": "rare",
@@ -11429,10 +11445,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 234,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 7,
     "rarity": "legendary",
@@ -11449,10 +11465,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 90,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -11469,10 +11485,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 280,
     "defense": 110,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -11489,10 +11505,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 172,
     "defense": 134,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -11510,9 +11526,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 170,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -11531,9 +11547,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 210,
     "defense": 250,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -11552,10 +11568,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -11573,10 +11589,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 230,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -11594,10 +11610,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 116,
     "defense": 160,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -11614,10 +11630,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 170,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -11634,10 +11650,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 290,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -11655,10 +11671,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 156,
     "defense": 206,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -11676,10 +11692,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 216,
     "defense": 266,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -11697,10 +11713,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 224,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -11718,10 +11734,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 280,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -11738,9 +11754,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 124,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 2,
@@ -11758,9 +11774,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 164,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 5,
@@ -11778,10 +11794,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -11798,10 +11814,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 210,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -11818,9 +11834,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -11838,9 +11854,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -11858,10 +11874,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 100,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -11878,10 +11894,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 140,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -11898,10 +11914,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 190,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 7,
     "rarity": "legendary",
@@ -11918,10 +11934,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 80,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -11938,10 +11954,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 100,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -11958,10 +11974,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 150,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 7,
     "rarity": "legendary",
@@ -11979,10 +11995,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 88,
     "defense": 100,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -12000,10 +12016,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 174,
     "defense": 126,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -12020,10 +12036,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 100,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -12040,10 +12056,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 130,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -12060,10 +12076,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 170,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -12081,9 +12097,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -12102,9 +12118,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -12123,10 +12139,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 120,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -12143,9 +12159,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -12164,9 +12180,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 270,
     "defense": 210,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -12185,9 +12201,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 90,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 1,
@@ -12206,9 +12222,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 140,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 5,
@@ -12227,10 +12243,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 100,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -12248,10 +12264,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 140,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -12268,10 +12284,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 160,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -12289,9 +12305,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 94,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -12310,9 +12326,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 154,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -12331,10 +12347,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 182,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -12352,10 +12368,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 188,
     "defense": 262,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -12372,10 +12388,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -12392,10 +12408,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -12412,10 +12428,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 230,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 7,
     "rarity": "legendary",
@@ -12432,10 +12448,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 80,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -12452,10 +12468,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 140,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -12472,10 +12488,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 160,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 7,
     "rarity": "legendary",
@@ -12492,10 +12508,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 110,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -12512,10 +12528,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 150,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -12533,10 +12549,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 110,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -12554,10 +12570,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -12575,10 +12591,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -12595,10 +12611,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 174,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 2,
     "rarity": "common",
@@ -12615,10 +12631,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 234,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 4,
     "rarity": "rare",
@@ -12635,10 +12651,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 294,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 8,
     "rarity": "legendary",
@@ -12655,10 +12671,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 80,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -12675,10 +12691,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 260,
     "defense": 160,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -12695,10 +12711,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 100,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 6,
     "rarity": "rare",
@@ -12715,9 +12731,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 170,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -12735,9 +12751,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -12756,10 +12772,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 132,
     "defense": 168,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -12776,10 +12792,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 2,
     "rarity": "common",
@@ -12796,10 +12812,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 250,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 5,
     "rarity": "rare",
@@ -12816,10 +12832,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 5,
     "rarity": "rare",
@@ -12837,10 +12853,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 148,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -12858,10 +12874,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 248,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -12879,10 +12895,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -12900,10 +12916,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 250,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -12920,9 +12936,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 220,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -12941,9 +12957,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 166,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -12962,9 +12978,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 246,
     "defense": 150,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -12983,10 +12999,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 150,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -13004,10 +13020,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 210,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -13024,10 +13040,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 194,
     "defense": 132,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -13045,9 +13061,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 218,
     "defense": 224,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -13066,10 +13082,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -13087,10 +13103,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -13108,10 +13124,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 210,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 9,
     "rarity": "legendary",
@@ -13129,9 +13145,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 110,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -13150,9 +13166,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 8,
@@ -13171,10 +13187,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 258,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 8,
     "rarity": "legendary",
@@ -13192,10 +13208,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 258,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 8,
     "rarity": "legendary",
@@ -13213,10 +13229,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 144,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 8,
     "rarity": "legendary",
@@ -13233,9 +13249,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 8,
@@ -13254,10 +13270,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 140,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -13275,10 +13291,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 10,
     "rarity": "legendary",
@@ -13296,10 +13312,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 300,
     "defense": 240,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 10,
     "rarity": "legendary",
@@ -13317,10 +13333,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 250,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 9,
     "rarity": "legendary",
@@ -13338,10 +13354,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 260,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 9,
     "rarity": "legendary",
@@ -13359,10 +13375,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 144,
     "defense": 180,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 8,
     "rarity": "legendary",
@@ -13380,9 +13396,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 154,
     "defense": 154,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 9,
@@ -13401,9 +13417,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 9,
@@ -13421,10 +13437,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 122,
     "defense": 130,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -13441,10 +13457,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 156,
     "defense": 190,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -13462,10 +13478,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 214,
     "defense": 244,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -13482,10 +13498,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 80,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -13502,10 +13518,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 118,
     "defense": 116,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -13523,10 +13539,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 138,
     "defense": 144,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -13543,10 +13559,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 112,
     "defense": 80,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -13563,10 +13579,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 126,
     "defense": 104,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -13584,10 +13600,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 134,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -13604,9 +13620,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 72,
     "defense": 76,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -13625,9 +13641,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 112,
     "defense": 154,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -13646,9 +13662,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 86,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -13667,10 +13683,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 146,
     "defense": 110,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -13688,10 +13704,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 162,
     "defense": 142,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -13708,9 +13724,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 70,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -13728,9 +13744,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 44,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -13749,9 +13765,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 104,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 6,
@@ -13770,10 +13786,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 116,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -13791,10 +13807,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 136,
     "defense": 144,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -13811,10 +13827,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 76,
     "defense": 78,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -13831,10 +13847,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 94,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -13851,10 +13867,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 136,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 8,
     "rarity": "legendary",
@@ -13871,10 +13887,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 96,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -13891,10 +13907,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 124,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 6,
     "rarity": "rare",
@@ -13911,10 +13927,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 164,
     "defense": 124,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 2,
     "rarity": "common",
@@ -13932,10 +13948,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 248,
     "defense": 156,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 5,
     "rarity": "rare",
@@ -13952,9 +13968,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -13972,10 +13988,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 96,
     "defense": 108,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -13992,10 +14008,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 96,
     "defense": 152,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -14013,10 +14029,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -14034,10 +14050,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 220,
     "defense": 300,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -14055,10 +14071,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 280,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 7,
     "rarity": "legendary",
@@ -14075,10 +14091,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 104,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -14095,10 +14111,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 144,
     "defense": 144,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -14115,10 +14131,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 96,
     "defense": 132,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -14135,10 +14151,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 172,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -14156,10 +14172,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 108,
     "defense": 106,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -14177,10 +14193,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 184,
     "defense": 176,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -14198,10 +14214,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 104,
     "defense": 134,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -14219,10 +14235,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 210,
     "defense": 230,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -14240,9 +14256,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 2,
@@ -14261,9 +14277,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 5,
@@ -14281,10 +14297,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 106,
     "defense": 124,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -14301,10 +14317,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 146,
     "defense": 176,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 3,
     "rarity": "common",
@@ -14322,10 +14338,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 76,
     "defense": 66,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -14343,10 +14359,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 104,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -14364,10 +14380,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 178,
     "defense": 154,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -14385,10 +14401,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 242,
     "defense": 238,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 6,
     "rarity": "rare",
@@ -14406,10 +14422,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 118,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -14427,10 +14443,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 154,
     "defense": 144,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 3,
     "rarity": "rare",
@@ -14447,10 +14463,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 6,
     "rarity": "rare",
@@ -14468,10 +14484,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 184,
     "defense": 150,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 5,
     "rarity": "rare",
@@ -14489,10 +14505,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 116,
     "defense": 114,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -14510,10 +14526,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 300,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 3,
     "rarity": "common",
@@ -14530,10 +14546,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 70,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 2,
     "rarity": "common",
@@ -14550,10 +14566,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 106,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 5,
     "rarity": "rare",
@@ -14570,10 +14586,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 9,
     "rarity": "legendary",
@@ -14591,10 +14607,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 182,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -14612,10 +14628,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 96,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -14633,10 +14649,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 220,
     "defense": 152,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -14654,10 +14670,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 132,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -14675,10 +14691,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 244,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -14695,10 +14711,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 138,
     "defense": 170,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -14715,10 +14731,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 234,
     "defense": 368,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 6,
     "rarity": "rare",
@@ -14736,9 +14752,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 70,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -14757,9 +14773,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 6,
@@ -14777,10 +14793,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 262,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 10,
     "rarity": "legendary",
@@ -14798,10 +14814,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 262,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 10,
     "rarity": "legendary",
@@ -14819,10 +14835,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 242,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 9,
     "rarity": "legendary",
@@ -14840,10 +14856,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 300,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 9,
     "rarity": "legendary",
@@ -14861,10 +14877,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 220,
     "defense": 120,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 9,
     "rarity": "legendary",
@@ -14882,10 +14898,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 220,
     "defense": 240,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 9,
     "rarity": "legendary",
@@ -14903,10 +14919,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 110,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -14924,10 +14940,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 150,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -14945,10 +14961,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 214,
     "defense": 150,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -14965,10 +14981,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 80,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -14985,10 +15001,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 100,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -15006,10 +15022,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 180,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 7,
     "rarity": "legendary",
@@ -15026,10 +15042,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 108,
     "defense": 108,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -15046,10 +15062,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 138,
     "defense": 138,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -15067,10 +15083,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 148,
     "defense": 148,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -15088,9 +15104,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 60,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -15109,9 +15125,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -15130,9 +15146,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 150,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 7,
@@ -15150,9 +15166,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 60,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -15170,9 +15186,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 220,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -15190,9 +15206,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 124,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -15211,9 +15227,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 164,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -15232,9 +15248,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 7,
@@ -15252,10 +15268,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 164,
     "defense": 114,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 2,
     "rarity": "common",
@@ -15273,10 +15289,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 264,
     "defense": 154,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 5,
     "rarity": "rare",
@@ -15294,10 +15310,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 140,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -15315,9 +15331,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -15336,9 +15352,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -15356,10 +15372,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 1,
     "rarity": "common",
@@ -15376,10 +15392,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -15396,10 +15412,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 40,
     "defense": 40,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -15417,9 +15433,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 106,
     "defense": 124,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 2,
@@ -15438,9 +15454,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 126,
     "defense": 304,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 5,
@@ -15458,10 +15474,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -15478,10 +15494,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 250,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -15499,10 +15515,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 104,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -15520,10 +15536,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 184,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -15540,10 +15556,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 70,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -15560,10 +15576,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 210,
     "defense": 180,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -15581,10 +15597,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 70,
     "defense": 110,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -15602,10 +15618,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 160,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -15623,9 +15639,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 88,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 2,
@@ -15644,9 +15660,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 128,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 5,
@@ -15665,9 +15681,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -15686,9 +15702,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 250,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -15706,10 +15722,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 76,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -15726,10 +15742,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 96,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 3,
     "rarity": "rare",
@@ -15746,10 +15762,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 196,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 7,
     "rarity": "legendary",
@@ -15766,10 +15782,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 104,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -15787,9 +15803,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -15807,10 +15823,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 5,
     "rarity": "rare",
@@ -15828,9 +15844,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 70,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -15849,9 +15865,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 250,
     "defense": 280,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 6,
@@ -15870,10 +15886,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -15891,10 +15907,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 220,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -15911,10 +15927,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 260,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -15931,9 +15947,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 3,
@@ -15951,9 +15967,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 8,
@@ -15972,10 +15988,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -15992,9 +16008,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -16013,10 +16029,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 156,
     "defense": 270,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -16034,10 +16050,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 196,
     "defense": 126,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -16055,10 +16071,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -16076,10 +16092,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 210,
     "defense": 140,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -16097,9 +16113,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 170,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -16118,10 +16134,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 262,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 6,
     "rarity": "rare",
@@ -16138,10 +16154,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 2,
     "rarity": "common",
@@ -16159,10 +16175,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 4,
     "rarity": "rare",
@@ -16180,10 +16196,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 220,
     "defense": 250,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 9,
     "rarity": "legendary",
@@ -16201,10 +16217,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 170,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -16222,10 +16238,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 150,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -16243,10 +16259,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 260,
     "defense": 230,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 8,
     "rarity": "legendary",
@@ -16264,10 +16280,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 230,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 8,
     "rarity": "legendary",
@@ -16284,10 +16300,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 58,
     "defense": 62,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -16304,10 +16320,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 58,
     "defense": 262,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -16325,10 +16341,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 274,
     "defense": 214,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 10,
     "rarity": "legendary",
@@ -16346,10 +16362,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 226,
     "defense": 178,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 10,
     "rarity": "legendary",
@@ -16367,10 +16383,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 106,
     "defense": 94,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 8,
     "rarity": "legendary",
@@ -16388,9 +16404,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 278,
     "defense": 278,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 8,
@@ -16409,9 +16425,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 274,
     "defense": 74,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 8,
@@ -16429,10 +16445,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 178,
     "defense": 142,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -16450,10 +16466,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 202,
     "defense": 206,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 8,
     "rarity": "legendary",
@@ -16471,10 +16487,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 362,
     "defense": 262,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 8,
     "rarity": "legendary",
@@ -16492,10 +16508,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 202,
     "defense": 106,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 8,
     "rarity": "legendary",
@@ -16512,10 +16528,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 214,
     "defense": 202,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 9,
     "rarity": "legendary",
@@ -16533,10 +16549,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 230,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 9,
     "rarity": "legendary",
@@ -16554,10 +16570,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 250,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 9,
     "rarity": "legendary",
@@ -16574,9 +16590,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 146,
     "defense": 134,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 6,
@@ -16595,9 +16611,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 146,
     "defense": 146,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 8,
@@ -16616,10 +16632,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 262,
     "defense": 422,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 8,
     "rarity": "legendary",
@@ -16637,10 +16653,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 254,
     "defense": 106,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -16657,10 +16673,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 224,
     "defense": 150,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 9,
     "rarity": "legendary",
@@ -16677,10 +16693,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 4,
     "rarity": "rare",
@@ -16697,10 +16713,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 286,
     "defense": 286,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 9,
     "rarity": "legendary",
@@ -16717,10 +16733,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 100,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -16737,10 +16753,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 140,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -16757,10 +16773,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 250,
     "defense": 180,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 8,
     "rarity": "legendary",
@@ -16777,10 +16793,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 142,
     "defense": 80,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -16797,10 +16813,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 172,
     "defense": 120,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -16817,10 +16833,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 232,
     "defense": 150,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -16837,10 +16853,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 80,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -16857,10 +16873,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 110,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -16877,10 +16893,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 130,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 8,
     "rarity": "legendary",
@@ -16897,9 +16913,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 110,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -16917,9 +16933,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -16937,9 +16953,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 94,
     "defense": 70,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -16957,9 +16973,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 134,
     "defense": 110,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -16978,9 +16994,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 174,
     "defense": 210,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 8,
@@ -16998,9 +17014,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 40,
     "defense": 40,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -17019,9 +17035,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 70,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 3,
@@ -17040,9 +17056,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 220,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 8,
@@ -17060,10 +17076,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 56,
     "defense": 56,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -17080,10 +17096,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 116,
     "defense": 116,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -17100,10 +17116,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 120,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -17120,10 +17136,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 180,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -17140,9 +17156,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 110,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -17160,9 +17176,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -17180,10 +17196,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 128,
     "defense": 100,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -17201,10 +17217,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 180,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -17221,10 +17237,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 100,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -17241,10 +17257,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 120,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -17261,10 +17277,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 1,
     "rarity": "common",
@@ -17282,10 +17298,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 4,
     "rarity": "rare",
@@ -17303,10 +17319,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 240,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 8,
     "rarity": "legendary",
@@ -17324,10 +17340,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 160,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -17345,10 +17361,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 220,
     "defense": 160,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -17366,10 +17382,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 160,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -17386,10 +17402,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 114,
     "defense": 150,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -17406,10 +17422,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 214,
     "defense": 250,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -17427,9 +17443,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 110,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -17447,10 +17463,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 126,
     "defense": 80,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -17467,10 +17483,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 246,
     "defense": 120,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -17488,10 +17504,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 76,
     "defense": 70,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -17509,10 +17525,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 196,
     "defense": 140,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -17530,10 +17546,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 90,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -17551,10 +17567,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 130,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 6,
     "rarity": "rare",
@@ -17571,10 +17587,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 136,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 2,
     "rarity": "common",
@@ -17591,10 +17607,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 236,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 5,
     "rarity": "rare",
@@ -17611,10 +17627,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -17631,10 +17647,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -17651,10 +17667,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 90,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -17671,10 +17687,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 130,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -17692,10 +17708,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 190,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -17713,10 +17729,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 60,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -17734,10 +17750,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -17755,10 +17771,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 8,
     "rarity": "legendary",
@@ -17776,10 +17792,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 202,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 8,
     "rarity": "legendary",
@@ -17796,10 +17812,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 220,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -17816,10 +17832,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -17836,10 +17852,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 270,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 5,
     "rarity": "rare",
@@ -17857,10 +17873,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 150,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 6,
     "rarity": "rare",
@@ -17878,10 +17894,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 290,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -17898,10 +17914,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -17918,10 +17934,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 150,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -17938,10 +17954,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 5,
     "rarity": "rare",
@@ -17958,10 +17974,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 202,
     "defense": 190,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -17979,10 +17995,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 50,
     "defense": 70,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -18000,10 +18016,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 120,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -18020,10 +18036,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 250,
     "defense": 270,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -18040,10 +18056,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 220,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -18061,10 +18077,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 110,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -18082,10 +18098,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 116,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -18102,10 +18118,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 98,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -18122,10 +18138,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 260,
     "defense": 138,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -18143,10 +18159,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 180,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -18164,10 +18180,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 180,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -18185,10 +18201,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 200,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -18206,10 +18222,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 200,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -18227,10 +18243,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 230,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 6,
     "rarity": "rare",
@@ -18248,10 +18264,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 60,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 1,
     "rarity": "common",
@@ -18269,10 +18285,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 4,
     "rarity": "rare",
@@ -18290,10 +18306,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 150,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 10,
     "rarity": "legendary",
@@ -18310,10 +18326,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 230,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 11,
     "rarity": "legendary",
@@ -18330,10 +18346,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 230,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 11,
     "rarity": "legendary",
@@ -18351,9 +18367,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 11,
@@ -18371,10 +18387,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 2,
     "rarity": "common",
@@ -18392,10 +18408,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 260,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 9,
     "rarity": "legendary",
@@ -18413,10 +18429,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 210,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 10,
     "rarity": "legendary",
@@ -18433,10 +18449,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 100,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 9,
     "rarity": "legendary",
@@ -18453,10 +18469,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 100,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 9,
     "rarity": "legendary",
@@ -18473,10 +18489,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 290,
     "defense": 260,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 9,
     "rarity": "legendary",
@@ -18493,10 +18509,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 9,
     "rarity": "legendary",
@@ -18514,10 +18530,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 160,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -18535,9 +18551,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 210,
     "defense": 144,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 8,
@@ -18556,9 +18572,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 270,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -18577,10 +18593,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 280,
     "defense": 210,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 9,
     "rarity": "legendary",
@@ -18598,10 +18614,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 224,
     "defense": 130,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 8,
     "rarity": "legendary",
@@ -18619,10 +18635,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 260,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 3,
     "rarity": "rare",
@@ -18640,10 +18656,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -18661,10 +18677,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 3,
     "rarity": "rare",
@@ -18681,10 +18697,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 122,
     "defense": 108,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -18701,10 +18717,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 126,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -18722,10 +18738,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 220,
     "defense": 140,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 8,
     "rarity": "legendary",
@@ -18742,10 +18758,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 118,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -18762,10 +18778,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 156,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -18783,10 +18799,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 200,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -18803,10 +18819,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 90,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -18823,10 +18839,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 130,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -18844,10 +18860,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 160,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 8,
     "rarity": "legendary",
@@ -18864,9 +18880,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -18884,9 +18900,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 150,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -18904,9 +18920,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 82,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -18924,9 +18940,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 158,
     "defense": 184,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -18944,9 +18960,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 92,
     "defense": 80,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -18965,9 +18981,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 204,
     "defense": 156,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -18985,10 +19001,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 40,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -19006,10 +19022,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 80,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 4,
     "rarity": "rare",
@@ -19027,10 +19043,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 140,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -19047,9 +19063,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 2,
@@ -19067,9 +19083,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -19087,10 +19103,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -19107,10 +19123,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 230,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -19128,10 +19144,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 70,
     "defense": 90,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -19149,10 +19165,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 106,
     "defense": 120,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -19170,10 +19186,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 138,
     "defense": 180,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 8,
     "rarity": "legendary",
@@ -19191,9 +19207,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 192,
     "defense": 102,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 4,
@@ -19211,10 +19227,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 150,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 1,
     "rarity": "common",
@@ -19231,10 +19247,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 4,
     "rarity": "rare",
@@ -19251,10 +19267,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 260,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 8,
     "rarity": "legendary",
@@ -19271,10 +19287,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 80,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -19292,10 +19308,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 200,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -19313,10 +19329,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 250,
     "defense": 160,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 8,
     "rarity": "legendary",
@@ -19333,10 +19349,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 62,
     "defense": 82,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -19353,10 +19369,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 128,
     "defense": 182,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -19374,10 +19390,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 70,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -19395,10 +19411,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 120,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -19415,10 +19431,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 156,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -19435,10 +19451,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -19456,9 +19472,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 70,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 1,
@@ -19477,9 +19493,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 5,
@@ -19498,10 +19514,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 60,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -19519,10 +19535,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 140,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -19540,10 +19556,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 80,
     "defense": 70,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -19561,10 +19577,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 6,
     "rarity": "rare",
@@ -19581,10 +19597,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 230,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -19601,10 +19617,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 124,
     "defense": 80,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -19622,10 +19638,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 216,
     "defense": 130,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -19642,9 +19658,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 1,
@@ -19663,9 +19679,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 170,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -19683,10 +19699,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 70,
     "defense": 60,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 1,
     "rarity": "common",
@@ -19703,10 +19719,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 120,
     "specialAbility": {
-      "name": "Mind Read",
-      "description": "Draw extra card",
+      "name": "Premonición",
+      "description": "Robas 1 carta adicional.",
       "effect": "draw_card",
-      "value": 1
+      "value": 0
     },
     "level": 5,
     "rarity": "rare",
@@ -19724,10 +19740,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -19745,10 +19761,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 110,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -19766,10 +19782,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 154,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 8,
     "rarity": "legendary",
@@ -19786,10 +19802,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 50,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -19806,10 +19822,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 100,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 4,
     "rarity": "rare",
@@ -19827,9 +19843,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 206,
     "defense": 170,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 8,
@@ -19847,10 +19863,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 80,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -19867,10 +19883,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 144,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -19888,10 +19904,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 126,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -19909,10 +19925,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 238,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 5,
     "rarity": "rare",
@@ -19930,10 +19946,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 130,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 5,
     "rarity": "rare",
@@ -19950,10 +19966,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 290,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 8,
     "rarity": "legendary",
@@ -19971,10 +19987,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 70,
     "defense": 84,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 2,
     "rarity": "common",
@@ -19992,10 +20008,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 6,
     "rarity": "rare",
@@ -20012,10 +20028,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 122,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 1,
     "rarity": "common",
@@ -20032,10 +20048,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 202,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -20053,9 +20069,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 148,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 5,
@@ -20073,10 +20089,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 136,
     "defense": 90,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 2,
     "rarity": "common",
@@ -20093,10 +20109,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 226,
     "defense": 130,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 6,
     "rarity": "rare",
@@ -20114,10 +20130,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 204,
     "defense": 146,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -20134,10 +20150,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 230,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 8,
     "rarity": "legendary",
@@ -20155,10 +20171,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 100,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 5,
     "rarity": "rare",
@@ -20176,10 +20192,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 8,
     "rarity": "legendary",
@@ -20197,9 +20213,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 120,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 5,
@@ -20218,9 +20234,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 180,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 8,
@@ -20238,9 +20254,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 200,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 6,
@@ -20259,10 +20275,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 270,
     "defense": 240,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 9,
     "rarity": "legendary",
@@ -20280,10 +20296,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 262,
     "defense": 262,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 9,
     "rarity": "legendary",
@@ -20301,10 +20317,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 198,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 9,
     "rarity": "legendary",
@@ -20322,10 +20338,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 254,
     "defense": 198,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 9,
     "rarity": "legendary",
@@ -20343,10 +20359,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 110,
     "defense": 110,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 9,
     "rarity": "legendary",
@@ -20364,9 +20380,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 270,
     "defense": 158,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 9,
@@ -20385,10 +20401,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 162,
     "defense": 194,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 9,
     "rarity": "legendary",
@@ -20406,10 +20422,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 224,
     "defense": 240,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 9,
     "rarity": "legendary",
@@ -20427,10 +20443,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 228,
     "specialAbility": {
-      "name": "Freeze",
-      "description": "Reduce opponent defense",
-      "effect": "reduce_defense",
-      "value": 15
+      "name": "Rayo Hielo",
+      "description": "Congela (Paraliza) a un Pokémon enemigo al azar.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 9,
     "rarity": "legendary",
@@ -20448,10 +20464,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 280,
     "defense": 216,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 9,
     "rarity": "legendary",
@@ -20469,10 +20485,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 172,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 9,
     "rarity": "legendary",
@@ -20490,10 +20506,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 140,
     "defense": 120,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 9,
     "rarity": "legendary",
@@ -20511,10 +20527,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 268,
     "defense": 220,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 9,
     "rarity": "legendary",
@@ -20532,10 +20548,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 90,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 2,
     "rarity": "common",
@@ -20553,10 +20569,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 190,
     "defense": 132,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 4,
     "rarity": "rare",
@@ -20574,10 +20590,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 290,
     "defense": 184,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 10,
     "rarity": "legendary",
@@ -20594,10 +20610,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 60,
     "defense": 140,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -20615,10 +20631,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 190,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 9,
     "rarity": "legendary",
@@ -20636,10 +20652,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 9,
     "rarity": "legendary",
@@ -20657,10 +20673,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 9,
     "rarity": "legendary",
@@ -20678,10 +20694,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 220,
     "defense": 250,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 9,
     "rarity": "legendary",
@@ -20699,10 +20715,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Rencor",
+      "description": "Inflige 100 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 100
     },
     "level": 9,
     "rarity": "legendary",
@@ -20720,10 +20736,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 278,
     "defense": 142,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
+      "name": "Furia Dragón",
+      "description": "Inflige 150 puntos de daño directo al oponente.",
       "effect": "direct_damage",
-      "value": 0
+      "value": 150
     },
     "level": 9,
     "rarity": "legendary",
@@ -20741,10 +20757,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 260,
     "defense": 180,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 9,
     "rarity": "legendary",
@@ -20762,10 +20778,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 270,
     "defense": 230,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Corpulencia",
+      "description": "Aumenta el ataque de este Pokémon en 30.",
+      "effect": "boost_attack",
+      "value": 30
     },
     "level": 11,
     "rarity": "legendary",
@@ -20783,10 +20799,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 170,
     "defense": 200,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 11,
     "rarity": "legendary",
@@ -20804,10 +20820,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 166,
     "defense": 182,
     "specialAbility": {
-      "name": "Aqua Heal",
-      "description": "Restore 50 HP",
+      "name": "Cura Acuática",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
       "effect": "heal",
-      "value": 50
+      "value": 100
     },
     "level": 9,
     "rarity": "legendary",
@@ -20825,10 +20841,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 260,
     "defense": 176,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 9,
     "rarity": "legendary",
@@ -20846,10 +20862,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 220,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -20867,10 +20883,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 90,
     "defense": 90,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 2,
     "rarity": "common",
@@ -20888,10 +20904,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 120,
     "defense": 212,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 5,
     "rarity": "rare",
@@ -20909,9 +20925,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 256,
     "defense": 230,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 9,
@@ -20930,9 +20946,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 150,
     "defense": 132,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 9,
@@ -20951,9 +20967,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 182,
     "defense": 164,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 9,
@@ -20971,10 +20987,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 168,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 9,
     "rarity": "legendary",
@@ -20992,10 +21008,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 210,
     "defense": 260,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 10,
     "rarity": "legendary",
@@ -21013,10 +21029,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 160,
     "defense": 220,
     "specialAbility": {
-      "name": "Spore Shield",
-      "description": "Block next attack",
-      "effect": "block",
-      "value": 0
+      "name": "Sintesis",
+      "description": "Restaura 100 puntos de salud a tu jugador.",
+      "effect": "heal",
+      "value": 100
     },
     "level": 9,
     "rarity": "legendary",
@@ -21034,10 +21050,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 230,
     "defense": 242,
     "specialAbility": {
-      "name": "Burn",
-      "description": "Boost attack for next turn",
-      "effect": "boost_attack",
-      "value": 10
+      "name": "Llamarada",
+      "description": "Quema a un Pokémon enemigo al azar, causándole 150 de daño cada turno.",
+      "effect": "burn",
+      "value": 0
     },
     "level": 9,
     "rarity": "legendary",
@@ -21055,10 +21071,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 146,
     "defense": 182,
     "specialAbility": {
-      "name": "Thunder Strike",
-      "description": "Direct damage to opponent",
-      "effect": "direct_damage",
-      "value": 50
+      "name": "Onda Trueno",
+      "description": "Paraliza a un Pokémon enemigo al azar, impidiendo su próximo ataque.",
+      "effect": "paralyze",
+      "value": 0
     },
     "level": 9,
     "rarity": "legendary",
@@ -21076,10 +21092,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 240,
     "defense": 160,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 9,
     "rarity": "legendary",
@@ -21097,10 +21113,10 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 144,
     "defense": 200,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
-      "value": 0
+      "name": "Tormenta Arena",
+      "description": "Reduce la defensa de todos los Pokémon enemigos en 20.",
+      "effect": "reduce_defense",
+      "value": 20
     },
     "level": 9,
     "rarity": "legendary",
@@ -21117,9 +21133,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 130,
     "defense": 170,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Ataque Rápido",
+      "description": "Bloquea el próximo ataque del oponente.",
+      "effect": "block",
       "value": 0
     },
     "level": 3,
@@ -21138,9 +21154,9 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 176,
     "defense": 320,
     "specialAbility": {
-      "name": "Basic Attack",
-      "description": "Standard attack",
-      "effect": "direct_damage",
+      "name": "Polvo Veneno",
+      "description": "Envenena a un Pokémon enemigo al azar, causándole 250 de daño cada turno.",
+      "effect": "poison",
       "value": 0
     },
     "level": 10,

@@ -3,6 +3,8 @@ import { BehaviorSubject } from 'rxjs';
 import { GameState } from '../models/game-state.model';
 import { PlayerState } from '../models/player.model';
 import { PokemonCard } from '../models/pokemon-card.model';
+import { ALL_POKEMON_CARDS } from '../models/all-pokemon-cards';
+import { AudioService } from './audio.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,16 +12,27 @@ import { PokemonCard } from '../models/pokemon-card.model';
 export class GameService {
   private gameState$ = new BehaviorSubject<GameState | null>(null);
 
-  constructor() {}
+  constructor(private audioService: AudioService) {}
 
   private prepareDecks(fullDeck: PokemonCard[]): { main: PokemonCard[], extra: PokemonCard[] } {
     const main: PokemonCard[] = [];
     const extra: PokemonCard[] = [];
     
     for (const card of fullDeck) {
-      // Evolutions go to extra deck
-      if (card.cardClass === 'pokemon' && card.level > 1) {
-        extra.push(card);
+      const isPokemon = card.cardClass === 'pokemon' || !card.cardClass;
+      if (isPokemon && card.level > 3) {
+        // Solo enviar al Extra Deck si el jugador también incluyó una pre-evolución en su mazo principal
+        const hasPreEvolution = fullDeck.some(c => 
+          (c.cardClass === 'pokemon' || !c.cardClass) && 
+          c.types[0] === card.types[0] && 
+          c.level < card.level
+        );
+
+        if (hasPreEvolution) {
+          extra.push(card);
+        } else {
+          main.push(card);
+        }
       } else {
         main.push(card);
       }
@@ -57,7 +70,7 @@ export class GameService {
 
     const gameState: GameState = {
       gameMode: 'cpu',
-      phase: 'draw',
+      phase: 'main',
       currentTurn: 'player1',
       player1: player1State,
       player2: player2State,
@@ -99,7 +112,7 @@ export class GameService {
     const gameState: GameState = {
       roomId,
       gameMode: 'online',
-      phase: 'draw',
+      phase: 'main',
       currentTurn: 'player1',
       player1: player1State,
       player2: player2State,
@@ -129,6 +142,45 @@ export class GameService {
       if (card) {
         player.hand.push(card);
       }
+    } else {
+      // Deck Out!
+      state.winner = isPlayer1 ? 'player2' : 'player1';
+    }
+  }
+
+  private applyFieldBuffsToCard(card: PokemonCard, player1FieldCard: PokemonCard | undefined, player2FieldCard: PokemonCard | undefined, isPlayer1: boolean) {
+    const applyField = (fieldCard: PokemonCard, isOwner: boolean) => {
+       const typeToBuff = fieldCard.name.includes('Soleado') ? 'fire' : 
+                          fieldCard.name.includes('Lluvia') ? 'water' :
+                          fieldCard.name.includes('Roca') ? 'rock' : null;
+       const buffValue = fieldCard.effectValue || 200;
+       
+       if (typeToBuff && card.types.includes(typeToBuff)) {
+          card.attack += buffValue;
+          card.defense += buffValue;
+       } else if (fieldCard.name.includes('Fortaleza Mística')) {
+          if (isOwner) {
+            card.attack += buffValue;
+            card.defense += buffValue;
+          }
+       }
+    };
+
+    if (player1FieldCard) applyField(player1FieldCard, isPlayer1);
+    if (player2FieldCard) applyField(player2FieldCard, !isPlayer1);
+  }
+
+  discardCardFromField(state: GameState, isPlayer1: boolean, slotIndex: number, isSpellZone: boolean = false): void {
+    const player = isPlayer1 ? state.player1 : state.player2;
+    if (state.currentTurn !== (isPlayer1 ? 'player1' : 'player2') || state.phase !== 'main') {
+      return;
+    }
+    const zone = isSpellZone ? player.spellZone : player.field;
+    if (slotIndex >= 0 && slotIndex < zone.length && zone[slotIndex]) {
+      const discardedCard = zone[slotIndex];
+      zone[slotIndex] = null as any; // Empty the slot
+      if (!player.graveyard) player.graveyard = [];
+      player.graveyard.push(discardedCard);
     }
   }
 
@@ -168,6 +220,7 @@ export class GameService {
          else { playedCard.hasAttacked = false; playedCard.hasUsedAbility = false; }
          zone[slotIndex] = playedCard;
          if (!isSpellOrTrap) {
+            this.applyFieldBuffsToCard(playedCard, state.player1.fieldCard, state.player2.fieldCard, isPlayer1);
             this.triggerTraps(state, 'on_summon', isPlayer1 ? 'player2' : 'player1', { summonedCard: playedCard, player: isPlayer1 ? 'player1' : 'player2' });
          }
          return true;
@@ -183,6 +236,7 @@ export class GameService {
            else { playedCard.hasAttacked = false; playedCard.hasUsedAbility = false; }
            zone[emptyIndex] = playedCard;
            if (!isSpellOrTrap) {
+              this.applyFieldBuffsToCard(playedCard, state.player1.fieldCard, state.player2.fieldCard, isPlayer1);
               this.triggerTraps(state, 'on_summon', isPlayer1 ? 'player2' : 'player1', { summonedCard: playedCard, player: isPlayer1 ? 'player1' : 'player2' });
            }
            return true;
@@ -213,10 +267,18 @@ export class GameService {
         const effectValue = card.specialAbility ? card.specialAbility.value : (card.effectValue || 0);
 
         switch (effectName) {
-          case 'heal':
-            player.hp = Math.min(player.hp + effectValue, 4000);
-            effectMessage = `¡Poción usada! +${effectValue} HP`;
+          case 'heal': {
+            const target = player.field[cardIndex];
+            if (target) {
+              const baseCard = ALL_POKEMON_CARDS.find(c => c.id === target.id);
+              const maxHp = baseCard ? baseCard.hp : 1000;
+              target.hp = Math.min(target.hp + effectValue, maxHp);
+              effectMessage = `¡Poción usada! ${target.name} fue curado.`;
+            } else {
+              effectMessage = `Poción falló: No hay Pokémon en esta columna.`;
+            }
             break;
+          }
           case 'boost_attack':
           case 'boost_atk':
             player.field.forEach(c => { if (c) c.attack += effectValue; });
@@ -239,8 +301,10 @@ export class GameService {
             effectMessage = `¡Daño directo! -${effectValue} HP al enemigo`;
             break;
           case 'field':
+            // Field spells should be played to the field zone, not the spell zone
+            // Just in case it somehow got here:
             player.field.forEach(c => { if (c) { c.attack += effectValue; c.defense += effectValue; } });
-            effectMessage = `¡Estadio activado! +${effectValue} ATK/DEF`;
+            effectMessage = `¡Efecto de campo aplicado! +${effectValue} ATK/DEF`;
             break;
         }
       }
@@ -266,6 +330,12 @@ export class GameService {
 
     if (!attacker || attacker.hasAttacked) return { cancelled: false, targetDied: false };
 
+    if (attacker.status === 'paralyzed') {
+      attacker.hasAttacked = true;
+      attacker.status = null;
+      return { cancelled: true, targetDied: false, trapMessage: `¡Ataque falló! ${attacker.name} estaba paralizado.` };
+    }
+
     if (defenderIndex >= 0) {
       const defender = defenderPlayer.field[defenderIndex];
       if (defender) {
@@ -283,6 +353,14 @@ export class GameService {
 
         if (defender.hp <= 0) {
           targetDied = true;
+          
+          // ¡Daño de Penetración / Daño Excedente!
+          // Si el daño fue tan grande que los HP quedaron en negativo, ese daño sobrante va al jugador.
+          const excessDamage = Math.abs(defender.hp);
+          if (excessDamage > 0) {
+             defenderPlayer.hp -= excessDamage;
+          }
+
           const deadCard = defenderPlayer.field[defenderIndex];
           defenderPlayer.field[defenderIndex] = null as any;
           if(!defenderPlayer.graveyard) defenderPlayer.graveyard = [];
@@ -359,14 +437,51 @@ export class GameService {
             }
           }
           break;
+        case 'burn':
+          this.applyStatusToRandomOpponent(opponent, 'burned');
+          break;
+        case 'poison':
+          this.applyStatusToRandomOpponent(opponent, 'poisoned');
+          break;
+        case 'paralyze':
+          this.applyStatusToRandomOpponent(opponent, 'paralyzed');
+          break;
       }
     }
 
     this.checkWinCondition(state);
   }
 
+  private applyStatusToRandomOpponent(opponent: PlayerState, status: 'burned' | 'poisoned' | 'paralyzed') {
+    const validTargets = opponent.field.filter(c => c && c.status !== status);
+    if (validTargets.length > 0) {
+      const target = validTargets[Math.floor(Math.random() * validTargets.length)];
+      target.status = status;
+    }
+  }
+
+  discardCard(state: GameState, isPlayer1: boolean, cardIndex: number): void {
+    const player = isPlayer1 ? state.player1 : state.player2;
+    if (state.currentTurn !== (isPlayer1 ? 'player1' : 'player2') || state.phase !== 'main') {
+      return;
+    }
+    if (cardIndex >= 0 && cardIndex < player.hand.length) {
+      const discardedCard = player.hand.splice(cardIndex, 1)[0];
+      if (!player.graveyard) player.graveyard = [];
+      player.graveyard.push(discardedCard);
+    }
+  }
+
   endTurn(state: GameState): void {
+    if (state.winner) return;
     state.phase = state.phase === 'end' ? 'draw' : this.getNextPhase(state.phase, state.turnNumber);
+
+    if (state.phase === 'end') {
+      this.processStatuses(state.player1);
+      this.processStatuses(state.player2);
+      this.checkWinCondition(state);
+      state.phase = 'draw';
+    }
 
     if (state.phase === 'draw') {
       state.currentTurn = state.currentTurn === 'player1' ? 'player2' : 'player1';
@@ -394,13 +509,42 @@ export class GameService {
     const phases: ('draw' | 'main' | 'battle' | 'end')[] = ['draw', 'main', 'battle', 'end'];
     let index = phases.indexOf(phase as any);
     
-    // Regla de Yu-Gi-Oh!: El jugador que va primero en el Turno 1 no puede atacar.
-    // Saltamos la fase de batalla si es el turno 1 y estamos en la fase principal.
-    if (turnNumber === 1 && phase === 'main') {
+    // Regla de Yu-Gi-Oh! modificada: Ni el jugador 1 ni el jugador 2 pueden atacar en su primer turno.
+    // Saltamos la fase de batalla si es el turno 1 o 2 y estamos en la fase principal.
+    if (turnNumber <= 2 && phase === 'main') {
       return 'end';
     }
 
     return phases[(index + 1) % phases.length];
+  }
+
+  private processStatuses(player: PlayerState): void {
+    let hasDeaths = false;
+    player.field.forEach(card => {
+      if (card && card.status) {
+        if (card.status === 'burned') {
+          card.hp -= 150; // Burn damage
+        } else if (card.status === 'poisoned') {
+          card.hp -= 250; // Poison is stronger
+          this.audioService.playPoisonSound();
+        }
+        
+        if (card.hp <= 0) {
+          hasDeaths = true;
+        }
+      }
+    });
+
+    if (hasDeaths) {
+      for (let i = 0; i < player.field.length; i++) {
+         const card = player.field[i];
+         if (card && card.hp <= 0) {
+            player.field[i] = null as any;
+            if (!player.graveyard) player.graveyard = [];
+            player.graveyard.push(card);
+         }
+      }
+    }
   }
 
   // Activa trampas automáticamente en respuesta a eventos. Retorna objeto con cancelación y mensaje del efecto.
@@ -461,10 +605,7 @@ export class GameService {
   }
 
   applyFieldEffect(state: GameState): void {
-    // Restaurar stats base primero (no lo hacemos para no romper buffos previos, 
-    // en un juego completo se tendría atk/def actual y original)
-    // Efecto simple: Sumar al ATK/DEF según el tipo
-    const applyToPlayer = (player: PlayerState, fieldCard: PokemonCard) => {
+    const applyToPlayer = (player: PlayerState, fieldCard: PokemonCard, isOwner: boolean) => {
        const typeToBuff = fieldCard.name.includes('Soleado') ? 'fire' : 
                           fieldCard.name.includes('Lluvia') ? 'water' :
                           fieldCard.name.includes('Roca') ? 'rock' : null;
@@ -473,21 +614,29 @@ export class GameService {
        if (typeToBuff) {
           player.field.forEach(c => {
              if (c && c.types.includes(typeToBuff)) {
-                // Buff solo visual o se acumula (simplificado)
                 c.attack += buffValue;
                 c.defense += buffValue;
              }
           });
+       } else if (fieldCard.name.includes('Fortaleza Mística')) {
+          if (isOwner) {
+            player.field.forEach(c => {
+               if (c) {
+                  c.attack += buffValue;
+                  c.defense += buffValue;
+               }
+            });
+          }
        }
     };
 
     if (state.player1.fieldCard) {
-       applyToPlayer(state.player1, state.player1.fieldCard);
-       applyToPlayer(state.player2, state.player1.fieldCard);
+       applyToPlayer(state.player1, state.player1.fieldCard, true);
+       applyToPlayer(state.player2, state.player1.fieldCard, false);
     }
     if (state.player2.fieldCard) {
-       applyToPlayer(state.player1, state.player2.fieldCard);
-       applyToPlayer(state.player2, state.player2.fieldCard);
+       applyToPlayer(state.player1, state.player2.fieldCard, false);
+       applyToPlayer(state.player2, state.player2.fieldCard, true);
     }
   }
 
@@ -507,6 +656,7 @@ export class GameService {
        // Ponemos la evolución en el campo
        extraCard.hasAttacked = false;
        extraCard.hasUsedAbility = false;
+       this.applyFieldBuffsToCard(extraCard, state.player1.fieldCard, state.player2.fieldCard, isPlayer1);
        player.field[fieldIndex] = extraCard;
        
        // Quitamos la carta del extra deck
@@ -516,11 +666,35 @@ export class GameService {
     return false;
   }
 
+  applyTargetedMagic(state: GameState, isPlayer1: boolean, fieldIndex: number, handCardIndex: number): boolean {
+    const player = isPlayer1 ? state.player1 : state.player2;
+    const target = player.field[fieldIndex];
+    const spell = player.hand[handCardIndex];
+
+    if (!target || !spell || spell.cardClass !== 'magic') return false;
+
+    if (spell.magicEffect === 'heal') {
+      const baseCard = ALL_POKEMON_CARDS.find(c => c.id === target.id);
+      const maxHp = baseCard ? baseCard.hp : 1000;
+      target.hp = Math.min(target.hp + (spell.effectValue || 0), maxHp);
+    } else {
+      return false; 
+    }
+
+    player.hand.splice(handCardIndex, 1);
+    if (!player.graveyard) player.graveyard = [];
+    player.graveyard.push(spell);
+
+    return true;
+  }
+
   private checkWinCondition(state: GameState): void {
     if (state.player1.hp <= 0) {
       state.winner = 'player2';
+      this.gameState$.next(state);
     } else if (state.player2.hp <= 0) {
       state.winner = 'player1';
+      this.gameState$.next(state);
     }
   }
 

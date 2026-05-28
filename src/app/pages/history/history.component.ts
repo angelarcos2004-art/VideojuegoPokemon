@@ -70,22 +70,50 @@ import { takeUntil } from 'rxjs/operators';
       <div *ngIf="!loading && games.length > 0" class="stats-summary">
         <h3>Estad&iacute;sticas</h3>
         <div class="stats-grid">
-          <div class="stat-item">
-            <span class="stat-label">Total de Juegos</span>
-            <span class="stat-value">{{ getTotalGames() }}</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-label">Victorias</span>
-            <span class="stat-value win">{{ getWins() }}</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-label">Derrotas</span>
-            <span class="stat-value loss">{{ getLosses() }}</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-label">Tasa de Victoria</span>
-            <span class="stat-value">{{ getWinRate() }}%</span>
-          </div>
+          <ng-container *ngIf="activeTab === 'all'">
+            <div class="stat-item">
+              <span class="stat-label">Total de Juegos</span>
+              <span class="stat-value">{{ getTotalGames() }}</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Victorias</span>
+              <span class="stat-value win">{{ getWins() }}</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Derrotas</span>
+              <span class="stat-value loss">{{ getLosses() }}</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Tasa de Victoria</span>
+              <span class="stat-value">{{ getWinRate() }}%</span>
+            </div>
+          </ng-container>
+
+          <ng-container *ngIf="activeTab === 'wins'">
+            <div class="stat-item">
+              <span class="stat-label">Total Victorias</span>
+              <span class="stat-value win">{{ getWins() }}</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Racha Actual</span>
+              <span class="stat-value win">{{ getCurrentStreak() }}</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Oponente Habitual</span>
+              <span class="stat-value">CPU</span>
+            </div>
+          </ng-container>
+
+          <ng-container *ngIf="activeTab === 'losses'">
+            <div class="stat-item">
+              <span class="stat-label">Total Derrotas</span>
+              <span class="stat-value loss">{{ getLosses() }}</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Rival más Difícil</span>
+              <span class="stat-value">CPU</span>
+            </div>
+          </ng-container>
         </div>
       </div>
     </div>
@@ -280,6 +308,7 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class HistoryComponent implements OnInit, OnDestroy {
   games: any[] = [];
+  allGamesStats: any[] = [];
   loading = false;
   activeTab = 'all';
   currentUserId: string | null = null;
@@ -314,6 +343,7 @@ export class HistoryComponent implements OnInit, OnDestroy {
 
       const remoteGames = await this.supabaseService.getUserGameResults(this.currentUserId);
       
+      this.allGamesStats = [...remoteGames];
       let allGames = [...remoteGames];
 
       if (this.activeTab === 'wins') {
@@ -348,19 +378,31 @@ export class HistoryComponent implements OnInit, OnDestroy {
   }
 
   getTotalGames(): number {
-    return this.games.length;
+    return this.allGamesStats.length;
   }
 
   getWins(): number {
-    return this.games.filter(g => g.winner === 'player').length;
+    return this.allGamesStats.filter(g => g.winner === 'player').length;
   }
 
   getLosses(): number {
-    return this.games.filter(g => g.winner !== 'player').length;
+    return this.allGamesStats.filter(g => g.winner !== 'player').length;
   }
 
   getWinRate(): string {
-    if (this.games.length === 0) return '0';
-    return Math.round((this.getWins() / this.games.length) * 100).toString();
+    if (this.allGamesStats.length === 0) return '0';
+    return Math.round((this.getWins() / this.allGamesStats.length) * 100).toString();
+  }
+
+  getCurrentStreak(): number {
+    let streak = 0;
+    const sorted = [...this.allGamesStats].sort((a, b) => 
+      new Date(b.played_at || b.created_at).getTime() - new Date(a.played_at || a.created_at).getTime()
+    );
+    for (let g of sorted) {
+      if (g.winner === 'player') streak++;
+      else break;
+    }
+    return streak;
   }
 }

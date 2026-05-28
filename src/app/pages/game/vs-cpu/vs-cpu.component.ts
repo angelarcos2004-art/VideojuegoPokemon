@@ -1,12 +1,12 @@
 import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { NavbarComponent } from '../../../shared/components/navbar/navbar.component';
 import { GameService } from '../../../core/services/game.service';
 import { PokemonService } from '../../../core/services/pokemon.service';
 import { SupabaseService } from '../../../core/services/supabase.service';
 import { AuthService } from '../../../core/services/auth.service';
 import { SqliteService } from '../../../core/services/sqlite.service';
+import { AudioService } from '../../../core/services/audio.service';
 import { GameState } from '../../../core/models/game-state.model';
 import { PokemonCard } from '../../../core/models/pokemon-card.model';
 import { Subject } from 'rxjs';
@@ -15,40 +15,43 @@ import { takeUntil } from 'rxjs/operators';
 @Component({
   selector: 'app-vs-cpu',
   standalone: true,
-  imports: [CommonModule, NavbarComponent],
+  imports: [CommonModule],
   template: `
-    <app-navbar></app-navbar>
     <div class="game-container" *ngIf="gameState">
+      <!-- Tutorial Overlay -->
+      <div *ngIf="isTutorial" class="tutorial-box">
+        <div class="tutorial-avatar">
+          <img src="/assets/images/logo.png" alt="Profesor" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <div class="tutorial-text">
+          <h3 style="margin-top: 0; color: var(--pk-yellow); text-shadow: 2px 2px 0 var(--pk-dark);">Guía de Batalla</h3>
+          <p>{{ tutorialMessage }}</p>
+        </div>
+      </div>
       
       <!-- Card Inspector -->
       <div *ngIf="hoveredCard" class="card-inspector">
         <img [src]="hoveredCard.image" [alt]="hoveredCard.name" class="inspector-image">
         <div class="inspector-details">
           <h3>{{ hoveredCard.name }}</h3>
-          <div class="inspector-stats">
+          <div class="inspector-stats" *ngIf="hoveredCard.cardClass === 'pokemon' || !hoveredCard.cardClass">
             <span class="atk">⚔️ {{ hoveredCard.attack }}</span>
             <span class="hp">❤️ {{ hoveredCard.hp }}</span>
             <span class="def">🛡️ {{ hoveredCard.defense }}</span>
           </div>
           <div class="inspector-meta">
             <span class="type-badge">{{ translateType(hoveredCard.types[0]) }}</span>
-            <span>Nvl {{ hoveredCard.level }}</span>
+            <span *ngIf="hoveredCard.cardClass === 'pokemon' || !hoveredCard.cardClass">Nvl {{ hoveredCard.level }}</span>
             <span>{{ hoveredCard.rarity === 'legendary' ? 'Legendario' : (hoveredCard.rarity === 'rare' ? 'Raro' : 'Común') }}</span>
           </div>
-          <div class="inspector-desc">
+          <div class="inspector-desc" *ngIf="hoveredCard.cardClass === 'pokemon' || !hoveredCard.cardClass">
             <strong>{{ translateAbilityName(hoveredCard.specialAbility?.name) }}:</strong>
             {{ translateAbilityDesc(hoveredCard.specialAbility?.description) }}
           </div>
           <div class="inspector-flavor">
             {{ hoveredCard.description }}
           </div>
-          <!-- Activate button if face-down spell in zone -->
-          <button *ngIf="hoveredCard.isFaceDown && gameState.phase === 'main' && gameState.currentTurn === 'player1'" 
-                  class="btn-action" style="margin-top: 10px; width: 100%;" 
-                  (click)="activateSpell(gameState.player1.spellZone.indexOf(hoveredCard))">
-            Activar Mágica/Trampa
-          </button>
-        </div>
+          </div>
       </div>
 
       
@@ -114,6 +117,11 @@ import { takeUntil } from 'rxjs/operators';
                       <span class="atk">⚔️ {{ gameState.player2.field[slot].attack }}</span>
                       <span class="hp">❤️ {{ gameState.player2.field[slot].hp }}</span>
                     </div>
+                    <div *ngIf="gameState.player2.field[slot].status" class="status-indicator" [ngClass]="gameState.player2.field[slot].status">
+                      <span *ngIf="gameState.player2.field[slot].status === 'burned'">🔥</span>
+                      <span *ngIf="gameState.player2.field[slot].status === 'poisoned'">☠️</span>
+                      <span *ngIf="gameState.player2.field[slot].status === 'paralyzed'">⚡</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -176,6 +184,7 @@ import { takeUntil } from 'rxjs/operators';
                        [class.pk-card-visual]="!spellCard.isFaceDown"
                        (click)="$event.stopPropagation(); activateSpell(slot)"
                        (mouseenter)="hoveredCard = spellCard" (mouseleave)="hoveredCard = null">
+                     <button class="btn-discard" (click)="$event.stopPropagation(); discardCardFromField(slot, true)" title="Enviar al Cementerio">❌</button>
                      <img *ngIf="!spellCard.isFaceDown" [src]="spellCard.image" class="card-image" style="height: 100%;">
                   </div>
                 </div>
@@ -207,11 +216,17 @@ import { takeUntil } from 'rxjs/operators';
                        [class.exhausted]="gameState.player1.field[slot].hasAttacked || gameState.player1.field[slot].hasUsedAbility"
                        (click)="$event.stopPropagation(); selectFieldCard(slot)"
                        (mouseenter)="hoveredCard = gameState.player1.field[slot]" (mouseleave)="hoveredCard = null">
+                    <button class="btn-discard" (click)="$event.stopPropagation(); discardCardFromField(slot, false)" title="Enviar al Cementerio">❌</button>
                     <img [src]="gameState.player1.field[slot].image" [alt]="gameState.player1.field[slot].name" class="card-image">
                     <div class="card-name">{{ gameState.player1.field[slot].name }}</div>
                     <div class="card-stats">
                       <span class="atk">⚔️ {{ gameState.player1.field[slot].attack }}</span>
                       <span class="hp">❤️ {{ gameState.player1.field[slot].hp }}</span>
+                    </div>
+                    <div *ngIf="gameState.player1.field[slot].status" class="status-indicator" [ngClass]="gameState.player1.field[slot].status">
+                      <span *ngIf="gameState.player1.field[slot].status === 'burned'">🔥</span>
+                      <span *ngIf="gameState.player1.field[slot].status === 'poisoned'">☠️</span>
+                      <span *ngIf="gameState.player1.field[slot].status === 'paralyzed'">⚡</span>
                     </div>
                   </div>
                 </div>
@@ -229,10 +244,12 @@ import { takeUntil } from 'rxjs/operators';
         </div>
 
         <!-- Winner Overlay -->
-        <div *ngIf="gameState.winner" class="winner-overlay">
+        <div *ngIf="gameState.winner" class="winner-overlay" [ngClass]="{'is-win': gameState.winner === 'player1', 'is-loss': gameState.winner !== 'player1'}">
           <div class="winner-message">
-            <h2>{{ gameState.winner === 'player1' ? '¡Ganaste!' : '¡Perdiste!' }}</h2>
-            <button (click)="endGame()" class="btn-action">Volver al Menú</button>
+            <h2 class="winner-title">{{ gameState.winner === 'player1' ? '¡VICTORIA!' : '¡DERROTA!' }}</h2>
+            <p class="winner-subtitle">{{ gameState.winner === 'player1' ? '¡Has superado a tu rival y dominado el campo de batalla!' : 'Tu rival ha sido superior esta vez... ¡Sigue entrenando!' }}</p>
+            <div class="winner-icon">{{ gameState.winner === 'player1' ? '🏆' : '💀' }}</div>
+            <button (click)="leaveGameManually()" class="btn-action btn-winner">Volver al Menú</button>
           </div>
         </div>
 
@@ -285,10 +302,14 @@ import { takeUntil } from 'rxjs/operators';
                [style.animation-delay]="(i * 0.1) + 's'"
                [ngClass]="'card-type-' + (card?.types?.[0] || 'default')"
                (click)="playCardFromHand(i)"
+               (contextmenu)="$event.preventDefault(); discardCardFromHand(i)"
                (mouseenter)="hoveredCard = card" (mouseleave)="hoveredCard = null">
+            
+            <button class="btn-discard" (click)="$event.stopPropagation(); discardCardFromHand(i)" title="Descartar Carta">❌</button>
+            
             <img [src]="card.image" [alt]="card.name" class="card-image">
             <div class="card-name">{{ card.name }}</div>
-            <div class="card-stats">
+            <div class="card-stats" *ngIf="card.cardClass === 'pokemon' || !card.cardClass">
               <span class="atk">⚔️ {{ card.attack }}</span>
               <span class="hp">❤️ {{ card.hp }}</span>
             </div>
@@ -301,10 +322,67 @@ import { takeUntil } from 'rxjs/operators';
     <div *ngIf="!gameState" class="loading-screen">
       <div class="loader"></div>
       <h2>Conectando al Tapete de Batalla...</h2>
-      <p style="color: rgba(255,255,255,0.5); font-family: monospace; font-size: 1rem; margin-top: 10px;">{{ debugLog }}</p>
+      <!-- <p style="color: rgba(255,255,255,0.5); font-family: monospace; font-size: 1rem; margin-top: 10px;">{{ debugLog }}</p> -->
     </div>
   `,
   styles: [`
+    .tutorial-box {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: var(--pk-white);
+      border: 4px solid var(--pk-dark);
+      border-radius: 15px;
+      padding: 15px 25px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      z-index: 9999;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 8px 8px 0 var(--pk-dark);
+      animation: pop-in-tutorial 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    @keyframes pop-in-tutorial {
+      0% {
+        transform: scale(0.5) translateY(50px);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .tutorial-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid var(--pk-blue);
+      background: var(--pk-light);
+      padding: 8px;
+      flex-shrink: 0;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .tutorial-text h3 {
+      margin-top: 0;
+      color: var(--pk-yellow);
+      text-shadow: 2px 2px 0 var(--pk-dark), -1px -1px 0 var(--pk-dark), 1px -1px 0 var(--pk-dark), -1px 1px 0 var(--pk-dark), 1px 1px 0 var(--pk-dark);
+      font-family: var(--font-title);
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    .tutorial-text p {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--pk-text);
+      line-height: 1.4;
+    }
+
     .game-container {
       min-height: calc(100vh - 60px);
       background: var(--pk-light);
@@ -918,26 +996,101 @@ import { takeUntil } from 'rxjs/operators';
     .winner-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.8);
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(8px);
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 100;
+      z-index: 9999;
+      animation: fade-in 0.5s ease-out forwards;
     }
+    
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
     .winner-message {
       background: var(--pk-white);
-      padding: 40px;
+      padding: 50px;
       border-radius: 20px;
       border: 6px solid var(--pk-dark);
       text-align: center;
-      box-shadow: 10px 10px 0px var(--pk-yellow);
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.1);
+      position: relative;
+      animation: pop-winner 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
     }
-    .winner-message h2 {
+    
+    @keyframes pop-winner {
+      to { transform: scale(1); }
+    }
+    
+    .winner-overlay.is-win .winner-message {
+      border-color: var(--pk-yellow);
+      background: linear-gradient(135deg, var(--pk-white) 0%, var(--pk-light) 100%);
+      box-shadow: 0 0 40px rgba(255, 215, 0, 0.6), 15px 15px 0px rgba(0,0,0,0.5);
+    }
+    
+    .winner-overlay.is-loss .winner-message {
+      border-color: var(--pk-red);
+      background: linear-gradient(135deg, var(--pk-white) 0%, var(--pk-light) 100%);
+      box-shadow: 0 0 40px rgba(244, 67, 54, 0.6), 15px 15px 0px rgba(0,0,0,0.5);
+    }
+    
+    .winner-title {
       font-family: var(--font-title);
-      font-size: 3rem;
-      color: var(--pk-blue);
-      margin: 0 0 30px;
-      text-shadow: -2px -2px 0 var(--pk-dark), 2px -2px 0 var(--pk-dark), -2px 2px 0 var(--pk-dark), 2px 2px 0 var(--pk-dark);
+      font-size: 4.5rem;
+      margin: 0 0 15px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    
+    .winner-overlay.is-win .winner-title {
+      color: var(--pk-yellow);
+      text-shadow: 4px 4px 0 var(--pk-blue), -2px -2px 0 var(--pk-dark), 2px -2px 0 var(--pk-dark), -2px 2px 0 var(--pk-dark), 2px 2px 0 var(--pk-dark);
+    }
+    
+    .winner-overlay.is-loss .winner-title {
+      color: var(--pk-red);
+      text-shadow: 4px 4px 0 var(--pk-dark), -2px -2px 0 var(--pk-dark), 2px -2px 0 var(--pk-dark), -2px 2px 0 var(--pk-dark), 2px 2px 0 var(--pk-dark);
+    }
+    
+    .winner-subtitle {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--pk-text);
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+    
+    .winner-icon {
+      font-size: 5rem;
+      margin-bottom: 30px;
+      animation: bounce 2s infinite ease-in-out;
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    
+    .btn-winner {
+      font-size: 1.5rem;
+      padding: 15px 40px;
+      border-radius: 50px;
+      background: var(--pk-dark);
+      color: white;
+      border: 4px solid white;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-winner:hover {
+      transform: translateY(-5px) scale(1.05);
+      background: var(--pk-blue);
+      box-shadow: 0 15px 20px rgba(0,0,0,0.4);
     }
 
     .loading-screen {
@@ -1029,6 +1182,47 @@ import { takeUntil } from 'rxjs/operators';
 
     @keyframes spin { to { transform: rotate(360deg); } }
 
+    .status-indicator {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: white;
+      border: 2px solid var(--pk-dark);
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      z-index: 20;
+      box-shadow: 2px 2px 0 var(--pk-dark);
+    }
+    .status-indicator.burned { background: #ff9999; }
+    .status-indicator.poisoned { background: #d9b3ff; }
+    .status-indicator.paralyzed { background: #ffff99; }
+
+    .btn-discard {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: var(--pk-red);
+      color: white;
+      border: 2px solid var(--pk-dark);
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      z-index: 30;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 2px 2px 0 var(--pk-dark);
+      transition: transform 0.2s;
+    }
+    .btn-discard:hover { transform: scale(1.1); background: #ff4d4d; }
+    .hand-card:hover .btn-discard, .field-card:hover .btn-discard { display: flex; }
   `]
 })
 export class VsCpuComponent implements OnInit, OnDestroy {
@@ -1054,6 +1248,41 @@ export class VsCpuComponent implements OnInit, OnDestroy {
 
   private turnTimer: any;
   private destroy$ = new Subject<void>();
+  private lastWinner: string | null = null;
+
+  isTutorial = false;
+  
+  get tutorialMessage(): string {
+    if (!this.isTutorial || !this.gameState) return '';
+    const state = this.gameState;
+    
+    if (state.winner) {
+      return "¡El duelo ha terminado! Has completado el tutorial. Haz clic en 'Volver al Menú'.";
+    }
+
+    if (state.currentTurn === 'player2') {
+      return "Turno de tu oponente. Observa sus movimientos y planea tu estrategia.";
+    }
+
+    if (state.turnNumber === 1 && state.phase === 'main') {
+      if (state.player1.field.filter(c => c).length === 0) {
+        return "¡Bienvenido al Tutorial! Para empezar, haz clic en un Pokémon de tu mano y luego en una ranura de tu campo para invocarlo.";
+      } else {
+        return "¡Bien hecho! Ahora que tienes un Pokémon en el campo, presiona 'Siguiente Fase'. Nota: en tu primer turno no puedes atacar.";
+      }
+    }
+    
+    if (state.turnNumber > 1 && state.currentTurn === 'player1') {
+      if (state.phase === 'main') {
+        return "Fase Principal: Puedes invocar más Pokémon o activar cartas mágicas. Luego, pasa a la Fase de Batalla.";
+      }
+      if (state.phase === 'battle') {
+        return "Fase de Batalla: Haz clic en uno de tus Pokémon y luego en un objetivo enemigo para atacar.";
+      }
+    }
+
+    return "Sigue reduciendo los HP del rival para ganar.";
+  }
 
   constructor(
     private gameService: GameService,
@@ -1062,10 +1291,13 @@ export class VsCpuComponent implements OnInit, OnDestroy {
     private authService: AuthService,
     private sqliteService: SqliteService,
     private router: Router,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private audioService: AudioService
   ) {}
 
   async ngOnInit(): Promise<void> {
+    this.isTutorial = this.router.url.includes('tutorial');
+    this.audioService.playBattleMusic();
     this.authService.getCurrentUser()
       .pipe(takeUntil(this.destroy$))
       .subscribe(user => {
@@ -1078,14 +1310,22 @@ export class VsCpuComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       this.initializeGame();
     }, 500);
+    
+    // Fallback to play music on first interaction in case browser blocks autoplay
+    const playMusic = () => {
+      this.audioService.playBattleMusic();
+      document.removeEventListener('click', playMusic);
+    };
+    document.addEventListener('click', playMusic);
   }
 
   ngOnDestroy(): void {
     // If game is not finished and user leaves, count it as a loss automatically
     if (this.gameState && !this.gameState.winner) {
       this.gameState.winner = 'player2';
-      this.endGame();
+      this.leaveGameManually();
     }
+    this.audioService.stopMusic();
     this.destroy$.next();
     this.destroy$.complete();
   }
@@ -1142,13 +1382,46 @@ export class VsCpuComponent implements OnInit, OnDestroy {
         playerDeck = [...playerDeck, ...extra];
       }
 
-      this.debugLog = 'Paso 8: Generando mazo del CPU...'; this.cdr.detectChanges();
-      let cpuDeck = await this.pokemonService.getRandomPokemons(20);
-      if (cpuDeck.length < 20) {
-        this.debugLog = 'Paso 9: Añadiendo cartas aleatorias al mazo del CPU...'; this.cdr.detectChanges();
-        const extra = await this.pokemonService.getRandomPokemons(20 - cpuDeck.length);
-        cpuDeck = [...cpuDeck, ...extra];
+      this.debugLog = 'Paso 8: Generando mazo del CPU balanceado...'; this.cdr.detectChanges();
+      // Obtenemos un pool grande para asegurar variedad y suficientes cartas
+      let cpuPool = await this.pokemonService.getRandomPokemons(150);
+      
+      // Contar legendarios y épicos del jugador para equilibrar
+      let playerLegendaries = playerDeck.filter(c => c.rarity === 'legendary').length;
+      
+      let cpuMain: PokemonCard[] = [];
+      let cpuExtra: PokemonCard[] = [];
+      let currentLegendaries = 0;
+      
+      for (const card of cpuPool) {
+         // Balancear legendarios
+         if (card.rarity === 'legendary') {
+            if (currentLegendaries >= playerLegendaries) continue;
+            currentLegendaries++;
+         }
+         
+         if ((card.cardClass === 'pokemon' || !card.cardClass) && card.level > 3) {
+            cpuExtra.push(card);
+         } else {
+            cpuMain.push(card);
+         }
       }
+      
+      // Mezclar las cartas principales para que magias y monstruos estén distribuidos
+      cpuMain = cpuMain.sort(() => 0.5 - Math.random());
+      
+      // Recortamos exactamente a 20 cartas para el Main Deck
+      cpuMain = cpuMain.slice(0, 20);
+      
+      // Si por alguna razón extrema no llegó a 20, rellenamos con cartas básicas
+      while (cpuMain.length < 20) {
+         const extra = await this.pokemonService.getRandomPokemons(1);
+         if (extra[0].rarity !== 'legendary' && ((extra[0].cardClass !== 'pokemon' && extra[0].cardClass) || extra[0].level <= 3)) {
+            cpuMain.push(extra[0]);
+         }
+      }
+      
+      const cpuDeck = [...cpuMain, ...cpuExtra];
 
       this.debugLog = 'Paso 10: Inicializando estado del juego...'; this.cdr.detectChanges();
       this.gameState = this.gameService.initializeCPUGame(
@@ -1165,6 +1438,19 @@ export class VsCpuComponent implements OnInit, OnDestroy {
           this.gameState = state;
           if (state) {
             this.debugLog = 'Paso 12: ¡Juego cargado!';
+            
+            // Check win/loss audio triggers
+            if (state.winner && this.lastWinner !== state.winner) {
+               this.lastWinner = state.winner;
+               this.showWinnerButton = true;
+               this.audioService.stopMusic();
+               if (state.winner === 'player1') {
+                  this.audioService.playWinSound();
+               } else {
+                  this.audioService.playLoseSound();
+               }
+            }
+
             if (this.gameState?.turnNumber === 1 && this.gameState?.currentTurn === 'player1') {
               this.showToast('¡Comienza el Duelo! Fase Principal: Invoca monstruos.');
               // Set dynamic origin for animation
@@ -1221,6 +1507,7 @@ export class VsCpuComponent implements OnInit, OnDestroy {
   }
 
   playPhase(): void {
+    if (this.gameState && this.gameState.winner) return;
     if (this.gameState && this.gameState.currentTurn === 'player1') {
       this.gameService.endTurn(this.gameState);
       
@@ -1254,6 +1541,25 @@ export class VsCpuComponent implements OnInit, OnDestroy {
       this.selectedHandCardIndex = index;
       this.showToast('Carta seleccionada. Haz clic en una zona vacía para colocarla.');
     }
+    this.cdr.detectChanges();
+  }
+
+  discardCardFromHand(index: number): void {
+    if (!this.gameState || this.gameState.currentTurn !== 'player1' || this.gameState.phase !== 'main') return;
+    
+    this.gameService.discardCard(this.gameState, true, index);
+    if (this.selectedHandCardIndex === index) {
+      this.selectedHandCardIndex = null;
+    }
+    this.showToast('Carta descartada.');
+    this.cdr.detectChanges();
+  }
+
+  discardCardFromField(slotIndex: number, isSpellZone: boolean): void {
+    if (!this.gameState || this.gameState.currentTurn !== 'player1' || this.gameState.phase !== 'main') return;
+    
+    this.gameService.discardCardFromField(this.gameState, true, slotIndex, isSpellZone);
+    this.showToast('Carta enviada al cementerio.');
     this.cdr.detectChanges();
   }
 
@@ -1325,6 +1631,7 @@ export class VsCpuComponent implements OnInit, OnDestroy {
     if (this.isEvolving && this.selectedExtraCardIndex !== null) {
       const success = this.gameService.evolvePokemon(this.gameState, true, index, this.selectedExtraCardIndex);
       if (success) {
+        this.audioService.playEvolutionSound();
         this.showToast(`¡Tu Pokémon ha evolucionado a ${this.gameState.player1.field[index].name}!`);
         this.playerAnimations[index] = 'anim-summon';
         setTimeout(() => { this.playerAnimations[index] = ''; this.cdr.detectChanges(); }, 600);
@@ -1338,6 +1645,23 @@ export class VsCpuComponent implements OnInit, OnDestroy {
     }
 
     if (this.gameState.phase === 'main') {
+      if (this.selectedHandCardIndex !== null) {
+        const handCard = this.gameState.player1.hand[this.selectedHandCardIndex];
+        if (handCard.cardClass === 'magic' && handCard.magicEffect === 'heal') {
+           const success = this.gameService.applyTargetedMagic(this.gameState, true, index, this.selectedHandCardIndex);
+           if (success) {
+             this.showToast('¡Poción usada! Pokémon curado.');
+             this.playerAnimations[index] = 'anim-summon';
+             setTimeout(() => { this.playerAnimations[index] = ''; this.cdr.detectChanges(); }, 600);
+           } else {
+             this.showToast('No se pudo usar la carta mágica.');
+           }
+           this.selectedHandCardIndex = null;
+           this.cdr.detectChanges();
+           return;
+        }
+      }
+
       if (!card.hasUsedAbility) {
         this.gameService.useAbility(this.gameState, index, true);
         this.playerAnimations[index] = 'anim-summon'; // Reusamos animacion como buff
@@ -1361,7 +1685,8 @@ export class VsCpuComponent implements OnInit, OnDestroy {
         this.selectedAttackerIndex = index;
         this.isSelectingTarget = true;
         
-        if (this.gameState.player2.field.length === 0) {
+        const hasDefenders = this.gameState.player2.field.some(c => !!c);
+        if (!hasDefenders) {
           // Ataque directo si no hay defensores
           this.executePlayerAttack(index, -1);
         } else {
@@ -1443,6 +1768,7 @@ export class VsCpuComponent implements OnInit, OnDestroy {
     await new Promise(r => setTimeout(r, 200)); // Espera al climax de la animación
 
     if (targetIdx !== -1) {
+      this.audioService.playDamageSound();
       // Animación de daño al objetivo
       this.cpuAnimations[targetIdx] = 'anim-damage';
       this.cdr.detectChanges();
@@ -1455,6 +1781,7 @@ export class VsCpuComponent implements OnInit, OnDestroy {
         await new Promise(r => setTimeout(r, 500));
       }
     } else {
+      this.audioService.playDamageSound();
       // Daño directo
       await new Promise(r => setTimeout(r, 400));
     }
@@ -1520,6 +1847,12 @@ export class VsCpuComponent implements OnInit, OnDestroy {
     // Pasar a BATTLE PHASE
     await delay(200);
     this.gameService.endTurn(this.gameState);
+
+    if (this.gameState.currentTurn !== 'player2') {
+      this.showToast('¡Tu turno!');
+      return;
+    }
+
     this.showToast('CPU: Fase de Batalla');
     await delay(150);
 
@@ -1565,6 +1898,7 @@ export class VsCpuComponent implements OnInit, OnDestroy {
         }
 
         let targetDied = result.targetDied;
+        this.audioService.playDamageSound();
         if (targetIdx !== -1) {
           this.playerAnimations[targetIdx] = 'anim-damage';
           this.cdr.detectChanges();
@@ -1606,6 +1940,7 @@ export class VsCpuComponent implements OnInit, OnDestroy {
 
   
   showSurrenderModal = false;
+  showWinnerButton = false;
   
   surrender() {
     this.showSurrenderModal = true;
@@ -1613,11 +1948,13 @@ export class VsCpuComponent implements OnInit, OnDestroy {
 
   confirmSurrender() {
     this.showSurrenderModal = false;
-    if (this.gameState) this.gameState.winner = 'player2';
-    this.endGame();
+    if (this.gameState) {
+      this.gameState.winner = 'player2';
+      this.gameService['gameState$'].next(this.gameState);
+    }
   }
 
-  async endGame(): Promise<void> {
+  async leaveGameManually(): Promise<void> {
     if (this.gameState && this.currentUserId) {
       const isPlayerWinner = this.gameState.winner === 'player1';
       const result = {
@@ -1638,10 +1975,11 @@ export class VsCpuComponent implements OnInit, OnDestroy {
       } catch (error) {
         console.error('Failed to save game result:', error);
       }
-
-      this.gameService.endGame(this.gameState);
     }
 
+    if (this.gameState) {
+      this.gameService.endGame(this.gameState);
+    }
     this.router.navigate(['/menu']);
   }
 

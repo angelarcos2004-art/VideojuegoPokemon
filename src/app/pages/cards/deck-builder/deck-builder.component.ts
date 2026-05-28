@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -675,7 +675,8 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     private pokemonService: PokemonService,
     private supabaseService: SupabaseService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -706,6 +707,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
       console.error('Failed to load cards:', error);
     } finally {
       this.loading = false;
+      this.cdr.detectChanges();
     }
   }
 
@@ -752,7 +754,9 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
 
     this.messageTimeout = setTimeout(() => {
       this.message = '';
+      this.cdr.detectChanges();
     }, 3000);
+    this.cdr.detectChanges();
   }
 
   get deckSize(): number {
@@ -833,18 +837,24 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
 
       setTimeout(() => {
         this.deckSaveMessage = '';
+        this.cdr.detectChanges();
       }, 3000);
+      this.cdr.detectChanges();
     } catch (error) {
       this.deckSaveMessage = 'Error al guardar el mazo. Inténtalo de nuevo.';
       this.deckSaveError = true;
       console.error('Failed to save deck:', error);
+      this.cdr.detectChanges();
     }
   }
 
   async loadUserDecks() {
     if (!this.currentUserId) return;
     try {
-      this.userDecks = await this.supabaseService.getUserDecks(this.currentUserId);
+      const decks = await this.supabaseService.getUserDecks(this.currentUserId);
+      this.userDecks = decks;
+      this.cdr.markForCheck();
+      this.cdr.detectChanges();
     } catch (e) {
       console.error('Failed to load user decks', e);
     }
@@ -888,8 +898,10 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
          this.editingDeckId = null;
       }
       this.showMessage('Mazo eliminado', 'success');
+      this.cdr.detectChanges();
     } catch (e) {
       this.showMessage('Error al eliminar el mazo');
+      this.cdr.detectChanges();
     }
   }
 
@@ -899,8 +911,10 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
       await this.supabaseService.setActiveDeck(this.currentUserId, deckId);
       await this.loadUserDecks();
       this.showMessage('Mazo establecido como Activo', 'success');
+      this.cdr.detectChanges();
     } catch (e) {
       this.showMessage('Error al establecer mazo activo');
+      this.cdr.detectChanges();
     }
   }
 
