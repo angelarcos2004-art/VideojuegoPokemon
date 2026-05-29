@@ -1,124 +1,93 @@
 const fs = require('fs');
-const playerPath = './src/app/pages/game/vs-player/vs-player.component.ts';
-let code = fs.readFileSync(playerPath, 'utf8');
 
-const methodsToAdd = `
-  hoveredCard: any | null = null;
-  selectedExtraDeckIndex: number | null = null;
-  toastMessage = '';
-  toastTimeout: any;
-  playerAnimations: string[] = ['', '', '', '', ''];
-  cpuAnimations: string[] = ['', '', '', '', ''];
+const path = 'src/app/pages/game/vs-player/vs-player.component.ts';
+let content = fs.readFileSync(path, 'utf8');
 
-  onCardHover(card: any) { this.hoveredCard = card; }
-  onCardLeave() { this.hoveredCard = null; }
+// 1. Add NgZone and ChangeDetectorRef
+content = content.replace(
+  "import { Component, OnInit, OnDestroy } from '@angular/core';",
+  "import { Component, OnInit, OnDestroy, ChangeDetectorRef, NgZone } from '@angular/core';"
+);
 
-  showToast(msg: string) {
-    this.toastMessage = msg;
-    if (this.toastTimeout) clearTimeout(this.toastTimeout);
-    this.toastTimeout = setTimeout(() => this.toastMessage = '', 3000);
-  }
+// 2. Add injections
+content = content.replace(
+  "    private router: Router\n  ) {}",
+  "    private router: Router,\n    private cdr: ChangeDetectorRef,\n    private ngZone: NgZone\n  ) {}"
+);
 
-  async selectExtraDeckCard(index: number): Promise<void> {
-    if (!this.isMyTurn() || this.gameState?.phase !== 'main') {
-      this.showToast('Solo puedes evolucionar en tu Fase Principal');
-      return;
-    }
-    this.selectedExtraDeckIndex = index;
-    this.showToast('Selecciona un Pokémon en el campo para evolucionarlo');
-  }
-
-  async discardCardFromField(index: number): Promise<void> {
-    if (this.isMyTurn() && this.gameState?.phase === 'main') {
-      const fieldCard = this.getMe().field[index];
-      if (fieldCard) {
-         this.getMe().field[index] = null;
-         if (!this.getMe().graveyard) this.getMe().graveyard = [];
-         this.getMe().graveyard.push(fieldCard);
-         this.showToast(\`\${fieldCard.name} fue descartado del campo.\`);
-         await this.syncState();
-      }
-    }
-  }
-
-  translateType(type: string): string {
-    const types: { [key: string]: string } = {
-      fire: 'Fuego', water: 'Agua', grass: 'Planta',
-      electric: 'Eléctrico', psychic: 'Psíquico', normal: 'Normal',
-      dark: 'Siniestro', dragon: 'Dragón', fairy: 'Hada',
-      fighting: 'Lucha', flying: 'Volador', ghost: 'Fantasma',
-      ground: 'Tierra', ice: 'Hielo', poison: 'Veneno',
-      rock: 'Roca', steel: 'Acero', bug: 'Bicho'
-    };
-    return types[type] || type;
-  }
-
-  translateAbilityName(name?: string): string { return name || 'Ninguna'; }
-  translateAbilityDesc(desc?: string): string { return desc || 'Este Pokémon no tiene habilidades especiales.'; }
-
-  activateSpellTrap(index: number) {
-    if (this.isMyTurn() && this.gameState?.phase === 'main') {
-      const msg = this.gameService.activateSpellTrap(this.gameState, index, this.myPlayerKey === 'player1');
-      if (msg) {
-         this.showToast(msg);
-         this.syncState();
-      }
-    }
-  }
-
-  leaveGameManually() { this.endGame(); }
-`;
-
-if (!code.includes('onCardHover(card: any)')) {
-  code = code.replace(/export class VsPlayerComponent implements OnInit, OnDestroy \{/, 'export class VsPlayerComponent implements OnInit, OnDestroy {' + methodsToAdd);
-}
-
-// Replace selectFieldCard
-const selectFieldCardRegex = /async selectFieldCard\(index: number\): Promise<void> \{[\s\S]*?\}\s*(?=async selectTarget)/;
-const selectFieldCode = `async selectFieldCard(index: number): Promise<void> {
-    if (!this.gameState || !this.isMyTurn()) return;
-
-    if (this.selectedExtraDeckIndex !== null) {
-       const evolutionCard = this.getMe().extraDeck[this.selectedExtraDeckIndex];
-       const baseCard = this.getMe().field[index];
-       
-       if (baseCard) {
-          this.gameService['evolvePokemon'](this.gameState, index, this.selectedExtraDeckIndex, this.myPlayerKey === 'player1');
-          this.audioService.playEvolutionSound();
-          this.showToast(\`¡\${baseCard.name} evolucionó a \${evolutionCard.name}!\`);
-          this.selectedExtraDeckIndex = null;
-          await this.syncState();
-       } else {
-          this.showToast('Debe seleccionar un Pokémon válido para evolucionar.');
-          this.selectedExtraDeckIndex = null;
-       }
-       return;
-    }
-
-    if (this.gameState.phase === 'main') {
-      this.gameService.useAbility(this.gameState, index, this.myPlayerKey === 'player1');
-      await this.syncState();
-    } else if (this.gameState.phase === 'battle') {
-      if (this.selectedAttackerIndex === index) {
-        this.selectedAttackerIndex = null;
-        this.isSelectingTarget = false;
-      } else {
-        this.selectedAttackerIndex = index;
-        this.isSelectingTarget = true;
-        
-        const hasDefenders = this.getOpponent().field.some(c => !!c);
-        if (!hasDefenders) {
-          this.gameService.attack(this.gameState, this.selectedAttackerIndex, -1, this.myPlayerKey === 'player1');
-          this.audioService.playDamageSound();
-          this.selectedAttackerIndex = null;
-          this.isSelectingTarget = false;
-          await this.syncState();
+// 3. Fix listenToRoom
+content = content.replace(
+  /private listenToRoom\(roomId: string\) {\s*this\.roomSubscription = this\.supabaseService\.subscribeToRoomStatus\(roomId, async \(room\) => {\s*if \(room\.status === 'active' && room\.player2_id\) {\s*\/\/ Opponent joined! Initialize the game\s*await this\.initializeOnlineGame\(roomId, room\.player2_id\);\s*}\s*}\);\s*}/g,
+  `private listenToRoom(roomId: string) {
+    this.roomSubscription = this.supabaseService.subscribeToRoomStatus(roomId, (room) => {
+      this.ngZone.run(async () => {
+        if (room.status === 'active' && room.player2_id) {
+          await this.initializeOnlineGame(roomId, room.player2_id);
+          this.cdr.detectChanges();
         }
+      });
+    });
+  }`
+);
+
+// 4. Fix listenToGameState
+content = content.replace(
+  /private listenToGameState\(roomId: string\) {\s*this\.gameSubscription = this\.supabaseService\.subscribeToGameState\(roomId, \(state\) => {\s*this\.gameState = state;\s*this\.gameService\['gameState\$'\]\.next\(state\); \/\/ hacky way to sync local game service state\s*}\);\s*\/\/ Try fetch existing in case we missed event\s*this\.supabaseService\.getGameState\(roomId\)\.then\(state => {\s*if \(state\) this\.gameState = state;\s*}\)\.catch\(\(\) => {}\);\s*}/g,
+  `private listenToGameState(roomId: string) {
+    this.gameSubscription = this.supabaseService.subscribeToGameState(roomId, (state) => {
+      this.ngZone.run(() => {
+        this.gameState = state;
+        this.gameService['gameState$'].next(state);
+        this.cdr.detectChanges();
+      });
+    });
+    this.supabaseService.getGameState(roomId).then(state => {
+      if (state) {
+        this.ngZone.run(() => {
+          this.gameState = state;
+          this.cdr.detectChanges();
+        });
       }
+    }).catch(() => {});
+  }`
+);
+
+// 5. Fix UI updates
+content = content.replace(/this\.listenToRoom\(room\.id\);\s*} catch/g, "this.listenToRoom(room.id);\n      this.cdr.detectChanges();\n    } catch");
+content = content.replace(/this\.errorMessage = '';\s*}\s*} catch/g, "this.errorMessage = '';\n      }\n      this.cdr.detectChanges();\n    } catch");
+content = content.replace(/this\.listenToGameState\(roomId\);\s*} catch/g, "this.listenToGameState(roomId);\n      this.cdr.detectChanges();\n    } catch");
+
+// 6. UI Ghost Rooms fix (cancelRoom / ngOnDestroy)
+content = content.replace(
+  /async cancelRoom\(\): Promise<void> {\s*this\.selectedRoom = null;/g,
+  `async cancelRoom(): Promise<void> {
+    if (this.selectedRoom && !this.gameState && this.myPlayerKey === 'player1') {
+      try {
+        await this.supabaseService.deleteGameRoom(this.selectedRoom);
+      } catch (e) {}
     }
-  }`;
+    this.selectedRoom = null;`
+);
 
-code = code.replace(selectFieldCardRegex, selectFieldCode + '\n  ');
+content = content.replace(
+  /ngOnDestroy\(\) {\s*\/\/ Si el jugador abandona/g,
+  `ngOnDestroy() {
+    if (this.selectedRoom && !this.gameState && this.myPlayerKey === 'player1') {
+      this.supabaseService.deleteGameRoom(this.selectedRoom).catch(()=>{});
+    }
+    // Si el jugador abandona`
+);
 
-fs.writeFileSync(playerPath, code);
-console.log('Methods and vars injected!');
+// 7. Format IDs
+content = content.replace(
+  "<p><strong>ID de Sala:</strong> {{ room.id }}</p>\n              <p><strong>Estado:</strong> {{ room.status }}</p>",
+  "Sala #{{ room.id | slice:0:4 | uppercase }}"
+);
+
+content = content.replace(
+  "<h2>Sala de Juego {{ selectedRoom }}</h2>",
+  "<h2>Sala de Juego #{{ selectedRoom ? selectedRoom.substring(0, 4).toUpperCase() : '' }}</h2>"
+);
+
+fs.writeFileSync(path, content, 'utf8');
+console.log('Update successful!');
