@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "dist/browser",
+  "outputDirectory": "dist/videojuego-pokemon",
   "framework": "angular",
   "rewrites": [
     {
