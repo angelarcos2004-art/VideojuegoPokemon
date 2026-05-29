@@ -40,12 +40,24 @@ import { takeUntil } from 'rxjs/operators';
           (ngModelChange)="applyFiltersAndSort()"
           class="search-input"
         >
-        <select [(ngModel)]="sortBy" (ngModelChange)="applyFiltersAndSort()" class="sort-select">
+        <select [(ngModel)]="filterType" (ngModelChange)="applyFiltersAndSort()" class="sort-select" style="margin-left: 10px;">
+          <option value="all">Todos los Tipos</option>
+          <option value="fire">Fuego</option>
+          <option value="water">Agua</option>
+          <option value="grass">Planta</option>
+          <option value="electric">Eléctrico</option>
+          <option value="psychic">Psíquico</option>
+          <option value="ice">Hielo</option>
+          <option value="rock">Roca</option>
+          <option value="default">Normal/Otro</option>
+        </select>
+        <select [(ngModel)]="sortBy" (ngModelChange)="applyFiltersAndSort()" class="sort-select" style="margin-left: 10px;">
           <option value="name">Ordenar por Nombre</option>
           <option value="rarity">Ordenar por Rareza</option>
           <option value="attack">Ordenar por Ataque</option>
           <option value="defense">Ordenar por Defensa</option>
           <option value="generation">Ordenar por Generación</option>
+          <option value="type">Ordenar por Tipo (Elemento)</option>
         </select>
       </div>
 
@@ -261,23 +273,25 @@ import { takeUntil } from 'rxjs/operators';
     }
 
     .card-desc {
-      background: #fdfdfd;
+      background: var(--pk-light);
       border-left: 4px solid var(--pk-yellow);
       padding: 8px;
       font-size: 0.8rem;
       line-height: 1.4;
       border-radius: 4px;
       margin-top: 5px;
+      color: var(--pk-text);
     }
     
     .card-flavor {
       font-size: 0.75rem;
       font-style: italic;
-      color: #666;
+      color: var(--pk-text);
+      opacity: 0.8;
       line-height: 1.3;
       margin-top: auto;
       padding-top: 10px;
-      border-top: 1px dashed #ccc;
+      border-top: 1px dashed var(--pk-dark);
     }
 
     .btn-add {
@@ -339,6 +353,7 @@ export class CollectionComponent implements OnInit, OnDestroy {
   loading = false;
   searchTerm = '';
   sortBy = 'name';
+  filterType = 'all';
   currentUserId: string | null = null;
   message = '';
   messageType: 'error' | 'success' = 'error';
@@ -385,6 +400,10 @@ export class CollectionComponent implements OnInit, OnDestroy {
     let filtered = this.cards.filter(card => {
       const matchesTab = this.activeTab === 'pokemon' ? (!card.cardClass || card.cardClass === 'pokemon') : (card.cardClass === 'magic' || card.cardClass === 'trap');
       if (!matchesTab) return false;
+      
+      const matchType = this.filterType === 'all' || (card.types && card.types[0] === this.filterType);
+      if (!matchType) return false;
+      
       return card.name.toLowerCase().includes(this.searchTerm.toLowerCase());
     });
 
@@ -402,6 +421,13 @@ export class CollectionComponent implements OnInit, OnDestroy {
       case 'generation':
         // generation is effectively mapped by ID (1-151 Gen1, etc)
         filtered.sort((a, b) => a.id - b.id);
+        break;
+      case 'type':
+        filtered.sort((a, b) => {
+          const typeA = a.types && a.types[0] ? a.types[0] : '';
+          const typeB = b.types && b.types[0] ? b.types[0] : '';
+          return typeA.localeCompare(typeB);
+        });
         break;
       case 'name':
       default:

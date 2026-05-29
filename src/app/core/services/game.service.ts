@@ -81,7 +81,7 @@ export class GameService {
     return gameState;
   }
 
-  initializeOnlineGame(player1Id: string, player1Name: string, player1Deck: PokemonCard[], player2Name: string, player2Deck: PokemonCard[], roomId: string): GameState {
+  initializeOnlineGame(player1Id: string, player1Name: string, player1Deck: PokemonCard[], player2Id: string, player2Name: string, player2Deck: PokemonCard[], roomId: string): GameState {
     const p1Decks = this.prepareDecks(player1Deck);
     const p2Decks = this.prepareDecks(player2Deck);
 
@@ -98,7 +98,7 @@ export class GameService {
     };
 
     const player2State: PlayerState = {
-      userId: '',
+      userId: player2Id,
       username: player2Name,
       hp: 4000,
       hand: this.drawCards(p2Decks.main, 5),
@@ -143,8 +143,9 @@ export class GameService {
         player.hand.push(card);
       }
     } else {
-      // Deck Out!
-      state.winner = isPlayer1 ? 'player2' : 'player1';
+      // Deck Out modificado: El usuario no quiere perder por quedarse sin cartas en el mazo.
+      // Simplemente ya no roban cartas.
+      console.warn('Deck Out evitado: El jugador ya no tiene cartas en el mazo principal.');
     }
   }
 
@@ -161,6 +162,10 @@ export class GameService {
        } else if (fieldCard.name.includes('Fortaleza Mística')) {
           if (isOwner) {
             card.attack += buffValue;
+            card.defense += buffValue;
+          }
+       } else if (fieldCard.name.includes('Armadura Defensiva')) {
+          if (isOwner) {
             card.defense += buffValue;
           }
        }
@@ -384,6 +389,13 @@ export class GameService {
       }
     }
 
+    state.lastAttack = {
+      attackerId: isPlayer1 ? 'player1' : 'player2',
+      attackerIndex: attackerIndex,
+      targetIndex: defenderIndex,
+      timestamp: Date.now()
+    };
+
     this.checkWinCondition(state);
     return { cancelled: false, targetDied };
   }
@@ -498,10 +510,19 @@ export class GameService {
       
       // Auto-draw card
       this.drawCard(state, state.currentTurn === 'player1');
+      // Emit the new state after drawing the card to update the UI correctly
+      this.gameState$.next(state);
+
       // Advance automatically to main phase after drawing
       setTimeout(() => {
-        if (state) state.phase = 'main';
+        if (state) {
+           state.phase = 'main';
+           this.gameState$.next(state);
+        }
       }, 1000);
+    } else {
+      // If it's not draw phase, emit state anyway
+      this.gameState$.next(state);
     }
   }
 
@@ -520,13 +541,17 @@ export class GameService {
 
   private processStatuses(player: PlayerState): void {
     let hasDeaths = false;
+    let playedPoisonSound = false;
     player.field.forEach(card => {
       if (card && card.status) {
         if (card.status === 'burned') {
           card.hp -= 150; // Burn damage
         } else if (card.status === 'poisoned') {
           card.hp -= 250; // Poison is stronger
-          this.audioService.playPoisonSound();
+          if (!playedPoisonSound) {
+             this.audioService.playPoisonSound();
+             playedPoisonSound = true;
+          }
         }
         
         if (card.hp <= 0) {
@@ -627,6 +652,14 @@ export class GameService {
                }
             });
           }
+       } else if (fieldCard.name.includes('Armadura Defensiva')) {
+          if (isOwner) {
+            player.field.forEach(c => {
+               if (c) {
+                  c.defense += buffValue;
+               }
+            });
+          }
        }
     };
 
@@ -689,10 +722,25 @@ export class GameService {
   }
 
   private checkWinCondition(state: GameState): void {
+    // Un jugador puede seguir luchando si tiene mazo (para robar), monstruos vivos en el campo, 
+    // o monstruos en la mano para invocar. Las mágicas/trampas solas sin monstruos no sirven para pelear.
+    const canFight = (p: PlayerState) => {
+      const hasDeck = p.deck.length > 0;
+      const hasMonstersOnField = p.field.some(c => !!c);
+      const hasMonstersInHand = p.hand.some(c => c.types && !c.types.includes('magic') && !c.types.includes('trap') && c.cardClass !== 'magic' && c.cardClass !== 'trap');
+      return hasDeck || hasMonstersOnField || hasMonstersInHand;
+    };
+
     if (state.player1.hp <= 0) {
       state.winner = 'player2';
       this.gameState$.next(state);
     } else if (state.player2.hp <= 0) {
+      state.winner = 'player1';
+      this.gameState$.next(state);
+    } else if (!canFight(state.player1)) {
+      state.winner = 'player2';
+      this.gameState$.next(state);
+    } else if (!canFight(state.player2)) {
       state.winner = 'player1';
       this.gameState$.next(state);
     }

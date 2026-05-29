@@ -1,0 +1,373 @@
+<app-navbar *ngIf="!gameState"></app-navbar>
+
+<style>
+  .vs-player-wrapper { display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 60px); background: var(--pk-light); background-image: var(--pk-bg-image); background-size: cover; background-position: center; }
+  .vs-player-container { padding: 40px; text-align: center; font-family: var(--font-text); background: var(--pk-white); border-radius: 20px; width: 90%; max-width: 800px; border: 6px solid var(--pk-dark); box-shadow: 10px 10px 0px var(--pk-dark); position: relative;}
+  .options-grid { display: flex; gap: 20px; justify-content: center; margin: 30px 0; }
+  .option-card { background: var(--pk-light); padding: 20px; border-radius: 10px; border: 3px solid var(--pk-dark); flex: 1; }
+  .room-grid { display: flex; flex-direction: column; gap: 10px; }
+  .room-card { background: var(--pk-white); padding: 15px; border-radius: 8px; border: 2px solid var(--pk-dark); display: flex; justify-content: space-between; align-items: center; }
+  .btn-primary, .btn-join, .btn-cancel { background: var(--pk-yellow); color: #111; padding: 10px 20px; border: 3px solid var(--pk-dark); border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; font-family: var(--font-title); font-size: 1.1rem; }
+  .btn-primary:hover, .btn-join:hover { transform: translateY(-3px); box-shadow: 0 4px 0 var(--pk-dark); }
+  .btn-cancel { background: var(--pk-red); color: white; margin-top: 20px; }
+  .spinner { width: 50px; height: 50px; border: 5px solid var(--pk-light); border-top-color: var(--pk-yellow); border-radius: 50%; animation: spin 1s infinite linear; margin: 20px auto; box-shadow: 0 0 10px rgba(0,0,0,0.2); }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .error-message { background: var(--pk-red); color: white; padding: 15px; border-radius: 8px; margin: 20px 0; border: 3px solid var(--pk-dark); font-weight: bold; text-align: center; font-size: 1.2rem;}
+</style>
+
+<div class="vs-player-wrapper" *ngIf="!gameState">
+    <div class="vs-player-container">
+      <div class="page-header" style="max-width: 1200px; margin: 0 auto 20px; padding: 0 20px;">
+        <a routerLink="/menu" class="btn-global-back">← Volver al Menú</a>
+      </div>
+      
+      <h1>Jugar En Línea</h1>
+
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+        <br><button (click)="cancelRoom()" class="btn-cancel" style="margin-top: 10px;">Aceptar y Volver</button>
+      </div>
+
+      <div *ngIf="!selectedRoom" class="room-selection">
+        <div class="options-grid">
+          <div class="option-card">
+            <h3>Crear Sala de Juego</h3>
+            <p>Inicia un nuevo juego y espera a que otro jugador se una</p>
+            <button (click)="createRoom()" class="btn-primary">Crear Sala</button>
+          </div>
+          <div class="option-card">
+            <h3>Unirse a Juego Existente</h3>
+            <p>Únete a una sala de juego disponible</p>
+            <button (click)="loadAvailableRooms()" class="btn-primary">Explorar Salas</button>
+          </div>
+        </div>
+
+        <div *ngIf="availableRooms.length > 0" class="rooms-list">
+          <h3 style="margin-top: 30px; font-size: 1.5rem; color: var(--pk-text);">Salas Disponibles</h3>
+          <div class="room-grid">
+            <div *ngFor="let room of availableRooms" class="room-card">
+              <div style="text-align: left;">
+                <p style="margin: 0; font-size: 1.2rem; color: var(--pk-text);"><strong>Sala:</strong> #{{ getShortId(room.id) }}</p>
+                <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: var(--pk-text); opacity: 0.8; display: flex; align-items: center;">
+                  <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background-color:var(--pk-yellow); margin-right:6px; border: 1px solid var(--pk-dark);"></span>
+                  {{ room.status === 'waiting' ? 'Esperando jugador...' : 'En progreso' }}
+                </p>
+              </div>
+              <button (click)="joinRoom(room.id)" class="btn-join">Unirse</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="selectedRoom && !gameState" class="game-waiting" style="padding: 20px;">
+        <h2 style="font-size: 2rem; color: var(--pk-text); margin-bottom: 10px;">¡Sala Lista!</h2>
+        <p style="font-size: 1.2rem; color: var(--pk-text);">Esperando a que un retador se una a la partida...</p>
+        <p style="font-size: 0.9rem; color: var(--pk-text); margin-top: 15px; background: var(--pk-light); display: inline-block; padding: 5px 15px; border-radius: 20px; border: 1px dashed var(--pk-dark);">Sala: <strong>#{{ getShortId(selectedRoom) }}</strong></p>
+        
+        <div class="spinner" style="margin: 40px auto;"></div>
+        <button (click)="cancelRoom()" class="btn-cancel">Cancelar y Salir</button>
+      </div>
+
+    </div>
+</div>
+
+<div class="game-container" *ngIf="gameState">
+      <!-- Tutorial Overlay -->
+      <div *ngIf="isTutorial" class="tutorial-box">
+        <div class="tutorial-avatar">
+          <img src="/assets/images/logo.png" alt="Profesor" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <div class="tutorial-text">
+          <h3 style="margin-top: 0; color: var(--pk-yellow); text-shadow: 2px 2px 0 var(--pk-dark);">Guía de Batalla</h3>
+          <p>{{ tutorialMessage }}</p>
+        </div>
+      </div>
+      
+      <!-- Card Inspector -->
+      <div *ngIf="hoveredCard" class="card-inspector">
+        <img [src]="hoveredCard.image" [alt]="hoveredCard.name" class="inspector-image">
+        <div class="inspector-details">
+          <h3>{{ hoveredCard.name }}</h3>
+          <div class="inspector-stats" *ngIf="hoveredCard.cardClass === 'pokemon' || !hoveredCard.cardClass">
+            <span class="atk">⚔️ {{ hoveredCard.attack }}</span>
+            <span class="hp">❤️ {{ hoveredCard.hp }}</span>
+            <span class="def">🛡️ {{ hoveredCard.defense }}</span>
+          </div>
+          <div class="inspector-meta">
+            <span class="type-badge">{{ translateType(hoveredCard.types[0]) }}</span>
+            <span *ngIf="hoveredCard.cardClass === 'pokemon' || !hoveredCard.cardClass">Nvl {{ hoveredCard.level }}</span>
+            <span>{{ hoveredCard.rarity === 'legendary' ? 'Legendario' : (hoveredCard.rarity === 'rare' ? 'Raro' : 'Común') }}</span>
+          </div>
+          <div class="inspector-desc" *ngIf="hoveredCard.cardClass === 'pokemon' || !hoveredCard.cardClass">
+            <strong>{{ translateAbilityName(hoveredCard.specialAbility?.name) }}:</strong>
+            {{ translateAbilityDesc(hoveredCard.specialAbility?.description) }}
+          </div>
+          <div class="inspector-flavor">
+            {{ hoveredCard.description }}
+          </div>
+          </div>
+      </div>
+
+      
+      <!-- Custom Surrender Modal -->
+      <div *ngIf="showSurrenderModal" class="custom-modal-overlay">
+        <div class="custom-modal">
+          <h2>⚠️ Advertencia</h2>
+          <p>¿Estás seguro de que quieres abandonar la partida?</p>
+          <p class="modal-warning">Contará como una derrota automática.</p>
+          <div class="modal-actions">
+            <button (click)="confirmSurrender()" class="btn-action btn-danger">Sí, Rendirse</button>
+            <button (click)="showSurrenderModal = false" class="btn-action">Cancelar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast Messages -->
+      <div *ngIf="toastMessage" class="toast-message">
+        {{ toastMessage }}
+      </div>
+
+      <!-- Top HUD (CPU info) -->
+      <div class="hud cpu-hud">
+        <div class="hud-info">
+          <h2>{{ getOpponent().username }}</h2>
+          <div class="hp-bar-container">
+            <div class="hp-bar" [style.width.%]="(getOpponent().hp / 4000) * 100"></div>
+          </div>
+          <span class="hp-text">{{ getOpponent().hp }}/4000</span>
+        </div>
+      </div>
+
+      <!-- Playmat Area -->
+      <div class="playmat-wrapper">
+        <div class="playmat">
+          
+          <!-- CPU Row -->
+          <div class="mat-half cpu-half">
+            <!-- Top row for CPU -->
+            <div class="mat-row cpu-monsters">
+              <div class="mat-zone graveyard-zone">
+                <div class="zone-label">Cementerio ({{ getOpponent().graveyard.length }})</div>
+                <div *ngIf="getOpponent().graveyard.length > 0" class="field-card pk-card-visual" style="position: absolute; width: 100%; height: 100%; pointer-events: none;">
+                  <img [src]="getOpponent().graveyard[getOpponent().graveyard.length-1].image" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+              </div>
+              
+              <div class="monster-zones">
+                <div *ngFor="let slot of slots; trackBy: trackByIndex" class="monster-slot">
+                  <div *ngIf="getOpponent().field[slot]"
+                       class="field-card pk-card-visual interactive"
+                       [ngClass]="[
+                         'card-type-' + (getOpponent().field[slot]?.types?.[0] || 'default'),
+                         opponentAnimations[slot] || ''
+                       ]"
+                       [class.targetable]="isSelectingTarget"
+                       [class.exhausted]="getOpponent().field[slot].hasAttacked || getOpponent().field[slot].hasUsedAbility"
+                       (click)="selectTarget(slot)"
+                       (mouseenter)="hoveredCard = getOpponent().field[slot]" (mouseleave)="hoveredCard = null">
+                    <img [src]="getOpponent().field[slot].image" [alt]="getOpponent().field[slot].name" class="card-image">
+                    <div class="card-name">{{ getOpponent().field[slot].name }}</div>
+                    <div class="card-stats">
+                      <span class="atk">⚔️ {{ getOpponent().field[slot].attack }}</span>
+                      <span class="hp">❤️ {{ getOpponent().field[slot].hp }}</span>
+                    </div>
+                    <div *ngIf="getOpponent().field[slot].status" class="status-indicator" [ngClass]="getOpponent().field[slot].status">
+                      <span *ngIf="getOpponent().field[slot].status === 'burned'">🔥</span>
+                      <span *ngIf="getOpponent().field[slot].status === 'poisoned'">☠️</span>
+                      <span *ngIf="getOpponent().field[slot].status === 'paralyzed'">⚡</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mat-zone deck-zone">
+                <div class="deck-stack"></div>
+                <div class="zone-label">Mazo ({{ getOpponent().deck.length }})</div>
+              </div>
+            </div>
+
+            <!-- Bottom row for CPU Spells/Traps -->
+            <div class="mat-row cpu-spells">
+              <div class="mat-zone extra-zone">
+                <div class="zone-label">Extra ({{ getOpponent().extraDeck.length }})</div>
+                <div *ngIf="getOpponent().extraDeck.length > 0" class="field-card pk-card-visual" style="position: absolute; width: 100%; height: 100%; pointer-events: none;">
+                  <img src="/assets/images/fondo_carta_pokemon.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                </div>
+              </div>
+              <div class="monster-zones spell-zones">
+                <div *ngFor="let slot of slots; trackBy: trackByIndex" class="monster-slot spell-slot">
+                  <div *ngIf="getOpponent().spellZone[slot] as spellCard" 
+                       class="field-card" 
+                       [class.face-down]="spellCard.isFaceDown"
+                       [class.pk-card-visual]="!spellCard.isFaceDown"
+                       (mouseenter)="hoveredCard = spellCard" (mouseleave)="hoveredCard = null">
+                     <img *ngIf="!spellCard.isFaceDown" [src]="spellCard.image" class="card-image" style="height: 100%;">
+                  </div>
+                </div>
+              </div>
+              <div class="mat-zone field-zone">
+                <div class="zone-label">Campo</div>
+                <div *ngIf="getOpponent().fieldCard" class="field-card pk-card-visual" style="position: absolute; width: 100%; height: 100%; pointer-events: none; border-color: var(--pk-red);">
+                  <img [src]="getOpponent().fieldCard?.image" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Divider / Phase Info -->
+          <div class="mat-divider">
+            <div class="phase-badge">{{ getCurrentPhaseText() }}</div>
+            <div class="turn-badge">Turno {{ gameState.turnNumber }} - {{ isMyTurn() ? 'Tu Turno' : 'Turno del Oponente' }}</div>
+          </div>
+
+          <!-- Player Row -->
+          <div class="mat-half player-half">
+            <!-- Top row for Player Spells/Traps -->
+            <div class="mat-row player-spells">
+              <div class="mat-zone field-zone interactive" (click)="placeFieldCard()" [class.highlight-slot]="selectedHandCardIndex !== null && isSelectedFieldSpell()">
+                <div class="zone-label">Campo</div>
+                <div *ngIf="getMe().fieldCard" class="field-card pk-card-visual" style="position: absolute; width: 100%; height: 100%; pointer-events: none; border-color: var(--pk-yellow);">
+                  <img [src]="getMe().fieldCard?.image" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+              </div>
+              <div class="monster-zones spell-zones">
+                <div *ngFor="let slot of slots; trackBy: trackByIndex" class="monster-slot spell-slot" (click)="!getMe().spellZone[slot] && placeCardInSlot(slot, true)" [class.highlight-slot]="selectedHandCardIndex !== null && isSelectedSpell()">
+                  <div *ngIf="getMe().spellZone[slot] as spellCard" 
+                       class="field-card interactive" 
+                       [class.face-down]="spellCard.isFaceDown"
+                       [class.pk-card-visual]="!spellCard.isFaceDown"
+                       (click)="$event.stopPropagation(); activateSpell(slot)"
+                       (mouseenter)="hoveredCard = spellCard" (mouseleave)="hoveredCard = null">
+                     <button class="btn-discard" (click)="$event.stopPropagation(); discardCardFromField(slot, true)" title="Enviar al Cementerio">❌</button>
+                     <img *ngIf="!spellCard.isFaceDown" [src]="spellCard.image" class="card-image" style="height: 100%;">
+                  </div>
+                </div>
+              </div>
+              <div class="mat-zone extra-zone interactive" (click)="openExtraDeck()">
+                <div class="zone-label">Extra ({{ getMe().extraDeck.length }})</div>
+                <div *ngIf="getMe().extraDeck.length > 0" class="field-card pk-card-visual" style="position: absolute; width: 100%; height: 100%; pointer-events: none;">
+                  <img src="/assets/images/fondo_carta_pokemon.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom row for Player -->
+            <div class="mat-row player-monsters">
+              <div class="mat-zone deck-zone">
+                <div class="deck-stack"></div>
+                <div class="zone-label">Mazo ({{ getMe().deck.length }})</div>
+              </div>
+              
+              <div class="monster-zones">
+                <div *ngFor="let slot of slots; trackBy: trackByIndex" class="monster-slot" (click)="!getMe().field[slot] && placeCardInSlot(slot, false)" [class.highlight-slot]="selectedHandCardIndex !== null && !isSelectedSpell()">
+                  <div *ngIf="getMe().field[slot]"
+                       class="field-card pk-card-visual interactive"
+                       [ngClass]="[
+                         'card-type-' + (getMe().field[slot]?.types?.[0] || 'default'),
+                         playerAnimations[slot] || ''
+                       ]"
+                       [class.selected]="selectedAttackerIndex === slot"
+                       [class.exhausted]="getMe().field[slot].hasAttacked || getMe().field[slot].hasUsedAbility"
+                       (click)="$event.stopPropagation(); selectFieldCard(slot)"
+                       (mouseenter)="hoveredCard = getMe().field[slot]" (mouseleave)="hoveredCard = null">
+                    <button class="btn-discard" (click)="$event.stopPropagation(); discardCardFromField(slot, false)" title="Enviar al Cementerio">❌</button>
+                    <img [src]="getMe().field[slot].image" [alt]="getMe().field[slot].name" class="card-image">
+                    <div class="card-name">{{ getMe().field[slot].name }}</div>
+                    <div class="card-stats">
+                      <span class="atk">⚔️ {{ getMe().field[slot].attack }}</span>
+                      <span class="hp">❤️ {{ getMe().field[slot].hp }}</span>
+                    </div>
+                    <div *ngIf="getMe().field[slot].status" class="status-indicator" [ngClass]="getMe().field[slot].status">
+                      <span *ngIf="getMe().field[slot].status === 'burned'">🔥</span>
+                      <span *ngIf="getMe().field[slot].status === 'poisoned'">☠️</span>
+                      <span *ngIf="getMe().field[slot].status === 'paralyzed'">⚡</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mat-zone graveyard-zone">
+                <div class="zone-label">Cementerio ({{ getMe().graveyard.length }})</div>
+                <div *ngIf="getMe().graveyard.length > 0" class="field-card pk-card-visual" style="position: absolute; width: 100%; height: 100%; pointer-events: none;">
+                  <img [src]="getMe().graveyard[getMe().graveyard.length-1].image" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Winner Overlay -->
+        <div *ngIf="gameState.winner" class="winner-overlay" [ngClass]="{'is-win': gameState.winner === myPlayerKey, 'is-loss': gameState.winner !== myPlayerKey}">
+          <div class="winner-message">
+            <h2 class="winner-title">{{ gameState.winner === myPlayerKey ? '¡VICTORIA!' : '¡DERROTA!' }}</h2>
+            <p class="winner-subtitle">{{ gameState.winner === myPlayerKey ? '¡Has superado a tu rival y dominado el campo de batalla!' : 'Tu rival ha sido superior esta vez... ¡Sigue entrenando!' }}</p>
+            <div class="winner-icon">{{ gameState.winner === myPlayerKey ? '🏆' : '💀' }}</div>
+            <button (click)="leaveGameManually()" class="btn-action btn-winner">Volver al Menú</button>
+          </div>
+        </div>
+
+        <!-- Extra Deck Modal -->
+        <div *ngIf="showExtraDeckModal" class="winner-overlay" style="z-index: 101;" (click)="closeExtraDeck()">
+          <div class="winner-message" style="max-width: 80%; background: var(--pk-light);" (click)="$event.stopPropagation()">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">Tu Deck Extra (Evoluciones)</h2>
+            <p *ngIf="getMe().extraDeck.length === 0" style="margin-bottom: 20px; font-family: var(--font-text);">No tienes evoluciones disponibles.</p>
+            
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;">
+               <div *ngFor="let card of getMe().extraDeck; let i = index; trackBy: trackByIndex" 
+                    class="field-card pk-card-visual interactive" 
+                    [ngClass]="'card-type-' + (card.types[0] || 'default')"
+                    style="position: relative; width: 140px; height: 200px;"
+                    (click)="selectExtraCardToEvolve(i)"
+                    (mouseenter)="hoveredCard = card" (mouseleave)="hoveredCard = null">
+                 <img [src]="card.image" class="card-image" style="width: 100%; height: 60%; object-fit: cover; border-bottom: 2px solid var(--pk-dark);">
+                 <div class="card-name" style="font-size: 0.8rem; padding: 5px;">{{ card.name }} (Nvl {{ card.level }})</div>
+                 <div style="font-size: 0.7rem; text-align: center; font-family: var(--font-text);">Click para Evolucionar</div>
+               </div>
+            </div>
+            
+            <button (click)="closeExtraDeck()" class="btn-action btn-danger">Cerrar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom HUD (Player Info & Actions) -->
+      <div class="hud player-hud">
+        <div class="hud-info">
+          <h2>{{ getMe().username }}</h2>
+          <div class="hp-bar-container">
+            <div class="hp-bar" [style.width.%]="(getMe().hp / 4000) * 100"></div>
+          </div>
+          <span class="hp-text">{{ getMe().hp }}/4000</span>
+        </div>
+        
+        <div *ngIf="isMyTurn() && !gameState.winner" class="player-actions">
+          <button (click)="playPhase()" class="btn-action phase-btn">Siguiente Fase ➔</button>
+           <button (click)="surrender()" class="btn-action btn-danger" style="margin-left: 10px;">Rendirse</button>
+        </div>
+      </div>
+
+      <!-- Player Hand -->
+      <div class="hand-container">
+        <div class="hand-cards">
+          <div *ngFor="let card of getMe().hand; let i = index; trackBy: trackByIndex"
+               class="hand-card anim-draw pk-card-visual interactive"
+               [class.selected-for-play]="selectedHandCardIndex === i"
+               [style.animation-delay]="(i * 0.1) + 's'"
+               [ngClass]="'card-type-' + (card?.types?.[0] || 'default')"
+               (click)="playCardFromHand(i)"
+               (contextmenu)="$event.preventDefault(); discardCardFromHand(i)"
+               (mouseenter)="hoveredCard = card" (mouseleave)="hoveredCard = null">
+            
+            <button class="btn-discard" (click)="$event.stopPropagation(); discardCardFromHand(i)" title="Descartar Carta">❌</button>
+            
+            <img [src]="card.image" [alt]="card.name" class="card-image">
+            <div class="card-name">{{ card.name }}</div>
+            <div class="card-stats" *ngIf="card.cardClass === 'pokemon' || !card.cardClass">
+              <span class="atk">⚔️ {{ card.attack }}</span>
+              <span class="hp">❤️ {{ card.hp }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

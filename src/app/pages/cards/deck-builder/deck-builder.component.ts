@@ -61,12 +61,24 @@ const MAX_CARDS_PER_TYPE = 2;
               [(ngModel)]="searchTerm" (ngModelChange)="applyFilter()"
               class="search-input"
             >
+            <select [(ngModel)]="filterType" (ngModelChange)="applyFilter()" class="sort-select" style="margin-left: 10px;">
+              <option value="all">Todos los Tipos</option>
+              <option value="fire">Fuego</option>
+              <option value="water">Agua</option>
+              <option value="grass">Planta</option>
+              <option value="electric">Eléctrico</option>
+              <option value="psychic">Psíquico</option>
+              <option value="ice">Hielo</option>
+              <option value="rock">Roca</option>
+              <option value="default">Normal/Otro</option>
+            </select>
             <select [(ngModel)]="sortBy" (ngModelChange)="applyFilter()" class="sort-select">
               <option value="name">Ordenar por Nombre</option>
               <option value="rarity">Ordenar por Rareza</option>
               <option value="attack">Ordenar por Ataque</option>
               <option value="defense">Ordenar por Defensa</option>
               <option value="generation">Ordenar por Generación</option>
+              <option value="type">Ordenar por Tipo (Elemento)</option>
             </select>
           </div>
           <div *ngIf="loading" class="loading">Cargando cartas...</div>
@@ -421,8 +433,8 @@ const MAX_CARDS_PER_TYPE = 2;
 
     .card-desc-row {
       font-size: 0.75rem;
-      color: #666;
-      background: #fdfdfd;
+      color: var(--pk-text);
+      background: var(--pk-light);
       border-left: 2px solid var(--pk-yellow);
       padding: 4px;
       line-height: 1.2;
@@ -499,7 +511,7 @@ const MAX_CARDS_PER_TYPE = 2;
     }
 
     .quantity {
-      color: var(--pk-text);
+      color: #111;
       font-weight: bold;
       font-size: 0.9rem;
       background: var(--pk-yellow);
@@ -656,6 +668,7 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
   loading = false;
   searchTerm = '';
   sortBy = 'name';
+  filterType = 'all';
   deckSaveMessage = '';
   deckSaveError = false;
   showSaveModal = false;
@@ -716,6 +729,10 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
     let filtered = this.availableCards.filter(card => {
       const matchesTab = this.activeTab === 'pokemon' ? (!card.cardClass || card.cardClass === 'pokemon') : (card.cardClass === 'magic' || card.cardClass === 'trap');
       if (!matchesTab) return false;
+      
+      const typeMatches = this.filterType === 'all' || (card.types && card.types[0] === this.filterType);
+      if (!typeMatches) return false;
+      
       const matchName = card.name?.toLowerCase().includes(term);
       const matchType = Array.isArray(card.types) && card.types.some(t => t?.toLowerCase().includes(term));
       return matchName || matchType;
@@ -734,6 +751,13 @@ export class DeckBuilderComponent implements OnInit, OnDestroy {
         break;
       case 'generation':
         filtered.sort((a, b) => a.id - b.id);
+        break;
+      case 'type':
+        filtered.sort((a, b) => {
+          const typeA = a.types && a.types[0] ? a.types[0] : '';
+          const typeB = b.types && b.types[0] ? b.types[0] : '';
+          return typeA.localeCompare(typeB);
+        });
         break;
       case 'name':
       default:

@@ -1400,23 +1400,40 @@ export class VsCpuComponent implements OnInit, OnDestroy {
             currentLegendaries++;
          }
          
-         if ((card.cardClass === 'pokemon' || !card.cardClass) && card.level > 3) {
-            cpuExtra.push(card);
-         } else {
-            cpuMain.push(card);
+         // Filtrar magias y trampas aleatorias que vengan en el pool para no desbalancear
+         if (card.cardClass !== 'magic' && card.cardClass !== 'trap') {
+            if (card.level > 3) {
+               cpuExtra.push(card);
+            } else {
+               cpuMain.push(card);
+            }
          }
       }
       
-      // Mezclar las cartas principales para que magias y monstruos estén distribuidos
-      cpuMain = cpuMain.sort(() => 0.5 - Math.random());
+      // Limitamos el Extra Deck a un máximo de 3 a 5 evoluciones
+      const numExtra = Math.floor(Math.random() * 3) + 3;
+      cpuExtra = cpuExtra.slice(0, numExtra);
       
-      // Recortamos exactamente a 20 cartas para el Main Deck
-      cpuMain = cpuMain.slice(0, 20);
+      // Aseguramos que la CPU tenga cartas mágicas y trampas (entre 3 y 5 cartas)
+      const allCardsForCPU = await this.pokemonService.getAllPokemons();
+      const magicAndTraps = allCardsForCPU.filter(c => c.cardClass === 'magic' || c.cardClass === 'trap');
+      const numMagics = Math.floor(Math.random() * 3) + 3; // 3 a 5 cartas mágicas
+      const selectedMagics = magicAndTraps.sort(() => 0.5 - Math.random()).slice(0, numMagics);
+
+      // Calculamos cuánto espacio queda para los monstruos básicos (Main Deck)
+      // TOTAL debe ser exactamente 20 cartas (Main + Extra)
+      const numMainPokemon = 20 - cpuExtra.length - selectedMagics.length;
       
-      // Si por alguna razón extrema no llegó a 20, rellenamos con cartas básicas
-      while (cpuMain.length < 20) {
+      // Recortamos los Pokémon principales
+      cpuMain = cpuMain.slice(0, numMainPokemon);
+      
+      // Combinamos el mazo principal (Magias + Monstruos básicos)
+      cpuMain = [...cpuMain, ...selectedMagics].sort(() => 0.5 - Math.random());
+      
+      // Si por alguna razón extrema faltan cartas para llegar a 20 en TOTAL
+      while ((cpuMain.length + cpuExtra.length) < 20) {
          const extra = await this.pokemonService.getRandomPokemons(1);
-         if (extra[0].rarity !== 'legendary' && ((extra[0].cardClass !== 'pokemon' && extra[0].cardClass) || extra[0].level <= 3)) {
+         if (extra[0].rarity !== 'legendary' && extra[0].cardClass !== 'magic' && extra[0].cardClass !== 'trap' && extra[0].level <= 3) {
             cpuMain.push(extra[0]);
          }
       }
@@ -1810,31 +1827,97 @@ export class VsCpuComponent implements OnInit, OnDestroy {
     
     await delay(200);
 
-    // Jugar cartas (Invocación)
+    // Jugar cartas (Invocación y Magias/Trampas)
     for (let i = this.gameState.player2.hand.length - 1; i >= 0; i--) {
-      const fieldCount = this.gameState.player2.field.filter(c => !!c).length;
-      if (fieldCount < 5) {
+      const card = this.gameState.player2.hand[i];
+      if (!card) continue;
+
+      const isSpellOrTrap = card.cardClass === 'magic' || card.cardClass === 'trap';
+      const isFieldSpell = card.cardClass === 'magic' && card.magicEffect === 'field';
+      
+      // Inteligencia para usar curaciones directamente desde la mano
+      if (card.cardClass === 'magic' && card.magicEffect === 'heal') {
+         // Buscar un monstruo herido
+         let targetIdx = -1;
+         let mostDamage = 0;
+         for (let j = 0; j < 5; j++) {
+            const fieldCard = this.gameState.player2.field[j];
+            if (fieldCard) {
+               // Heurística simple: hp base estimado es 1000 (o lo que tenga). Asumimos daño si hp es bajo.
+               // Idealmente comparamos con maxHp, pero en este caso si hp < 500, curamos.
+               if (fieldCard.hp <= 500) { targetIdx = j; break; }
+            }
+         }
+         if (targetIdx !== -1) {
+            await delay(200);
+            const success = this.gameService.applyTargetedMagic(this.gameState, false, targetIdx, i);
+            if (success) {
+               this.showToast(`CPU: ¡Poción usada en ${this.gameState.player2.field[targetIdx].name}!`);
+               this.cpuAnimations[targetIdx] = 'anim-summon'; // Efecto visual de curación
+               this.cdr.detectChanges();
+               setTimeout(() => { this.cpuAnimations[targetIdx] = ''; this.cdr.detectChanges(); }, 600);
+            }
+            continue;
+         }
+      }
+
+      const zone = isSpellOrTrap ? this.gameState.player2.spellZone : this.gameState.player2.field;
+      const fieldCount = zone.filter(c => !!c).length;
+
+      if (isFieldSpell || fieldCount < 5) {
         await delay(200);
 
-        // Find empty slot for animation
         let emptySlot = 0;
-        for (let s = 0; s < 5; s++) {
-          if (!this.gameState.player2.field[s]) { emptySlot = s; break; }
+        if (!isFieldSpell) {
+           for (let s = 0; s < 5; s++) {
+             if (!zone[s]) { emptySlot = s; break; }
+           }
         }
 
-        this.gameService.playCard(this.gameState, false, i);
-        this.cpuAnimations[emptySlot] = 'anim-summon';
-        this.cdr.detectChanges();
-        setTimeout(() => { this.cpuAnimations[emptySlot] = ''; this.cdr.detectChanges(); }, 600);
+        const played = this.gameService.playCard(this.gameState, false, i);
+        if (played && !isSpellOrTrap) {
+          this.cpuAnimations[emptySlot] = 'anim-summon';
+          this.cdr.detectChanges();
+          setTimeout(() => { this.cpuAnimations[emptySlot] = ''; this.cdr.detectChanges(); }, 600);
+        } else {
+          this.cdr.detectChanges();
+        }
       }
     }
 
-    // Activar cartas mágicas de la CPU (no trampas)
+    // Intentar EVOLUCIONAR monstruos
+    for (let i = 0; i < 5; i++) {
+       const fieldCard = this.gameState.player2.field[i];
+       if (fieldCard) {
+          // Find matching extra deck card
+          const extraIdx = this.gameState.player2.extraDeck.findIndex(ex => ex.types[0] === fieldCard.types[0] && ex.level > fieldCard.level);
+          if (extraIdx !== -1) {
+             await delay(300);
+             const success = this.gameService.evolvePokemon(this.gameState, false, i, extraIdx);
+             if (success) {
+                this.audioService.playEvolutionSound();
+                this.showToast(`¡CPU evolucionó a ${this.gameState.player2.field[i].name}!`);
+                this.cpuAnimations[i] = 'anim-summon';
+                this.cdr.detectChanges();
+                setTimeout(() => { this.cpuAnimations[i] = ''; this.cdr.detectChanges(); }, 600);
+             }
+          }
+       }
+    }
+
+    // Activar cartas mágicas de la CPU (no trampas) que estén en el campo
     if (this.gameState.player2.spellZone) {
       for (let i = 0; i < this.gameState.player2.spellZone.length; i++) {
         const card = this.gameState.player2.spellZone[i];
         if (card && card.isFaceDown && card.cardClass !== 'trap') {
-          await delay(300);
+          // Revelar la carta visualmente por 1 segundo antes de activar el efecto
+          card.isFaceDown = false;
+          this.cdr.detectChanges();
+          await delay(1000);
+          
+          // Volver a voltear internamente para que pase la validación del service
+          card.isFaceDown = true;
+          
           const effectMessage = this.gameService.activateSpellTrap(this.gameState, i, false);
           if (effectMessage) {
             this.showToast(`CPU: ${effectMessage}`);
@@ -1922,10 +2005,8 @@ export class VsCpuComponent implements OnInit, OnDestroy {
       }
     }
 
-    // Pasar a END PHASE y luego al turno del jugador
     await delay(200);
-    this.gameService.endTurn(this.gameState); // end
-    this.gameService.endTurn(this.gameState); // draw -> player1 main
+    this.gameService.endTurn(this.gameState); // end -> draw -> sets timeout to main
     this.showToast('¡Tu Turno! Fase Principal');
     this.cdr.detectChanges();
     } catch (e) {

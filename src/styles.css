@@ -91,3 +91,21 @@ body {
   transform: translate(2px, 2px);
   box-shadow: 2px 2px 0px var(--pk-dark);
 }
+
+/* Custom Scrollbar for Cel-Shaded aesthetics */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+::-webkit-scrollbar-track {
+  background: var(--pk-white);
+  border-left: 2px solid var(--pk-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--pk-text);
+  border: 3px solid var(--pk-white);
+  border-radius: 7px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pk-blue);
+}

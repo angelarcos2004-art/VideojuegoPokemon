@@ -11,6 +11,12 @@ export interface GameState {
   player2: PlayerState;
   winner?: string;
   turnNumber: number;
+  lastAttack?: {
+    attackerId: 'player1' | 'player2';
+    attackerIndex: number;
+    targetIndex: number;
+    timestamp: number;
+  };
   createdAt?: Date;
   updatedAt?: Date;
 }

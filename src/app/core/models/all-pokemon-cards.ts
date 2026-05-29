@@ -114,7 +114,7 @@ export const ALL_POKEMON_CARDS: PokemonCard[] = [
     "attack": 0,
     "defense": 0,
     "cardClass": "magic",
-    "magicEffect": "boost_def",
+    "magicEffect": "field",
     "effectValue": 300,
     "level": 2,
     "rarity": "common",

@@ -99,19 +99,32 @@ export class SupabaseService {
     return data?.[0];
   }
 
-  async joinGameRoom(roomId: string, player2Id: string): Promise<void> {
+  async deleteGameRoom(roomId: string): Promise<void> {
     const { error } = await this.supabase
       .from('game_rooms')
-      .update({ player2_id: player2Id, status: 'active' })
+      .delete()
       .eq('id', roomId);
+      
+    if (error) throw error;
+  }
+
+  async joinGameRoom(roomId: string, player2Id: string): Promise<void> {
+    const { data, error } = await this.supabase
+      .from('game_rooms')
+      .update({ player2_id: player2Id, status: 'active' })
+      .eq('id', roomId)
+      .select();
 
     if (error) throw error;
+    if (!data || data.length === 0) {
+      throw new Error('RLS Blocked: 0 rows updated');
+    }
   }
 
   async updateGameState(roomId: string, state: any): Promise<void> {
     const { error } = await this.supabase
       .from('game_state')
-      .upsert({ room_id: roomId, state_json: JSON.stringify(state), updated_at: new Date().toISOString() });
+      .upsert({ room_id: roomId, state_json: JSON.stringify(state), updated_at: new Date().toISOString() }, { onConflict: 'room_id' });
 
     if (error) throw error;
   }
@@ -156,10 +169,15 @@ export class SupabaseService {
   }
 
   async getAvailableRooms(): Promise<any[]> {
+    // Solo mostrar salas creadas en los últimos 30 minutos para evitar salas "fantasma"
+    const thirtyMinutesAgo = new Date(Date.now() - 30 * 60 * 1000).toISOString();
+    
     const { data, error } = await this.supabase
       .from('game_rooms')
       .select('*')
       .eq('status', 'waiting')
+      .gte('created_at', thirtyMinutesAgo)
+      .order('created_at', { ascending: false })
       .limit(10);
 
     if (error) throw error;
